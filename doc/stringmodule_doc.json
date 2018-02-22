@@ -1,0 +1,298 @@
+[
+	{
+		"name": "stringLen",
+		"description": "liefert die Länge des String <em>s</em> (ähnlich wie strlen() in C)",
+		"usages": [
+			{
+				"functionName": "stringLen",
+				"call": "  string s  "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "s"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "stringStartsWith",
+		"description": "liefert <em>true</em>, wenn der String <em>src</em> mit dem als Parameter angegebenen String <em>search</em> beginnt, andernfalls <em>false</em>",
+		"usages": [
+			{
+				"functionName": "stringStartsWith",
+				"call": "   string src  ,  string search   "
+			}
+		],
+		"params": [
+			{
+				"name": "search",
+				"description": "legt den String fest, mit dem zu prüfen ist, ob dieser sich am Anfang des Strings src befindet"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "stringEndsWith",
+		"description": "liefert <em>true</em>, wenn der String <em>src</em> mit dem als Parameter angegebenen String <em>search</em> endet, andernfalls <em>false</em>",
+		"usages": [
+			{
+				"functionName": "stringEndsWith",
+				"call": "   string src  ,  string search   "
+			}
+		],
+		"params": [
+			{
+				"name": "search",
+				"description": "legt den String fest, mit dem zu prüfen ist, ob dieser sich am Ende des Strings src befindet"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "stringContains",
+		"description": "liefert <em>true</em>, wenn der String <em>src</em> den als Parameter angegebenen String <em>search</em> enthält, andernfalls <em>false</em>",
+		"usages": [
+			{
+				"functionName": "stringContains",
+				"call": "   string src  ,  string search  [ ,  bool CaseSensitive = true  ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "search",
+				"description": "legt den String fest, mit dem zu prüfen ist, ob dieser sich innerhalb des Strings src befindet"
+			},
+			{
+				"name": "CaseSensitive",
+				"description": "legt fest, ob bei der Überprüfung Groß- und Kleinschreibung beachtet werden soll (CaseSensitive = true)"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "stringIndexOf",
+		"description": "liefert die erste Position, an der sich der als Parameter angegebene String <em>search</em> im String <em>src</em> befindet.",
+		"usages": [
+			{
+				"functionName": "stringIndexOf",
+				"call": "   string src  ,  string search   "
+			}
+		],
+		"params": [
+			{
+				"name": "search",
+				"description": "legt den String fest, von dem die erste Position im String src zu finden ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "stringLastIndexOf",
+		"description": "liefert die letzte Position, an der sich der als Parameter angegebene String <em>search</em> im String <em>src</em> befindet.",
+		"usages": [
+			{
+				"functionName": "stringLastIndexOf",
+				"call": "   string src  ,  string search   "
+			}
+		],
+		"params": [
+			{
+				"name": "search",
+				"description": "legt den String fest, von dem die letzte Position im String src zu finden ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "stringInsert",
+		"description": "fügt im String <em>src</em> an der Position <em>index</em> den als 2. Parameter angegebene String <em>search</em> ein",
+		"usages": [
+			{
+				"functionName": "stringInsert",
+				"call": "   string src  ,  int index ,  string search   "
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "legt die Position fest, an der der String search im String src einzufügen ist"
+			},
+			{
+				"name": "search",
+				"description": "legt den einzufügenden String fest"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringLeft",
+		"description": "liefert die <em> n </em> am weitesten links stehenden Zeichen des Strings <em>src</em> zurück",
+		"usages": [
+			{
+				"functionName": "stringLeft",
+				"call": "   string src  ,  int n   "
+			}
+		],
+		"params": [
+			{
+				"name": "n",
+				"description": "Anzahl der am weitesten links stehenden Zeichen vom String src, die zurück zu geben sind"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringMid",
+		"description": "liefert ab Position <em>pos</em> die <em>n</em> nächsten Zeichen des Strings <em>src</em>  zurück.",
+		"usages": [
+			{
+				"functionName": "stringMid",
+				"call": "   string src  ,  int pos  [,  int n = -1 ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "pos",
+				"description": "Position, ab der Zeichen aus dem String src zurückzugeben zu sind"
+			},
+			{
+				"name": "n",
+				"description": "Anzahl der Zeichen, die zurück zu liefern sind"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringRight",
+		"description": "liefert die <em>n</em> am weitesten rechts stehenden Zeichen des Strings <em>src</em> zurück",
+		"usages": [
+			{
+				"functionName": "stringRight",
+				"call": "    string src  ,  int n   "
+			}
+		],
+		"params": [
+			{
+				"name": "n",
+				"description": "Anzahl der am weitesten rechts stehenden Zeichen des Strings src, die zurückzuliefern sind"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringReplace",
+		"description": "ersetzt im String <em>src</em> einen Teilstring <em>oldStr</em> durch den String <em>newStr</em>",
+		"usages": [
+			{
+				"functionName": "stringReplace",
+				"call": "   string str  ,  string oldStr  ,  string newStr   "
+			}
+		],
+		"params": [
+			{
+				"name": "oldStr",
+				"description": "zu ersetzender Teilstring im String src"
+			},
+			{
+				"name": "newStr",
+				"description": "statt oldstr neu einzusetzender Teilstring im String src"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringSplit",
+		"description": "zerteilt den String <em>str</em> an den durch <em>sep</em> festgelegten Schnittstellen und gibt die hieraus",
+		"usages": [
+			{
+				"functionName": "stringSplit",
+				"call": "   string src  ,  string sep  [ ,  bool keepEmptyParts = true  ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "sep",
+				"description": "legt die Schnittstellen für den String src fest"
+			},
+			{
+				"name": "keepEmptyParts",
+				"description": "bei true befinden sich in der zurück gelieferten Liste auch eventuell leere Einträge,"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringListJoin",
+		"description": "fügt alle Strings aus der String-Liste <em>strList</em> zu einem String zusammen, wobei zwischen den einzelnen",
+		"usages": [
+			{
+				"functionName": "stringListJoin",
+				"call": "   list[string] strList  [ ,  string sep  ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "sep",
+				"description": "Trennzeichen zwischen den Strings beim Zusammenfügen"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringToUpper",
+		"description": "gibt ein neues String-object zurück bei dem alle Buchstaben groß",
+		"usages": [
+			{
+				"functionName": "stringToUpper",
+				"call": " string"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": ""
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringToLower",
+		"description": "gibt ein neues String-object zurück bei dem alle Buchstaben klein",
+		"usages": [
+			{
+				"functionName": "stringToLower",
+				"call": " string"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": ""
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringArg",
+		"description": "Ersetzt in einem String die kleinste Nummer die mit einem Ersetzungszeichen markiert ist",
+		"usages": [
+			{
+				"functionName": "stringArg",
+				"call": " string, string"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": ""
+			},
+			{
+				"name": "string",
+				"description": ""
+			}
+		],
+		"returnValue": "string"
+	}
+]

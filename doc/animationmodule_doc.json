@@ -1,0 +1,548 @@
+[
+	{
+		"name": "makeAnimation",
+		"description": "Erstellt ein allgemeines Animationsobjekt.",
+		"usages": [
+			{
+				"functionName": "makeAnimation",
+				"call": " GGLQObject object,  string property"
+			}
+		],
+		"params": [
+			{
+				"name": "object",
+				"description": "gibt das zu animierende Objekt an."
+			},
+			{
+				"name": "property",
+				"description": "gibt die Eigenschaft eines Objektes an, die animiert werden soll."
+			}
+		],
+		"returnValue": "GGLObject<Animation>"
+	},
+	{
+		"name": "makePathAnimation",
+		"description": "Erstellt ein Pfad-Animationsobjekt.",
+		"usages": [
+			{
+				"functionName": "makePathAnimation",
+				"call": " GGLQObject object, int duartion, Shape path, int steps"
+			}
+		],
+		"params": [
+			{
+				"name": "object",
+				"description": "gibt das zu animierende Objekt an."
+			},
+			{
+				"name": "duration",
+				"description": "gibt die Dauer der Animation an."
+			},
+			{
+				"name": "path",
+				"description": "beschreibt den Pfad den das Objekt ablaufen soll."
+			},
+			{
+				"name": "steps",
+				"description": "gibt an, in wie oft der Pfad zerteilt wird (beeinflusst die Genauigkeit der abzufahrenden Figur)."
+			}
+		],
+		"returnValue": "GGLObject<Animation>"
+	},
+	{
+		"name": "makeSequentialAnimationGroup",
+		"description": "Erstellt eine Gruppe für Animationsobjekte für sequenziell verlaufende Animationen.",
+		"usages": [
+			{
+				"functionName": "makeSequentialAnimationGroup",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject<AnimationGroup>"
+	},
+	{
+		"name": "makeParallelAnimationGroup",
+		"description": "Erstellt eine Gruppe für Animationsobjekte für parallel verlaufende Animationen.",
+		"usages": [
+			{
+				"functionName": "makeParallelAnimationGroup",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject<AnimationGroup>"
+	},
+	{
+		"name": "makeAnimationToRect",
+		"description": "Erstellt eine komplexe Animationssequenz.",
+		"usages": [
+			{
+				"functionName": "makeAnimationToRect",
+				"call": " GGraphicsObject item, rect dst, int duration [\\, string AspectRatioMode = ignore\\, dict easingCurve ]"
+			}
+		],
+		"params": [
+			{
+				"name": "item",
+				"description": "gibt das Element an, mit dem die Animation ausgeführt werden soll."
+			},
+			{
+				"name": "dst",
+				"description": "gibt das Ziel-Rechteck an."
+			},
+			{
+				"name": "duration",
+				"description": "gibt die Dauer der Animation an."
+			},
+			{
+				"name": "AspectRatioMode",
+				"description": "gibt das Verhalten beim Scalieren an. (siehe scaled())"
+			},
+			{
+				"name": "easingCurve",
+				"description": "gibt die Auslenkung der Animation an."
+			}
+		],
+		"returnValue": "GGLObject<AnimationGroup>"
+	},
+	{
+		"name": "animAddToGroup",
+		"description": "Fügt einer Gruppe eine Animation hinzu.",
+		"usages": [
+			{
+				"functionName": "animAddToGroup",
+				"call": " GGLObject<AnimationGroup> gruppe, GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "gruppe",
+				"description": "gibt die Animationgroup an in die die Animation eingefügt werden soll."
+			},
+			{
+				"name": "animation",
+				"description": "gibt die einzufügende Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animAddPauseToSequence",
+		"description": "Fügt zueiner sequential Animationsgruppe eine Pause hinzu",
+		"usages": [
+			{
+				"functionName": "animAddPauseToSequence",
+				"call": " QSequentialAnimationGroup anim, int milli"
+			}
+		],
+		"params": [
+			{
+				"name": "anim",
+				"description": "gibt die sequential Animationgroup an, in die die Pause hinzugefügt werden soll"
+			},
+			{
+				"name": "milli",
+				"description": "ist die Länge der Pause in Millisekunden"
+			}
+		]
+	},
+	{
+		"name": "animSetKeyValueAt",
+		"description": "Setzt einen Zwischenwert in einer Animation",
+		"usages": [
+			{
+				"functionName": "animSetKeyValueAt",
+				"call": "GGLObject<Animation> animation, double step, variant value"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "step",
+				"description": "gibt an, an welcher Stelle der Zwischenwert eingefügt werden soll."
+			},
+			{
+				"name": "variant",
+				"description": "gibt den Wert an (Datentype hängt vom Property ab)."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animStart",
+		"description": "Startet eine Animation.",
+		"usages": [
+			{
+				"functionName": "animStart",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animStop",
+		"description": "Stoppt eine Animation.",
+		"usages": [
+			{
+				"functionName": "animStop",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animPause",
+		"description": "Pausiert eine Animation.",
+		"usages": [
+			{
+				"functionName": "animPause",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animResume",
+		"description": "Lässt eine pausierte Animation weiter laufen.",
+		"usages": [
+			{
+				"functionName": "animResume",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animIsRunning",
+		"description": "Prüft ob eine Animation gerade läuft.",
+		"usages": [
+			{
+				"functionName": "animIsRunning",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "animIsStopped",
+		"description": "Prüft ob eine Animation gerade gestoppt ist.",
+		"usages": [
+			{
+				"functionName": "animIsStopped",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "animSetLoopCount",
+		"description": "Wiederholt eine Animation eine bestimmt Anzahl.",
+		"usages": [
+			{
+				"functionName": "animSetLoopCount",
+				"call": "GGLObject<Animation> animation, int loopCount"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "loopCount",
+				"description": "gibt wie oft die Animation wiederholt werden soll."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animSetDuration",
+		"description": "Setzt die Zeit wie lange die Animation in eine Durchlauf laufen soll.",
+		"usages": [
+			{
+				"functionName": "animSetDuration",
+				"call": "GGLObject<Animation> animation, int duration"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "duration",
+				"description": "Laufzeit in Millisekunden."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animGetDuration",
+		"description": "Gibt die Zeit zurück wie lange die Animation in eine Durchlauf laufen soll.",
+		"usages": [
+			{
+				"functionName": "animGetDuration",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animSetStartValue",
+		"description": "Setzt den Startwert in einer Animation.",
+		"usages": [
+			{
+				"functionName": "animSetStartValue",
+				"call": "GGLObject<Animation> animation, variant value"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "variant",
+				"description": "gibt den Wert an (Datentype hängt vom Property ab)."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animGetStartValue",
+		"description": "Gibt den Startwert einer Animation zurück.",
+		"usages": [
+			{
+				"functionName": "animGetStartValue",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		]
+	},
+	{
+		"name": "animSetEndValue",
+		"description": "Setzt den Endwert in einer Animation.",
+		"usages": [
+			{
+				"functionName": "animSetEndValue",
+				"call": "GGLObject<Animation> animation, variant value"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "variant",
+				"description": "gibt den Wert an (Datentype hängt vom Property ab)."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animGetEndValue",
+		"description": "Gibt den Endwert einer Animation zurück.",
+		"usages": [
+			{
+				"functionName": "animGetEndValue",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		]
+	},
+	{
+		"name": "animSetDirection",
+		"description": "Setzt die Laufrichtung einer Animation.",
+		"usages": [
+			{
+				"functionName": "animSetDirection",
+				"call": "GGLObject<Animation> animation, string direction"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "direction",
+				"description": "gibt die Richtung an."
+			}
+		]
+	},
+	{
+		"name": "animGetDirection",
+		"description": "Gibt die Laufrichtung einer Animation zurück.",
+		"usages": [
+			{
+				"functionName": "animGetDirection",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "animSetEasingCurve",
+		"description": "Ändert die Auslenkung einer Animation.",
+		"usages": [
+			{
+				"functionName": "animSetEasingCurve",
+				"call": "GGLObject<Animation> animation, dict easingCurve"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "curveType",
+				"description": "Type der EasingCurve"
+			},
+			{
+				"name": "easingCurve",
+				"description": "dieser Dictionary muss immer den Type und optional die Zusatzparameter beinhalten."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animGetEasingCurve",
+		"description": "Gibt die eingestellte Auslenkung einer Animation zurück",
+		"usages": [
+			{
+				"functionName": "animGetEasingCurve",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "animGetCurrentTime",
+		"description": "Gibt den aktuellen Zeitpunkt einer Animation zurück",
+		"usages": [
+			{
+				"functionName": "animGetCurrentTime",
+				"call": " GGLObject animation"
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": "animation"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "animSetCurrentTime",
+		"description": "Ändert den aktuellen Zeitpunkt einer Animation",
+		"usages": [
+			{
+				"functionName": "animSetCurrentTime",
+				"call": " GGLObject animation, int msecs"
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": "animation"
+			},
+			{
+				"name": "GGLObject",
+				"description": "animation"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "animRemoveFromGroup",
+		"description": "Entfernt eine Animation aus einer Gruppe. Existiert diese nicht in der",
+		"usages": [
+			{
+				"functionName": "animRemoveFromGroup",
+				"call": " QAnimationGroup group, QAbstractAnimation anim"
+			}
+		],
+		"params": [
+			{
+				"name": "QAnimationGroup",
+				"description": "group"
+			},
+			{
+				"name": "QAnimationGroup",
+				"description": "group"
+			}
+		],
+		"returnValue": "none"
+	}
+]

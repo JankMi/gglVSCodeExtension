@@ -1,0 +1,210 @@
+[
+	{
+		"name": "soundPlay",
+		"description": "spielt einen Sound ab.",
+		"usages": [
+			{
+				"functionName": "soundPlay",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "soundStop",
+		"description": "stoppt das Abspielen eines Sounds.",
+		"usages": [
+			{
+				"functionName": "soundStop",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "soundResume",
+		"description": "setzt das Abspielen eines Sounds fort.",
+		"usages": [
+			{
+				"functionName": "soundResume",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "soundPause",
+		"description": "pausiert das Abspielen eines Sounds.",
+		"usages": [
+			{
+				"functionName": "soundPause",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "soundIsPlaying",
+		"description": "liefert <em> true </em> zurück wenn der Sound gerade abgespielt wird sonst <em> false </em>.",
+		"usages": [
+			{
+				"functionName": "soundIsPlaying",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "soundIsPaused",
+		"description": "liefert <em> true </em> zurück wenn der Sound gerade pausiert ist sonst <em> false </em>.",
+		"usages": [
+			{
+				"functionName": "soundIsPaused",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "soundIsStopped",
+		"description": "liefert <em> true </em> zurück wenn der Sound gerade gestoppt ist sonst <em> false </em>.",
+		"usages": [
+			{
+				"functionName": "soundIsStopped",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "soundAddTimestamp",
+		"description": "fügt eine neue Zeitmarke zum Sound hinzu.",
+		"usages": [
+			{
+				"functionName": "soundAddTimestamp",
+				"call": "   Sound obj , number time  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			},
+			{
+				"name": "time",
+				"description": "- Zeitmarke als double oder int"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "soundClearTimestamps",
+		"description": "entfernt alle Zeitmarken eines Sounds.",
+		"usages": [
+			{
+				"functionName": "soundClearTimestamps",
+				"call": "   Sound obj  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "list<double>"
+	},
+	{
+		"name": "soundGetTimestamps",
+		"description": "gibt eine Liste aller Zeitmarken eines Sounds zurück.",
+		"usages": [
+			{
+				"functionName": "soundGetTimestamps",
+				"call": "   Sound obj  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "list<double>"
+	},
+	{
+		"name": "soundGetDuration",
+		"description": "gibt die Gesamtlänge eines Sounds zurück.",
+		"usages": [
+			{
+				"functionName": "soundGetDuration",
+				"call": "   Sound obj  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "soundGetPlaybackTime",
+		"description": "gibt die aktuelle Abspielzeit eines Sounds zurück.",
+		"usages": [
+			{
+				"functionName": "soundGetPlaybackTime",
+				"call": "   Sound obj  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "double"
+	}
+]

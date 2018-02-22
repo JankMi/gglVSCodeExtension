@@ -1,0 +1,153 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "GameGenerationLanguge",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#support"
+		},
+		{
+			"include": "#helper"
+		},
+		{
+			"comment": "imports",
+			"begin": "(import)\\(\\\"ga:\\\/\\\/([a-zA-Z~]+)@(\\w+)\\.ggl\\\"\\)",
+			"beginCaptures": {
+				"1":{
+					"name" : "keyword.control.ggl.import"
+				},
+				"2":{
+					"name" : "entity.name.selector.ggl.import"
+				},
+				"3":{
+					"name": "entity.name.section.ggl.import"
+				}
+			},
+			"end": ";"
+
+		},
+		{
+			"comment": "function implementation",
+			"begin": "(\\s*function\\s+)([a-z,A-Z,0-9,_]+)\\s*(\\([\\w, ,=,\\,]*\\))",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.type.function.ggl"
+				},
+				"2": {
+					"name": "entity.name.function.ggl"
+				},
+				"3":{
+					"name": "variable.parameter.ggl"
+				}
+			},
+			"patterns": [
+				{
+					"include": "$base"
+				}
+			],
+			"end": "(\\s*)",
+			"name": "meta.declaration.ggl.function"
+		},
+		{
+			"comment": "variable declaration",
+			"begin": "(\\s*var\\s+)([a-z,A-Z,0-9,_]+)",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.type.variable.ggl"
+				},
+				"2": {
+					"name": "variable.other.readwrite.ggl"
+				}
+			},
+			"end": "(\\s*[=|;])",
+			"name": "meta.initialization.ggl"
+		},
+		{
+			"comment": "function declaration",
+			"begin": "(\\s*function\\s+)([a-z,A-Z,0-9,_]+)",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.type.function.ggl"
+				},
+				"2": {
+					"name": "entity.name.function.ggl"
+				}
+			},
+			"end": "(\\([\\w, ,=,\\,]*\\))",
+
+			"endCaptures": {
+					"1": {
+						"name":"variable.parameter.ggl"
+					}
+				},
+			"name": "meta.declaration.ggl"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.ggl.nobuiltin",
+					"match": "(if|else|for|do|while|assert|then|case|switch|default|break)"
+				}
+			]			
+		},
+		"helper":{
+			"patterns": [
+				{
+					"name":"meta.declaration.ggl.secexit",
+					"match": "(})"
+				},
+				{
+					"name":"meta.declaration.ggl.secentry",
+					"match": "({)"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.ggl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ggl",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"name" : "comment.line",
+					"begin": "//",
+					"end": "\n"
+				}
+			]		
+		},
+		"support": {
+			"patterns": [
+			]		
+		},
+		"storage":{
+			"patterns": [
+				{
+					"name":"storage.type.variable",
+					"match": "\\s*var\\s+"
+				},{
+					"name":"storage.type.function",
+					"match": "\\s*function\\s+"
+				}
+			]
+		}
+	},
+	"scopeName": "source.genesisGGL"
+	
+}

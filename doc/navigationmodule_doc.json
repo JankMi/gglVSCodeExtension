@@ -1,0 +1,639 @@
+[
+	{
+		"name": "naviMakeMatrix",
+		"description": "Erstellt ein Navigation-Matrix-Objekt.",
+		"usages": [
+			{
+				"functionName": "naviMakeMatrix",
+				"call": " int row, int col"
+			}
+		],
+		"params": [
+			{
+				"name": "Kurze",
+				"description": "Beschreibung"
+			}
+		],
+		"returnValue": "GGLQObject<naviMatrix>"
+	},
+	{
+		"name": "naviMoveLeft",
+		"description": "Bewegung nach Links.",
+		"usages": [
+			{
+				"functionName": "naviMoveLeft",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviMoveRight",
+		"description": "Bewegung nach Rechts.",
+		"usages": [
+			{
+				"functionName": "naviMoveRight",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviMoveUp",
+		"description": "Bewegung nach Oben.",
+		"usages": [
+			{
+				"functionName": "naviMoveUp",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviMoveDown",
+		"description": "Bewegung nach Unten.",
+		"usages": [
+			{
+				"functionName": "naviMoveDown",
+				"call": " naviMatrix matrix "
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviNext",
+		"description": "Bewegung zum nächsten Element.",
+		"usages": [
+			{
+				"functionName": "naviNext",
+				"call": " naviMatrix matrix [\\, bool forcedWrapAround = false ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviPrev",
+		"description": "Bewegung zum vorherigen Element.",
+		"usages": [
+			{
+				"functionName": "naviPrev",
+				"call": " naviMatrix matrix [\\, bool forcedWrapAround = false ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSelect",
+		"description": "Selektierung eines Elements in der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviSelect",
+				"call": " naviMatrix matrix [\\, GGLQObject item ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::Bool"
+	},
+	{
+		"name": "naviSetCurrent",
+		"description": "Setzt die übergebene Position als neue Matrix-Position.",
+		"usages": [
+			{
+				"functionName": "naviSetCurrent",
+				"call": " naviMatrix matrix, int row, int col | none "
+			},
+			{
+				"functionName": "naviSetCurrent",
+				"call": " naviMatrix matrix, list [row col]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetCurrentRow",
+		"description": "Setzt die übergebene Reihe als neue Matrix-Position.",
+		"usages": [
+			{
+				"functionName": "naviSetCurrentRow",
+				"call": " naviMatrix matrix, int row"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetNone",
+		"description": "Setzt die aktuelle Matrix-Position auf eine außerhalb der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviSetNone",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviGetCurrent",
+		"description": "Fragt die aktuelle Position der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviGetCurrent",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::List[row,"
+	},
+	{
+		"name": "naviSetFirst",
+		"description": "Setzt die aktuelle Position der Matrix auf die erste Position.",
+		"usages": [
+			{
+				"functionName": "naviSetFirst",
+				"call": " naviMatrix matrix, [\\, bool forceSkipDisabled = true ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetEnabled",
+		"description": "Aktiviert oder Deaktiviert einen Eintrag in der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviSetEnabled",
+				"call": " naviMatrix matrix, int row, int col, [\\, bool = true ]"
+			},
+			{
+				"functionName": "naviSetEnabled",
+				"call": " naviMatrix matrix, list[row, col], [\\, bool = true ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviIsEnabled",
+		"description": "Prüft, ob ein Eintrag in der Matrix aktiviert oder deaktiviert ist. ",
+		"usages": [
+			{
+				"functionName": "naviIsEnabled",
+				"call": " naviMatrix matrix, int row, int col, [\\, bool = true ]"
+			},
+			{
+				"functionName": "naviIsEnabled",
+				"call": " naviMatrix matrix, list[row, col], [\\, bool = true ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetQObject",
+		"description": "Setzt für eine Matrix-Position ein QObjekt als Referenz-Objekt.",
+		"usages": [
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, int row, int col, GGLQObject obj "
+			},
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, int row, int col, none "
+			},
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, list[row, col] , GGLQObject obj "
+			},
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, list[row, col] , none "
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviGetQObject",
+		"description": "Holt für eine Matrix-Reihe das gesetzte QObjekt.",
+		"usages": [
+			{
+				"functionName": "naviGetQObject",
+				"call": " naviMatrix matrix, int row"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		]
+	},
+	{
+		"name": "naviSetExceededCallback",
+		"description": "Setzt die Exceeded-Callback-Funktion.",
+		"usages": [
+			{
+				"functionName": "naviSetExceededCallback",
+				"call": " naviMatrix matrix, GGLFunction callback"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetSelectionCallback",
+		"description": "Setzt die Selection-Callback-Funktion.",
+		"usages": [
+			{
+				"functionName": "naviSetSelectionCallback",
+				"call": " naviMatrix matrix, GGLFunction callback"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetItemChangedCallback",
+		"description": "Setzt die ItemChanged-Callback-Funktion.",
+		"usages": [
+			{
+				"functionName": "naviSetItemChangedCallback",
+				"call": " naviMatrix matrix, GGLFunction callback"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetCallbackArgs",
+		"description": "Hinzufügen von zusätzlichen Argumenten an die Callback-Funktionen.",
+		"usages": [
+			{
+				"functionName": "naviSetCallbackArgs",
+				"call": " naviMatrix matrix, list [GGLObject]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviGetRowCount",
+		"description": "Gibt die Anzahl der Reihen der Matrix zurück.",
+		"usages": [
+			{
+				"functionName": "naviGetRowCount",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::Integer"
+	},
+	{
+		"name": "naviGetColCount",
+		"description": "Gibt die Anzahl der Spalten der Matrix zurück.",
+		"usages": [
+			{
+				"functionName": "naviGetColCount",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::Integer"
+	},
+	{
+		"name": "naviDisableAll",
+		"description": "Deaktiviert alle Einträge in der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviDisableAll",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviEnableAll",
+		"description": "Aktiviert alle Einträge in der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviEnableAll",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetRowSelectionMode",
+		"description": "Aktiviert oder Deaktiviert den Row Selection Modus der NavigationsMatrix",
+		"usages": [
+			{
+				"functionName": "naviSetRowSelectionMode",
+				"call": " NaviMatrix matrix, bool enabled = true"
+			}
+		],
+		"params": [
+			{
+				"name": "NaviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "NaviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviIsRowSelectionMode",
+		"description": "Gibt den Status des Row Selection Modus der NaviMatrix zurück",
+		"usages": [
+			{
+				"functionName": "naviIsRowSelectionMode",
+				"call": " NaviMatrix"
+			}
+		],
+		"params": [
+			{
+				"name": "NaviMatrix",
+				"description": ""
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "naviIsWrapAround",
+		"description": "Gibt den Status des WrapAround Modus der NavigationsMatrix zurück",
+		"usages": [
+			{
+				"functionName": "naviIsWrapAround",
+				"call": " NaviMatrix"
+			}
+		],
+		"params": [
+			{
+				"name": "NaviMatrix",
+				"description": ""
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "naviSetSkipDisabled",
+		"description": "Aktiviert oder Deaktiviert den SkipDisabled Modus der NavigationsMatrix",
+		"usages": [
+			{
+				"functionName": "naviSetSkipDisabled",
+				"call": " NaviMatrix matrix, bool enabled = true"
+			}
+		],
+		"params": [
+			{
+				"name": "NaviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "NaviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "naviIsSkipDisabled",
+		"description": "Gibt den Status des SkipDisabled Modus der NavigationsMatrix zurück",
+		"usages": [
+			{
+				"functionName": "naviIsSkipDisabled",
+				"call": " NaviMatrix"
+			}
+		],
+		"params": [
+			{
+				"name": "NaviMatrix",
+				"description": ""
+			}
+		],
+		"returnValue": "bool"
+	}
+]

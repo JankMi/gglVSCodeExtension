@@ -1,0 +1,7107 @@
+[
+	{
+		"name": "len",
+		"description": "liefert die Anzahl der Elemente in der Liste <em>l</em> bzw. die Anzahl der Einträge im Dictionary <em>d</em>",
+		"usages": [
+			{
+				"functionName": "len",
+				"call": "  list l   "
+			}
+		],
+		"params": [
+			{
+				"name": "list",
+				"description": "l"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "sort",
+		"description": "sortiert die Liste <em>l</em> und gibt sortierte Liste zurück",
+		"usages": [
+			{
+				"functionName": "sort",
+				"call": "   list l  [ ,  bool reverse = false   ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "reverse",
+				"description": "legt fest, ob vorwärts (false) oder rückwärts (true) zu sortieren ist"
+			},
+			{
+				"name": "cmp_func",
+				"description": "legt die Vergleichsfunktion fest, die zum Sortieren aufzurufen ist"
+			},
+			{
+				"name": "cmp_key",
+				"description": "legt den Schlüssel für die Dictionaries fest, die in einer Liste zu sortieren sind."
+			}
+		],
+		"returnValue": "none"
+	},
+	{
+		"name": "list",
+		"description": "liefert die Anzahl der Elemente in der Liste <em>l</em> bzw. die Anzahl der Einträge im Dictionary <em>d</em>",
+		"usages": [
+			{
+				"functionName": "len",
+				"call": "  list l   "
+			}
+		],
+		"params": [
+			{
+				"name": "list",
+				"description": "l"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "dict",
+		"description": "legt ein Dictionary an",
+		"usages": [
+			{
+				"functionName": "dict",
+				"call": ""
+			}
+		],
+		"params": []
+	},
+	{
+		"name": "point",
+		"description": "erstellt einen Punkt",
+		"usages": [
+			{
+				"functionName": "point",
+				"call": "   int x  ,  int y   "
+			}
+		],
+		"params": [
+			{
+				"name": "x",
+				"description": "legt x-Koordinate des Punktes fest"
+			},
+			{
+				"name": "y",
+				"description": "legt y-Koordinate des Punktes fest"
+			}
+		]
+	},
+	{
+		"name": "size",
+		"description": "liefert ein Größen-Objekt",
+		"usages": [
+			{
+				"functionName": "size",
+				"call": "   int width  ,  int height   "
+			}
+		],
+		"params": [
+			{
+				"name": "width",
+				"description": "legt die Breite des size()-Objekts fest"
+			},
+			{
+				"name": "height",
+				"description": "legt die Höhe des size()-Objekts fest"
+			}
+		]
+	},
+	{
+		"name": "rect",
+		"description": "erstellt ein Rechteck",
+		"usages": [
+			{
+				"functionName": "rect",
+				"call": "   int x ,  int y ,  int width ,  int height   "
+			}
+		],
+		"params": [
+			{
+				"name": "x",
+				"description": "legt x-Koordinate des linken oberen Punktes des Rechtecks fest "
+			},
+			{
+				"name": "y",
+				"description": "legt y-Koordinate des linken oberen Punktes des Rechtecks fest "
+			},
+			{
+				"name": "topLeft",
+				"description": "legt den linken oberen Punkt des Rechtecks fest (2, 3)"
+			},
+			{
+				"name": "bottomRight",
+				"description": "legt den rechten unteren Punkt des Rechtecks fest "
+			},
+			{
+				"name": "size",
+				"description": "legt die Größe des Rechtecks fest "
+			}
+		]
+	},
+	{
+		"name": "print",
+		"description": "gibt Strings und Objekte aus",
+		"usages": [
+			{
+				"functionName": "print",
+				"call": " ... "
+			}
+		],
+		"params": [],
+		"returnValue": "none"
+	},
+	{
+		"name": "append",
+		"description": "hängt <em>o</em> an die Liste <em>l</em> und liefert diese erweiterte Liste als Rückgabe",
+		"usages": [
+			{
+				"functionName": "append",
+				"call": "  list l ,  object o   "
+			}
+		],
+		"params": [
+			{
+				"name": "list",
+				"description": "l"
+			},
+			{
+				"name": "list",
+				"description": "l"
+			}
+		]
+	},
+	{
+		"name": "appendList",
+		"description": "Hängte eine Liste an eine andere Liste an.",
+		"usages": [
+			{
+				"functionName": "appendList",
+				"call": "  list dst ,  list src   "
+			}
+		],
+		"params": [
+			{
+				"name": "list",
+				"description": "dst"
+			},
+			{
+				"name": "list",
+				"description": "dst"
+			}
+		],
+		"returnValue": "list"
+	},
+	{
+		"name": "insert",
+		"description": "fügt <em>value</em> mit dem Schlüssel <em>key</em> in dem Dictionary <em>d</em> ein und liefert dieses erweiterte Dictionary als Rückgabe",
+		"usages": [
+			{
+				"functionName": "insert",
+				"call": "   dict d  ,  object key  ,  object value    "
+			}
+		],
+		"params": [
+			{
+				"name": "dict",
+				"description": "d"
+			},
+			{
+				"name": "dict",
+				"description": "d"
+			},
+			{
+				"name": "dict",
+				"description": "d"
+			}
+		]
+	},
+	{
+		"name": "removeAll",
+		"description": "entfernt alle Elemente, die gleich dem Objekt <em>o</em> sind, aus der Liste <em>l</em> und gibt die Anzahl entfernter Elemente zurück",
+		"usages": [
+			{
+				"functionName": "removeAll",
+				"call": "   list l  ,  object   "
+			}
+		],
+		"params": [
+			{
+				"name": "list",
+				"description": "l"
+			},
+			{
+				"name": "list",
+				"description": "l"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "del",
+		"description": "löscht aus der Liste <em>l</em> das Element mit dem Index <em>idx</em> bzw. aus dem Dictionary <em>d</em> das Element mit dem Schlüssel <em>key</em>",
+		"usages": [
+			{
+				"functionName": "del",
+				"call": "   list l  ,  int idx   "
+			}
+		],
+		"params": [
+			{
+				"name": "idx",
+				"description": "Index des Elements, das aus einer Liste zu enfernen ist"
+			},
+			{
+				"name": "key",
+				"description": "Schlüssel des Elements, das aus einem Dictionary zu enfernen ist"
+			}
+		],
+		"returnValue": "none"
+	},
+	{
+		"name": "str",
+		"description": "wandelt den Inhalt der übergebenen Variable <em>v</em> in einen String um und gibt diesen zurück",
+		"usages": [
+			{
+				"functionName": "str",
+				"call": "   var v   "
+			}
+		],
+		"params": [
+			{
+				"name": "v",
+				"description": "Variable, deren Inhalt in einen String umzuwandeln ist"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "deepcopy",
+		"description": "führt eine tiefe Kopie durch, indem es den Inhalt von <em>v</em> physikalisch umkopiert und nicht nur",
+		"usages": [
+			{
+				"functionName": "deepcopy",
+				"call": "   var v   "
+			}
+		],
+		"params": [
+			{
+				"name": "v",
+				"description": "Variable, für deren Inhalt eine tiefe Kopie durchzuführen ist"
+			}
+		]
+	},
+	{
+		"name": "id",
+		"description": "liefert ein Größen-Objekt",
+		"usages": [
+			{
+				"functionName": "size",
+				"call": "   int width  ,  int height   "
+			}
+		],
+		"params": [
+			{
+				"name": "width",
+				"description": "legt die Breite des size()-Objekts fest"
+			},
+			{
+				"name": "height",
+				"description": "legt die Höhe des size()-Objekts fest"
+			}
+		]
+	},
+	{
+		"name": "type",
+		"description": "liefert den Typ der übergebenen Variable <em>v</em>",
+		"usages": [
+			{
+				"functionName": "type",
+				"call": "   var v   "
+			}
+		],
+		"params": [
+			{
+				"name": "v",
+				"description": "Variable, deren Typ zu bestimmen ist"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "contains",
+		"description": "überprüft zum einen, ob ein bestimmter Wert <em>value</em> in der Liste <em>l</em> bzw. im Dictionary <em>d</em> vorhanden ist, und",
+		"usages": [
+			{
+				"functionName": "contains",
+				"call": "   list l  ,  var value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Wert, der daraufhin zu überprüfen ist, ob er in einer list() oder dict() vorhanden ist"
+			},
+			{
+				"name": "p",
+				"description": "Punkt, der daraufhin zu überprüfen ist, ob er innerhalb eines rect() liegt"
+			},
+			{
+				"name": "r",
+				"description": "Rechteck, das daraufhin zu überprüfen ist, ob es innerhalb eines rect() liegt"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "getX",
+		"description": "gibt zu dem Punkt <em>p</em> dessen x-Koordinate bzw. zu dem Rechteck <em>r</em> die x-Koordinate der linken oberen Ecke zurück",
+		"usages": [
+			{
+				"functionName": "getX",
+				"call": "   point p   "
+			}
+		],
+		"params": [
+			{
+				"name": "point",
+				"description": "p"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "getY",
+		"description": "gibt zu dem Punkt <em>p</em> dessen y-Koordinate bzw. zu dem Rechteck <em>r</em> die y-Koordinate der linken oberen Ecke zurück",
+		"usages": [
+			{
+				"functionName": "getY",
+				"call": "   point p   "
+			}
+		],
+		"params": [
+			{
+				"name": "point",
+				"description": "p"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "getWidth",
+		"description": "gibt zu dem Rechteck <em>r</em> oder zu dem size()-Objekt <em>s</em> deren Breite zurück",
+		"usages": [
+			{
+				"functionName": "getWidth",
+				"call": "   rect r  "
+			}
+		],
+		"params": [
+			{
+				"name": "rect",
+				"description": "r"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "getHeight",
+		"description": "gibt zu dem Rechteck <em>r</em> oder zu dem size()-Objekt <em>s</em> deren Höhe zurück",
+		"usages": [
+			{
+				"functionName": "getHeight",
+				"call": "   rect r  "
+			}
+		],
+		"params": [
+			{
+				"name": "rect",
+				"description": "r"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "getSize",
+		"description": "gibt zu dem Rechteck <em>r</em> dessen Größe zurück",
+		"usages": [
+			{
+				"functionName": "getSize",
+				"call": "   rect r   "
+			}
+		],
+		"params": [
+			{
+				"name": "rect",
+				"description": "r"
+			}
+		]
+	},
+	{
+		"name": "getCenter",
+		"description": "gibt zu dem Rechteck <em>r</em> oder einer Größe <em>s</em> den Mittelpunkt zurück",
+		"usages": [
+			{
+				"functionName": "getCenter",
+				"call": "   rect r  | size s  "
+			}
+		],
+		"params": [
+			{
+				"name": "rect",
+				"description": "r"
+			}
+		]
+	},
+	{
+		"name": "getTopLeft",
+		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner linken oberen Ecke zurück",
+		"usages": [
+			{
+				"functionName": "getTopLeft",
+				"call": "   rect r   "
+			}
+		],
+		"params": [
+			{
+				"name": "rect",
+				"description": "r"
+			}
+		]
+	},
+	{
+		"name": "getTopRight",
+		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner rechten oberen Ecke zurück",
+		"usages": [
+			{
+				"functionName": "getTopRight",
+				"call": "   rect r   "
+			}
+		],
+		"params": [
+			{
+				"name": "rect",
+				"description": "r"
+			}
+		]
+	},
+	{
+		"name": "getBottomLeft",
+		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner linken unteren Ecke zurück",
+		"usages": [
+			{
+				"functionName": "getBottomLeft",
+				"call": "   rect r   "
+			}
+		],
+		"params": [
+			{
+				"name": "rect",
+				"description": "r"
+			}
+		]
+	},
+	{
+		"name": "getBottomRight",
+		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner rechten unteren Ecke zurück",
+		"usages": [
+			{
+				"functionName": "getBottomRight",
+				"call": "   rect r   "
+			}
+		],
+		"params": [
+			{
+				"name": "rect",
+				"description": "r"
+			}
+		]
+	},
+	{
+		"name": "movedTopLeft",
+		"description": "verschiebt die linke obere Ecke des Rechtecks <em>r</em> an den Punkt <em>p</em> und gibt das verschobene Rechteck als rect() zurück",
+		"usages": [
+			{
+				"functionName": "movedTopLeft",
+				"call": "   rect r  ,  point p  "
+			}
+		],
+		"params": [
+			{
+				"name": "p",
+				"description": "legt die neue Koordinate der linken oberen Ecke fest"
+			}
+		]
+	},
+	{
+		"name": "united",
+		"description": " liefert ein neues Rechteck, das die beiden beteiligten Rechtecke <em>r1</em> und <em>r2</em> enthält",
+		"usages": [
+			{
+				"functionName": "united",
+				"call": "   rect r1  ,  rect r2  "
+			}
+		],
+		"params": [
+			{
+				"name": "r2",
+				"description": "Rechteck, das mit dem existierenden zu einem Rechteck r1 zusammenzufassen ist"
+			}
+		]
+	},
+	{
+		"name": "intersected",
+		"description": "liefert ein neues Rechteck, das die Schnittmenge der beiden Rechtecke <em>r1</em> und <em>r2</em> enthält",
+		"usages": [
+			{
+				"functionName": "intersected",
+				"call": "   rect r1  ,  rect r2  "
+			}
+		],
+		"params": [
+			{
+				"name": "r2",
+				"description": "Rechteck, aus dem mit dem existierenden Rechteck r1 die Schnittmenge zu bilden ist"
+			}
+		]
+	},
+	{
+		"name": "adjusted",
+		"description": "liefert ein neues Rechteck, bei dem die übergebenen Werte auf die Koordinaten des Originalrechtecks <em>r</em> addiert sind",
+		"usages": [
+			{
+				"functionName": "adjusted",
+				"call": "   rect r ,  int dx1 ,  int dy1 ,  int dx2 ,  int dy2  "
+			}
+		],
+		"params": [
+			{
+				"name": "x1",
+				"description": "legt fest, um wieviel die x-Koordinate der linken oberen Ecke des Rechtecks zu verschieben ist"
+			},
+			{
+				"name": "y1",
+				"description": "legt fest, um wieviel die y-Koordinate der linken oberen Ecke des Rechtecks zu verschieben ist"
+			},
+			{
+				"name": "x2",
+				"description": "legt fest, um wieviel die Breite des Rechtecks zu vergrößern bzw. zu verkleinern ist"
+			},
+			{
+				"name": "y2",
+				"description": "legt fest, um wieviel die Höhe des Rechtecks zu vergrößern bzw. zu verkleinern ist"
+			}
+		]
+	},
+	{
+		"name": "boundedTo",
+		"description": "liefert ein size()-Objekt, das die minimale Breite und Höhe den beiden size()-Objekten <em>s1</em> und <em>s2</em> </em> enthält",
+		"usages": [
+			{
+				"functionName": "boundedTo",
+				"call": "   size s1  ,  size s2  "
+			}
+		],
+		"params": [
+			{
+				"name": "s2",
+				"description": "size()-Objekt, das für das Finden der minimalen Breite und Höhe mit dem existierenden size()-Objekt s1 verwendet wird"
+			}
+		]
+	},
+	{
+		"name": "expandedTo",
+		"description": "liefert ein size()-Objekt, das die maximale Breite und Höhe den beiden size()-Objekten <em>s1</em> und <em>s2</em> </em> enthält",
+		"usages": [
+			{
+				"functionName": "expandedTo",
+				"call": "   size s1  ,  size s2  "
+			}
+		],
+		"params": [
+			{
+				"name": "s2",
+				"description": "size()-Objekt, das für das Finden der maximalen Breite und Höhe mit dem existierenden size()-Objekt s1 verwendet wird"
+			}
+		]
+	},
+	{
+		"name": "scaled",
+		"description": "liefert ein size()-Objekt, das das existierende size()-Objekt <em>s1</em> entsprechend dem übergebenen size()-Objekt <em>s2</em> skaliert",
+		"usages": [
+			{
+				"functionName": "scaled",
+				"call": "   size s1  ,  size s2  [,  string mode = \"IgnoreAspectRatio\"  ] "
+			}
+		],
+		"params": [
+			{
+				"name": "s2",
+				"description": "size()-Objekt, das für das Skalieren des existierenden size()-Objekt s1 verwendet wird"
+			},
+			{
+				"name": "mode",
+				"description": "Hierfür können 3 Strings angegeben werden:"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "indexOf",
+		"description": "Gibt die Indexposition des ersten Auftretens eines Wertes in einer Liste zurück.",
+		"usages": [
+			{
+				"functionName": "indexOf",
+				"call": "   list l  ,  var value  [ ,  int from  ] "
+			}
+		],
+		"params": [
+			{
+				"name": "l",
+				"description": "Liste in der gesucht wird"
+			},
+			{
+				"name": "value",
+				"description": "Wert nach dem in der Liste gesucht wird"
+			},
+			{
+				"name": "from",
+				"description": "Position ab der gesucht wird"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "localImport",
+		"description": "Liest Funktions- und Variablendefinitionen in den lokalen Variablenraum aus.",
+		"usages": [
+			{
+				"functionName": "localImport",
+				"call": "   gurl   "
+			}
+		],
+		"params": [
+			{
+				"name": "gurl",
+				"description": "Dateipfad zur GGL-Datei"
+			}
+		]
+	},
+	{
+		"name": "mathFloor",
+		"description": "liefert größte ganze Zahl, die nicht größer als die Zahl <em>value</em> ist; wird zum Abrunden verwendet",
+		"usages": [
+			{
+				"functionName": "mathFloor",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "legt die Zahl fest, die ab zu runden ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "mathCeil",
+		"description": "liefert kleinste ganze Zahl, die nicht kleiner als die Zahl <em>value</em> ist; wird zum Aufrunden verwendet",
+		"usages": [
+			{
+				"functionName": "mathCeil",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "legt die Zahl fest, die aufzurunden ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "mathDecToHex",
+		"description": "liefert zu der Dezimalzahl <em>decZahl</em> die entsprechende Hexadezimalzahl",
+		"usages": [
+			{
+				"functionName": "mathDecToHex",
+				"call": "   int decZahl   "
+			}
+		],
+		"params": [
+			{
+				"name": "decZahl",
+				"description": "die in das Hexadezimalsystem umzuwandelnde Dezimalzahl"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "mathHexToDec",
+		"description": "liefert zu der Hexadezimalzahl <em>hexZahl</em> die entsprechende Dezimalzahl",
+		"usages": [
+			{
+				"functionName": "mathHexToDec",
+				"call": "   string hexZahl   "
+			}
+		],
+		"params": [
+			{
+				"name": "hexZahl",
+				"description": "die in das Dezimalsystem umzuwandelnde Hexadezimalzahl"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "mathAbs",
+		"description": "liefert zu der Zahl <em>value</em> den entsprechenden Absolutwert",
+		"usages": [
+			{
+				"functionName": "mathAbs",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, zu der der Absolutwert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathSin",
+		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Sinus-Wert",
+		"usages": [
+			{
+				"functionName": "mathSin",
+				"call": "   number grad   "
+			}
+		],
+		"params": [
+			{
+				"name": "grad",
+				"description": "Winkelgrad, zu dem der Sinus-Wert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathCos",
+		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Cosinus-Wert",
+		"usages": [
+			{
+				"functionName": "mathCos",
+				"call": "   number grad   "
+			}
+		],
+		"params": [
+			{
+				"name": "grad",
+				"description": "Winkelgrad, zu dem der Cosinus-Wert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathTan",
+		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Tangens-Wert",
+		"usages": [
+			{
+				"functionName": "mathTan",
+				"call": "   number grad   "
+			}
+		],
+		"params": [
+			{
+				"name": "grad",
+				"description": "Winkelgrad, zu dem der Tangens-Wert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathArcSin",
+		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Arcussinus-Wert",
+		"usages": [
+			{
+				"functionName": "mathArcSin",
+				"call": "   number grad   "
+			}
+		],
+		"params": [
+			{
+				"name": "grad",
+				"description": "Winkelgrad, zu dem der Arcussinus-Wert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathArcCos",
+		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Arcuscosinus-Wert",
+		"usages": [
+			{
+				"functionName": "mathArcCos",
+				"call": "   number grad   "
+			}
+		],
+		"params": [
+			{
+				"name": "grad",
+				"description": "Winkelgrad, zu dem der Arcuscosinus-Wert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathArcTan",
+		"description": "liefert zu den zwei übergebenen Zahlen <em>zähler</em> und <em>nenner</em> den entsprechenden Arcustagens-Wert",
+		"usages": [
+			{
+				"functionName": "mathArcTan",
+				"call": "   number zähler ,  number nenner   "
+			}
+		],
+		"params": [
+			{},
+			{
+				"name": "nenner",
+				"description": "Nenner des übergebenen Bruches"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathSqrt",
+		"description": "liefert zu der Zahl <em>value</em> die Quadratwurzel",
+		"usages": [
+			{
+				"functionName": "mathSqrt",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, zu der die Quadratwurzel zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathPow",
+		"description": "liefert die Potenz: <em>base</em>^<em>exponent</em>",
+		"usages": [
+			{
+				"functionName": "mathPow",
+				"call": "   number base , number exponent  "
+			}
+		],
+		"params": [
+			{
+				"name": "base",
+				"description": "Zahl, zu der die Potenz zu bestimmen ist"
+			},
+			{
+				"name": "exponent",
+				"description": "Exponent zu base"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathLn",
+		"description": "liefert zu der Zahl <em>value</em> den natürlichen Logarithmus",
+		"usages": [
+			{
+				"functionName": "mathLn",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, zu der der natürliche Lograithmus zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathLog",
+		"description": "liefert zu der Zahl <em>value</em> den Zehner-Logarithmus",
+		"usages": [
+			{
+				"functionName": "mathLog",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, zu der der Zehner-Logarithmus zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathExp",
+		"description": "liefert <em>n</em>. Potenz zur Zahl e (=2.71828)",
+		"usages": [
+			{
+				"functionName": "mathExp",
+				"call": "   number n   "
+			}
+		],
+		"params": [
+			{
+				"name": "n",
+				"description": "Wert, mit dem die Zahl e zu potenzieren ist"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathPi",
+		"description": "liefert die Zahl PI",
+		"usages": [
+			{
+				"functionName": "mathPi",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathRound",
+		"description": "liefert gerundete Zahl zu <em>value</em>",
+		"usages": [
+			{
+				"functionName": "mathRound",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, die auf- bzw abzurunden ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "mathRadToDeg",
+		"description": "liefert zum übergebenen Bogenmaß <em>rad</em> die entsprechende Grad-Zahl",
+		"usages": [
+			{
+				"functionName": "mathRadToDeg",
+				"call": "   number rad   "
+			}
+		],
+		"params": [
+			{
+				"name": "rad",
+				"description": "Bogenmaß, zu dem die entsprechende Grad-Zahl zurückzugeben ist"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathDegToRad",
+		"description": "liefert zur übergebenen Grad-Zahl <em>deg</em> das entsprechende Bogenmaß",
+		"usages": [
+			{
+				"functionName": "mathDegToRad",
+				"call": "   number deg   "
+			}
+		],
+		"params": [
+			{
+				"name": "deg",
+				"description": "Grad-Zahl, zu der das entsprechende Bogenmaß zurückzugeben ist"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathSignum",
+		"description": "liefert 1 bei positiven <em>value</em>, -1 bei negativen <em>value</em> und 0, wenn <em>value</em> gleich 0 ist",
+		"usages": [
+			{
+				"functionName": "mathSignum",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, zu der das Vorzeichen zu bestimmen ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "mathFMod",
+		"description": "liefert den Rest der Division zurück",
+		"usages": [
+			{
+				"functionName": "mathFMod",
+				"call": " number left, number right "
+			}
+		],
+		"params": [
+			{
+				"name": "left",
+				"description": "Divident"
+			},
+			{
+				"name": "right",
+				"description": "Divisor"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathMin",
+		"description": "liefert das Minimum zweier Zahlen zurück",
+		"usages": [
+			{
+				"functionName": "mathMin",
+				"call": " number value1, number value2 "
+			}
+		],
+		"params": [
+			{
+				"name": "number",
+				"description": "value1"
+			},
+			{
+				"name": "number",
+				"description": "value1"
+			}
+		]
+	},
+	{
+		"name": "mathMax",
+		"description": "liefert das Maximum zweier Zahlen zurück",
+		"usages": [
+			{
+				"functionName": "mathMax",
+				"call": " number value1, number value2 "
+			}
+		],
+		"params": [
+			{
+				"name": "number",
+				"description": "value1"
+			},
+			{
+				"name": "number",
+				"description": "value1"
+			}
+		]
+	},
+	{
+		"name": "stringLen",
+		"description": "liefert die Länge des String <em>s</em> (ähnlich wie strlen() in C)",
+		"usages": [
+			{
+				"functionName": "stringLen",
+				"call": "  string s  "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "s"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "stringStartsWith",
+		"description": "liefert <em>true</em>, wenn der String <em>src</em> mit dem als Parameter angegebenen String <em>search</em> beginnt, andernfalls <em>false</em>",
+		"usages": [
+			{
+				"functionName": "stringStartsWith",
+				"call": "   string src  ,  string search   "
+			}
+		],
+		"params": [
+			{
+				"name": "search",
+				"description": "legt den String fest, mit dem zu prüfen ist, ob dieser sich am Anfang des Strings src befindet"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "stringEndsWith",
+		"description": "liefert <em>true</em>, wenn der String <em>src</em> mit dem als Parameter angegebenen String <em>search</em> endet, andernfalls <em>false</em>",
+		"usages": [
+			{
+				"functionName": "stringEndsWith",
+				"call": "   string src  ,  string search   "
+			}
+		],
+		"params": [
+			{
+				"name": "search",
+				"description": "legt den String fest, mit dem zu prüfen ist, ob dieser sich am Ende des Strings src befindet"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "stringContains",
+		"description": "liefert <em>true</em>, wenn der String <em>src</em> den als Parameter angegebenen String <em>search</em> enthält, andernfalls <em>false</em>",
+		"usages": [
+			{
+				"functionName": "stringContains",
+				"call": "   string src  ,  string search  [ ,  bool CaseSensitive = true  ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "search",
+				"description": "legt den String fest, mit dem zu prüfen ist, ob dieser sich innerhalb des Strings src befindet"
+			},
+			{
+				"name": "CaseSensitive",
+				"description": "legt fest, ob bei der Überprüfung Groß- und Kleinschreibung beachtet werden soll (CaseSensitive = true)"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "stringIndexOf",
+		"description": "liefert die erste Position, an der sich der als Parameter angegebene String <em>search</em> im String <em>src</em> befindet.",
+		"usages": [
+			{
+				"functionName": "stringIndexOf",
+				"call": "   string src  ,  string search   "
+			}
+		],
+		"params": [
+			{
+				"name": "search",
+				"description": "legt den String fest, von dem die erste Position im String src zu finden ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "stringLastIndexOf",
+		"description": "liefert die letzte Position, an der sich der als Parameter angegebene String <em>search</em> im String <em>src</em> befindet.",
+		"usages": [
+			{
+				"functionName": "stringLastIndexOf",
+				"call": "   string src  ,  string search   "
+			}
+		],
+		"params": [
+			{
+				"name": "search",
+				"description": "legt den String fest, von dem die letzte Position im String src zu finden ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "stringInsert",
+		"description": "fügt im String <em>src</em> an der Position <em>index</em> den als 2. Parameter angegebene String <em>search</em> ein",
+		"usages": [
+			{
+				"functionName": "stringInsert",
+				"call": "   string src  ,  int index ,  string search   "
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "legt die Position fest, an der der String search im String src einzufügen ist"
+			},
+			{
+				"name": "search",
+				"description": "legt den einzufügenden String fest"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringLeft",
+		"description": "liefert die <em> n </em> am weitesten links stehenden Zeichen des Strings <em>src</em> zurück",
+		"usages": [
+			{
+				"functionName": "stringLeft",
+				"call": "   string src  ,  int n   "
+			}
+		],
+		"params": [
+			{
+				"name": "n",
+				"description": "Anzahl der am weitesten links stehenden Zeichen vom String src, die zurück zu geben sind"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringMid",
+		"description": "liefert ab Position <em>pos</em> die <em>n</em> nächsten Zeichen des Strings <em>src</em>  zurück.",
+		"usages": [
+			{
+				"functionName": "stringMid",
+				"call": "   string src  ,  int pos  [,  int n = -1 ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "pos",
+				"description": "Position, ab der Zeichen aus dem String src zurückzugeben zu sind"
+			},
+			{
+				"name": "n",
+				"description": "Anzahl der Zeichen, die zurück zu liefern sind"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringRight",
+		"description": "liefert die <em>n</em> am weitesten rechts stehenden Zeichen des Strings <em>src</em> zurück",
+		"usages": [
+			{
+				"functionName": "stringRight",
+				"call": "    string src  ,  int n   "
+			}
+		],
+		"params": [
+			{
+				"name": "n",
+				"description": "Anzahl der am weitesten rechts stehenden Zeichen des Strings src, die zurückzuliefern sind"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringReplace",
+		"description": "ersetzt im String <em>src</em> einen Teilstring <em>oldStr</em> durch den String <em>newStr</em>",
+		"usages": [
+			{
+				"functionName": "stringReplace",
+				"call": "   string str  ,  string oldStr  ,  string newStr   "
+			}
+		],
+		"params": [
+			{
+				"name": "oldStr",
+				"description": "zu ersetzender Teilstring im String src"
+			},
+			{
+				"name": "newStr",
+				"description": "statt oldstr neu einzusetzender Teilstring im String src"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringSplit",
+		"description": "zerteilt den String <em>str</em> an den durch <em>sep</em> festgelegten Schnittstellen und gibt die hieraus",
+		"usages": [
+			{
+				"functionName": "stringSplit",
+				"call": "   string src  ,  string sep  [ ,  bool keepEmptyParts = true  ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "sep",
+				"description": "legt die Schnittstellen für den String src fest"
+			},
+			{
+				"name": "keepEmptyParts",
+				"description": "bei true befinden sich in der zurück gelieferten Liste auch eventuell leere Einträge,"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringListJoin",
+		"description": "fügt alle Strings aus der String-Liste <em>strList</em> zu einem String zusammen, wobei zwischen den einzelnen",
+		"usages": [
+			{
+				"functionName": "stringListJoin",
+				"call": "   list[string] strList  [ ,  string sep  ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "sep",
+				"description": "Trennzeichen zwischen den Strings beim Zusammenfügen"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringToUpper",
+		"description": "gibt ein neues String-object zurück bei dem alle Buchstaben groß",
+		"usages": [
+			{
+				"functionName": "stringToUpper",
+				"call": " string"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": ""
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringToLower",
+		"description": "gibt ein neues String-object zurück bei dem alle Buchstaben klein",
+		"usages": [
+			{
+				"functionName": "stringToLower",
+				"call": " string"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": ""
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "stringArg",
+		"description": "Ersetzt in einem String die kleinste Nummer die mit einem Ersetzungszeichen markiert ist",
+		"usages": [
+			{
+				"functionName": "stringArg",
+				"call": " string, string"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": ""
+			},
+			{
+				"name": "string",
+				"description": ""
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "makeAnimation",
+		"description": "Erstellt ein allgemeines Animationsobjekt.",
+		"usages": [
+			{
+				"functionName": "makeAnimation",
+				"call": " GGLQObject object,  string property"
+			}
+		],
+		"params": [
+			{
+				"name": "object",
+				"description": "gibt das zu animierende Objekt an."
+			},
+			{
+				"name": "property",
+				"description": "gibt die Eigenschaft eines Objektes an, die animiert werden soll."
+			}
+		],
+		"returnValue": "GGLObject<Animation>"
+	},
+	{
+		"name": "makePathAnimation",
+		"description": "Erstellt ein Pfad-Animationsobjekt.",
+		"usages": [
+			{
+				"functionName": "makePathAnimation",
+				"call": " GGLQObject object, int duartion, Shape path, int steps"
+			}
+		],
+		"params": [
+			{
+				"name": "object",
+				"description": "gibt das zu animierende Objekt an."
+			},
+			{
+				"name": "duration",
+				"description": "gibt die Dauer der Animation an."
+			},
+			{
+				"name": "path",
+				"description": "beschreibt den Pfad den das Objekt ablaufen soll."
+			},
+			{
+				"name": "steps",
+				"description": "gibt an, in wie oft der Pfad zerteilt wird (beeinflusst die Genauigkeit der abzufahrenden Figur)."
+			}
+		],
+		"returnValue": "GGLObject<Animation>"
+	},
+	{
+		"name": "makeSequentialAnimationGroup",
+		"description": "Erstellt eine Gruppe für Animationsobjekte für sequenziell verlaufende Animationen.",
+		"usages": [
+			{
+				"functionName": "makeSequentialAnimationGroup",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject<AnimationGroup>"
+	},
+	{
+		"name": "makeParallelAnimationGroup",
+		"description": "Erstellt eine Gruppe für Animationsobjekte für parallel verlaufende Animationen.",
+		"usages": [
+			{
+				"functionName": "makeParallelAnimationGroup",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject<AnimationGroup>"
+	},
+	{
+		"name": "makeAnimationToRect",
+		"description": "Erstellt eine komplexe Animationssequenz.",
+		"usages": [
+			{
+				"functionName": "makeAnimationToRect",
+				"call": " GGraphicsObject item, rect dst, int duration [\\, string AspectRatioMode = ignore\\, dict easingCurve ]"
+			}
+		],
+		"params": [
+			{
+				"name": "item",
+				"description": "gibt das Element an, mit dem die Animation ausgeführt werden soll."
+			},
+			{
+				"name": "dst",
+				"description": "gibt das Ziel-Rechteck an."
+			},
+			{
+				"name": "duration",
+				"description": "gibt die Dauer der Animation an."
+			},
+			{
+				"name": "AspectRatioMode",
+				"description": "gibt das Verhalten beim Scalieren an. (siehe scaled())"
+			},
+			{
+				"name": "easingCurve",
+				"description": "gibt die Auslenkung der Animation an."
+			}
+		],
+		"returnValue": "GGLObject<AnimationGroup>"
+	},
+	{
+		"name": "animAddToGroup",
+		"description": "Fügt einer Gruppe eine Animation hinzu.",
+		"usages": [
+			{
+				"functionName": "animAddToGroup",
+				"call": " GGLObject<AnimationGroup> gruppe, GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "gruppe",
+				"description": "gibt die Animationgroup an in die die Animation eingefügt werden soll."
+			},
+			{
+				"name": "animation",
+				"description": "gibt die einzufügende Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animAddPauseToSequence",
+		"description": "Fügt zueiner sequential Animationsgruppe eine Pause hinzu",
+		"usages": [
+			{
+				"functionName": "animAddPauseToSequence",
+				"call": " QSequentialAnimationGroup anim, int milli"
+			}
+		],
+		"params": [
+			{
+				"name": "anim",
+				"description": "gibt die sequential Animationgroup an, in die die Pause hinzugefügt werden soll"
+			},
+			{
+				"name": "milli",
+				"description": "ist die Länge der Pause in Millisekunden"
+			}
+		]
+	},
+	{
+		"name": "animSetKeyValueAt",
+		"description": "Setzt einen Zwischenwert in einer Animation",
+		"usages": [
+			{
+				"functionName": "animSetKeyValueAt",
+				"call": "GGLObject<Animation> animation, double step, variant value"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "step",
+				"description": "gibt an, an welcher Stelle der Zwischenwert eingefügt werden soll."
+			},
+			{
+				"name": "variant",
+				"description": "gibt den Wert an (Datentype hängt vom Property ab)."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animStart",
+		"description": "Startet eine Animation.",
+		"usages": [
+			{
+				"functionName": "animStart",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animStop",
+		"description": "Stoppt eine Animation.",
+		"usages": [
+			{
+				"functionName": "animStop",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animPause",
+		"description": "Pausiert eine Animation.",
+		"usages": [
+			{
+				"functionName": "animPause",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animResume",
+		"description": "Lässt eine pausierte Animation weiter laufen.",
+		"usages": [
+			{
+				"functionName": "animResume",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animIsRunning",
+		"description": "Prüft ob eine Animation gerade läuft.",
+		"usages": [
+			{
+				"functionName": "animIsRunning",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "animIsStopped",
+		"description": "Prüft ob eine Animation gerade gestoppt ist.",
+		"usages": [
+			{
+				"functionName": "animIsStopped",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "animSetLoopCount",
+		"description": "Wiederholt eine Animation eine bestimmt Anzahl.",
+		"usages": [
+			{
+				"functionName": "animSetLoopCount",
+				"call": "GGLObject<Animation> animation, int loopCount"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "loopCount",
+				"description": "gibt wie oft die Animation wiederholt werden soll."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animSetDuration",
+		"description": "Setzt die Zeit wie lange die Animation in eine Durchlauf laufen soll.",
+		"usages": [
+			{
+				"functionName": "animSetDuration",
+				"call": "GGLObject<Animation> animation, int duration"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "duration",
+				"description": "Laufzeit in Millisekunden."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animGetDuration",
+		"description": "Gibt die Zeit zurück wie lange die Animation in eine Durchlauf laufen soll.",
+		"usages": [
+			{
+				"functionName": "animGetDuration",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animSetStartValue",
+		"description": "Setzt den Startwert in einer Animation.",
+		"usages": [
+			{
+				"functionName": "animSetStartValue",
+				"call": "GGLObject<Animation> animation, variant value"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "variant",
+				"description": "gibt den Wert an (Datentype hängt vom Property ab)."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animGetStartValue",
+		"description": "Gibt den Startwert einer Animation zurück.",
+		"usages": [
+			{
+				"functionName": "animGetStartValue",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		]
+	},
+	{
+		"name": "animSetEndValue",
+		"description": "Setzt den Endwert in einer Animation.",
+		"usages": [
+			{
+				"functionName": "animSetEndValue",
+				"call": "GGLObject<Animation> animation, variant value"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "variant",
+				"description": "gibt den Wert an (Datentype hängt vom Property ab)."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animGetEndValue",
+		"description": "Gibt den Endwert einer Animation zurück.",
+		"usages": [
+			{
+				"functionName": "animGetEndValue",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		]
+	},
+	{
+		"name": "animSetDirection",
+		"description": "Setzt die Laufrichtung einer Animation.",
+		"usages": [
+			{
+				"functionName": "animSetDirection",
+				"call": "GGLObject<Animation> animation, string direction"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "direction",
+				"description": "gibt die Richtung an."
+			}
+		]
+	},
+	{
+		"name": "animGetDirection",
+		"description": "Gibt die Laufrichtung einer Animation zurück.",
+		"usages": [
+			{
+				"functionName": "animGetDirection",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "animSetEasingCurve",
+		"description": "Ändert die Auslenkung einer Animation.",
+		"usages": [
+			{
+				"functionName": "animSetEasingCurve",
+				"call": "GGLObject<Animation> animation, dict easingCurve"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			},
+			{
+				"name": "curveType",
+				"description": "Type der EasingCurve"
+			},
+			{
+				"name": "easingCurve",
+				"description": "dieser Dictionary muss immer den Type und optional die Zusatzparameter beinhalten."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animGetEasingCurve",
+		"description": "Gibt die eingestellte Auslenkung einer Animation zurück",
+		"usages": [
+			{
+				"functionName": "animGetEasingCurve",
+				"call": "GGLObject<Animation> animation"
+			}
+		],
+		"params": [
+			{
+				"name": "animation",
+				"description": "gibt die Animation an."
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "animGetCurrentTime",
+		"description": "Gibt den aktuellen Zeitpunkt einer Animation zurück",
+		"usages": [
+			{
+				"functionName": "animGetCurrentTime",
+				"call": " GGLObject animation"
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": "animation"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "animSetCurrentTime",
+		"description": "Ändert den aktuellen Zeitpunkt einer Animation",
+		"usages": [
+			{
+				"functionName": "animSetCurrentTime",
+				"call": " GGLObject animation, int msecs"
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": "animation"
+			},
+			{
+				"name": "GGLObject",
+				"description": "animation"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "animRemoveFromGroup",
+		"description": "Entfernt eine Animation aus einer Gruppe. Existiert diese nicht in der",
+		"usages": [
+			{
+				"functionName": "animRemoveFromGroup",
+				"call": " QAnimationGroup group, QAbstractAnimation anim"
+			}
+		],
+		"params": [
+			{
+				"name": "QAnimationGroup",
+				"description": "group"
+			},
+			{
+				"name": "QAnimationGroup",
+				"description": "group"
+			}
+		],
+		"returnValue": "none"
+	},
+	{
+		"name": "gameGetAll",
+		"description": "Gibt eine Liste mit allen installierten genesis-Spielen zurück.",
+		"usages": [
+			{
+				"functionName": "gameGetAll",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "list[string]"
+	},
+	{
+		"name": "gameGetAllMediasets",
+		"description": "Gibt eine Liste mit allen installierten genesis-Medienssätzen zurück,",
+		"usages": [
+			{
+				"functionName": "gameGetAllMediasets",
+				"call": "string gameId"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "gameId"
+			}
+		],
+		"returnValue": "list[string]"
+	},
+	{
+		"name": "gameStart",
+		"description": "Diese Function ist sehr ähnlich zu simStartGGL, nur dass sie eine spiele-id",
+		"usages": [
+			{
+				"functionName": "gameStart",
+				"call": "string gameId, [string mediasetId, list userList | id userIdx | qobject user]"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "gameId"
+			},
+			{
+				"name": "string",
+				"description": "gameId"
+			},
+			{
+				"name": "string",
+				"description": "gameId"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "makeGraphicsObject",
+		"description": "Erstellt ein GGraphicsObject.",
+		"usages": [
+			{
+				"functionName": "makeGraphicsObject",
+				"call": " "
+			}
+		],
+		"params": [
+			{
+				"name": "Zusammenfassung",
+				"description": "der möglichen Transformationen"
+			}
+		],
+		"returnValue": "GGLObject<GGraphicsObject>"
+	},
+	{
+		"name": "makePrimitive",
+		"description": "Erstellt ein Primitive.",
+		"usages": [
+			{
+				"functionName": "makePrimitive",
+				"call": " shape s [\\, dict brush [\\, dict pen ]]"
+			},
+			{
+				"functionName": "makePrimitive",
+				"call": " rect r [\\, dict brush [\\, dict pen ]]"
+			},
+			{
+				"functionName": "makePrimitive",
+				"call": " size s [\\, dict brush [\\, dict pen ]]"
+			},
+			{
+				"functionName": "makePrimitive",
+				"call": " list[point] [\\, dict pen [\\, dict pen ]]"
+			},
+			{
+				"functionName": "makePrimitive",
+				"call": " par1, par2"
+			}
+		],
+		"params": [
+			{
+				"name": "shape",
+				"description": "s"
+			},
+			{
+				"name": "shape",
+				"description": "s"
+			},
+			{
+				"name": "shape",
+				"description": "s"
+			}
+		],
+		"returnValue": "GGLObject<Primitive>"
+	},
+	{
+		"name": "makeLine",
+		"description": "Erstellt eine Linie.",
+		"usages": [
+			{
+				"functionName": "makeLine",
+				"call": " point startPoint, point endPoint [\\, dict pen ]]"
+			}
+		],
+		"params": [
+			{
+				"name": "point",
+				"description": "startPoint"
+			},
+			{
+				"name": "point",
+				"description": "startPoint"
+			},
+			{
+				"name": "point",
+				"description": "startPoint"
+			}
+		],
+		"returnValue": "GGLObject<Primitive>"
+	},
+	{
+		"name": "makeHoverPrimitive",
+		"description": "Erstellt ein Hoverprimitive",
+		"usages": [
+			{
+				"functionName": "makeHoverPrimitive",
+				"call": "parent item, string color, bool shape = false"
+			}
+		],
+		"params": [
+			{
+				"name": "parent",
+				"description": "item"
+			},
+			{
+				"name": "parent",
+				"description": "item"
+			},
+			{
+				"name": "parent",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject<Primitive>"
+	},
+	{
+		"name": "makeTextLabel",
+		"description": "Erstellt ein Textelemet",
+		"usages": [
+			{
+				"functionName": "makeTextLabel",
+				"call": "size s, [,string text]"
+			}
+		],
+		"params": [
+			{
+				"name": "size",
+				"description": "s"
+			},
+			{
+				"name": "size",
+				"description": "s"
+			},
+			{
+				"name": "size",
+				"description": "s"
+			}
+		],
+		"returnValue": "GGLObject<Text>"
+	},
+	{
+		"name": "makeTextField",
+		"description": "Erstellt ein Textfeld",
+		"usages": [
+			{
+				"functionName": "makeTextField",
+				"call": "size s, [,string text]"
+			}
+		],
+		"params": [
+			{}
+		],
+		"returnValue": "GGLObject<TextField>"
+	},
+	{
+		"name": "makePicture",
+		"description": "Erstellt ein Bildelemet",
+		"usages": [
+			{
+				"functionName": "makePicture",
+				"call": "string path, [,size s]"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "path"
+			},
+			{
+				"name": "string",
+				"description": "path"
+			},
+			{
+				"name": "string",
+				"description": "path"
+			}
+		],
+		"returnValue": "GGLObject<Picture>"
+	},
+	{
+		"name": "makeMaskItem",
+		"description": "Maskiert eine Farbe aus einem Bild und liefert die Maske zurück",
+		"usages": [
+			{
+				"functionName": "makeMaskItem",
+				"call": "Picture pic, string color, string maskcolor [, string mode]"
+			}
+		],
+		"params": [
+			{
+				"name": "color",
+				"description": "Farbe mit der die Maske gezeichnet wird"
+			},
+			{
+				"name": "maskcolor",
+				"description": "Pixelfarbe die als Maske verwendet wird"
+			},
+			{
+				"name": "mode",
+				"description": "Als Maskierungsmode ist \"MaskInColor\" und \"MaskOutColor\" möglich"
+			}
+		],
+		"returnValue": "GGLObject<MaskItem>"
+	},
+	{
+		"name": "makeCanvas",
+		"description": "Erstellt eine Zeichenfläche",
+		"usages": [
+			{
+				"functionName": "makeCanvas",
+				"call": "size s"
+			},
+			{
+				"functionName": "makeCanvas",
+				"call": "Picture pic, rect r"
+			}
+		],
+		"params": [
+			{
+				"name": "size",
+				"description": "s"
+			}
+		],
+		"returnValue": "GGLObject<AnimatedPicture>"
+	},
+	{
+		"name": "makeAnimatedPicture",
+		"description": "Erstellt ein animierte Bilderserie",
+		"usages": [
+			{
+				"functionName": "makeAnimatedPicture",
+				"call": "string path, int duration, int loopCount [,size size]"
+			}
+		],
+		"params": [
+			{
+				"name": "path",
+				"description": "Gibt den Pfad als GUrl zu der Bilderserie an"
+			},
+			{
+				"name": "duration",
+				"description": "Bestimmt die Ablaufzeit der Bilderserie"
+			},
+			{
+				"name": "loopCount",
+				"description": "Gibt an wie oft die Bildserie wiederholt wird"
+			},
+			{
+				"name": "size",
+				"description": "Größe der Bilder"
+			}
+		],
+		"returnValue": "GGLObject<AnimatedPicture>"
+	},
+	{
+		"name": "makeSvgItem",
+		"description": "Erstellt ein SVG Element",
+		"usages": [
+			{
+				"functionName": "makeSvgItem",
+				"call": "string path, size s"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "path"
+			},
+			{
+				"name": "string",
+				"description": "path"
+			}
+		],
+		"returnValue": "GGLObject<SvgItem>"
+	},
+	{
+		"name": "makeVideo",
+		"description": "Erstellt ein Videoelement",
+		"usages": [
+			{
+				"functionName": "makeVideo",
+				"call": "string path, size s"
+			}
+		],
+		"params": [
+			{
+				"name": "path",
+				"description": "Gibt den Pfad als GUrl zum Video"
+			},
+			{
+				"name": "s",
+				"description": "Größe des Videos"
+			}
+		],
+		"returnValue": "GGLObject<Video>"
+	},
+	{
+		"name": "gfxPrint",
+		"description": "Gibt einen Bildschirmausschnitt am Drucker aus",
+		"usages": [
+			{
+				"functionName": "gfxPrint",
+				"call": " Canvas canvas \\[, string paperSize \\[, string orientation \\[, size s]]]"
+			}
+		],
+		"params": [
+			{
+				"name": "can",
+				"description": "Canvas, das am Drucker auszugeben ist."
+			},
+			{
+				"name": "paperSize",
+				"description": "\"A0\", ..., \"A9\", \"B0\", ..., \"B9\", \"Letter\""
+			},
+			{
+				"name": "orientation",
+				"description": "\"Portrait\" oder \"Landscape\""
+			},
+			{
+				"name": "s",
+				"description": "size to print"
+			}
+		],
+		"returnValue": "GGLObject<None>"
+	},
+	{
+		"name": "gfxSetPos",
+		"description": "Verschiebt ein Grafikelement auf eine Position",
+		"usages": [
+			{
+				"functionName": "gfxSetPos",
+				"call": "Graphicsobject objekt, point p"
+			},
+			{
+				"functionName": "gfxSetPos",
+				"call": "Graphicsobject objekt, int x, int y"
+			},
+			{
+				"functionName": "gfxSetPos",
+				"call": "Graphicsobject objekt, double x, double y"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetPos",
+		"description": "Liefert die Position des Objectes",
+		"usages": [
+			{
+				"functionName": "gfxGetPos",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxSetScale",
+		"description": "Sklaiert ein Grafikelement",
+		"usages": [
+			{
+				"functionName": "gfxSetScale",
+				"call": "Graphicsobject objekt, int scale"
+			},
+			{
+				"functionName": "gfxSetScale",
+				"call": "Graphicsobject objekt, double scale"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetRotation",
+		"description": "Rotiert ein Grafikelement",
+		"usages": [
+			{
+				"functionName": "gfxSetRotation",
+				"call": "Graphicsobject objekt, int rot"
+			},
+			{
+				"functionName": "gfxSetRotation",
+				"call": "Graphicsobject objekt, double rot"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetRotation",
+		"description": "Gibt den Rotationswert eines Grafikelement zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetRotation",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "gfxSetOpacity",
+		"description": "Setzt den Transparentwert eines Grafikelements",
+		"usages": [
+			{
+				"functionName": "gfxSetOpacity",
+				"call": "Graphicsobject objekt, int op"
+			},
+			{
+				"functionName": "gfxSetOpacity",
+				"call": "Graphicsobject objekt, double op"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetOpacity",
+		"description": "Gibt den Transparentwert eines Grafikelement zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetOpacity",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "gfxSetBlur",
+		"description": "Setzt den Unschärfewert eines Grafikelements",
+		"usages": [
+			{
+				"functionName": "gfxSetBlur",
+				"call": "Graphicsobject objekt, double radius [, string BlurHint]"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetVisible",
+		"description": "Macht ein Grafikelement sichtbar",
+		"usages": [
+			{
+				"functionName": "gfxSetVisible",
+				"call": "Graphicsobject objekt, bool vis"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxIsVisible",
+		"description": "Gibt an ob ein Grafikelement sichtbar ist",
+		"usages": [
+			{
+				"functionName": "gfxIsVisible",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "gfxSetEnabled",
+		"description": "Setzt ein Element aktiv",
+		"usages": [
+			{
+				"functionName": "gfxSetEnabled",
+				"call": "Graphicsobject objekt, bool enable"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxIsEnabled",
+		"description": "Gibt an ob ein Grafikelement aktiv ist",
+		"usages": [
+			{
+				"functionName": "gfxIsEnabled",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "gfxSetZValue",
+		"description": "Setzt den Z-Wert eines Grafikelements",
+		"usages": [
+			{
+				"functionName": "gfxSetZValue",
+				"call": "Graphicsobject objekt, int op"
+			},
+			{
+				"functionName": "gfxSetZValue",
+				"call": "Graphicsobject objekt, double op"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetZValue",
+		"description": "Gibt den Z-Wert eines Grafikelements an",
+		"usages": [
+			{
+				"functionName": "gfxGetZValue",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "gfxSetBrush",
+		"description": "Setzt den Brush eines Primitves oder Textelements",
+		"usages": [
+			{
+				"functionName": "gfxSetBrush",
+				"call": "Primitives objekt, dict | string brush"
+			}
+		],
+		"params": [
+			{
+				"name": "Primitives",
+				"description": "objekt"
+			},
+			{
+				"name": "Primitives",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetBrush",
+		"description": "Gibt den Brush eines Primitves oder Textelemtes zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetBrush",
+				"call": "Primitive objekt"
+			},
+			{
+				"functionName": "gfxGetBrush",
+				"call": "Text objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Primitive",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "gfxSetPen",
+		"description": "Setzt den Pen eines Grafikobjektes",
+		"usages": [
+			{
+				"functionName": "gfxSetPen",
+				"call": "Graphicsobject objekt, dict pen"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetPen",
+		"description": "Gibt den Pen eines Grafikobjektes zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetPen",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "gfxSetHoverItem",
+		"description": "Setzt das Hoverelement für ein Grafikelement",
+		"usages": [
+			{
+				"functionName": "gfxSetHoverItem",
+				"call": "Graphicsobject objekt, Graphicsobject hover"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetFont",
+		"description": "Setzt die Schriftart für ein Textelement",
+		"usages": [
+			{
+				"functionName": "gfxSetFont",
+				"call": "Text objekt, dict font"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "objekt"
+			},
+			{
+				"name": "Text",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetFont",
+		"description": "Gibt die Schriftart eines Textelemtes zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetFont",
+				"call": "Text objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "gfxGetBoundingRect",
+		"description": "Gibt die äußeren Koordinaten eines Grafikelements zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetBoundingRect",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "rect"
+	},
+	{
+		"name": "gfxCenterOn",
+		"description": "Zentriert ein Element auf einem anderen",
+		"usages": [
+			{
+				"functionName": "gfxCenterOn",
+				"call": "Graphicsobject objekt, Graphicsobject target"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxScaleTo",
+		"description": "Skaliert ein Grafikelement",
+		"usages": [
+			{
+				"functionName": "gfxScaleTo",
+				"call": "Graphicsobject objekt, Graphicsobject target [, AspectRatioMode mode = IgnoreAspectRatio]"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetParent",
+		"description": "Setzt das ein Elternobjekt für ein Element",
+		"usages": [
+			{
+				"functionName": "gfxSetParent",
+				"call": "Graphicsobject objekt, Graphicsobject parent"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetParent",
+		"description": "Gibt das Elternobjekt für ein Element an",
+		"usages": [
+			{
+				"functionName": "gfxGetParent",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject<Primitives>,"
+	},
+	{
+		"name": "gfxGetClickedObject",
+		"description": "Gibt das Element zurück, auf dass mit der Maus geklickt wurde",
+		"usages": [
+			{
+				"functionName": "gfxGetClickedObject",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject<Primitives>,"
+	},
+	{
+		"name": "gfxSetFlag",
+		"description": "Grafikflags setzen.",
+		"usages": [
+			{
+				"functionName": "gfxSetFlag",
+				"call": "Graphicsobject object, string flag, bool enabled"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxTestFlag",
+		"description": "Prüft ob ein Grafikflag für ein Element gesetzt ist.",
+		"usages": [
+			{
+				"functionName": "gfxTestFlag",
+				"call": "Graphicsobject object, string flag"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetAlignment",
+		"description": "Setzt die Ausrichtung eines Textobjects.",
+		"usages": [
+			{
+				"functionName": "gfxSetAlignment",
+				"call": "Text objekt, string alignment"
+			}
+		],
+		"params": [
+			{},
+			{},
+			{}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetElideMode",
+		"description": "Setzt die Richtung in der überlappende Text abgeschnitten werden.",
+		"usages": [
+			{
+				"functionName": "gfxSetElideMode",
+				"call": "TextLabel objekt, string elideMode"
+			}
+		],
+		"params": [
+			{
+				"name": "TextLabel",
+				"description": "objekt"
+			},
+			{
+				"name": "TextLabel",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetElideMode",
+		"description": "Gibt den Elidemode für ein Textlabel zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetElideMode",
+				"call": "Text objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "gfxSetAdjustPolicy",
+		"description": "Dies gibt an, wie der Text sein Größe ändert wenn sich der angezeigte Text verändert.",
+		"usages": [
+			{
+				"functionName": "gfxSetAdjustPolicy",
+				"call": "Text objekt, string adjustPolicy"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "objekt"
+			},
+			{
+				"name": "Text",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetAdjustPolicy",
+		"description": "Gibt an wie die Schrift auf ein Textlabel angepasst wird.",
+		"usages": [
+			{
+				"functionName": "gfxGetAdjustPolicy",
+				"call": "Text objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "gfxSetColor",
+		"description": "Setzt die Textfarbe eines Texts",
+		"usages": [
+			{
+				"functionName": "gfxSetColor",
+				"call": "Text text, string color"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "text"
+			},
+			{
+				"name": "Text",
+				"description": "text"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetColor",
+		"description": "Gibt die Textfarbe eines Textelements zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetColor",
+				"call": "Text text"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "text"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "gfxSetText",
+		"description": "Setzt den Text der in einem Textelements angezeigt wird.",
+		"usages": [
+			{
+				"functionName": "gfxSetText",
+				"call": "Text text, string text"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "text"
+			},
+			{
+				"name": "Text",
+				"description": "text"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetText",
+		"description": "Gibt den Text eines Textelements zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetText",
+				"call": "Text text"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "text"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "gfxSetTextMargin",
+		"description": "Setzt den Abstand zwischen dem Text und dem Rahmen des Textelements.",
+		"usages": [
+			{
+				"functionName": "gfxSetTextMargin",
+				"call": "Text text, double x1, double y1, double x2, double y2"
+			},
+			{
+				"functionName": "gfxSetTextMargin",
+				"call": "Text text, int x1, int y1, int x2, int y2"
+			}
+		],
+		"params": [
+			{
+				"name": "x1",
+				"description": "Dieser Parameter gibt an, wie weit der Text von der linken Seite des Elements entfernt ist."
+			},
+			{
+				"name": "y1",
+				"description": "Dieser Parameter gibt an, wie weit der Text von der oberen Seite des Elements entfernt ist."
+			},
+			{
+				"name": "x2",
+				"description": "Dieser Parameter gibt an, wie weit der Text von der rechten Seite des Elements entfernt ist."
+			},
+			{
+				"name": "y2",
+				"description": "Dieser Parameter gibt an, wie weit der Text von der unteren Seite des Elements entfernt ist."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetTextMargin",
+		"description": "Gibt den Abstand zwischen dem Text und dem Rahmen des Textfeldes als <em>dict</em> zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetTextMargin",
+				"call": "Text text"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "text"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "gfxSetPicturePath",
+		"description": "Mit dieser Funktion kann der Pfad gesetzt werden, aus dem ein Bildelement geladen werden soll.",
+		"usages": [
+			{
+				"functionName": "gfxSetPicturePath",
+				"call": "Picture picture, string path"
+			}
+		],
+		"params": [
+			{
+				"name": "Picture",
+				"description": "picture"
+			},
+			{
+				"name": "Picture",
+				"description": "picture"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetPicturePath",
+		"description": "Gibt den Pfad des geladenen Bildes an.",
+		"usages": [
+			{
+				"functionName": "gfxGetPicturePath",
+				"call": "Picture picture"
+			}
+		],
+		"params": [
+			{
+				"name": "Picture",
+				"description": "picture"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "gfxContains",
+		"description": "Prüft, ob ein Grafikelement eine bestimmte Koordinate überdeckt.",
+		"usages": [
+			{
+				"functionName": "gfxContains",
+				"call": "Graphicsobject object, point koord"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "gfxSetHoverEnabled",
+		"description": "Schaltet Hoverevents für Grafikelemente ein oder aus.",
+		"usages": [
+			{
+				"functionName": "gfxSetHoverEnabled",
+				"call": "[Graphicsobject object,] bool enabled"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxIsUnderMouse",
+		"description": "Prüft, ob der Mauszeiger sich auf der Position des Grafikelement befindet.",
+		"usages": [
+			{
+				"functionName": "gfxIsUnderMouse",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "gfxMoveBy",
+		"description": "Bewegt das Grafikelement um die angegebene Entfernung.",
+		"usages": [
+			{
+				"functionName": "gfxMoveBy",
+				"call": "Graphicsobject object, int dx, int dy"
+			},
+			{
+				"functionName": "gfxMoveBy",
+				"call": "Graphicsobject object, double dx, double dy"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetTransform",
+		"description": "Setzt die allgemeine Transformations Matrix eines Grafikelements",
+		"usages": [
+			{
+				"functionName": "gfxSetTransform",
+				"call": "Graphicobjects object, list transform"
+			}
+		],
+		"params": [
+			{
+				"name": "object",
+				"description": "Grafikelement"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetTransform",
+		"description": "Gibt die allgemeine Transformations Matrix eines Grafikelements zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetTransform",
+				"call": " Graphicobjects object"
+			}
+		],
+		"params": [
+			{
+				"name": "object",
+				"description": "Grafikelement"
+			}
+		]
+	},
+	{
+		"name": "gfxSetTransformOriginPoint",
+		"description": "Setzt den \"Origin Point\" des Grafikelements auf den angegeben Punkt.",
+		"usages": [
+			{
+				"functionName": "gfxSetTransformOriginPoint",
+				"call": "Graphicsobject object, point origin"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetTransformOriginPoint",
+		"description": "Gibt den \"Origin Point\" des Grafikelements zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetTransformOriginPoint",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxGetActiveHoverItems",
+		"description": "Gibt eine Liste aller aktiver Hoveritems zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetActiveHoverItems",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "list<Graphicsobject>"
+	},
+	{
+		"name": "gfxUpdateHoverItems",
+		"description": "Aktuallisiert für alle Objekte, für die mit gfxSetHoverItem ein Objekt",
+		"usages": [
+			{
+				"functionName": "gfxUpdateHoverItems",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "gfxIntersects",
+		"description": "Prüft ob sich zwei Grafikelemente schneiden",
+		"usages": [
+			{
+				"functionName": "gfxIntersects",
+				"call": "Graphicsobject object, Graphicsobject target"
+			},
+			{
+				"functionName": "gfxIntersects",
+				"call": "Graphicsobject object, Shape target"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "list<Graphicsobject>"
+	},
+	{
+		"name": "gfxMapFromItem",
+		"description": "Bildet einen Punkt, der sich auf ein Element bezieht, auf die absoluten Koordinaten ab.",
+		"usages": [
+			{
+				"functionName": "gfxMapFromItem",
+				"call": "Graphicsobject object, point target"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxMapToItem",
+		"description": "Bildet einen Punkt (in absolute Koordinaten) auf die Itemkoordinaten des angegebene Objekts an ab.",
+		"usages": [
+			{
+				"functionName": "gfxMapToItem",
+				"call": "Graphicsobject object, point target"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxGetXScale",
+		"description": "Gibt den Faktur zurück auf das ein Grafikelement in X-Richtung scaliert wird.",
+		"usages": [
+			{
+				"functionName": "gfxGetXScale",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetXScale",
+		"description": "Sklaiert ein Grafikelement in X-Richtung",
+		"usages": [
+			{
+				"functionName": "gfxSetXScale",
+				"call": "Graphicsobject objekt, double scale"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetYScale",
+		"description": "Gibt den Faktur zurück auf das ein Grafikelement in Y-Richtung scaliert wird.",
+		"usages": [
+			{
+				"functionName": "gfxGetYScale",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetYScale",
+		"description": "Sklaiert ein Grafikelement in Y-Richtung",
+		"usages": [
+			{
+				"functionName": "gfxSetYScale",
+				"call": "Graphicsobject objekt, double scale"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetXYScaleOriginPoint",
+		"description": "Gibt den \"Scale Origin Point\" des Grafikelements zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetXYScaleOriginPoint",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxSetXYScaleOriginPoint",
+		"description": "Setzt den \"XY Scale Origin Point\" des Grafikelements auf den angegeben Punkt.",
+		"usages": [
+			{
+				"functionName": "gfxSetXYScaleOriginPoint",
+				"call": "Graphicsobject object, point origin"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetAngle",
+		"description": "Gibt den Drehwinkel des Grafikelements für die 3D-Rotation zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetAngle",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "gfxSetAngle",
+		"description": "Setzt den \"Angle Origin Point\" des Grafikelements auf den angegeben Punkt.",
+		"usages": [
+			{
+				"functionName": "gfxSetAngleOriginPoint",
+				"call": "Graphicsobject object, point origin"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetAngleOriginPoint",
+		"description": "Gibt den \"Angle Origin Point\" des Grafikelements zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetAngleOriginPoint",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxSetAngleOriginPoint",
+		"description": "Setzt den \"Angle Origin Point\" des Grafikelements auf den angegeben Punkt.",
+		"usages": [
+			{
+				"functionName": "gfxSetAngleOriginPoint",
+				"call": "Graphicsobject object, point origin"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetAngleAxis",
+		"description": "Gibt die Richtung der Drehachse für die 3D-Rotation zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetAngleAxis",
+				"call": " GGraphicsObject obj"
+			}
+		],
+		"params": [
+			{
+				"name": "GGraphicsObject",
+				"description": "obj"
+			}
+		]
+	},
+	{
+		"name": "gfxSetAngleAxis",
+		"description": "Setzt die Richtung der Drehachse für die 3D-Rotation",
+		"usages": [
+			{
+				"functionName": "gfxSetAngleAxis",
+				"call": " GGraphicsObject obj, list vector3D"
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Grafikelement"
+			},
+			{
+				"name": "vector3D",
+				"description": "Richtung der Drehachse als Liste [x, y, z]"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxRenderScene",
+		"description": "Rendert ein Rechteck der Szene auf eine Zeichenfläche (Canvas).",
+		"usages": [
+			{
+				"functionName": "gfxRenderScene",
+				"call": "Canvas can, rect r"
+			}
+		],
+		"params": [
+			{
+				"name": "Canvas",
+				"description": "can"
+			},
+			{
+				"name": "Canvas",
+				"description": "can"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxFill",
+		"description": "Füllt eine Zeichenfläche mit einer Farbe",
+		"usages": [
+			{
+				"functionName": "gfxFill",
+				"call": "Canvas can, string color"
+			}
+		],
+		"params": [
+			{
+				"name": "Canvas",
+				"description": "can"
+			},
+			{
+				"name": "Canvas",
+				"description": "can"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetShape",
+		"description": "Gibt den Umriss eines Primitives oder eins SvgItems zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetShape",
+				"call": "Primitive | SvgItem object"
+			}
+		],
+		"params": [
+			{
+				"name": "Primitive",
+				"description": ""
+			}
+		],
+		"returnValue": "Shape"
+	},
+	{
+		"name": "gfxSetShape",
+		"description": "Setzt für ein Primitive eine Form",
+		"usages": [
+			{
+				"functionName": "gfxSetShape",
+				"call": "Primitive object, Shape form"
+			}
+		],
+		"params": [
+			{
+				"name": "Primitive",
+				"description": "object"
+			},
+			{
+				"name": "Primitive",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxIsAncesterOf",
+		"description": "Gibt true zurück wenn das child-item ein direktes Kind oder ein Kindes Kind",
+		"usages": [
+			{
+				"functionName": "gfxIsAncesterOf",
+				"call": "GraphicsObject item, GraphicsObject child"
+			}
+		],
+		"params": [
+			{
+				"name": "GraphicsObject",
+				"description": "item"
+			},
+			{
+				"name": "GraphicsObject",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Bool"
+	},
+	{
+		"name": "gfxReparent",
+		"description": "Setzt ein neues Elternelement und behält die aktuelle Position in der Szene bei.",
+		"usages": [
+			{
+				"functionName": "gfxReparent",
+				"call": "GraphicsObject item, GraphicsObject newParent"
+			}
+		],
+		"params": [
+			{
+				"name": "GraphicsObject",
+				"description": "item"
+			},
+			{
+				"name": "GraphicsObject",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxAnimPicPlay",
+		"description": "Startet eine Bildsequenz.",
+		"usages": [
+			{
+				"functionName": "gfxAnimPicPlay",
+				"call": "AnimatedPicture item"
+			}
+		],
+		"params": [
+			{
+				"name": "AnimatedPicture",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxAnimPicStop",
+		"description": "Stoppt eine Bildsequenz.",
+		"usages": [
+			{
+				"functionName": "gfxAnimPicStop",
+				"call": "AnimatedPicture item"
+			}
+		],
+		"params": [
+			{
+				"name": "AnimatedPicture",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxAnimPicPause",
+		"description": "Pausiert eine Bildsequenz.",
+		"usages": [
+			{
+				"functionName": "gfxAnimPicPause",
+				"call": "AnimatedPicture item"
+			}
+		],
+		"params": [
+			{
+				"name": "AnimatedPicture",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxAnimPicResume",
+		"description": "Setzt eine pausierte Bildsequenz fort.",
+		"usages": [
+			{
+				"functionName": "gfxAnimPicResume",
+				"call": "AnimatedPicture item"
+			}
+		],
+		"params": [
+			{
+				"name": "AnimatedPicture",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoPlay",
+		"description": "Startet ein Video.",
+		"usages": [
+			{
+				"functionName": "gfxVideoPlay",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoStop",
+		"description": "Stoppt ein Video.",
+		"usages": [
+			{
+				"functionName": "gfxVideoStop",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoPause",
+		"description": "Pausiert ein Video.",
+		"usages": [
+			{
+				"functionName": "gfxVideoPause",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoResume",
+		"description": "Setzt ein pausiertes Video fort.",
+		"usages": [
+			{
+				"functionName": "gfxVideoResume",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoRestart",
+		"description": "Lässt ein Video neustarten",
+		"usages": [
+			{
+				"functionName": "gfxVideoRestart",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoIsPlaying",
+		"description": "Fragt ab, ob das Video gerade abgespielt wird",
+		"usages": [
+			{
+				"functionName": "gfxVideoIsPlaying",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Bool"
+	},
+	{
+		"name": "gfxVideoIsStopped",
+		"description": "Fragt ab, ob das Video gestoppt oder am Ende ist",
+		"usages": [
+			{
+				"functionName": "gfxVideoIsStopped",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Bool"
+	},
+	{
+		"name": "gfxVideoIsPaused",
+		"description": "Fragt ab, ob das Video pausiert ist.",
+		"usages": [
+			{
+				"functionName": "gfxVideoIsPaused",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Bool"
+	},
+	{
+		"name": "gfxVideoGetVolume",
+		"description": "Gibt die Lautstärke eines Videos zurück",
+		"usages": [
+			{
+				"functionName": "gfxVideoGetVolume",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Double"
+	},
+	{
+		"name": "gfxVideoSetVolume",
+		"description": "Setzt die Lautstärke mit der der Ton eines Videos wiedergegeben wird",
+		"usages": [
+			{
+				"functionName": "gfxVideoSetVolume",
+				"call": "VideoItem item, double volume"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			},
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoGetDuration",
+		"description": "Gibt die gesammt Dauer eines Videos zurück",
+		"usages": [
+			{
+				"functionName": "gfxVideoGetDuration",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Double"
+	},
+	{
+		"name": "gfxVideoAddTimestamp",
+		"description": "Fügt eine Video einen Zeitstempel hinzu",
+		"usages": [
+			{
+				"functionName": "gfxVideoAddTimestamp",
+				"call": "VideoItem item, double timestamp"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			},
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoClearTimestamps",
+		"description": "Löscht alle gesetzten Zeitstempel eines Videos",
+		"usages": [
+			{
+				"functionName": "gfxVideoClearTimestamps",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoGetTimestamps",
+		"description": "Gibt eine Liste aller Zeitstempel eines Videos zurück",
+		"usages": [
+			{
+				"functionName": "gfxVideoGetTimestamps",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::List"
+	},
+	{
+		"name": "gfxVideoGetPosition",
+		"description": "Gibt die aktuelle Position eines Videos zurück",
+		"usages": [
+			{
+				"functionName": "gfxVideoGetPosition",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Double"
+	},
+	{
+		"name": "registerEventHandler",
+		"description": "Registriert einen Event-Handler",
+		"usages": [
+			{
+				"functionName": "registerEventHandler",
+				"call": " QEvent::Type type ,  Function callable  "
+			}
+		],
+		"params": [
+			{
+				"name": "forced",
+				"description": "mit dem Parameter True werden auch mit blockInput() geblockte Events empfangen."
+			},
+			{
+				"name": "callable",
+				"description": "gibt die GGL-Callback-Funktion an, die aufgerufen wird sobald ein Event auftritt wurde."
+			},
+			{
+				"name": "type",
+				"description": "Dieser Parameter beschreibt den Type an Event."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "unregisterEventHandler",
+		"description": "Entfernt einen Eintrag im Event-Handler",
+		"usages": [
+			{
+				"functionName": "unregisterEventHandler",
+				"call": " QEvent::Type type ,  Function callable  "
+			}
+		],
+		"params": [
+			{
+				"name": "callable",
+				"description": "gibt die GGL-Callback-Funktion an, die aufgerufen wird sobald ein Event auftritt wurde."
+			},
+			{
+				"name": "type",
+				"description": "Dieser Parameter beschreibt den Type an Event."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "clearEventHandler",
+		"description": "Entfernt alle Einträge im Event-Handler",
+		"usages": [
+			{
+				"functionName": "clearEventHandler",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "sleep",
+		"description": "Wartet mit der weiteren Programmausführung um den angegeben Zeitwert",
+		"usages": [
+			{
+				"functionName": "sleep",
+				"call": " int msec"
+			}
+		],
+		"params": [
+			{
+				"name": "msec",
+				"description": "Zeit in Millisekunden die gewartet werden soll."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "wait",
+		"description": "Wartet mit der weiteren Programmausführung auf das Signal <em>finish</em> eines QObjects.",
+		"usages": [
+			{
+				"functionName": "wait",
+				"call": " QObjects src "
+			}
+		],
+		"params": [
+			{
+				"name": "src",
+				"description": "gibt das Objekt an auf das gewartet werden soll."
+			},
+			{
+				"name": "timeout",
+				"description": "Maximale Wartezeit in Millisekunden."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "blockInput",
+		"description": "Blockiert alle Input-Events.",
+		"usages": [
+			{
+				"functionName": "blockInput",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "processEvents",
+		"description": "Verarbeitet alle Events in der Eventqueue.",
+		"usages": [
+			{
+				"functionName": "processEvents",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "ioReadFile",
+		"description": "Liest eine Datei ein und gibt diese als Liste oder Dictionary zurück",
+		"usages": [
+			{
+				"functionName": "ioReadFile",
+				"call": " string url "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "url"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "ioWriteFile",
+		"description": "Speichert eine GGL-Variable in einer Datei",
+		"usages": [
+			{
+				"functionName": "ioWriteFile",
+				"call": " string url, GGLObject data"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "url"
+			},
+			{
+				"name": "string",
+				"description": "url"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "ioFileExists",
+		"description": "Prüft ob die angegebene Datei vorhanden ist.",
+		"usages": [
+			{
+				"functionName": "ioFileExists",
+				"call": " string url "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "url"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "ioGetPictureInfo",
+		"description": "Liest Informationen zu einem Bild aus, ohne es zu laden.",
+		"usages": [
+			{
+				"functionName": "ioGetPictureInfo",
+				"call": " string url"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "url"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "ioLoadPluginModule",
+		"description": "Läde ein Plugin Modul zu den GGL-Builtin-Funktionen hinzu.",
+		"usages": [
+			{
+				"functionName": "ioLoadPluginModule",
+				"call": " string pluginPath, string name "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "pluginPath"
+			},
+			{
+				"name": "string",
+				"description": "pluginPath"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "miscRandom",
+		"description": "liefert eine Zufallszahl zwischen 0 und <em>count-1</em>",
+		"usages": [
+			{
+				"functionName": "miscRandom",
+				"call": "   int count   "
+			}
+		],
+		"params": [
+			{
+				"name": "int",
+				"description": "count"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "miscShuffle",
+		"description": "tauscht in der Liste <em>l</em> zufällig die Elemente",
+		"usages": [
+			{
+				"functionName": "miscShuffle",
+				"call": "   list l   "
+			}
+		],
+		"params": [
+			{
+				"name": "list",
+				"description": "l"
+			}
+		]
+	},
+	{
+		"name": "miscGetDate",
+		"description": "liefert das aktuelle Datum als String",
+		"usages": [
+			{
+				"functionName": "miscGetDate",
+				"call": "   string format   "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "format"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "miscGetTime",
+		"description": "liefert die aktuelle Zeit als String",
+		"usages": [
+			{
+				"functionName": "miscGetTime",
+				"call": "   string format   "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "format"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "miscGetTimeStamp",
+		"description": "liefert die seit 1.1.1970 0 Uhr vergangenen Sekunden",
+		"usages": [
+			{
+				"functionName": "miscGetTimeStamp",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "miscGetMTimeStamp",
+		"description": "liefert die seit 1.1.1970 0 Uhr vergangenen Millisekunden",
+		"usages": [
+			{
+				"functionName": "miscGetMTimeStamp",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "miscFindFirstIndexRecursive",
+		"description": "sucht in  der Liste <em>l</em> bzw. im Dictionary <em>d</em> das erste Vorkommen von <em>v</em>",
+		"usages": [
+			{
+				"functionName": "miscFindFirstIndexRecursive",
+				"call": "   list l  ,  var v   "
+			}
+		],
+		"params": [
+			{
+				"name": "v",
+				"description": "Variable, nach deren Inhalt zu suchen ist (darf kein list() und kein dict() sein)"
+			}
+		]
+	},
+	{
+		"name": "miscIntSequence",
+		"description": "liefert eine Liste mit aufwärts steigenden ganzen Zahlen",
+		"usages": [
+			{
+				"functionName": "miscIntSequence",
+				"call": "   int sequence_size  [ ,  int start_value = 0  ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "sequence_size",
+				"description": "legt die Anzahl der Zahlen in der zu erzeugenden Zahlenfolge fest"
+			},
+			{
+				"name": "start_value",
+				"description": "legt den Startwert für die zu erzeugende Zahlenfolge fest"
+			}
+		]
+	},
+	{
+		"name": "miscTransformSquareToQuad",
+		"description": "liefert eine Transformationsmatrize, die ein 4-seitiges Polygon (Liste aus Punkten) auf ein Quardrat transformiert",
+		"usages": [
+			{
+				"functionName": "miscTransformSquareToQuad",
+				"call": " list[4 point] points [\\, list transform = none ] "
+			}
+		],
+		"params": [
+			{
+				"name": "points",
+				"description": "4 Punkte die ein Polygon beschreiben."
+			},
+			{
+				"name": "transform",
+				"description": "Referenz auf die Transformationsmatrize die übergeben werden kann."
+			}
+		]
+	},
+	{
+		"name": "miscGetKeycode",
+		"description": "Gibt den Keycode einer Taste zurück.",
+		"usages": [
+			{
+				"functionName": "miscGetKeycode",
+				"call": "   string name   "
+			}
+		],
+		"params": [
+			{
+				"name": "name",
+				"description": "Name der Taste"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "miscRandomColor",
+		"description": "Gibt eine zufällige Farbe zurück",
+		"usages": [
+			{
+				"functionName": "miscRandomColor",
+				"call": " [withAlpha = false]"
+			}
+		],
+		"params": [
+			{
+				"name": "withAlpha",
+				"description": "Soll Farbe einen Alphakanal haben"
+			}
+		],
+		"returnValue": "color-string"
+	},
+	{
+		"name": "naviMakeMatrix",
+		"description": "Erstellt ein Navigation-Matrix-Objekt.",
+		"usages": [
+			{
+				"functionName": "naviMakeMatrix",
+				"call": " int row, int col"
+			}
+		],
+		"params": [
+			{
+				"name": "Kurze",
+				"description": "Beschreibung"
+			}
+		],
+		"returnValue": "GGLQObject<naviMatrix>"
+	},
+	{
+		"name": "naviMoveLeft",
+		"description": "Bewegung nach Links.",
+		"usages": [
+			{
+				"functionName": "naviMoveLeft",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviMoveRight",
+		"description": "Bewegung nach Rechts.",
+		"usages": [
+			{
+				"functionName": "naviMoveRight",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviMoveUp",
+		"description": "Bewegung nach Oben.",
+		"usages": [
+			{
+				"functionName": "naviMoveUp",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviMoveDown",
+		"description": "Bewegung nach Unten.",
+		"usages": [
+			{
+				"functionName": "naviMoveDown",
+				"call": " naviMatrix matrix "
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviNext",
+		"description": "Bewegung zum nächsten Element.",
+		"usages": [
+			{
+				"functionName": "naviNext",
+				"call": " naviMatrix matrix [\\, bool forcedWrapAround = false ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviPrev",
+		"description": "Bewegung zum vorherigen Element.",
+		"usages": [
+			{
+				"functionName": "naviPrev",
+				"call": " naviMatrix matrix [\\, bool forcedWrapAround = false ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSelect",
+		"description": "Selektierung eines Elements in der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviSelect",
+				"call": " naviMatrix matrix [\\, GGLQObject item ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::Bool"
+	},
+	{
+		"name": "naviSetCurrent",
+		"description": "Setzt die übergebene Position als neue Matrix-Position.",
+		"usages": [
+			{
+				"functionName": "naviSetCurrent",
+				"call": " naviMatrix matrix, int row, int col | none "
+			},
+			{
+				"functionName": "naviSetCurrent",
+				"call": " naviMatrix matrix, list [row col]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetCurrentRow",
+		"description": "Setzt die übergebene Reihe als neue Matrix-Position.",
+		"usages": [
+			{
+				"functionName": "naviSetCurrentRow",
+				"call": " naviMatrix matrix, int row"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetNone",
+		"description": "Setzt die aktuelle Matrix-Position auf eine außerhalb der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviSetNone",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviGetCurrent",
+		"description": "Fragt die aktuelle Position der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviGetCurrent",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::List[row,"
+	},
+	{
+		"name": "naviSetFirst",
+		"description": "Setzt die aktuelle Position der Matrix auf die erste Position.",
+		"usages": [
+			{
+				"functionName": "naviSetFirst",
+				"call": " naviMatrix matrix, [\\, bool forceSkipDisabled = true ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetEnabled",
+		"description": "Aktiviert oder Deaktiviert einen Eintrag in der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviSetEnabled",
+				"call": " naviMatrix matrix, int row, int col, [\\, bool = true ]"
+			},
+			{
+				"functionName": "naviSetEnabled",
+				"call": " naviMatrix matrix, list[row, col], [\\, bool = true ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviIsEnabled",
+		"description": "Prüft, ob ein Eintrag in der Matrix aktiviert oder deaktiviert ist. ",
+		"usages": [
+			{
+				"functionName": "naviIsEnabled",
+				"call": " naviMatrix matrix, int row, int col, [\\, bool = true ]"
+			},
+			{
+				"functionName": "naviIsEnabled",
+				"call": " naviMatrix matrix, list[row, col], [\\, bool = true ]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetQObject",
+		"description": "Setzt für eine Matrix-Position ein QObjekt als Referenz-Objekt.",
+		"usages": [
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, int row, int col, GGLQObject obj "
+			},
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, int row, int col, none "
+			},
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, list[row, col] , GGLQObject obj "
+			},
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, list[row, col] , none "
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviGetQObject",
+		"description": "Holt für eine Matrix-Reihe das gesetzte QObjekt.",
+		"usages": [
+			{
+				"functionName": "naviGetQObject",
+				"call": " naviMatrix matrix, int row"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		]
+	},
+	{
+		"name": "naviSetExceededCallback",
+		"description": "Setzt die Exceeded-Callback-Funktion.",
+		"usages": [
+			{
+				"functionName": "naviSetExceededCallback",
+				"call": " naviMatrix matrix, GGLFunction callback"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetSelectionCallback",
+		"description": "Setzt die Selection-Callback-Funktion.",
+		"usages": [
+			{
+				"functionName": "naviSetSelectionCallback",
+				"call": " naviMatrix matrix, GGLFunction callback"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetItemChangedCallback",
+		"description": "Setzt die ItemChanged-Callback-Funktion.",
+		"usages": [
+			{
+				"functionName": "naviSetItemChangedCallback",
+				"call": " naviMatrix matrix, GGLFunction callback"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetCallbackArgs",
+		"description": "Hinzufügen von zusätzlichen Argumenten an die Callback-Funktionen.",
+		"usages": [
+			{
+				"functionName": "naviSetCallbackArgs",
+				"call": " naviMatrix matrix, list [GGLObject]"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviGetRowCount",
+		"description": "Gibt die Anzahl der Reihen der Matrix zurück.",
+		"usages": [
+			{
+				"functionName": "naviGetRowCount",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::Integer"
+	},
+	{
+		"name": "naviGetColCount",
+		"description": "Gibt die Anzahl der Spalten der Matrix zurück.",
+		"usages": [
+			{
+				"functionName": "naviGetColCount",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::Integer"
+	},
+	{
+		"name": "naviDisableAll",
+		"description": "Deaktiviert alle Einträge in der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviDisableAll",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviEnableAll",
+		"description": "Aktiviert alle Einträge in der Matrix.",
+		"usages": [
+			{
+				"functionName": "naviEnableAll",
+				"call": " naviMatrix matrix"
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetRowSelectionMode",
+		"description": "Aktiviert oder Deaktiviert den Row Selection Modus der NavigationsMatrix",
+		"usages": [
+			{
+				"functionName": "naviSetRowSelectionMode",
+				"call": " NaviMatrix matrix, bool enabled = true"
+			}
+		],
+		"params": [
+			{
+				"name": "NaviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "NaviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviIsRowSelectionMode",
+		"description": "Gibt den Status des Row Selection Modus der NaviMatrix zurück",
+		"usages": [
+			{
+				"functionName": "naviIsRowSelectionMode",
+				"call": " NaviMatrix"
+			}
+		],
+		"params": [
+			{
+				"name": "NaviMatrix",
+				"description": ""
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "naviIsWrapAround",
+		"description": "Gibt den Status des WrapAround Modus der NavigationsMatrix zurück",
+		"usages": [
+			{
+				"functionName": "naviIsWrapAround",
+				"call": " NaviMatrix"
+			}
+		],
+		"params": [
+			{
+				"name": "NaviMatrix",
+				"description": ""
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "naviSetSkipDisabled",
+		"description": "Aktiviert oder Deaktiviert den SkipDisabled Modus der NavigationsMatrix",
+		"usages": [
+			{
+				"functionName": "naviSetSkipDisabled",
+				"call": " NaviMatrix matrix, bool enabled = true"
+			}
+		],
+		"params": [
+			{
+				"name": "NaviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "NaviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "naviIsSkipDisabled",
+		"description": "Gibt den Status des SkipDisabled Modus der NavigationsMatrix zurück",
+		"usages": [
+			{
+				"functionName": "naviIsSkipDisabled",
+				"call": " NaviMatrix"
+			}
+		],
+		"params": [
+			{
+				"name": "NaviMatrix",
+				"description": ""
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "objSetProp",
+		"description": "Setzt eine Property eines QObjects.",
+		"usages": [
+			{
+				"functionName": "objSetProp",
+				"call": " GGLQObject obj, String property, GGLObject value"
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Property gesetzt werden soll."
+			},
+			{
+				"name": "property",
+				"description": "Name des Properties das geändert werden soll."
+			},
+			{
+				"name": "value",
+				"description": "Wert auf das das Property gesetzt werden soll."
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objGetProp",
+		"description": "Abfragen eines Properties von einem QObject.",
+		"usages": [
+			{
+				"functionName": "objGetProp",
+				"call": " GGLQObject obj, String property"
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Property erfragt werden soll."
+			},
+			{
+				"name": "property",
+				"description": "Name des Properties das erfragt werden soll."
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objSetProperties",
+		"description": "Setzen mehrerer Properties eines QObjects.",
+		"usages": [
+			{
+				"functionName": "objSetProperties",
+				"call": " GGLQObject obj, Dictionary dict"
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Property gesetzt werden soll."
+			},
+			{
+				"name": "dict",
+				"description": "Dictornary mit den Properties die geändert werden sollen"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objListProps",
+		"description": "Listet alle Properties eines Objectes auf",
+		"usages": [
+			{
+				"functionName": "objListProps",
+				"call": " GGLQObject obj"
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Properties angezeigt werden sollen."
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objInvokeMethod",
+		"description": "Ruft eine Methode auf ein QObject auf.",
+		"usages": [
+			{
+				"functionName": "objInvokeMethod",
+				"call": "  GGLQObject obj,  string method  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt auf das die Methode aufgerufen werden soll"
+			},
+			{
+				"name": "method",
+				"description": "Name der Methode die aufgerufen werden soll"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objConnectSignal",
+		"description": "Erstellt eine Verbindung zu einem Signal",
+		"usages": [
+			{
+				"functionName": "objConnectSignal",
+				"call": "  GGLQObject obj,  string signal,  GGLObject callable  [,  list[GGLObject] args   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Signal entfernt werden soll."
+			},
+			{
+				"name": "signal",
+				"description": "Name des Signals"
+			},
+			{
+				"name": "callable",
+				"description": "Callback-Funktion"
+			},
+			{
+				"name": "args",
+				"description": "optionale Liste mit Argumenten, die der Callback-Funktion übergeben werden sollen."
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objDisconnectSignal",
+		"description": "Entfernt eine mit Verbindung mit einem Signal.",
+		"usages": [
+			{
+				"functionName": "objDisconnectSignal",
+				"call": "  GGLQObject obj,  string signal,  GGLObject callable   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Signal entfernt werden soll."
+			},
+			{
+				"name": "signal",
+				"description": "Name des Signals"
+			},
+			{
+				"name": "callable",
+				"description": "Callback-Funktion"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "makeEventLoop",
+		"description": "Erstellt einen EventLoop",
+		"usages": [
+			{
+				"functionName": "makeEventLoop",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::QObject"
+	},
+	{
+		"name": "objEventLoopExec",
+		"description": "Startet einen lokalen EventLoop.",
+		"usages": [
+			{
+				"functionName": "objEventLoopExec",
+				"call": "   EventLoop loop   "
+			}
+		],
+		"params": [
+			{
+				"name": "loop",
+				"description": "EventLoop der gestartet werden soll."
+			}
+		],
+		"returnValue": "GGLObject::Integer"
+	},
+	{
+		"name": "objEventLoopExit",
+		"description": "Beendet einen lokalen EventLoop.",
+		"usages": [
+			{
+				"functionName": "objEventLoopExit",
+				"call": "   EventLoop loop  [,  int exitCode = 0 ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "loop",
+				"description": "EventLoop der beendet werden soll."
+			},
+			{
+				"name": "exitCode",
+				"description": "Rückgabewert von objEventLoopExec()"
+			}
+		],
+		"returnValue": "GGLObject::Integer"
+	},
+	{
+		"name": "makeShape",
+		"description": "Erstellt ein Shape-Objekt.",
+		"usages": [
+			{
+				"functionName": "makeShape",
+				"call": ""
+			}
+		],
+		"params": [
+			{
+				"name": "Kurze",
+				"description": "Beschreibung"
+			},
+			{
+				"name": "Elemente",
+				"description": "kombinieren"
+			}
+		],
+		"returnValue": "GGLObject<Shape>"
+	},
+	{
+		"name": "shapeAddRect",
+		"description": "Fügt das Rechteck <em>rect</em> zu dem Shape <em>s</em> hinzu.\\n",
+		"usages": [
+			{
+				"functionName": "shapeAddRect",
+				"call": "   Shape s ,  rect r   "
+			}
+		],
+		"params": [
+			{
+				"name": "r",
+				"description": "das hinzuzufügende Rechteck"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeAddEllipse",
+		"description": "Fügt eine Ellipse zu dem Shape <em>s</em> hinzu.\\n",
+		"usages": [
+			{
+				"functionName": "shapeAddEllipse",
+				"call": "   Shape s ,  rect r   "
+			}
+		],
+		"params": [
+			{
+				"name": "r",
+				"description": "legt das Rechteck fest, innerhalb sich die Ellipse befinden soll"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeAddPolygon",
+		"description": "Fügt das Polygon aus der Liste <em>l</em> zu dem Shape <em>s</em> hinzu.\\n",
+		"usages": [
+			{
+				"functionName": "shapeAddPolygon",
+				"call": "   Shape s ,  list[point] l   "
+			}
+		],
+		"params": [
+			{
+				"name": "l",
+				"description": "point()-Liste für das hinzuzufügende Polygon"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeAddShape",
+		"description": "Fügt das Shape <em>s1</em> zu dem Shape <em>s2</em> hinzu.\\n",
+		"usages": [
+			{
+				"functionName": "shapeAddShape",
+				"call": "   Shape s1 ,  Shape s2   "
+			}
+		],
+		"params": [
+			{
+				"name": "s2",
+				"description": "das hinzuzufügende Shape"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeTranslate",
+		"description": "Verschiebt alle Elemente von target um Offset.",
+		"usages": [
+			{
+				"functionName": "shapeTranslate",
+				"call": "Shape target, point offset"
+			}
+		],
+		"params": [
+			{
+				"name": "Shape",
+				"description": "target"
+			},
+			{
+				"name": "Shape",
+				"description": "target"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeAddRoundedRect",
+		"description": "Fügt das an den Ecken abgerundete Rechteck <em>r</em> zu dem Shape <em>s</em> hinzu.",
+		"usages": [
+			{
+				"functionName": "shapeAddRoundedRect",
+				"call": "   Shape s ,  rect r ,  number xRadius  ,  number yRadius   "
+			}
+		],
+		"params": [
+			{
+				"name": "xRadius",
+				"description": "legt den x-Radius der Ecken für das abgerundete Rechteck fest"
+			},
+			{
+				"name": "yRadius",
+				"description": "legt den y-Radius der Ecken für das abgerundete Rechteck fest"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeGetAngleAtPercent",
+		"description": "liefert den Winkel an der Prozentzahl <em>t</em> im Shape <em>s</em>.",
+		"usages": [
+			{
+				"functionName": "shapeGetAngleAtPercent",
+				"call": "   Shape s ,  double t   "
+			}
+		],
+		"params": [
+			{
+				"name": "t",
+				"description": "legt die Prozentzahl zwischen 0 und 1 fest, zu der der entsprechende Winkel zu finden ist "
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "shapeGetPointAtPercent",
+		"description": "liefert den Punkt, der an der Prozentzahl <em>t</em> im Shape <em>s</em> liegt.",
+		"usages": [
+			{
+				"functionName": "shapeGetPointAtPercent",
+				"call": "   Shape s ,  double t   "
+			}
+		],
+		"params": [
+			{
+				"name": "t",
+				"description": "legt die Prozentzahl zwischen 0 und 1 fest, zu der der entsprechende Punkt zu finden ist "
+			}
+		]
+	},
+	{
+		"name": "shapeArcMoveTo",
+		"description": "legt im Shape <em>s</em> innerhalb des Rechtecks <em>r</em> den Startwinkel <em>startAngle</em> für das Zeichnen eines Bogens fest.",
+		"usages": [
+			{
+				"functionName": "shapeArcMoveTo",
+				"call": "   Shape s ,  rect r ,  number angle   "
+			}
+		],
+		"params": [
+			{
+				"name": "r",
+				"description": "legt das Rechteck fest, in dem der Startwinkel festzulegen ist"
+			},
+			{
+				"name": "angle",
+				"description": "legt den Startwinkel des Bogens fest"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeArcTo",
+		"description": "Fügt einen Bogen im Shape <em>s</em> ein, der am Startwinkel <em>startAngle</em> und sich über <em>sweepLength</em> Grad",
+		"usages": [
+			{
+				"functionName": "shapeArcTo",
+				"call": "   Shape s ,  rect r ,  number startAngle  ,  number sweepLength   "
+			}
+		],
+		"params": [
+			{
+				"name": "r",
+				"description": "legt das Rechteck fest, in dem der Bogen zu zeichnen ist."
+			},
+			{
+				"name": "startAngle",
+				"description": "legt den Startwinkel des Bogens fest"
+			},
+			{
+				"name": "sweepLength",
+				"description": "legt als Endwinkel des Bogens die Summe aus startAngle + sweepLength fest"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeGetBoundingRect",
+		"description": "Liefert das Rechteck, das den Shape <em>s</em> umfasst",
+		"usages": [
+			{
+				"functionName": "shapeGetBoundingRect",
+				"call": "   Shape s  "
+			}
+		],
+		"params": [
+			{
+				"name": "Shape",
+				"description": "s"
+			}
+		]
+	},
+	{
+		"name": "shapeCubicTo",
+		"description": "Fügt im Shape <em>s</em> eine kubische Bezier-Kurve zwischen der aktuellen Position und der Position <em>endPoint</em>",
+		"usages": [
+			{
+				"functionName": "shapeCubicTo",
+				"call": "   Shape s,  point c1  ,  point c2 ,  point endPoint   "
+			}
+		],
+		"params": [
+			{
+				"name": "c1",
+				"description": "Erster Kontrollpunkt für die kubische Bezier-Kurve"
+			},
+			{
+				"name": "c2",
+				"description": "Zweiter Kontrollpunkt für die kubische Bezier-Kurve"
+			},
+			{
+				"name": "endPoint",
+				"description": "Endpunkt der kubische Bezier-Kurve"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeQuadTo",
+		"description": "Fügt im Shape <em>s</em> eine quadratische Bezier-Kurve zwischen der aktuellen Position und der Position <em>endPoint</em>",
+		"usages": [
+			{
+				"functionName": "shapeQuadTo",
+				"call": "   Shape s,  point c  ,  point endPoint   "
+			}
+		],
+		"params": [
+			{
+				"name": "Shape",
+				"description": "s"
+			},
+			{
+				"name": "Shape",
+				"description": "s"
+			},
+			{
+				"name": "Shape",
+				"description": "s"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeGetCurrentPosition",
+		"description": "liefert die aktuelle Position für das Zeichnen im Shape <em>s</em> (z.B. nach shapeArcTo(), shapeCubicTo(), shapeQuadTo() und shapeLineTo())",
+		"usages": [
+			{
+				"functionName": "shapeGetCurrentPosition",
+				"call": "   Shape s  "
+			}
+		],
+		"params": [
+			{
+				"name": "c",
+				"description": "Kontrollpunkt für die quadratische Bezier-Kurve"
+			},
+			{
+				"name": "endPoint",
+				"description": "Endpunkt der quadratische Bezier-Kurve"
+			}
+		]
+	},
+	{
+		"name": "shapeGetLength",
+		"description": "liefert die die Länge des Pfads vom Shape <em>s</em>",
+		"usages": [
+			{
+				"functionName": "shapeGetLength",
+				"call": "   Shape s  "
+			}
+		],
+		"params": [
+			{
+				"name": "Shape",
+				"description": "s"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "shapeLineTo",
+		"description": "Zeichnet von der aktuellen Position (zu Beginn (0,0)) Linie zu dem Punkt <em>p</em> im Shape <em>s</em>.\\n",
+		"usages": [
+			{
+				"functionName": "shapeLineTo",
+				"call": "   Shape s ,  point p   "
+			}
+		],
+		"params": [
+			{
+				"name": "p",
+				"description": "Zielpunkt der zu zeichnenden Linie"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeMoveTo",
+		"description": "verschiebt im Shape <em>s</em> den Startpunkt für das Zeichnen von shapeArcTo(), shapeCubicTo(), shapeQuadTo() und shapeLineTo() ",
+		"usages": [
+			{
+				"functionName": "shapeMoveTo",
+				"call": "   Shape s ,  point p   "
+			}
+		],
+		"params": [
+			{
+				"name": "p",
+				"description": "Neuer Startpunkt für das Zeichnen (wie z.B. zum Zeichnen einer Linie mit shapeLineTo()) im Shape s"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "shapeIntersects",
+		"description": "Liefert true, wenn Shape <em>s1</em> eine Schnittmenge mit Shape <em>s2</em besitzt, andernfalls false.\\n",
+		"usages": [
+			{
+				"functionName": "shapeIntersects",
+				"call": "   Shape s1 ,  Shape s2   "
+			}
+		],
+		"params": [
+			{
+				"name": "s2",
+				"description": "Shape, das auf eine Schnittmenge mit Shape s2 zu prüfen ist"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "simExit",
+		"description": "Beendet den akutellen Simulator.",
+		"usages": [
+			{
+				"functionName": "simExit",
+				"call": " [int returncode]"
+			}
+		],
+		"params": [
+			{
+				"name": "returncode",
+				"description": "Rückgabewert des Simulators (default=0)"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "simStop",
+		"description": "Startet einen Simulator in dem das Stop-Spiel gestartet wird. Dieses wird",
+		"usages": [
+			{
+				"functionName": "simStop",
+				"call": " [list userList | id userIdx | qobject user, var argument]"
+			}
+		],
+		"params": [
+			{
+				"name": "argument",
+				"description": "Argument des Simulators (default=none)"
+			},
+			{
+				"name": "userList",
+				"description": "Spielerliste des Simulators (default=leer)"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "simStopExitCode",
+		"description": "Startet einen Simulator in dem das Stop-Spiel gestartet wird. Dieses wird",
+		"usages": [
+			{
+				"functionName": "simStop",
+				"call": " [list userList | id userIdx | qobject user, var argument]"
+			},
+			{
+				"functionName": "simStopExitCode",
+				"call": " string str"
+			}
+		],
+		"params": [
+			{
+				"name": "argument",
+				"description": "Argument des Simulators (default=none)"
+			},
+			{
+				"name": "userList",
+				"description": "Spielerliste des Simulators (default=leer)"
+			},
+			{
+				"name": "str",
+				"description": "ExitCode als String"
+			}
+		]
+	},
+	{
+		"name": "simStartGGL",
+		"description": "Startet einen Simulator in dem das Stop-Spiel gestartet wird. Dieses wird",
+		"usages": [
+			{
+				"functionName": "simStop",
+				"call": " [list userList | id userIdx | qobject user, var argument]"
+			},
+			{
+				"functionName": "simStopExitCode",
+				"call": " string str"
+			},
+			{
+				"functionName": "simStartGGL",
+				"call": " gurl ggl, [list userList | id userIdx | qobject user, var arg ]"
+			}
+		],
+		"params": [
+			{
+				"name": "argument",
+				"description": "Argument des Simulators (default=none)"
+			},
+			{
+				"name": "userList",
+				"description": "Spielerliste des Simulators (default=leer)"
+			},
+			{
+				"name": "str",
+				"description": "ExitCode als String"
+			},
+			{},
+			{},
+			{
+				"name": "argument",
+				"description": "beliebige ggl-Variable als Argument für neuen Simulator (default=none)"
+			}
+		]
+	},
+	{
+		"name": "simGetArgument",
+		"description": "Fragt die übergebenen Argumente ab.",
+		"usages": [
+			{
+				"functionName": "simGetArgument",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject"
+	},
+	{
+		"name": "simSetArgument",
+		"description": "Setzt Argumente für den aktuellen Simulator.",
+		"usages": [
+			{
+				"functionName": "simSetArgument",
+				"call": " GGLObject arg"
+			}
+		],
+		"params": [
+			{
+				"name": "arg",
+				"description": "GGLObject das als neues Argument verwendet wird"
+			}
+		],
+		"returnValue": "GGLObject"
+	},
+	{
+		"name": "simSetMouseCursor",
+		"description": "Setzt einen Mauscursor.",
+		"usages": [
+			{
+				"functionName": "simSetMouseCursor",
+				"call": " string fileName [, int hotX, int hotY]"
+			}
+		],
+		"params": [
+			{
+				"name": "fileName",
+				"description": "Url zum Mauszeiger"
+			},
+			{
+				"name": "hotX",
+				"description": "X-Koordinate des Interaktionspunkts des Mauszeigers."
+			},
+			{
+				"name": "hotY",
+				"description": "Y-Koordinate des Interaktionspunkts des Mauszeigers."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "simResetMouseCursor",
+		"description": "Setzt den Standard-Mauscursor",
+		"usages": [
+			{
+				"functionName": "simResetMouseCursor",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "simGetMousePos",
+		"description": "Gibt die aktuelle Maus-Position in Scenenkoordinaten zurück.",
+		"usages": [
+			{
+				"functionName": "simGetMousePos",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "point"
+	},
+	{
+		"name": "simGetWidthResolution",
+		"description": "Gibt die aktuelle Player Auflösung (Breite) zurück.",
+		"usages": [
+			{
+				"functionName": "simGetWidthResolution",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "simGetHeightResolution",
+		"description": "Gibt die aktuelle Player Auflösung (Höhe) zurück.",
+		"usages": [
+			{
+				"functionName": "simGetHeightResolution",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "simGetMonitorData",
+		"description": "Gibt die Daten des Monitors zurück.",
+		"usages": [
+			{
+				"functionName": "simGetMonitorData",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "dict"
+	},
+	{
+		"name": "soundPlay",
+		"description": "spielt einen Sound ab.",
+		"usages": [
+			{
+				"functionName": "soundPlay",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "soundStop",
+		"description": "stoppt das Abspielen eines Sounds.",
+		"usages": [
+			{
+				"functionName": "soundStop",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "soundResume",
+		"description": "setzt das Abspielen eines Sounds fort.",
+		"usages": [
+			{
+				"functionName": "soundResume",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "soundPause",
+		"description": "pausiert das Abspielen eines Sounds.",
+		"usages": [
+			{
+				"functionName": "soundPause",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "soundIsPlaying",
+		"description": "liefert <em> true </em> zurück wenn der Sound gerade abgespielt wird sonst <em> false </em>.",
+		"usages": [
+			{
+				"functionName": "soundIsPlaying",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "soundIsPaused",
+		"description": "liefert <em> true </em> zurück wenn der Sound gerade pausiert ist sonst <em> false </em>.",
+		"usages": [
+			{
+				"functionName": "soundIsPaused",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "soundIsStopped",
+		"description": "liefert <em> true </em> zurück wenn der Sound gerade gestoppt ist sonst <em> false </em>.",
+		"usages": [
+			{
+				"functionName": "soundIsStopped",
+				"call": "   Sound obj   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "soundAddTimestamp",
+		"description": "fügt eine neue Zeitmarke zum Sound hinzu.",
+		"usages": [
+			{
+				"functionName": "soundAddTimestamp",
+				"call": "   Sound obj , number time  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			},
+			{
+				"name": "time",
+				"description": "- Zeitmarke als double oder int"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "soundClearTimestamps",
+		"description": "entfernt alle Zeitmarken eines Sounds.",
+		"usages": [
+			{
+				"functionName": "soundClearTimestamps",
+				"call": "   Sound obj  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "list<double>"
+	},
+	{
+		"name": "soundGetTimestamps",
+		"description": "gibt eine Liste aller Zeitmarken eines Sounds zurück.",
+		"usages": [
+			{
+				"functionName": "soundGetTimestamps",
+				"call": "   Sound obj  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "list<double>"
+	},
+	{
+		"name": "soundGetDuration",
+		"description": "gibt die Gesamtlänge eines Sounds zurück.",
+		"usages": [
+			{
+				"functionName": "soundGetDuration",
+				"call": "   Sound obj  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "soundGetPlaybackTime",
+		"description": "gibt die aktuelle Abspielzeit eines Sounds zurück.",
+		"usages": [
+			{
+				"functionName": "soundGetPlaybackTime",
+				"call": "   Sound obj  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "makeTimer",
+		"description": "erstellt einen Timer",
+		"usages": [
+			{
+				"functionName": "makeTimer",
+				"call": " int intervall ,  Function callable  "
+			}
+		],
+		"params": [
+			{
+				"name": "intervall",
+				"description": "stellt die Zeit ein (in Millisekunden) die der Timer ablaufen muss."
+			},
+			{
+				"name": "callable",
+				"description": "gibt die GGL-Callback-Funktion an, die aufgerufen wird sobald der Timer abgelaufen ist."
+			},
+			{
+				"name": "args",
+				"description": "hier werden die Argumente für die Callback-Funktion angegeben."
+			},
+			{
+				"name": "singleShot",
+				"description": "Dieser Parameter beschreibt ob dies ein SingleShot-Timer ist. Default = false."
+			}
+		],
+		"returnValue": "GGLObject<Timer>"
+	},
+	{
+		"name": "makeSingleShot",
+		"description": "erstellt einen Timer der nur einmal aufgerufen wird.",
+		"usages": [
+			{
+				"functionName": "makeSingleShot",
+				"call": " int intervall ,  Function callable  "
+			}
+		],
+		"params": [
+			{
+				"name": "intervall",
+				"description": "stellt die Zeit ein (in Millisekunden) die der Timer ablaufen muss."
+			},
+			{
+				"name": "callable",
+				"description": "gibt die GGL-Callback-Funktion an, die aufgerufen wird sobald der Timer abgelaufen ist."
+			}
+		],
+		"returnValue": "GGLObject<Timer>"
+	},
+	{
+		"name": "timerStart",
+		"description": "startet einen Timer.",
+		"usages": [
+			{
+				"functionName": "timerStart",
+				"call": "  GGLObject<Timer> timer "
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": ""
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "timerPause",
+		"description": "pausiert einen Timer.",
+		"usages": [
+			{
+				"functionName": "timerPause",
+				"call": "  GGLObject<Timer> timer "
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": ""
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "timerResume",
+		"description": "setzt einen pausierten Timer fort.",
+		"usages": [
+			{
+				"functionName": "timerResume",
+				"call": "  GGLObject<Timer> timer "
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": ""
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "timerStop",
+		"description": "stoppt einen Timer.",
+		"usages": [
+			{
+				"functionName": "timerStop",
+				"call": "  GGLObject<Timer> timer "
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": ""
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "timerIsActive",
+		"description": "prüft ob ein Timer gerade läuft.",
+		"usages": [
+			{
+				"functionName": "timerIsActive",
+				"call": "  GGLObject<Timer> timer "
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": ""
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userNext",
+		"description": "Wechselt auf den nächsten User.",
+		"usages": [
+			{
+				"functionName": "userNext",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "userCurrent",
+		"description": "gibt die aktuelle Usernummer zurück.",
+		"usages": [
+			{
+				"functionName": "userCurrent",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "userCount",
+		"description": "gibt an, wie viele User in diesem Spiel mitspielen.",
+		"usages": [
+			{
+				"functionName": "userCount",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "userGet",
+		"description": "gibt ein user object zurück. Als Eingabe-Parameter dient entweder der Index",
+		"usages": [
+			{
+				"functionName": "userGet",
+				"call": " ind idx | string name"
+			}
+		],
+		"params": [
+			{
+				"name": "ind",
+				"description": "idx"
+			}
+		],
+		"returnValue": "qobject<user>"
+	},
+	{
+		"name": "userGetName",
+		"description": "gibt den Namen zu einer Spielernummer an.",
+		"usages": [
+			{
+				"functionName": "userGetName",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userIsGuest",
+		"description": "liefert zurück, ob user der Gast-User ist",
+		"usages": [
+			{
+				"functionName": "userIsGuest",
+				"call": " int index | qobject<user> "
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userGetPlayableGames",
+		"description": "liefert die für einen Spieler spielbaren Spiele",
+		"usages": [
+			{
+				"functionName": "userGetPlayableGames",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "list"
+	},
+	{
+		"name": "userGetGameDialog",
+		"description": "liefert für einen Spieler den Dialog zur angegebenen Id des Spiels gameName einschließlich der aktuellen Einstellung",
+		"usages": [
+			{
+				"functionName": "userGetGameDialog",
+				"call": " int index | qobject<user>, string gameId, string dialogType"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userCurrent() geholt werden kann"
+			},
+			{
+				"name": "gameId",
+				"description": "Id des Spiels"
+			},
+			{
+				"name": "dialogType",
+				"description": "Id des jeweiligen Dialogs (in info.json)"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "userGetActivatedMediasets",
+		"description": "Gibt zu einem Mediensatz in einem Spiel zurück, ob dieser für einen Benutzer aktiviert ist.",
+		"usages": [
+			{
+				"functionName": "userGetActivatedMediasets",
+				"call": " int index | qobject<user>, string gameId"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			},
+			{
+				"name": "gameId",
+				"description": "Id des Spiels"
+			}
+		],
+		"returnValue": "list"
+	},
+	{
+		"name": "userSetGameDialog",
+		"description": "setzt für einen Spieler die aktuellen Einstellungen für das Spiel gameName",
+		"usages": [
+			{
+				"functionName": "userSetGameDialog",
+				"call": " int index | qobject<user>, string gameName, dict defaultValue"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			},
+			{
+				"name": "gameName",
+				"description": "Name des Spiels"
+			},
+			{
+				"name": "dict",
+				"description": "enthält Paare mit (dialogType, defaultValue)"
+			}
+		],
+		"returnValue": "None"
+	},
+	{
+		"name": "userGetAll",
+		"description": "liefert eine Liste zurück mit allen verfügbaren Usern.",
+		"usages": [
+			{
+				"functionName": "userGetAll",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "list"
+	},
+	{
+		"name": "userGetAvatarPath",
+		"description": "liefert einen Pfad zum Avatar eines Spielers.",
+		"usages": [
+			{
+				"functionName": "userGetAvatarPath",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userGetSmallAvatarPath",
+		"description": "liefert einen Pfad zum kleinen Avatar eines Spielers.",
+		"usages": [
+			{
+				"functionName": "userGetSmallAvatarPath",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userGetInputDeviceList",
+		"description": "gibt eine Liste zurück die beschreibt, welche Eingabegeräte ein Spieler verwenden kann.",
+		"usages": [
+			{
+				"functionName": "userGetInputDeviceList",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "list[string]"
+	},
+	{
+		"name": "userGetKeysOfNr",
+		"description": "gibt die zu einer Nummer eingestellten Keys eines Spielers zurück.",
+		"usages": [
+			{
+				"functionName": "userGetKeysOfNr",
+				"call": " int index | qobject<user>, int buttonNr"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			},
+			{
+				"name": "buttonNr",
+				"description": "Nummer des Buttons, zu dem die Keys zu ermittteln"
+			}
+		],
+		"returnValue": "dict[\"Keyboard\","
+	},
+	{
+		"name": "userGetKeys",
+		"description": "gibt die zu einer Nummer eingestellten Keys eines Spielers zurück.",
+		"usages": [
+			{
+				"functionName": "userGetKeysOfNr",
+				"call": " int index | qobject<user>, int buttonNr"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			},
+			{
+				"name": "buttonNr",
+				"description": "Nummer des Buttons, zu dem die Keys zu ermittteln"
+			}
+		],
+		"returnValue": "dict[\"Keyboard\","
+	},
+	{
+		"name": "userHasMouse",
+		"description": "prüft, ob ein User die Maus verwenden kann.",
+		"usages": [
+			{
+				"functionName": "userHasMouse",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userGetCursorSize",
+		"description": "gibt die eingestellte Mausgröße für einen Spieler zurück.",
+		"usages": [
+			{
+				"functionName": "userGetCursorSize",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "userGetCursor",
+		"description": "gibt die eingestellte Mausgröße für einen Spieler zurück.",
+		"usages": [
+			{
+				"functionName": "userGetCursorSize",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "userHasGamePad",
+		"description": "prüft, ob ein User mit Gamepad spielen kann.",
+		"usages": [
+			{
+				"functionName": "userHasGamePad",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasKeyboard",
+		"description": "prüft, ob ein User mit Tasten spielen kann.",
+		"usages": [
+			{
+				"functionName": "userHasKeyboard",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userKeyboardKeyCount",
+		"description": "gibt die Maximalzahl an Tasten für einen User an.",
+		"usages": [
+			{
+				"functionName": "userKeyboardKeyCount",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "userHasScantime",
+		"description": "gibt zurück, ob die Scan-Zeit eingeschaltet ist oder nicht",
+		"usages": [
+			{
+				"functionName": "userHasScantime",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userKeyboardScanInfo",
+		"description": "gibt die Scan-Zeit und den Scan-Modi eines Spielers zurück.",
+		"usages": [
+			{
+				"functionName": "userKeyboardScanInfo",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "userGetSecondaryRunnable",
+		"description": "gibt das Appmenü eines Spielers an.",
+		"usages": [
+			{
+				"functionName": "userGetSecondaryRunnable",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userHasBackToGameSelection",
+		"description": "prüft, ob ein User bei Spielende automatisch zur Spieleauswahl kommt.",
+		"usages": [
+			{
+				"functionName": "userHasBackToGameSelection",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasStartGameAgain",
+		"description": "prüft, ob für einen User bei Spielende automatisch das SPiel neu gestartet wird.",
+		"usages": [
+			{
+				"functionName": "userHasStartGameAgain",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasGroupOptimizationOption",
+		"description": "prüft, ob ein User das Group-Optimization Flag besitzt",
+		"usages": [
+			{
+				"functionName": "userHasGroupOptimizationOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasAlwaysGameSettingsOption",
+		"description": "prüft, ob ein User das AlwaysGameSettings Flag gesetzt hat",
+		"usages": [
+			{
+				"functionName": "userHasAlwaysGameSettingsOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasPermanentGameSettingsOption",
+		"description": "prüft, ob ein User bei Änderungen der Spieleinstellungen über den Stop-Button diese neuen Einstellungen gespeichert haben möchte",
+		"usages": [
+			{
+				"functionName": "userHasPermanentGameSettingsOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasPrinterOption",
+		"description": "prüft, ob ein User das Printer Flag gesetzt hat",
+		"usages": [
+			{
+				"functionName": "userHasPrinterOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasDemoOption",
+		"description": "prüft, ob ein User das Demonstrations Flag gesetzt hat",
+		"usages": [
+			{
+				"functionName": "userHasDemoOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasEnabledStopOption",
+		"description": "prüft, ob ein User über den Stopbutton navigieren möchte",
+		"usages": [
+			{
+				"functionName": "userHasEnabledStopOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasGlobalStopOption",
+		"description": "prüft, ob ein User eine globale Stopoption besitzt",
+		"usages": [
+			{
+				"functionName": "userHasGlobalStopOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userGetGlobalStopKeys",
+		"description": "Gibt eine Liste der globalen Stop-Tasten zurück",
+		"usages": [
+			{
+				"functionName": "userGetGlobalStopKeys",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "GGLList"
+	},
+	{
+		"name": "userCreateGuest",
+		"description": "erzeugt einen Gast-User.",
+		"usages": [
+			{
+				"functionName": "userCreateGuest",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "qobject<user>"
+	},
+	{
+		"name": "userCreateComputerPlayer",
+		"description": "erzeugt einen Computerplayer",
+		"usages": [
+			{
+				"functionName": "userCreateComputerPlayer",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "qobject<user>"
+	},
+	{
+		"name": "userCreateArchivGUrl",
+		"description": "erzeugt einen GUrl um auf User und Archiv spezifische Daten zuzugreifen.",
+		"usages": [
+			{
+				"functionName": "userCreateArchivGUrl",
+				"call": " string filename, int index | qobject<user> , string archiveId"
+			}
+		],
+		"params": [
+			{
+				"name": "filename",
+				"description": "der Name des Files"
+			},
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			},
+			{
+				"name": "archiveId",
+				"description": "ArchiveId eines Spieles, aktuelle Id kann mit gameGetId() abgefragt werden"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userAllCreateArchivGUrl",
+		"description": "erzeugt einen GUrl um auf Daten zuzugreifen, die für alle User zugänglich sind jedoch Archiv spezifisch sein sollen.",
+		"usages": [
+			{
+				"functionName": "userAllCreateArchivGUrl",
+				"call": " string filename, string archiveId"
+			}
+		],
+		"params": [
+			{
+				"name": "filename",
+				"description": "der Name des Files"
+			},
+			{
+				"name": "archiveId",
+				"description": "ArchiveId eines Spieles, aktuelle Id kann mit gameGetId() abgefragt werden"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userAllCreateGUrl",
+		"description": "erzeugt einen GUrl um auf sehr allgemeine Daten zuzugreifen.",
+		"usages": [
+			{
+				"functionName": "userAllCreateGUrl",
+				"call": " string filename"
+			}
+		],
+		"params": [
+			{
+				"name": "filename",
+				"description": "der Name des Files"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userSetVolumes",
+		"description": "Setzt die eingestellten Lautstärken für den ersten User.",
+		"usages": [
+			{
+				"functionName": "userSetVolumes",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "None"
+	}
+]

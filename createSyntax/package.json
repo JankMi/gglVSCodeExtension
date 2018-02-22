@@ -1,0 +1,41 @@
+{
+  "name": "createsyntax",
+  "version": "1.0.0",
+  "description": "creates the syntax for the ggl-language support",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "ansi-regex": "^3.0.0",
+    "chalk": "^2.3.1",
+    "clone": "^2.1.1",
+    "clone-stats": "^1.0.0",
+    "dateformat": "^3.0.3",
+    "end-of-stream": "^1.4.1",
+    "escape-string-regexp": "^1.0.5",
+    "file-system": "^2.2.2",
+    "gulp-util": "^3.0.8",
+    "has-ansi": "^3.0.0",
+    "has-gulplog": "^0.1.0",
+    "lodash._basecopy": "^3.0.1",
+    "lodash._basetostring": "^4.12.0",
+    "lodash._basevalues": "^3.0.0",
+    "lodash.template": "^4.4.0",
+    "once": "^1.4.0",
+    "orchestrator": "^0.3.8",
+    "path": "^0.12.7",
+    "reinstall": "^2.0.0",
+    "replace-ext": "^1.0.0",
+    "sequencify": "0.0.7",
+    "sparkles": "^1.0.0",
+    "strip-ansi": "^4.0.0",
+    "vinyl": "^2.1.0",
+    "wrappy": "^1.0.2"
+  }
+}

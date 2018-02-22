@@ -1,0 +1,183 @@
+[
+	{
+		"name": "miscRandom",
+		"description": "liefert eine Zufallszahl zwischen 0 und <em>count-1</em>",
+		"usages": [
+			{
+				"functionName": "miscRandom",
+				"call": "   int count   "
+			}
+		],
+		"params": [
+			{
+				"name": "int",
+				"description": "count"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "miscShuffle",
+		"description": "tauscht in der Liste <em>l</em> zufällig die Elemente",
+		"usages": [
+			{
+				"functionName": "miscShuffle",
+				"call": "   list l   "
+			}
+		],
+		"params": [
+			{
+				"name": "list",
+				"description": "l"
+			}
+		]
+	},
+	{
+		"name": "miscGetDate",
+		"description": "liefert das aktuelle Datum als String",
+		"usages": [
+			{
+				"functionName": "miscGetDate",
+				"call": "   string format   "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "format"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "miscGetTime",
+		"description": "liefert die aktuelle Zeit als String",
+		"usages": [
+			{
+				"functionName": "miscGetTime",
+				"call": "   string format   "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "format"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "miscGetTimeStamp",
+		"description": "liefert die seit 1.1.1970 0 Uhr vergangenen Sekunden",
+		"usages": [
+			{
+				"functionName": "miscGetTimeStamp",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "miscGetMTimeStamp",
+		"description": "liefert die seit 1.1.1970 0 Uhr vergangenen Millisekunden",
+		"usages": [
+			{
+				"functionName": "miscGetMTimeStamp",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "miscFindFirstIndexRecursive",
+		"description": "sucht in  der Liste <em>l</em> bzw. im Dictionary <em>d</em> das erste Vorkommen von <em>v</em>",
+		"usages": [
+			{
+				"functionName": "miscFindFirstIndexRecursive",
+				"call": "   list l  ,  var v   "
+			}
+		],
+		"params": [
+			{
+				"name": "v",
+				"description": "Variable, nach deren Inhalt zu suchen ist (darf kein list() und kein dict() sein)"
+			}
+		]
+	},
+	{
+		"name": "miscIntSequence",
+		"description": "liefert eine Liste mit aufwärts steigenden ganzen Zahlen",
+		"usages": [
+			{
+				"functionName": "miscIntSequence",
+				"call": "   int sequence_size  [ ,  int start_value = 0  ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "sequence_size",
+				"description": "legt die Anzahl der Zahlen in der zu erzeugenden Zahlenfolge fest"
+			},
+			{
+				"name": "start_value",
+				"description": "legt den Startwert für die zu erzeugende Zahlenfolge fest"
+			}
+		]
+	},
+	{
+		"name": "miscTransformSquareToQuad",
+		"description": "liefert eine Transformationsmatrize, die ein 4-seitiges Polygon (Liste aus Punkten) auf ein Quardrat transformiert",
+		"usages": [
+			{
+				"functionName": "miscTransformSquareToQuad",
+				"call": " list[4 point] points [\\, list transform = none ] "
+			}
+		],
+		"params": [
+			{
+				"name": "points",
+				"description": "4 Punkte die ein Polygon beschreiben."
+			},
+			{
+				"name": "transform",
+				"description": "Referenz auf die Transformationsmatrize die übergeben werden kann."
+			}
+		]
+	},
+	{
+		"name": "miscGetKeycode",
+		"description": "Gibt den Keycode einer Taste zurück.",
+		"usages": [
+			{
+				"functionName": "miscGetKeycode",
+				"call": "   string name   "
+			}
+		],
+		"params": [
+			{
+				"name": "name",
+				"description": "Name der Taste"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "miscRandomColor",
+		"description": "Gibt eine zufällige Farbe zurück",
+		"usages": [
+			{
+				"functionName": "miscRandomColor",
+				"call": " [withAlpha = false]"
+			}
+		],
+		"params": [
+			{
+				"name": "withAlpha",
+				"description": "Soll Farbe einen Alphakanal haben"
+			}
+		],
+		"returnValue": "color-string"
+	}
+]

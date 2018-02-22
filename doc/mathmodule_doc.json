@@ -1,0 +1,420 @@
+[
+	{
+		"name": "mathFloor",
+		"description": "liefert größte ganze Zahl, die nicht größer als die Zahl <em>value</em> ist; wird zum Abrunden verwendet",
+		"usages": [
+			{
+				"functionName": "mathFloor",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "legt die Zahl fest, die ab zu runden ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "mathCeil",
+		"description": "liefert kleinste ganze Zahl, die nicht kleiner als die Zahl <em>value</em> ist; wird zum Aufrunden verwendet",
+		"usages": [
+			{
+				"functionName": "mathCeil",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "legt die Zahl fest, die aufzurunden ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "mathDecToHex",
+		"description": "liefert zu der Dezimalzahl <em>decZahl</em> die entsprechende Hexadezimalzahl",
+		"usages": [
+			{
+				"functionName": "mathDecToHex",
+				"call": "   int decZahl   "
+			}
+		],
+		"params": [
+			{
+				"name": "decZahl",
+				"description": "die in das Hexadezimalsystem umzuwandelnde Dezimalzahl"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "mathHexToDec",
+		"description": "liefert zu der Hexadezimalzahl <em>hexZahl</em> die entsprechende Dezimalzahl",
+		"usages": [
+			{
+				"functionName": "mathHexToDec",
+				"call": "   string hexZahl   "
+			}
+		],
+		"params": [
+			{
+				"name": "hexZahl",
+				"description": "die in das Dezimalsystem umzuwandelnde Hexadezimalzahl"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "mathAbs",
+		"description": "liefert zu der Zahl <em>value</em> den entsprechenden Absolutwert",
+		"usages": [
+			{
+				"functionName": "mathAbs",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, zu der der Absolutwert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathSin",
+		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Sinus-Wert",
+		"usages": [
+			{
+				"functionName": "mathSin",
+				"call": "   number grad   "
+			}
+		],
+		"params": [
+			{
+				"name": "grad",
+				"description": "Winkelgrad, zu dem der Sinus-Wert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathCos",
+		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Cosinus-Wert",
+		"usages": [
+			{
+				"functionName": "mathCos",
+				"call": "   number grad   "
+			}
+		],
+		"params": [
+			{
+				"name": "grad",
+				"description": "Winkelgrad, zu dem der Cosinus-Wert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathTan",
+		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Tangens-Wert",
+		"usages": [
+			{
+				"functionName": "mathTan",
+				"call": "   number grad   "
+			}
+		],
+		"params": [
+			{
+				"name": "grad",
+				"description": "Winkelgrad, zu dem der Tangens-Wert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathArcSin",
+		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Arcussinus-Wert",
+		"usages": [
+			{
+				"functionName": "mathArcSin",
+				"call": "   number grad   "
+			}
+		],
+		"params": [
+			{
+				"name": "grad",
+				"description": "Winkelgrad, zu dem der Arcussinus-Wert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathArcCos",
+		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Arcuscosinus-Wert",
+		"usages": [
+			{
+				"functionName": "mathArcCos",
+				"call": "   number grad   "
+			}
+		],
+		"params": [
+			{
+				"name": "grad",
+				"description": "Winkelgrad, zu dem der Arcuscosinus-Wert zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathArcTan",
+		"description": "liefert zu den zwei übergebenen Zahlen <em>zähler</em> und <em>nenner</em> den entsprechenden Arcustagens-Wert",
+		"usages": [
+			{
+				"functionName": "mathArcTan",
+				"call": "   number zähler ,  number nenner   "
+			}
+		],
+		"params": [
+			{},
+			{
+				"name": "nenner",
+				"description": "Nenner des übergebenen Bruches"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathSqrt",
+		"description": "liefert zu der Zahl <em>value</em> die Quadratwurzel",
+		"usages": [
+			{
+				"functionName": "mathSqrt",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, zu der die Quadratwurzel zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathPow",
+		"description": "liefert die Potenz: <em>base</em>^<em>exponent</em>",
+		"usages": [
+			{
+				"functionName": "mathPow",
+				"call": "   number base , number exponent  "
+			}
+		],
+		"params": [
+			{
+				"name": "base",
+				"description": "Zahl, zu der die Potenz zu bestimmen ist"
+			},
+			{
+				"name": "exponent",
+				"description": "Exponent zu base"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathLn",
+		"description": "liefert zu der Zahl <em>value</em> den natürlichen Logarithmus",
+		"usages": [
+			{
+				"functionName": "mathLn",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, zu der der natürliche Lograithmus zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathLog",
+		"description": "liefert zu der Zahl <em>value</em> den Zehner-Logarithmus",
+		"usages": [
+			{
+				"functionName": "mathLog",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, zu der der Zehner-Logarithmus zurückzugeben ist."
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathExp",
+		"description": "liefert <em>n</em>. Potenz zur Zahl e (=2.71828)",
+		"usages": [
+			{
+				"functionName": "mathExp",
+				"call": "   number n   "
+			}
+		],
+		"params": [
+			{
+				"name": "n",
+				"description": "Wert, mit dem die Zahl e zu potenzieren ist"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathPi",
+		"description": "liefert die Zahl PI",
+		"usages": [
+			{
+				"functionName": "mathPi",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathRound",
+		"description": "liefert gerundete Zahl zu <em>value</em>",
+		"usages": [
+			{
+				"functionName": "mathRound",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, die auf- bzw abzurunden ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "mathRadToDeg",
+		"description": "liefert zum übergebenen Bogenmaß <em>rad</em> die entsprechende Grad-Zahl",
+		"usages": [
+			{
+				"functionName": "mathRadToDeg",
+				"call": "   number rad   "
+			}
+		],
+		"params": [
+			{
+				"name": "rad",
+				"description": "Bogenmaß, zu dem die entsprechende Grad-Zahl zurückzugeben ist"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathDegToRad",
+		"description": "liefert zur übergebenen Grad-Zahl <em>deg</em> das entsprechende Bogenmaß",
+		"usages": [
+			{
+				"functionName": "mathDegToRad",
+				"call": "   number deg   "
+			}
+		],
+		"params": [
+			{
+				"name": "deg",
+				"description": "Grad-Zahl, zu der das entsprechende Bogenmaß zurückzugeben ist"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathSignum",
+		"description": "liefert 1 bei positiven <em>value</em>, -1 bei negativen <em>value</em> und 0, wenn <em>value</em> gleich 0 ist",
+		"usages": [
+			{
+				"functionName": "mathSignum",
+				"call": "   number value   "
+			}
+		],
+		"params": [
+			{
+				"name": "value",
+				"description": "Zahl, zu der das Vorzeichen zu bestimmen ist"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "mathFMod",
+		"description": "liefert den Rest der Division zurück",
+		"usages": [
+			{
+				"functionName": "mathFMod",
+				"call": " number left, number right "
+			}
+		],
+		"params": [
+			{
+				"name": "left",
+				"description": "Divident"
+			},
+			{
+				"name": "right",
+				"description": "Divisor"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "mathMin",
+		"description": "liefert das Minimum zweier Zahlen zurück",
+		"usages": [
+			{
+				"functionName": "mathMin",
+				"call": " number value1, number value2 "
+			}
+		],
+		"params": [
+			{
+				"name": "number",
+				"description": "value1"
+			},
+			{
+				"name": "number",
+				"description": "value1"
+			}
+		]
+	},
+	{
+		"name": "mathMax",
+		"description": "liefert das Maximum zweier Zahlen zurück",
+		"usages": [
+			{
+				"functionName": "mathMax",
+				"call": " number value1, number value2 "
+			}
+		],
+		"params": [
+			{
+				"name": "number",
+				"description": "value1"
+			},
+			{
+				"name": "number",
+				"description": "value1"
+			}
+		]
+	}
+]

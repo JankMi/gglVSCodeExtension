@@ -1,0 +1,2112 @@
+[
+	{
+		"name": "makeGraphicsObject",
+		"description": "Erstellt ein GGraphicsObject.",
+		"usages": [
+			{
+				"functionName": "makeGraphicsObject",
+				"call": " "
+			}
+		],
+		"params": [
+			{
+				"name": "Zusammenfassung",
+				"description": "der möglichen Transformationen"
+			}
+		],
+		"returnValue": "GGLObject<GGraphicsObject>"
+	},
+	{
+		"name": "makePrimitive",
+		"description": "Erstellt ein Primitive.",
+		"usages": [
+			{
+				"functionName": "makePrimitive",
+				"call": " shape s [\\, dict brush [\\, dict pen ]]"
+			},
+			{
+				"functionName": "makePrimitive",
+				"call": " rect r [\\, dict brush [\\, dict pen ]]"
+			},
+			{
+				"functionName": "makePrimitive",
+				"call": " size s [\\, dict brush [\\, dict pen ]]"
+			},
+			{
+				"functionName": "makePrimitive",
+				"call": " list[point] [\\, dict pen [\\, dict pen ]]"
+			},
+			{
+				"functionName": "makePrimitive",
+				"call": " par1, par2"
+			}
+		],
+		"params": [
+			{
+				"name": "shape",
+				"description": "s"
+			},
+			{
+				"name": "shape",
+				"description": "s"
+			},
+			{
+				"name": "shape",
+				"description": "s"
+			}
+		],
+		"returnValue": "GGLObject<Primitive>"
+	},
+	{
+		"name": "makeLine",
+		"description": "Erstellt eine Linie.",
+		"usages": [
+			{
+				"functionName": "makeLine",
+				"call": " point startPoint, point endPoint [\\, dict pen ]]"
+			}
+		],
+		"params": [
+			{
+				"name": "point",
+				"description": "startPoint"
+			},
+			{
+				"name": "point",
+				"description": "startPoint"
+			},
+			{
+				"name": "point",
+				"description": "startPoint"
+			}
+		],
+		"returnValue": "GGLObject<Primitive>"
+	},
+	{
+		"name": "makeHoverPrimitive",
+		"description": "Erstellt ein Hoverprimitive",
+		"usages": [
+			{
+				"functionName": "makeHoverPrimitive",
+				"call": "parent item, string color, bool shape = false"
+			}
+		],
+		"params": [
+			{
+				"name": "parent",
+				"description": "item"
+			},
+			{
+				"name": "parent",
+				"description": "item"
+			},
+			{
+				"name": "parent",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject<Primitive>"
+	},
+	{
+		"name": "makeTextLabel",
+		"description": "Erstellt ein Textelemet",
+		"usages": [
+			{
+				"functionName": "makeTextLabel",
+				"call": "size s, [,string text]"
+			}
+		],
+		"params": [
+			{
+				"name": "size",
+				"description": "s"
+			},
+			{
+				"name": "size",
+				"description": "s"
+			},
+			{
+				"name": "size",
+				"description": "s"
+			}
+		],
+		"returnValue": "GGLObject<Text>"
+	},
+	{
+		"name": "makeTextField",
+		"description": "Erstellt ein Textfeld",
+		"usages": [
+			{
+				"functionName": "makeTextField",
+				"call": "size s, [,string text]"
+			}
+		],
+		"params": [
+			{}
+		],
+		"returnValue": "GGLObject<TextField>"
+	},
+	{
+		"name": "makePicture",
+		"description": "Erstellt ein Bildelemet",
+		"usages": [
+			{
+				"functionName": "makePicture",
+				"call": "string path, [,size s]"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "path"
+			},
+			{
+				"name": "string",
+				"description": "path"
+			},
+			{
+				"name": "string",
+				"description": "path"
+			}
+		],
+		"returnValue": "GGLObject<Picture>"
+	},
+	{
+		"name": "makeMaskItem",
+		"description": "Maskiert eine Farbe aus einem Bild und liefert die Maske zurück",
+		"usages": [
+			{
+				"functionName": "makeMaskItem",
+				"call": "Picture pic, string color, string maskcolor [, string mode]"
+			}
+		],
+		"params": [
+			{
+				"name": "color",
+				"description": "Farbe mit der die Maske gezeichnet wird"
+			},
+			{
+				"name": "maskcolor",
+				"description": "Pixelfarbe die als Maske verwendet wird"
+			},
+			{
+				"name": "mode",
+				"description": "Als Maskierungsmode ist \"MaskInColor\" und \"MaskOutColor\" möglich"
+			}
+		],
+		"returnValue": "GGLObject<MaskItem>"
+	},
+	{
+		"name": "makeCanvas",
+		"description": "Erstellt eine Zeichenfläche",
+		"usages": [
+			{
+				"functionName": "makeCanvas",
+				"call": "size s"
+			},
+			{
+				"functionName": "makeCanvas",
+				"call": "Picture pic, rect r"
+			}
+		],
+		"params": [
+			{
+				"name": "size",
+				"description": "s"
+			}
+		],
+		"returnValue": "GGLObject<AnimatedPicture>"
+	},
+	{
+		"name": "makeAnimatedPicture",
+		"description": "Erstellt ein animierte Bilderserie",
+		"usages": [
+			{
+				"functionName": "makeAnimatedPicture",
+				"call": "string path, int duration, int loopCount [,size size]"
+			}
+		],
+		"params": [
+			{
+				"name": "path",
+				"description": "Gibt den Pfad als GUrl zu der Bilderserie an"
+			},
+			{
+				"name": "duration",
+				"description": "Bestimmt die Ablaufzeit der Bilderserie"
+			},
+			{
+				"name": "loopCount",
+				"description": "Gibt an wie oft die Bildserie wiederholt wird"
+			},
+			{
+				"name": "size",
+				"description": "Größe der Bilder"
+			}
+		],
+		"returnValue": "GGLObject<AnimatedPicture>"
+	},
+	{
+		"name": "makeSvgItem",
+		"description": "Erstellt ein SVG Element",
+		"usages": [
+			{
+				"functionName": "makeSvgItem",
+				"call": "string path, size s"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "path"
+			},
+			{
+				"name": "string",
+				"description": "path"
+			}
+		],
+		"returnValue": "GGLObject<SvgItem>"
+	},
+	{
+		"name": "makeVideo",
+		"description": "Erstellt ein Videoelement",
+		"usages": [
+			{
+				"functionName": "makeVideo",
+				"call": "string path, size s"
+			}
+		],
+		"params": [
+			{
+				"name": "path",
+				"description": "Gibt den Pfad als GUrl zum Video"
+			},
+			{
+				"name": "s",
+				"description": "Größe des Videos"
+			}
+		],
+		"returnValue": "GGLObject<Video>"
+	},
+	{
+		"name": "gfxPrint",
+		"description": "Gibt einen Bildschirmausschnitt am Drucker aus",
+		"usages": [
+			{
+				"functionName": "gfxPrint",
+				"call": " Canvas canvas \\[, string paperSize \\[, string orientation \\[, size s]]]"
+			}
+		],
+		"params": [
+			{
+				"name": "can",
+				"description": "Canvas, das am Drucker auszugeben ist."
+			},
+			{
+				"name": "paperSize",
+				"description": "\"A0\", ..., \"A9\", \"B0\", ..., \"B9\", \"Letter\""
+			},
+			{
+				"name": "orientation",
+				"description": "\"Portrait\" oder \"Landscape\""
+			},
+			{
+				"name": "s",
+				"description": "size to print"
+			}
+		],
+		"returnValue": "GGLObject<None>"
+	},
+	{
+		"name": "gfxSetPos",
+		"description": "Verschiebt ein Grafikelement auf eine Position",
+		"usages": [
+			{
+				"functionName": "gfxSetPos",
+				"call": "Graphicsobject objekt, point p"
+			},
+			{
+				"functionName": "gfxSetPos",
+				"call": "Graphicsobject objekt, int x, int y"
+			},
+			{
+				"functionName": "gfxSetPos",
+				"call": "Graphicsobject objekt, double x, double y"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetPos",
+		"description": "Liefert die Position des Objectes",
+		"usages": [
+			{
+				"functionName": "gfxGetPos",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxSetScale",
+		"description": "Sklaiert ein Grafikelement",
+		"usages": [
+			{
+				"functionName": "gfxSetScale",
+				"call": "Graphicsobject objekt, int scale"
+			},
+			{
+				"functionName": "gfxSetScale",
+				"call": "Graphicsobject objekt, double scale"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetRotation",
+		"description": "Rotiert ein Grafikelement",
+		"usages": [
+			{
+				"functionName": "gfxSetRotation",
+				"call": "Graphicsobject objekt, int rot"
+			},
+			{
+				"functionName": "gfxSetRotation",
+				"call": "Graphicsobject objekt, double rot"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetRotation",
+		"description": "Gibt den Rotationswert eines Grafikelement zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetRotation",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "gfxSetOpacity",
+		"description": "Setzt den Transparentwert eines Grafikelements",
+		"usages": [
+			{
+				"functionName": "gfxSetOpacity",
+				"call": "Graphicsobject objekt, int op"
+			},
+			{
+				"functionName": "gfxSetOpacity",
+				"call": "Graphicsobject objekt, double op"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetOpacity",
+		"description": "Gibt den Transparentwert eines Grafikelement zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetOpacity",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "gfxSetBlur",
+		"description": "Setzt den Unschärfewert eines Grafikelements",
+		"usages": [
+			{
+				"functionName": "gfxSetBlur",
+				"call": "Graphicsobject objekt, double radius [, string BlurHint]"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetVisible",
+		"description": "Macht ein Grafikelement sichtbar",
+		"usages": [
+			{
+				"functionName": "gfxSetVisible",
+				"call": "Graphicsobject objekt, bool vis"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxIsVisible",
+		"description": "Gibt an ob ein Grafikelement sichtbar ist",
+		"usages": [
+			{
+				"functionName": "gfxIsVisible",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "gfxSetEnabled",
+		"description": "Setzt ein Element aktiv",
+		"usages": [
+			{
+				"functionName": "gfxSetEnabled",
+				"call": "Graphicsobject objekt, bool enable"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxIsEnabled",
+		"description": "Gibt an ob ein Grafikelement aktiv ist",
+		"usages": [
+			{
+				"functionName": "gfxIsEnabled",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "gfxSetZValue",
+		"description": "Setzt den Z-Wert eines Grafikelements",
+		"usages": [
+			{
+				"functionName": "gfxSetZValue",
+				"call": "Graphicsobject objekt, int op"
+			},
+			{
+				"functionName": "gfxSetZValue",
+				"call": "Graphicsobject objekt, double op"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetZValue",
+		"description": "Gibt den Z-Wert eines Grafikelements an",
+		"usages": [
+			{
+				"functionName": "gfxGetZValue",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "gfxSetBrush",
+		"description": "Setzt den Brush eines Primitves oder Textelements",
+		"usages": [
+			{
+				"functionName": "gfxSetBrush",
+				"call": "Primitives objekt, dict | string brush"
+			}
+		],
+		"params": [
+			{
+				"name": "Primitives",
+				"description": "objekt"
+			},
+			{
+				"name": "Primitives",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetBrush",
+		"description": "Gibt den Brush eines Primitves oder Textelemtes zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetBrush",
+				"call": "Primitive objekt"
+			},
+			{
+				"functionName": "gfxGetBrush",
+				"call": "Text objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Primitive",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "gfxSetPen",
+		"description": "Setzt den Pen eines Grafikobjektes",
+		"usages": [
+			{
+				"functionName": "gfxSetPen",
+				"call": "Graphicsobject objekt, dict pen"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetPen",
+		"description": "Gibt den Pen eines Grafikobjektes zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetPen",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "gfxSetHoverItem",
+		"description": "Setzt das Hoverelement für ein Grafikelement",
+		"usages": [
+			{
+				"functionName": "gfxSetHoverItem",
+				"call": "Graphicsobject objekt, Graphicsobject hover"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetFont",
+		"description": "Setzt die Schriftart für ein Textelement",
+		"usages": [
+			{
+				"functionName": "gfxSetFont",
+				"call": "Text objekt, dict font"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "objekt"
+			},
+			{
+				"name": "Text",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetFont",
+		"description": "Gibt die Schriftart eines Textelemtes zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetFont",
+				"call": "Text objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "gfxGetBoundingRect",
+		"description": "Gibt die äußeren Koordinaten eines Grafikelements zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetBoundingRect",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "rect"
+	},
+	{
+		"name": "gfxCenterOn",
+		"description": "Zentriert ein Element auf einem anderen",
+		"usages": [
+			{
+				"functionName": "gfxCenterOn",
+				"call": "Graphicsobject objekt, Graphicsobject target"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxScaleTo",
+		"description": "Skaliert ein Grafikelement",
+		"usages": [
+			{
+				"functionName": "gfxScaleTo",
+				"call": "Graphicsobject objekt, Graphicsobject target [, AspectRatioMode mode = IgnoreAspectRatio]"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetParent",
+		"description": "Setzt das ein Elternobjekt für ein Element",
+		"usages": [
+			{
+				"functionName": "gfxSetParent",
+				"call": "Graphicsobject objekt, Graphicsobject parent"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetParent",
+		"description": "Gibt das Elternobjekt für ein Element an",
+		"usages": [
+			{
+				"functionName": "gfxGetParent",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject<Primitives>,"
+	},
+	{
+		"name": "gfxGetClickedObject",
+		"description": "Gibt das Element zurück, auf dass mit der Maus geklickt wurde",
+		"usages": [
+			{
+				"functionName": "gfxGetClickedObject",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject<Primitives>,"
+	},
+	{
+		"name": "gfxSetFlag",
+		"description": "Grafikflags setzen.",
+		"usages": [
+			{
+				"functionName": "gfxSetFlag",
+				"call": "Graphicsobject object, string flag, bool enabled"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxTestFlag",
+		"description": "Prüft ob ein Grafikflag für ein Element gesetzt ist.",
+		"usages": [
+			{
+				"functionName": "gfxTestFlag",
+				"call": "Graphicsobject object, string flag"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetAlignment",
+		"description": "Setzt die Ausrichtung eines Textobjects.",
+		"usages": [
+			{
+				"functionName": "gfxSetAlignment",
+				"call": "Text objekt, string alignment"
+			}
+		],
+		"params": [
+			{},
+			{},
+			{}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetElideMode",
+		"description": "Setzt die Richtung in der überlappende Text abgeschnitten werden.",
+		"usages": [
+			{
+				"functionName": "gfxSetElideMode",
+				"call": "TextLabel objekt, string elideMode"
+			}
+		],
+		"params": [
+			{
+				"name": "TextLabel",
+				"description": "objekt"
+			},
+			{
+				"name": "TextLabel",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetElideMode",
+		"description": "Gibt den Elidemode für ein Textlabel zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetElideMode",
+				"call": "Text objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "gfxSetAdjustPolicy",
+		"description": "Dies gibt an, wie der Text sein Größe ändert wenn sich der angezeigte Text verändert.",
+		"usages": [
+			{
+				"functionName": "gfxSetAdjustPolicy",
+				"call": "Text objekt, string adjustPolicy"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "objekt"
+			},
+			{
+				"name": "Text",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetAdjustPolicy",
+		"description": "Gibt an wie die Schrift auf ein Textlabel angepasst wird.",
+		"usages": [
+			{
+				"functionName": "gfxGetAdjustPolicy",
+				"call": "Text objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "gfxSetColor",
+		"description": "Setzt die Textfarbe eines Texts",
+		"usages": [
+			{
+				"functionName": "gfxSetColor",
+				"call": "Text text, string color"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "text"
+			},
+			{
+				"name": "Text",
+				"description": "text"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetColor",
+		"description": "Gibt die Textfarbe eines Textelements zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetColor",
+				"call": "Text text"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "text"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "gfxSetText",
+		"description": "Setzt den Text der in einem Textelements angezeigt wird.",
+		"usages": [
+			{
+				"functionName": "gfxSetText",
+				"call": "Text text, string text"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "text"
+			},
+			{
+				"name": "Text",
+				"description": "text"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetText",
+		"description": "Gibt den Text eines Textelements zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetText",
+				"call": "Text text"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "text"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "gfxSetTextMargin",
+		"description": "Setzt den Abstand zwischen dem Text und dem Rahmen des Textelements.",
+		"usages": [
+			{
+				"functionName": "gfxSetTextMargin",
+				"call": "Text text, double x1, double y1, double x2, double y2"
+			},
+			{
+				"functionName": "gfxSetTextMargin",
+				"call": "Text text, int x1, int y1, int x2, int y2"
+			}
+		],
+		"params": [
+			{
+				"name": "x1",
+				"description": "Dieser Parameter gibt an, wie weit der Text von der linken Seite des Elements entfernt ist."
+			},
+			{
+				"name": "y1",
+				"description": "Dieser Parameter gibt an, wie weit der Text von der oberen Seite des Elements entfernt ist."
+			},
+			{
+				"name": "x2",
+				"description": "Dieser Parameter gibt an, wie weit der Text von der rechten Seite des Elements entfernt ist."
+			},
+			{
+				"name": "y2",
+				"description": "Dieser Parameter gibt an, wie weit der Text von der unteren Seite des Elements entfernt ist."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetTextMargin",
+		"description": "Gibt den Abstand zwischen dem Text und dem Rahmen des Textfeldes als <em>dict</em> zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetTextMargin",
+				"call": "Text text"
+			}
+		],
+		"params": [
+			{
+				"name": "Text",
+				"description": "text"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "gfxSetPicturePath",
+		"description": "Mit dieser Funktion kann der Pfad gesetzt werden, aus dem ein Bildelement geladen werden soll.",
+		"usages": [
+			{
+				"functionName": "gfxSetPicturePath",
+				"call": "Picture picture, string path"
+			}
+		],
+		"params": [
+			{
+				"name": "Picture",
+				"description": "picture"
+			},
+			{
+				"name": "Picture",
+				"description": "picture"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetPicturePath",
+		"description": "Gibt den Pfad des geladenen Bildes an.",
+		"usages": [
+			{
+				"functionName": "gfxGetPicturePath",
+				"call": "Picture picture"
+			}
+		],
+		"params": [
+			{
+				"name": "Picture",
+				"description": "picture"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "gfxContains",
+		"description": "Prüft, ob ein Grafikelement eine bestimmte Koordinate überdeckt.",
+		"usages": [
+			{
+				"functionName": "gfxContains",
+				"call": "Graphicsobject object, point koord"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "gfxSetHoverEnabled",
+		"description": "Schaltet Hoverevents für Grafikelemente ein oder aus.",
+		"usages": [
+			{
+				"functionName": "gfxSetHoverEnabled",
+				"call": "[Graphicsobject object,] bool enabled"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxIsUnderMouse",
+		"description": "Prüft, ob der Mauszeiger sich auf der Position des Grafikelement befindet.",
+		"usages": [
+			{
+				"functionName": "gfxIsUnderMouse",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "gfxMoveBy",
+		"description": "Bewegt das Grafikelement um die angegebene Entfernung.",
+		"usages": [
+			{
+				"functionName": "gfxMoveBy",
+				"call": "Graphicsobject object, int dx, int dy"
+			},
+			{
+				"functionName": "gfxMoveBy",
+				"call": "Graphicsobject object, double dx, double dy"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetTransform",
+		"description": "Setzt die allgemeine Transformations Matrix eines Grafikelements",
+		"usages": [
+			{
+				"functionName": "gfxSetTransform",
+				"call": "Graphicobjects object, list transform"
+			}
+		],
+		"params": [
+			{
+				"name": "object",
+				"description": "Grafikelement"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetTransform",
+		"description": "Gibt die allgemeine Transformations Matrix eines Grafikelements zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetTransform",
+				"call": " Graphicobjects object"
+			}
+		],
+		"params": [
+			{
+				"name": "object",
+				"description": "Grafikelement"
+			}
+		]
+	},
+	{
+		"name": "gfxSetTransformOriginPoint",
+		"description": "Setzt den \"Origin Point\" des Grafikelements auf den angegeben Punkt.",
+		"usages": [
+			{
+				"functionName": "gfxSetTransformOriginPoint",
+				"call": "Graphicsobject object, point origin"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetTransformOriginPoint",
+		"description": "Gibt den \"Origin Point\" des Grafikelements zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetTransformOriginPoint",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxGetActiveHoverItems",
+		"description": "Gibt eine Liste aller aktiver Hoveritems zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetActiveHoverItems",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "list<Graphicsobject>"
+	},
+	{
+		"name": "gfxUpdateHoverItems",
+		"description": "Aktuallisiert für alle Objekte, für die mit gfxSetHoverItem ein Objekt",
+		"usages": [
+			{
+				"functionName": "gfxUpdateHoverItems",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "gfxIntersects",
+		"description": "Prüft ob sich zwei Grafikelemente schneiden",
+		"usages": [
+			{
+				"functionName": "gfxIntersects",
+				"call": "Graphicsobject object, Graphicsobject target"
+			},
+			{
+				"functionName": "gfxIntersects",
+				"call": "Graphicsobject object, Shape target"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "list<Graphicsobject>"
+	},
+	{
+		"name": "gfxMapFromItem",
+		"description": "Bildet einen Punkt, der sich auf ein Element bezieht, auf die absoluten Koordinaten ab.",
+		"usages": [
+			{
+				"functionName": "gfxMapFromItem",
+				"call": "Graphicsobject object, point target"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxMapToItem",
+		"description": "Bildet einen Punkt (in absolute Koordinaten) auf die Itemkoordinaten des angegebene Objekts an ab.",
+		"usages": [
+			{
+				"functionName": "gfxMapToItem",
+				"call": "Graphicsobject object, point target"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxGetXScale",
+		"description": "Gibt den Faktur zurück auf das ein Grafikelement in X-Richtung scaliert wird.",
+		"usages": [
+			{
+				"functionName": "gfxGetXScale",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetXScale",
+		"description": "Sklaiert ein Grafikelement in X-Richtung",
+		"usages": [
+			{
+				"functionName": "gfxSetXScale",
+				"call": "Graphicsobject objekt, double scale"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetYScale",
+		"description": "Gibt den Faktur zurück auf das ein Grafikelement in Y-Richtung scaliert wird.",
+		"usages": [
+			{
+				"functionName": "gfxGetYScale",
+				"call": "Graphicsobject objekt"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxSetYScale",
+		"description": "Sklaiert ein Grafikelement in Y-Richtung",
+		"usages": [
+			{
+				"functionName": "gfxSetYScale",
+				"call": "Graphicsobject objekt, double scale"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "objekt"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetXYScaleOriginPoint",
+		"description": "Gibt den \"Scale Origin Point\" des Grafikelements zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetXYScaleOriginPoint",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxSetXYScaleOriginPoint",
+		"description": "Setzt den \"XY Scale Origin Point\" des Grafikelements auf den angegeben Punkt.",
+		"usages": [
+			{
+				"functionName": "gfxSetXYScaleOriginPoint",
+				"call": "Graphicsobject object, point origin"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetAngle",
+		"description": "Gibt den Drehwinkel des Grafikelements für die 3D-Rotation zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetAngle",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "double"
+	},
+	{
+		"name": "gfxSetAngle",
+		"description": "Setzt den \"Angle Origin Point\" des Grafikelements auf den angegeben Punkt.",
+		"usages": [
+			{
+				"functionName": "gfxSetAngleOriginPoint",
+				"call": "Graphicsobject object, point origin"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetAngleOriginPoint",
+		"description": "Gibt den \"Angle Origin Point\" des Grafikelements zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetAngleOriginPoint",
+				"call": "Graphicsobject object"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "point"
+	},
+	{
+		"name": "gfxSetAngleOriginPoint",
+		"description": "Setzt den \"Angle Origin Point\" des Grafikelements auf den angegeben Punkt.",
+		"usages": [
+			{
+				"functionName": "gfxSetAngleOriginPoint",
+				"call": "Graphicsobject object, point origin"
+			}
+		],
+		"params": [
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			},
+			{
+				"name": "Graphicsobject",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetAngleAxis",
+		"description": "Gibt die Richtung der Drehachse für die 3D-Rotation zurück.",
+		"usages": [
+			{
+				"functionName": "gfxGetAngleAxis",
+				"call": " GGraphicsObject obj"
+			}
+		],
+		"params": [
+			{
+				"name": "GGraphicsObject",
+				"description": "obj"
+			}
+		]
+	},
+	{
+		"name": "gfxSetAngleAxis",
+		"description": "Setzt die Richtung der Drehachse für die 3D-Rotation",
+		"usages": [
+			{
+				"functionName": "gfxSetAngleAxis",
+				"call": " GGraphicsObject obj, list vector3D"
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Grafikelement"
+			},
+			{
+				"name": "vector3D",
+				"description": "Richtung der Drehachse als Liste [x, y, z]"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxRenderScene",
+		"description": "Rendert ein Rechteck der Szene auf eine Zeichenfläche (Canvas).",
+		"usages": [
+			{
+				"functionName": "gfxRenderScene",
+				"call": "Canvas can, rect r"
+			}
+		],
+		"params": [
+			{
+				"name": "Canvas",
+				"description": "can"
+			},
+			{
+				"name": "Canvas",
+				"description": "can"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxFill",
+		"description": "Füllt eine Zeichenfläche mit einer Farbe",
+		"usages": [
+			{
+				"functionName": "gfxFill",
+				"call": "Canvas can, string color"
+			}
+		],
+		"params": [
+			{
+				"name": "Canvas",
+				"description": "can"
+			},
+			{
+				"name": "Canvas",
+				"description": "can"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetShape",
+		"description": "Gibt den Umriss eines Primitives oder eins SvgItems zurück",
+		"usages": [
+			{
+				"functionName": "gfxGetShape",
+				"call": "Primitive | SvgItem object"
+			}
+		],
+		"params": [
+			{
+				"name": "Primitive",
+				"description": ""
+			}
+		],
+		"returnValue": "Shape"
+	},
+	{
+		"name": "gfxSetShape",
+		"description": "Setzt für ein Primitive eine Form",
+		"usages": [
+			{
+				"functionName": "gfxSetShape",
+				"call": "Primitive object, Shape form"
+			}
+		],
+		"params": [
+			{
+				"name": "Primitive",
+				"description": "object"
+			},
+			{
+				"name": "Primitive",
+				"description": "object"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxIsAncesterOf",
+		"description": "Gibt true zurück wenn das child-item ein direktes Kind oder ein Kindes Kind",
+		"usages": [
+			{
+				"functionName": "gfxIsAncesterOf",
+				"call": "GraphicsObject item, GraphicsObject child"
+			}
+		],
+		"params": [
+			{
+				"name": "GraphicsObject",
+				"description": "item"
+			},
+			{
+				"name": "GraphicsObject",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Bool"
+	},
+	{
+		"name": "gfxReparent",
+		"description": "Setzt ein neues Elternelement und behält die aktuelle Position in der Szene bei.",
+		"usages": [
+			{
+				"functionName": "gfxReparent",
+				"call": "GraphicsObject item, GraphicsObject newParent"
+			}
+		],
+		"params": [
+			{
+				"name": "GraphicsObject",
+				"description": "item"
+			},
+			{
+				"name": "GraphicsObject",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxAnimPicPlay",
+		"description": "Startet eine Bildsequenz.",
+		"usages": [
+			{
+				"functionName": "gfxAnimPicPlay",
+				"call": "AnimatedPicture item"
+			}
+		],
+		"params": [
+			{
+				"name": "AnimatedPicture",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxAnimPicStop",
+		"description": "Stoppt eine Bildsequenz.",
+		"usages": [
+			{
+				"functionName": "gfxAnimPicStop",
+				"call": "AnimatedPicture item"
+			}
+		],
+		"params": [
+			{
+				"name": "AnimatedPicture",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxAnimPicPause",
+		"description": "Pausiert eine Bildsequenz.",
+		"usages": [
+			{
+				"functionName": "gfxAnimPicPause",
+				"call": "AnimatedPicture item"
+			}
+		],
+		"params": [
+			{
+				"name": "AnimatedPicture",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxAnimPicResume",
+		"description": "Setzt eine pausierte Bildsequenz fort.",
+		"usages": [
+			{
+				"functionName": "gfxAnimPicResume",
+				"call": "AnimatedPicture item"
+			}
+		],
+		"params": [
+			{
+				"name": "AnimatedPicture",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoPlay",
+		"description": "Startet ein Video.",
+		"usages": [
+			{
+				"functionName": "gfxVideoPlay",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoStop",
+		"description": "Stoppt ein Video.",
+		"usages": [
+			{
+				"functionName": "gfxVideoStop",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoPause",
+		"description": "Pausiert ein Video.",
+		"usages": [
+			{
+				"functionName": "gfxVideoPause",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoResume",
+		"description": "Setzt ein pausiertes Video fort.",
+		"usages": [
+			{
+				"functionName": "gfxVideoResume",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoRestart",
+		"description": "Lässt ein Video neustarten",
+		"usages": [
+			{
+				"functionName": "gfxVideoRestart",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoIsPlaying",
+		"description": "Fragt ab, ob das Video gerade abgespielt wird",
+		"usages": [
+			{
+				"functionName": "gfxVideoIsPlaying",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Bool"
+	},
+	{
+		"name": "gfxVideoIsStopped",
+		"description": "Fragt ab, ob das Video gestoppt oder am Ende ist",
+		"usages": [
+			{
+				"functionName": "gfxVideoIsStopped",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Bool"
+	},
+	{
+		"name": "gfxVideoIsPaused",
+		"description": "Fragt ab, ob das Video pausiert ist.",
+		"usages": [
+			{
+				"functionName": "gfxVideoIsPaused",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Bool"
+	},
+	{
+		"name": "gfxVideoGetVolume",
+		"description": "Gibt die Lautstärke eines Videos zurück",
+		"usages": [
+			{
+				"functionName": "gfxVideoGetVolume",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Double"
+	},
+	{
+		"name": "gfxVideoSetVolume",
+		"description": "Setzt die Lautstärke mit der der Ton eines Videos wiedergegeben wird",
+		"usages": [
+			{
+				"functionName": "gfxVideoSetVolume",
+				"call": "VideoItem item, double volume"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			},
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoGetDuration",
+		"description": "Gibt die gesammt Dauer eines Videos zurück",
+		"usages": [
+			{
+				"functionName": "gfxVideoGetDuration",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Double"
+	},
+	{
+		"name": "gfxVideoAddTimestamp",
+		"description": "Fügt eine Video einen Zeitstempel hinzu",
+		"usages": [
+			{
+				"functionName": "gfxVideoAddTimestamp",
+				"call": "VideoItem item, double timestamp"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			},
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoClearTimestamps",
+		"description": "Löscht alle gesetzten Zeitstempel eines Videos",
+		"usages": [
+			{
+				"functionName": "gfxVideoClearTimestamps",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxVideoGetTimestamps",
+		"description": "Gibt eine Liste aller Zeitstempel eines Videos zurück",
+		"usages": [
+			{
+				"functionName": "gfxVideoGetTimestamps",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::List"
+	},
+	{
+		"name": "gfxVideoGetPosition",
+		"description": "Gibt die aktuelle Position eines Videos zurück",
+		"usages": [
+			{
+				"functionName": "gfxVideoGetPosition",
+				"call": "VideoItem item"
+			}
+		],
+		"params": [
+			{
+				"name": "VideoItem",
+				"description": "item"
+			}
+		],
+		"returnValue": "GGLObject::Double"
+	}
+]

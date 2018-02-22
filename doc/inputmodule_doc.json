@@ -1,0 +1,122 @@
+[
+	{
+		"name": "registerEventHandler",
+		"description": "Registriert einen Event-Handler",
+		"usages": [
+			{
+				"functionName": "registerEventHandler",
+				"call": " QEvent::Type type ,  Function callable  "
+			}
+		],
+		"params": [
+			{
+				"name": "forced",
+				"description": "mit dem Parameter True werden auch mit blockInput() geblockte Events empfangen."
+			},
+			{
+				"name": "callable",
+				"description": "gibt die GGL-Callback-Funktion an, die aufgerufen wird sobald ein Event auftritt wurde."
+			},
+			{
+				"name": "type",
+				"description": "Dieser Parameter beschreibt den Type an Event."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "unregisterEventHandler",
+		"description": "Entfernt einen Eintrag im Event-Handler",
+		"usages": [
+			{
+				"functionName": "unregisterEventHandler",
+				"call": " QEvent::Type type ,  Function callable  "
+			}
+		],
+		"params": [
+			{
+				"name": "callable",
+				"description": "gibt die GGL-Callback-Funktion an, die aufgerufen wird sobald ein Event auftritt wurde."
+			},
+			{
+				"name": "type",
+				"description": "Dieser Parameter beschreibt den Type an Event."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "clearEventHandler",
+		"description": "Entfernt alle Einträge im Event-Handler",
+		"usages": [
+			{
+				"functionName": "clearEventHandler",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "sleep",
+		"description": "Wartet mit der weiteren Programmausführung um den angegeben Zeitwert",
+		"usages": [
+			{
+				"functionName": "sleep",
+				"call": " int msec"
+			}
+		],
+		"params": [
+			{
+				"name": "msec",
+				"description": "Zeit in Millisekunden die gewartet werden soll."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "wait",
+		"description": "Wartet mit der weiteren Programmausführung auf das Signal <em>finish</em> eines QObjects.",
+		"usages": [
+			{
+				"functionName": "wait",
+				"call": " QObjects src "
+			}
+		],
+		"params": [
+			{
+				"name": "src",
+				"description": "gibt das Objekt an auf das gewartet werden soll."
+			},
+			{
+				"name": "timeout",
+				"description": "Maximale Wartezeit in Millisekunden."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "blockInput",
+		"description": "Blockiert alle Input-Events.",
+		"usages": [
+			{
+				"functionName": "blockInput",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "processEvents",
+		"description": "Verarbeitet alle Events in der Eventqueue.",
+		"usages": [
+			{
+				"functionName": "processEvents",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::None"
+	}
+]

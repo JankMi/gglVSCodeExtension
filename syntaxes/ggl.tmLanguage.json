@@ -1,0 +1,223 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "GameGenerationLanguge",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#support"
+		},
+		{
+			"include": "#helper"
+		},
+		{
+			"comment": "imports",
+			"begin": "(import)\\(\\\"ga:\\/\\/([a-zA-Z~]+)@(\\w+)\\.ggl\\\"\\)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.ggl.import"
+				},
+				"2": {
+					"name": "entity.name.selector.ggl.import"
+				},
+				"3": {
+					"name": "entity.name.section.ggl.import"
+				}
+			},
+			"end": ";"
+		},
+		{
+			"comment": "function implementation",
+			"begin": "(\\s*function\\s+)([a-z,A-Z,0-9,_]+)\\s*(\\([\\w, ,=,\\,]*\\))",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.type.function.ggl"
+				},
+				"2": {
+					"name": "entity.name.function.ggl"
+				},
+				"3": {
+					"name": "variable.parameter.ggl"
+				}
+			},
+			"patterns": [
+				{
+					"include": "$base"
+				}
+			],
+			"end": "(\\s*)",
+			"name": "meta.declaration.ggl.function"
+		},
+		{
+			"comment": "variable declaration",
+			"begin": "(\\s*var\\s+)([a-z,A-Z,0-9,_]+)",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.type.variable.ggl"
+				},
+				"2": {
+					"name": "variable.other.readwrite.ggl"
+				}
+			},
+			"end": "(\\s*[=|;])",
+			"name": "meta.initialization.ggl"
+		},
+		{
+			"comment": "function declaration",
+			"begin": "(\\s*function\\s+)([a-z,A-Z,0-9,_]+)",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.type.function.ggl"
+				},
+				"2": {
+					"name": "entity.name.function.ggl"
+				}
+			},
+			"end": "(\\([\\w, ,=,\\,]*\\))",
+			"endCaptures": {
+				"1": {
+					"name": "variable.parameter.ggl"
+				}
+			},
+			"name": "meta.declaration.ggl"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.ggl.nobuiltin",
+					"match": "(if|else|for|do|while|assert|then|case|switch|default|break)"
+				}
+			]
+		},
+		"helper": {
+			"patterns": [
+				{
+					"name": "meta.declaration.ggl.secexit",
+					"match": "(})"
+				},
+				{
+					"name": "meta.declaration.ggl.secentry",
+					"match": "({)"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.ggl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ggl",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"name": "comment.line",
+					"begin": "//",
+					"end": "\n"
+				}
+			]
+		},
+		"support": {
+			"patterns": [
+				{
+					"name": "support.function.ggl.coremodule",
+					"match": "\\b(len|sort|sorted|list|dict|point|size|rect|print|append|appendList|insert|removeAll|del|str|deepcopy|id|type|contains|getX|getY|getWidth|getHeight|getSize|getCenter|getTopLeft|getTopRight|getBottomLeft|getBottomRight|movedTopLeft|united|intersected|adjusted|boundedTo|expandedTo|scaled|indexOf|localImport)\\b"
+				},
+				{
+					"name": "support.function.ggl.mathmodule",
+					"match": "\\b(mathFloor|mathCeil|mathDecToHex|mathHexToDec|mathAbs|mathSin|mathCos|mathTan|mathArcSin|mathArcCos|mathArcTan|mathSqrt|mathPow|mathLn|mathLog|mathExp|mathPi|mathRound|mathRadToDeg|mathDegToRad|mathSignum|mathFMod|mathMin|mathMax)\\b"
+				},
+				{
+					"name": "support.function.ggl.stringmodule",
+					"match": "\\b(stringLen|stringStartsWith|stringEndsWith|stringContains|stringIndexOf|stringLastIndexOf|stringInsert|stringLeft|stringMid|stringRight|stringRemove|stringReplace|stringSplit|stringListJoin|stringToUpper|stringToLower|stringArg)\\b"
+				},
+				{
+					"name": "support.function.ggl.animationmodule",
+					"match": "\\b(makeAnimation|makePathAnimation|makeSequentialAnimationGroup|makeParallelAnimationGroup|makeAnimationToRect|animAddToGroup|animAddPauseToSequence|animSetKeyValueAt|animStart|animStop|animPause|animResume|animIsRunning|animIsPaused|animIsStopped|animSetLoopCount|animGetLoopCount|animSetDuration|animGetDuration|animSetStartValue|animGetStartValue|animSetEndValue|animGetEndValue|animSetDirection|animGetDirection|animToggleDirection|animSetEasingCurve|animGetEasingCurve|animGetCurrentTime|animSetCurrentTime|animRemoveFromGroup)\\b"
+				},
+				{
+					"name": "support.function.ggl.gamemodule",
+					"match": "\\b(gameGetAll|gameGetAllMediasets|gameStart|gameGetMedia|gameGetDisplayName|gameGetId|gameGetDescription|gameGetMediasetDescription|gameGetMinPlayers|gameGetMaxPlayers|gameHasComputerPlayer|gameGetLoadPicturePath|gameGetMediasetDisplayName|gameGetMediasetId|gameGetMediaDescription)\\b"
+				},
+				{
+					"name": "support.function.ggl.graphicsmodule",
+					"match": "\\b(makeGraphicsObject|makePrimitive|makeLine|makeHoverPrimitive|makeTextLabel|makeTextField|makePicture|makeMaskItem|makeCanvas|makeAnimatedPicture|makeSvgItem|makeVideo|gfxPrint|gfxSetPos|gfxGetPos|gfxSetScale|gfxGetScale|gfxSetRotation|gfxGetRotation|gfxSetOpacity|gfxGetOpacity|gfxSetBlur|gfxSetVisible|gfxIsVisible|gfxSetEnabled|gfxIsEnabled|gfxSetZValue|gfxGetZValue|gfxSetBrush|gfxGetBrush|gfxSetPen|gfxGetPen|gfxSetHoverItem|gfxSetFont|gfxGetFont|gfxGetBoundingRect|gfxGetGeometry|gfxCenterOn|gfxScaleTo|gfxSetParent|gfxGetParent|gfxGetClickedObject|gfxSetFlag|gfxTestFlag|gfxSetAlignment|gfxGetAlignment|gfxSetElideMode|gfxGetElideMode|gfxSetAdjustPolicy|gfxGetAdjustPolicy|gfxSetColor|gfxGetColor|gfxSetText|gfxGetText|gfxSetTextMargin|gfxGetTextMargin|gfxSetPicturePath|gfxGetPicturePath|gfxContains|gfxSetHoverEnabled|gfxIsUnderMouse|gfxMoveBy|gfxSetTransform|gfxGetTransform|gfxSetTransformOriginPoint|gfxGetTransformOriginPoint|gfxGetActiveHoverItems|gfxUpdateHoverItems|gfxIntersects|gfxMapFromItem|gfxMapToItem|gfxGetXScale|gfxSetXScale|gfxGetYScale|gfxSetYScale|gfxGetXYScaleOriginPoint|gfxSetXYScaleOriginPoint|gfxGetAngle|gfxSetAngle|gfxGetAngleOriginPoint|gfxSetAngleOriginPoint|gfxGetAngleAxis|gfxSetAngleAxis|gfxRenderScene|gfxFill|gfxGetShape|gfxSetShape|gfxIsAncesterOf|gfxReparent|gfxAnimPicPlay|gfxAnimPicStop|gfxAnimPicPause|gfxAnimPicResume|gfxVideoPlay|gfxVideoStop|gfxVideoPause|gfxVideoResume|gfxVideoRestart|gfxVideoIsPlaying|gfxVideoIsStopped|gfxVideoIsPaused|gfxVideoGetVolume|gfxVideoSetVolume|gfxVideoGetDuration|gfxVideoAddTimestamp|gfxVideoClearTimestamps|gfxVideoGetTimestamps|gfxVideoGetPosition)\\b"
+				},
+				{
+					"name": "support.function.ggl.inputmodule",
+					"match": "\\b(registerEventHandler|unregisterEventHandler|clearEventHandler|sleep|wait|blockInput|unblockInput|processEvents)\\b"
+				},
+				{
+					"name": "support.function.ggl.iomodule",
+					"match": "\\b(ioReadFile|ioWriteFile|ioFileExists|ioGetPictureInfo|ioLoadPluginModule)\\b"
+				},
+				{
+					"name": "support.function.ggl.miscmodule",
+					"match": "\\b(miscRandom|miscShuffle|miscGetDate|miscGetTime|miscGetTimeStamp|miscGetMTimeStamp|miscFindFirstIndexRecursive|miscIntSequence|miscTransformSquareToQuad|miscGetKeycode|miscRandomColor|miscPointsDistance|miscPointsRotation)\\b"
+				},
+				{
+					"name": "support.function.ggl.navigationmodule",
+					"match": "\\b(naviMakeMatrix|naviMoveLeft|naviMoveRight|naviMoveUp|naviMoveDown|naviNext|naviPrev|naviSelect|naviSetCurrent|naviSetCurrentRow|naviSetNone|naviGetCurrent|naviSetFirst|naviSetLast|naviSetEnabled|naviIsEnabled|naviHasEnabledPos|naviSetQObject|naviGetQObject|naviSetRowQObject|naviGetRowQObject|naviGetQObjectPos|naviSetExceededCallback|naviSetSelectionCallback|naviSetItemChangedCallback|naviSetRowChangedCallback|naviSetCallbackArgs|naviGetRowCount|naviGetColCount|naviDisableAll|naviEnableAll|naviSetRowSelectionMode|naviIsRowSelectionMode|naviSetWrapAround|naviIsWrapAround|naviSetSkipDisabled|naviIsSkipDisabled)\\b"
+				},
+				{
+					"name": "support.function.ggl.qobjectmodule",
+					"match": "\\b(objSetProp|objGetProp|objSetProperties|objListProps|objInvokeMethod|objConnectSignal|objDisconnectSignal|makeEventLoop|objEventLoopExec|objEventLoopExit)\\b"
+				},
+				{
+					"name": "support.function.ggl.shapemodule",
+					"match": "\\b(makeShape|shapeAddRect|shapeAddEllipse|shapeAddPolygon|shapeAddShape|shapeTranslate|shapeAddRoundedRect|shapeGetAngleAtPercent|shapeGetSlopeAtPercent|shapeGetPointAtPercent|shapeArcMoveTo|shapeArcTo|shapeGetBoundingRect|shapeCloseSubpath|shapeCubicTo|shapeQuadTo|shapeGetCurrentPosition|shapeGetLength|shapeLineTo|shapeMoveTo|shapeIntersects|shapeToReversed|shapeClone|shapeSetFillRule|shapeSimplify|shapeUnited)\\b"
+				},
+				{
+					"name": "support.function.ggl.simulatormodule",
+					"match": "\\b(simExit|simStop|simStopExitCode|simStartGGL|simGetArgument|simSetArgument|simSetMouseCursor|simResetMouseCursor|simGetMousePos|simGetWidthResolution|simGetHeightResolution|simGetMonitorData)\\b"
+				},
+				{
+					"name": "support.function.ggl.soundmodule",
+					"match": "\\b(makeBufferedSound|makeStreamedSound|soundPlay|soundStop|soundResume|soundPause|soundIsPlaying|soundIsPaused|soundIsStopped|soundAddTimestamp|soundClearTimestamps|soundGetTimestamps|soundGetDuration|soundGetPlaybackTime|soundGetVolume|soundSetVolume)\\b"
+				},
+				{
+					"name": "support.function.ggl.timermodule",
+					"match": "\\b(makeTimer|makeSingleShot|timerStart|timerPause|timerResume|timerStop|timerIsPaused|timerIsActive)\\b"
+				},
+				{
+					"name": "support.function.ggl.usermodule",
+					"match": "\\b(userNext|userCurrent|userCount|userGet|userGetName|userIsGuest|userGetPlayableGames|userGetGameDialog|userGetActivatedMediasets|userSetGameDialog|userGetAll|userGetAvatarPath|userGetSmallAvatarPath|userGetInputDeviceList|userGetKeysOfNr|userGetKeys|userHasMouse|userGetCursorSize|userGetCursor|userHasTouchscreen|userHasGamePad|userHasKeyboard|userKeyboardKeyCount|userHasScantime|userKeyboardScanInfo|userGetSecondaryRunnable|userHasBackToGameSelection|userHasStartGameAgain|userHasGroupOptimizationOption|userHasHighscoreOption|userHasAlwaysGameSettingsOption|userHasPermanentGameSettingsOption|userHasPrinterOption|userHasDemoOption|userHasEnabledStopOption|userHasGlobalStopOption|userGetGlobalStopKeys|userGetGlobalSwitchKeys|userCreateGuest|userCreateComputerPlayer|userCreateArchivGUrl|userCreateGUrl|userAllCreateArchivGUrl|userAllCreateGUrl|userSetVolumes)\\b"
+				},
+				{
+					"name": "support.function.ggl.webmodule",
+					"match": "\\b(makeWebView|webSetUrl)\\b"
+				},
+				{
+					"name": "support.function.ggl.playermodule",
+					"match": "\\b(simStartConfigurator)\\b"
+				}
+			]
+		},
+		"storage": {
+			"patterns": [
+				{
+					"name": "storage.type.variable",
+					"match": "\\s*var\\s+"
+				},
+				{
+					"name": "storage.type.function",
+					"match": "\\s*function\\s+"
+				}
+			]
+		}
+	},
+	"scopeName": "source.genesisGGL"
+}

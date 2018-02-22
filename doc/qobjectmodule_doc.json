@@ -1,0 +1,211 @@
+[
+	{
+		"name": "objSetProp",
+		"description": "Setzt eine Property eines QObjects.",
+		"usages": [
+			{
+				"functionName": "objSetProp",
+				"call": " GGLQObject obj, String property, GGLObject value"
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Property gesetzt werden soll."
+			},
+			{
+				"name": "property",
+				"description": "Name des Properties das geändert werden soll."
+			},
+			{
+				"name": "value",
+				"description": "Wert auf das das Property gesetzt werden soll."
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objGetProp",
+		"description": "Abfragen eines Properties von einem QObject.",
+		"usages": [
+			{
+				"functionName": "objGetProp",
+				"call": " GGLQObject obj, String property"
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Property erfragt werden soll."
+			},
+			{
+				"name": "property",
+				"description": "Name des Properties das erfragt werden soll."
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objSetProperties",
+		"description": "Setzen mehrerer Properties eines QObjects.",
+		"usages": [
+			{
+				"functionName": "objSetProperties",
+				"call": " GGLQObject obj, Dictionary dict"
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Property gesetzt werden soll."
+			},
+			{
+				"name": "dict",
+				"description": "Dictornary mit den Properties die geändert werden sollen"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objListProps",
+		"description": "Listet alle Properties eines Objectes auf",
+		"usages": [
+			{
+				"functionName": "objListProps",
+				"call": " GGLQObject obj"
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Properties angezeigt werden sollen."
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objInvokeMethod",
+		"description": "Ruft eine Methode auf ein QObject auf.",
+		"usages": [
+			{
+				"functionName": "objInvokeMethod",
+				"call": "  GGLQObject obj,  string method  "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt auf das die Methode aufgerufen werden soll"
+			},
+			{
+				"name": "method",
+				"description": "Name der Methode die aufgerufen werden soll"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objConnectSignal",
+		"description": "Erstellt eine Verbindung zu einem Signal",
+		"usages": [
+			{
+				"functionName": "objConnectSignal",
+				"call": "  GGLQObject obj,  string signal,  GGLObject callable  [,  list[GGLObject] args   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Signal entfernt werden soll."
+			},
+			{
+				"name": "signal",
+				"description": "Name des Signals"
+			},
+			{
+				"name": "callable",
+				"description": "Callback-Funktion"
+			},
+			{
+				"name": "args",
+				"description": "optionale Liste mit Argumenten, die der Callback-Funktion übergeben werden sollen."
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "objDisconnectSignal",
+		"description": "Entfernt eine mit Verbindung mit einem Signal.",
+		"usages": [
+			{
+				"functionName": "objDisconnectSignal",
+				"call": "  GGLQObject obj,  string signal,  GGLObject callable   "
+			}
+		],
+		"params": [
+			{
+				"name": "obj",
+				"description": "Objekt dessen Signal entfernt werden soll."
+			},
+			{
+				"name": "signal",
+				"description": "Name des Signals"
+			},
+			{
+				"name": "callable",
+				"description": "Callback-Funktion"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "makeEventLoop",
+		"description": "Erstellt einen EventLoop",
+		"usages": [
+			{
+				"functionName": "makeEventLoop",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::QObject"
+	},
+	{
+		"name": "objEventLoopExec",
+		"description": "Startet einen lokalen EventLoop.",
+		"usages": [
+			{
+				"functionName": "objEventLoopExec",
+				"call": "   EventLoop loop   "
+			}
+		],
+		"params": [
+			{
+				"name": "loop",
+				"description": "EventLoop der gestartet werden soll."
+			}
+		],
+		"returnValue": "GGLObject::Integer"
+	},
+	{
+		"name": "objEventLoopExit",
+		"description": "Beendet einen lokalen EventLoop.",
+		"usages": [
+			{
+				"functionName": "objEventLoopExit",
+				"call": "   EventLoop loop  [,  int exitCode = 0 ]  "
+			}
+		],
+		"params": [
+			{
+				"name": "loop",
+				"description": "EventLoop der beendet werden soll."
+			},
+			{
+				"name": "exitCode",
+				"description": "Rückgabewert von objEventLoopExec()"
+			}
+		],
+		"returnValue": "GGLObject::Integer"
+	}
+]

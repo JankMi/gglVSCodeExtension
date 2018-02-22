@@ -1,0 +1,95 @@
+[
+	{
+		"name": "ioReadFile",
+		"description": "Liest eine Datei ein und gibt diese als Liste oder Dictionary zurück",
+		"usages": [
+			{
+				"functionName": "ioReadFile",
+				"call": " string url "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "url"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "ioWriteFile",
+		"description": "Speichert eine GGL-Variable in einer Datei",
+		"usages": [
+			{
+				"functionName": "ioWriteFile",
+				"call": " string url, GGLObject data"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "url"
+			},
+			{
+				"name": "string",
+				"description": "url"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "ioFileExists",
+		"description": "Prüft ob die angegebene Datei vorhanden ist.",
+		"usages": [
+			{
+				"functionName": "ioFileExists",
+				"call": " string url "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "url"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "ioGetPictureInfo",
+		"description": "Liest Informationen zu einem Bild aus, ohne es zu laden.",
+		"usages": [
+			{
+				"functionName": "ioGetPictureInfo",
+				"call": " string url"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "url"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "ioLoadPluginModule",
+		"description": "Läde ein Plugin Modul zu den GGL-Builtin-Funktionen hinzu.",
+		"usages": [
+			{
+				"functionName": "ioLoadPluginModule",
+				"call": " string pluginPath, string name "
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "pluginPath"
+			},
+			{
+				"name": "string",
+				"description": "pluginPath"
+			}
+		],
+		"returnValue": "returnValue"
+	}
+]

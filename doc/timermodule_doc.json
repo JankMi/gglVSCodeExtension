@@ -1,0 +1,137 @@
+[
+	{
+		"name": "makeTimer",
+		"description": "erstellt einen Timer",
+		"usages": [
+			{
+				"functionName": "makeTimer",
+				"call": " int intervall ,  Function callable  "
+			}
+		],
+		"params": [
+			{
+				"name": "intervall",
+				"description": "stellt die Zeit ein (in Millisekunden) die der Timer ablaufen muss."
+			},
+			{
+				"name": "callable",
+				"description": "gibt die GGL-Callback-Funktion an, die aufgerufen wird sobald der Timer abgelaufen ist."
+			},
+			{
+				"name": "args",
+				"description": "hier werden die Argumente für die Callback-Funktion angegeben."
+			},
+			{
+				"name": "singleShot",
+				"description": "Dieser Parameter beschreibt ob dies ein SingleShot-Timer ist. Default = false."
+			}
+		],
+		"returnValue": "GGLObject<Timer>"
+	},
+	{
+		"name": "makeSingleShot",
+		"description": "erstellt einen Timer der nur einmal aufgerufen wird.",
+		"usages": [
+			{
+				"functionName": "makeSingleShot",
+				"call": " int intervall ,  Function callable  "
+			}
+		],
+		"params": [
+			{
+				"name": "intervall",
+				"description": "stellt die Zeit ein (in Millisekunden) die der Timer ablaufen muss."
+			},
+			{
+				"name": "callable",
+				"description": "gibt die GGL-Callback-Funktion an, die aufgerufen wird sobald der Timer abgelaufen ist."
+			}
+		],
+		"returnValue": "GGLObject<Timer>"
+	},
+	{
+		"name": "timerStart",
+		"description": "startet einen Timer.",
+		"usages": [
+			{
+				"functionName": "timerStart",
+				"call": "  GGLObject<Timer> timer "
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": ""
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "timerPause",
+		"description": "pausiert einen Timer.",
+		"usages": [
+			{
+				"functionName": "timerPause",
+				"call": "  GGLObject<Timer> timer "
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": ""
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "timerResume",
+		"description": "setzt einen pausierten Timer fort.",
+		"usages": [
+			{
+				"functionName": "timerResume",
+				"call": "  GGLObject<Timer> timer "
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": ""
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "timerStop",
+		"description": "stoppt einen Timer.",
+		"usages": [
+			{
+				"functionName": "timerStop",
+				"call": "  GGLObject<Timer> timer "
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": ""
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "timerIsActive",
+		"description": "prüft ob ein Timer gerade läuft.",
+		"usages": [
+			{
+				"functionName": "timerIsActive",
+				"call": "  GGLObject<Timer> timer "
+			}
+		],
+		"params": [
+			{
+				"name": "GGLObject",
+				"description": ""
+			}
+		],
+		"returnValue": "bool"
+	}
+]

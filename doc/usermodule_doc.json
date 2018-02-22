@@ -1,0 +1,828 @@
+[
+	{
+		"name": "userNext",
+		"description": "Wechselt auf den nächsten User.",
+		"usages": [
+			{
+				"functionName": "userNext",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "userCurrent",
+		"description": "gibt die aktuelle Usernummer zurück.",
+		"usages": [
+			{
+				"functionName": "userCurrent",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "userCount",
+		"description": "gibt an, wie viele User in diesem Spiel mitspielen.",
+		"usages": [
+			{
+				"functionName": "userCount",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "userGet",
+		"description": "gibt ein user object zurück. Als Eingabe-Parameter dient entweder der Index",
+		"usages": [
+			{
+				"functionName": "userGet",
+				"call": " ind idx | string name"
+			}
+		],
+		"params": [
+			{
+				"name": "ind",
+				"description": "idx"
+			}
+		],
+		"returnValue": "qobject<user>"
+	},
+	{
+		"name": "userGetName",
+		"description": "gibt den Namen zu einer Spielernummer an.",
+		"usages": [
+			{
+				"functionName": "userGetName",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userIsGuest",
+		"description": "liefert zurück, ob user der Gast-User ist",
+		"usages": [
+			{
+				"functionName": "userIsGuest",
+				"call": " int index | qobject<user> "
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userGetPlayableGames",
+		"description": "liefert die für einen Spieler spielbaren Spiele",
+		"usages": [
+			{
+				"functionName": "userGetPlayableGames",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "list"
+	},
+	{
+		"name": "userGetGameDialog",
+		"description": "liefert für einen Spieler den Dialog zur angegebenen Id des Spiels gameName einschließlich der aktuellen Einstellung",
+		"usages": [
+			{
+				"functionName": "userGetGameDialog",
+				"call": " int index | qobject<user>, string gameId, string dialogType"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userCurrent() geholt werden kann"
+			},
+			{
+				"name": "gameId",
+				"description": "Id des Spiels"
+			},
+			{
+				"name": "dialogType",
+				"description": "Id des jeweiligen Dialogs (in info.json)"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "userGetActivatedMediasets",
+		"description": "Gibt zu einem Mediensatz in einem Spiel zurück, ob dieser für einen Benutzer aktiviert ist.",
+		"usages": [
+			{
+				"functionName": "userGetActivatedMediasets",
+				"call": " int index | qobject<user>, string gameId"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			},
+			{
+				"name": "gameId",
+				"description": "Id des Spiels"
+			}
+		],
+		"returnValue": "list"
+	},
+	{
+		"name": "userSetGameDialog",
+		"description": "setzt für einen Spieler die aktuellen Einstellungen für das Spiel gameName",
+		"usages": [
+			{
+				"functionName": "userSetGameDialog",
+				"call": " int index | qobject<user>, string gameName, dict defaultValue"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			},
+			{
+				"name": "gameName",
+				"description": "Name des Spiels"
+			},
+			{
+				"name": "dict",
+				"description": "enthält Paare mit (dialogType, defaultValue)"
+			}
+		],
+		"returnValue": "None"
+	},
+	{
+		"name": "userGetAll",
+		"description": "liefert eine Liste zurück mit allen verfügbaren Usern.",
+		"usages": [
+			{
+				"functionName": "userGetAll",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "list"
+	},
+	{
+		"name": "userGetAvatarPath",
+		"description": "liefert einen Pfad zum Avatar eines Spielers.",
+		"usages": [
+			{
+				"functionName": "userGetAvatarPath",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userGetSmallAvatarPath",
+		"description": "liefert einen Pfad zum kleinen Avatar eines Spielers.",
+		"usages": [
+			{
+				"functionName": "userGetSmallAvatarPath",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userGetInputDeviceList",
+		"description": "gibt eine Liste zurück die beschreibt, welche Eingabegeräte ein Spieler verwenden kann.",
+		"usages": [
+			{
+				"functionName": "userGetInputDeviceList",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "list[string]"
+	},
+	{
+		"name": "userGetKeysOfNr",
+		"description": "gibt die zu einer Nummer eingestellten Keys eines Spielers zurück.",
+		"usages": [
+			{
+				"functionName": "userGetKeysOfNr",
+				"call": " int index | qobject<user>, int buttonNr"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			},
+			{
+				"name": "buttonNr",
+				"description": "Nummer des Buttons, zu dem die Keys zu ermittteln"
+			}
+		],
+		"returnValue": "dict[\"Keyboard\","
+	},
+	{
+		"name": "userGetKeys",
+		"description": "gibt die zu einer Nummer eingestellten Keys eines Spielers zurück.",
+		"usages": [
+			{
+				"functionName": "userGetKeysOfNr",
+				"call": " int index | qobject<user>, int buttonNr"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			},
+			{
+				"name": "buttonNr",
+				"description": "Nummer des Buttons, zu dem die Keys zu ermittteln"
+			}
+		],
+		"returnValue": "dict[\"Keyboard\","
+	},
+	{
+		"name": "userHasMouse",
+		"description": "prüft, ob ein User die Maus verwenden kann.",
+		"usages": [
+			{
+				"functionName": "userHasMouse",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userGetCursorSize",
+		"description": "gibt die eingestellte Mausgröße für einen Spieler zurück.",
+		"usages": [
+			{
+				"functionName": "userGetCursorSize",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "userGetCursor",
+		"description": "gibt die eingestellte Mausgröße für einen Spieler zurück.",
+		"usages": [
+			{
+				"functionName": "userGetCursorSize",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "userHasGamePad",
+		"description": "prüft, ob ein User mit Gamepad spielen kann.",
+		"usages": [
+			{
+				"functionName": "userHasGamePad",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasKeyboard",
+		"description": "prüft, ob ein User mit Tasten spielen kann.",
+		"usages": [
+			{
+				"functionName": "userHasKeyboard",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userKeyboardKeyCount",
+		"description": "gibt die Maximalzahl an Tasten für einen User an.",
+		"usages": [
+			{
+				"functionName": "userKeyboardKeyCount",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "int"
+	},
+	{
+		"name": "userHasScantime",
+		"description": "gibt zurück, ob die Scan-Zeit eingeschaltet ist oder nicht",
+		"usages": [
+			{
+				"functionName": "userHasScantime",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userKeyboardScanInfo",
+		"description": "gibt die Scan-Zeit und den Scan-Modi eines Spielers zurück.",
+		"usages": [
+			{
+				"functionName": "userKeyboardScanInfo",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "dict"
+	},
+	{
+		"name": "userGetSecondaryRunnable",
+		"description": "gibt das Appmenü eines Spielers an.",
+		"usages": [
+			{
+				"functionName": "userGetSecondaryRunnable",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userHasBackToGameSelection",
+		"description": "prüft, ob ein User bei Spielende automatisch zur Spieleauswahl kommt.",
+		"usages": [
+			{
+				"functionName": "userHasBackToGameSelection",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasStartGameAgain",
+		"description": "prüft, ob für einen User bei Spielende automatisch das SPiel neu gestartet wird.",
+		"usages": [
+			{
+				"functionName": "userHasStartGameAgain",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasGroupOptimizationOption",
+		"description": "prüft, ob ein User das Group-Optimization Flag besitzt",
+		"usages": [
+			{
+				"functionName": "userHasGroupOptimizationOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasAlwaysGameSettingsOption",
+		"description": "prüft, ob ein User das AlwaysGameSettings Flag gesetzt hat",
+		"usages": [
+			{
+				"functionName": "userHasAlwaysGameSettingsOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasPermanentGameSettingsOption",
+		"description": "prüft, ob ein User bei Änderungen der Spieleinstellungen über den Stop-Button diese neuen Einstellungen gespeichert haben möchte",
+		"usages": [
+			{
+				"functionName": "userHasPermanentGameSettingsOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasPrinterOption",
+		"description": "prüft, ob ein User das Printer Flag gesetzt hat",
+		"usages": [
+			{
+				"functionName": "userHasPrinterOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasDemoOption",
+		"description": "prüft, ob ein User das Demonstrations Flag gesetzt hat",
+		"usages": [
+			{
+				"functionName": "userHasDemoOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasEnabledStopOption",
+		"description": "prüft, ob ein User über den Stopbutton navigieren möchte",
+		"usages": [
+			{
+				"functionName": "userHasEnabledStopOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userHasGlobalStopOption",
+		"description": "prüft, ob ein User eine globale Stopoption besitzt",
+		"usages": [
+			{
+				"functionName": "userHasGlobalStopOption",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "bool"
+	},
+	{
+		"name": "userGetGlobalStopKeys",
+		"description": "Gibt eine Liste der globalen Stop-Tasten zurück",
+		"usages": [
+			{
+				"functionName": "userGetGlobalStopKeys",
+				"call": " int index | qobject<user>"
+			}
+		],
+		"params": [
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			}
+		],
+		"returnValue": "GGLList"
+	},
+	{
+		"name": "userCreateGuest",
+		"description": "erzeugt einen Gast-User.",
+		"usages": [
+			{
+				"functionName": "userCreateGuest",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "qobject<user>"
+	},
+	{
+		"name": "userCreateComputerPlayer",
+		"description": "erzeugt einen Computerplayer",
+		"usages": [
+			{
+				"functionName": "userCreateComputerPlayer",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "qobject<user>"
+	},
+	{
+		"name": "userCreateArchivGUrl",
+		"description": "erzeugt einen GUrl um auf User und Archiv spezifische Daten zuzugreifen.",
+		"usages": [
+			{
+				"functionName": "userCreateArchivGUrl",
+				"call": " string filename, int index | qobject<user> , string archiveId"
+			}
+		],
+		"params": [
+			{
+				"name": "filename",
+				"description": "der Name des Files"
+			},
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
+			},
+			{
+				"name": "archiveId",
+				"description": "ArchiveId eines Spieles, aktuelle Id kann mit gameGetId() abgefragt werden"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userAllCreateArchivGUrl",
+		"description": "erzeugt einen GUrl um auf Daten zuzugreifen, die für alle User zugänglich sind jedoch Archiv spezifisch sein sollen.",
+		"usages": [
+			{
+				"functionName": "userAllCreateArchivGUrl",
+				"call": " string filename, string archiveId"
+			}
+		],
+		"params": [
+			{
+				"name": "filename",
+				"description": "der Name des Files"
+			},
+			{
+				"name": "archiveId",
+				"description": "ArchiveId eines Spieles, aktuelle Id kann mit gameGetId() abgefragt werden"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userAllCreateGUrl",
+		"description": "erzeugt einen GUrl um auf sehr allgemeine Daten zuzugreifen.",
+		"usages": [
+			{
+				"functionName": "userAllCreateGUrl",
+				"call": " string filename"
+			}
+		],
+		"params": [
+			{
+				"name": "filename",
+				"description": "der Name des Files"
+			}
+		],
+		"returnValue": "string"
+	},
+	{
+		"name": "userSetVolumes",
+		"description": "Setzt die eingestellten Lautstärken für den ersten User.",
+		"usages": [
+			{
+				"functionName": "userSetVolumes",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "None"
+	}
+]

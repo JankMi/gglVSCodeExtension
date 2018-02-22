@@ -1,0 +1,220 @@
+[
+	{
+		"name": "simExit",
+		"description": "Beendet den akutellen Simulator.",
+		"usages": [
+			{
+				"functionName": "simExit",
+				"call": " [int returncode]"
+			}
+		],
+		"params": [
+			{
+				"name": "returncode",
+				"description": "Rückgabewert des Simulators (default=0)"
+			}
+		],
+		"returnValue": "returnValue"
+	},
+	{
+		"name": "simStop",
+		"description": "Startet einen Simulator in dem das Stop-Spiel gestartet wird. Dieses wird",
+		"usages": [
+			{
+				"functionName": "simStop",
+				"call": " [list userList | id userIdx | qobject user, var argument]"
+			}
+		],
+		"params": [
+			{
+				"name": "argument",
+				"description": "Argument des Simulators (default=none)"
+			},
+			{
+				"name": "userList",
+				"description": "Spielerliste des Simulators (default=leer)"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "simStopExitCode",
+		"description": "Startet einen Simulator in dem das Stop-Spiel gestartet wird. Dieses wird",
+		"usages": [
+			{
+				"functionName": "simStop",
+				"call": " [list userList | id userIdx | qobject user, var argument]"
+			},
+			{
+				"functionName": "simStopExitCode",
+				"call": " string str"
+			}
+		],
+		"params": [
+			{
+				"name": "argument",
+				"description": "Argument des Simulators (default=none)"
+			},
+			{
+				"name": "userList",
+				"description": "Spielerliste des Simulators (default=leer)"
+			},
+			{
+				"name": "str",
+				"description": "ExitCode als String"
+			}
+		]
+	},
+	{
+		"name": "simStartGGL",
+		"description": "Startet einen Simulator in dem das Stop-Spiel gestartet wird. Dieses wird",
+		"usages": [
+			{
+				"functionName": "simStop",
+				"call": " [list userList | id userIdx | qobject user, var argument]"
+			},
+			{
+				"functionName": "simStopExitCode",
+				"call": " string str"
+			},
+			{
+				"functionName": "simStartGGL",
+				"call": " gurl ggl, [list userList | id userIdx | qobject user, var arg ]"
+			}
+		],
+		"params": [
+			{
+				"name": "argument",
+				"description": "Argument des Simulators (default=none)"
+			},
+			{
+				"name": "userList",
+				"description": "Spielerliste des Simulators (default=leer)"
+			},
+			{
+				"name": "str",
+				"description": "ExitCode als String"
+			},
+			{},
+			{},
+			{
+				"name": "argument",
+				"description": "beliebige ggl-Variable als Argument für neuen Simulator (default=none)"
+			}
+		]
+	},
+	{
+		"name": "simGetArgument",
+		"description": "Fragt die übergebenen Argumente ab.",
+		"usages": [
+			{
+				"functionName": "simGetArgument",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject"
+	},
+	{
+		"name": "simSetArgument",
+		"description": "Setzt Argumente für den aktuellen Simulator.",
+		"usages": [
+			{
+				"functionName": "simSetArgument",
+				"call": " GGLObject arg"
+			}
+		],
+		"params": [
+			{
+				"name": "arg",
+				"description": "GGLObject das als neues Argument verwendet wird"
+			}
+		],
+		"returnValue": "GGLObject"
+	},
+	{
+		"name": "simSetMouseCursor",
+		"description": "Setzt einen Mauscursor.",
+		"usages": [
+			{
+				"functionName": "simSetMouseCursor",
+				"call": " string fileName [, int hotX, int hotY]"
+			}
+		],
+		"params": [
+			{
+				"name": "fileName",
+				"description": "Url zum Mauszeiger"
+			},
+			{
+				"name": "hotX",
+				"description": "X-Koordinate des Interaktionspunkts des Mauszeigers."
+			},
+			{
+				"name": "hotY",
+				"description": "Y-Koordinate des Interaktionspunkts des Mauszeigers."
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "simResetMouseCursor",
+		"description": "Setzt den Standard-Mauscursor",
+		"usages": [
+			{
+				"functionName": "simResetMouseCursor",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "simGetMousePos",
+		"description": "Gibt die aktuelle Maus-Position in Scenenkoordinaten zurück.",
+		"usages": [
+			{
+				"functionName": "simGetMousePos",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "point"
+	},
+	{
+		"name": "simGetWidthResolution",
+		"description": "Gibt die aktuelle Player Auflösung (Breite) zurück.",
+		"usages": [
+			{
+				"functionName": "simGetWidthResolution",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "simGetHeightResolution",
+		"description": "Gibt die aktuelle Player Auflösung (Höhe) zurück.",
+		"usages": [
+			{
+				"functionName": "simGetHeightResolution",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "int"
+	},
+	{
+		"name": "simGetMonitorData",
+		"description": "Gibt die Daten des Monitors zurück.",
+		"usages": [
+			{
+				"functionName": "simGetMonitorData",
+				"call": " "
+			}
+		],
+		"params": [],
+		"returnValue": "dict"
+	}
+]

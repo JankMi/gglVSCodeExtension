@@ -1,0 +1,64 @@
+{
+  "name": "genesisvscode",
+  "displayName": "genesisVSCode",
+  "description": "language services for the genesis ggl",
+  "version": "0.1.0",
+  "publisher": "Michael Jank",
+  "engines": {
+    "vscode": "^1.20.0"
+  },
+  "categories": [
+    "Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "ggl",
+        "aliases": [
+          "GameGenerationLanguge",
+          "ggl"
+        ],
+        "extensions": [
+          ".ggl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ggl",
+        "scopeName": "source.genesisGGL",
+        "path": "./syntaxes/ggl.tmLanguage.json"
+      }
+    ]
+  },
+  "main": "out/extension",
+  "dependencies": {
+    "child-process": "^1.0.2",
+    "child_process": "^1.0.2",
+    "fast-plist": "^0.1.2",
+    "gulp": "^3.9.1",
+    "gyp": "^0.5.0",
+    "node-gyp": "^3.6.2",
+    "oniguruma": "^7.0.0",
+    "orchestrator": "^0.3.8",
+    "path": "^0.12.7",
+    "vscode": "^1.1.10",
+    "vscode-textmate": "^3.2.0",
+    "windows-build-tools": "^2.2.1"
+  },
+  "activationEvents": [
+    "onLanguage:ggl"
+  ],
+  "devDependencies": {
+    "@types/node": "^9.4.6"
+  },
+  "scripts": {
+    "vscode:prepublish": "gulp --gulpfile \".\\createSyntax\\gulpfile.js\" createSyntax | tsc -p ./",
+    "compile": "tsc -watch -p ./ | gulp --gulpfile createSynax/gulpfile.js fixRequire",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "author": "mj",
+  "license": "ISC"
+}

@@ -1,0 +1,56 @@
+[
+	{
+		"name": "gameGetAll",
+		"description": "Gibt eine Liste mit allen installierten genesis-Spielen zurück.",
+		"usages": [
+			{
+				"functionName": "gameGetAll",
+				"call": ""
+			}
+		],
+		"params": [],
+		"returnValue": "list[string]"
+	},
+	{
+		"name": "gameGetAllMediasets",
+		"description": "Gibt eine Liste mit allen installierten genesis-Medienssätzen zurück,",
+		"usages": [
+			{
+				"functionName": "gameGetAllMediasets",
+				"call": "string gameId"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "gameId"
+			}
+		],
+		"returnValue": "list[string]"
+	},
+	{
+		"name": "gameStart",
+		"description": "Diese Function ist sehr ähnlich zu simStartGGL, nur dass sie eine spiele-id",
+		"usages": [
+			{
+				"functionName": "gameStart",
+				"call": "string gameId, [string mediasetId, list userList | id userIdx | qobject user]"
+			}
+		],
+		"params": [
+			{
+				"name": "string",
+				"description": "gameId"
+			},
+			{
+				"name": "string",
+				"description": "gameId"
+			},
+			{
+				"name": "string",
+				"description": "gameId"
+			}
+		],
+		"returnValue": "int"
+	}
+]
