@@ -12,7 +12,7 @@ export class GGLParser {
 
     public static init() {
         if (GGLParser.tmRegistry === undefined) { GGLParser.tmRegistry = new vsTM.Registry(); }
-        const pathToGrammar = path.join(vscode.extensions.getExtension("mj.genesisvscode").extensionPath, "syntaxes/ggl.tmLanguage.json");
+        const pathToGrammar = path.join(vscode.extensions.getExtension("JankMi.genesisvscode").extensionPath, "syntaxes/ggl.tmLanguage.json");
         GGLParser.tmGrammar = GGLParser.tmRegistry.loadGrammarFromPathSync(pathToGrammar);
     }
 

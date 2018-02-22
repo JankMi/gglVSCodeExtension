@@ -3,7 +3,7 @@
   "displayName": "genesisVSCode",
   "description": "language services for the genesis ggl",
   "version": "0.1.0",
-  "publisher": "Michael Jank",
+  "publisher": "JankMi",
   "engines": {
     "vscode": "^1.20.0"
   },
@@ -54,11 +54,15 @@
     "@types/node": "^9.4.6"
   },
   "scripts": {
-    "vscode:prepublish": "gulp --gulpfile \".\\createSyntax\\gulpfile.js\" createSyntax | tsc -p ./",
-    "compile": "tsc -watch -p ./ | gulp --gulpfile createSynax/gulpfile.js fixRequire",
+    "vscode:prepublish": "sh prepublish.sh",
+    "compile": "tsc -p ./ ; gulp --gulpfile ./createSyntax/gulpfile.js fixRequire",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "node ./node_modules/vscode/bin/test"
   },
-  "author": "mj",
-  "license": "ISC"
+  "author": "JankMi",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JankMi/gglVSCodeExtension"
+  }
 }

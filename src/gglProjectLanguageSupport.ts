@@ -45,7 +45,7 @@ export class GGLProjectLanguageSupport {
         // read builtin doce
         const extensions = vscode.extensions;
         const extInfo = this.provideBuiltinSignatureInformations;
-        fs.readFile(path.join(vscode.extensions.getExtension("mj.genesisvscode").extensionPath, "doc/allDocs_doc.json"), "utf-8", (errno, fileContent) => {
+        fs.readFile(path.join(vscode.extensions.getExtension("JankMi.genesisvscode").extensionPath, "doc/allDocs_doc.json"), "utf-8", (errno, fileContent) => {
             if (errno !== null) {
                 console.debug("error on file read: " + errno.message);
                 return;
