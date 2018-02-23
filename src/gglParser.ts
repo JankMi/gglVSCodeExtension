@@ -23,7 +23,7 @@ export class GGLParser {
     public static get TM_Grammar() { return GGLParser.tmGrammar; }
     private tokens: GGLToken[] = [];
     public get Definitions() { return this.tokens; }
-    private sections: object[] = []; // level, beginLine, endLine
+    private sections: ISection[] = []; // level, beginLine, endLine
     private imports: IRelativeFile[] = [];
     public get Sections() { return this.sections; }
     private sectionID: number = 0;

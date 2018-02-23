@@ -10,10 +10,16 @@ export class GGLDocument {
 
     public static createFromTextDoc(document: vscode.TextDocument) {
         const matches = /([0-9]\.[0-9][\w]*)[\\\/](((\w+)[\\\/])+)(\w+)\.ggl/.exec(document.fileName);
+        let fileRootName: string;
+        if (matches[5] === "main") {
+            fileRootName = "~";
+        } else {
+            fileRootName = matches[2].slice(0, matches[2].length - 1);
+        }
         // tslint:disable-next-line:prefer-const
         const fileLocation: IRelativeFile = {
             fileName: matches[5],
-            rootName: matches[2].slice(0, matches[2].length - 1),
+            rootName: fileRootName,
         };
         return new GGLDocument(fileLocation, document);
     }

@@ -25,6 +25,11 @@ load time, the builtin docs, no doc for ggl functions, ...
 
 still beta
 
+
+### 0.1.2
+
+fixed sections problem, talks a lot -> debuging for marius
+
 ### 0.1.1
 
 fixed relative path to 'default' ggl`s

@@ -57,7 +57,7 @@ export class GGLProjectLanguageSupport {
         });
 
         // if not main project file, import main.ggl too
-        if (file !== "main" || fs.existsSync(gameRootPath + "/" + root + "/" + "main.ggl")) {
+        if (file !== "main" && fs.existsSync(gameRootPath + "/" + root + "/" + "main.ggl")) {
             GGLDocument.createFromPair({ rootName: "~", fileName: "main" }, gameRootPath, root).then((doc) => {
                 GGLProjectLanguageSupport.documents.push(doc.document);
                 const importFilesI = doc.document.updateFile();
@@ -324,11 +324,12 @@ export class GGLProjectLanguageSupport {
     }
 
     private addDocument(importFileLocation: IRelativeFile, rootPath: string, subRoot: string): void {
-        if (GGLProjectLanguageSupport.documents.find((document: GGLDocument) => document.Root === importFileLocation["0"] && document.File === importFileLocation["1"]) !== undefined) {
+        const doc = GGLProjectLanguageSupport.documents.find((document: GGLDocument) => document.Root === importFileLocation.rootName && document.File === importFileLocation.fileName);
+        if (doc !== undefined) {
             return;
         }
-        GGLDocument.createFromPair(importFileLocation, rootPath, subRoot).then((doc) => {
-            GGLProjectLanguageSupport.documents.push(doc.document);
+        GGLDocument.createFromPair(importFileLocation, rootPath, subRoot).then((newDoc) => {
+            GGLProjectLanguageSupport.documents.push(newDoc.document);
         });
     }
 
@@ -344,7 +345,7 @@ export class GGLProjectLanguageSupport {
         const groups: number[] = [];
         groups.push(0);
         searchDocument.Parser.Sections.forEach((section) => {
-            if (sourcePosition.line >= section["1"] && sourcePosition.line <= section["2"]) { groups.push(section["0"]); }
+            if (sourcePosition.line >= section.beginAtLine && sourcePosition.line <= section.endAtLine) { groups.push(section.groupID); }
         });
         // in scope, if 0->global or in same file
         if (element.NestedGroups[0] !== 0 && element.FileName !== searchDocument.Document.fileName) { return false; }

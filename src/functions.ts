@@ -18,7 +18,7 @@ export function logInfo(message: string) {
 
 export function logDebug(message: string) {
     console.log(message);
-    // vscode.window.showInformationMessage(message);
+    vscode.window.showInformationMessage(message);
 }
 
 export function logError(message: string) {
