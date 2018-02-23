@@ -1,4 +1,8 @@
+import * as filesystem from "file-system";
+import * as fs from "fs";
+import * as path from "path";
 import * as vscode from "vscode";
+import { logDebug, logError, logInfo } from "./functions";
 import { IRelativeFile } from "./gglInterfaces";
 import { GGLParser } from "./gglParser";
 
@@ -13,31 +17,68 @@ export class GGLDocument {
         };
         return new GGLDocument(fileLocation, document);
     }
-    public static createFromPair(fileLocation: IRelativeFile, rootDir: string): Promise<{ document: GGLDocument }> {
+    public static createFromPair(fileLocation: IRelativeFile, rootDir: string, projectDir: string = ""): Promise<{ document: GGLDocument }> {
         return new Promise((resolve, reject) => {
             try {
-
-                let doc: vscode.TextDocument;
                 if (fileLocation.rootName === "~") {
-                    vscode.workspace.openTextDocument(vscode.Uri.file(rootDir + "\\" + fileLocation.rootName + "\\" + fileLocation.fileName + ".ggl")).then((element) => { doc = element; });
-                    const retValue = new GGLDocument(fileLocation, doc);
-                    if (retValue !== undefined) {
-                        console.debug(`opended file: ${retValue.document.fileName}`);
-                        resolve({ document: retValue });
-                    } else { console.debug("file coud not be created"); }
+                    if (projectDir === "") {
+                        logError("no project dir given");
+                        return reject("no project dir given");
+                    }
+                    vscode.workspace.openTextDocument(vscode.Uri.file(rootDir + "\\" + projectDir + "\\" + fileLocation.fileName + ".ggl")).then((element) => {
+                        const retValue = new GGLDocument(fileLocation, element);
+                        if (retValue !== undefined) {
+                            logDebug(`opended file: ${retValue.document.fileName}`);
+                            return resolve({ document: retValue });
+                        } else {
+                            logDebug(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened -> ${element.fileName}`);
+                            return reject(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
+                        }
+                    });
                 } else {
-                    const uri = vscode.Uri.file(rootDir + "/" + fileLocation.rootName + "/" + fileLocation.fileName + ".ggl");
+                    const splitedPath = /([\S]+)genesis-([\w]+)[\\\/]([\w\.]+)/.exec(rootDir);
+                    let absoluteFilePath: string;
+                    if (splitedPath != null) {
+                        const reposBasePath: string = splitedPath[1];
+                        const gameType = splitedPath[2]; // playground or games
+                        const gamePackage = splitedPath[3]; // like 4.1_maks ...
+                        const basePackage = /([0-9\.]+)/.exec(gamePackage)[1]; // for stdggl and commons
+
+                        // create import base pathes
+                        const importPathes: string[] = [];
+                        if (gamePackage !== basePackage) { importPathes.push(reposBasePath + "genesis-games/" + gamePackage); }
+                        importPathes.push(reposBasePath + "genesis-games/" + basePackage);
+                        // todo: add configuration path
+                        const configuration: string = vscode.workspace.getConfiguration("JankMi.genesisvscode").get("gglConfiguration.gglVersion");
+                        importPathes.forEach((importPath) => {
+                            filesystem.recurseSync(`${importPath}/${fileLocation.rootName}`, `**/${fileLocation.fileName}.ggl`, (filepath, relative, filename) => {
+                                if (!filename) { return; }
+                                absoluteFilePath = filepath;
+                                return;
+                            });
+                        });
+                        if (absoluteFilePath === undefined) {
+                            logDebug(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
+                            return reject(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
+                        }
+                    } else {
+                        logDebug(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
+                        return reject(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
+                    }
                     let retValue: GGLDocument;
-                    vscode.workspace.openTextDocument(uri).then((element) => {
+                    vscode.workspace.openTextDocument(absoluteFilePath).then((element) => {
                         retValue = new GGLDocument(fileLocation, element);
                         if (retValue !== undefined) {
-                            console.debug(`opended file: ${retValue.document.fileName}`);
+                            logDebug(`opended file: ${retValue.document.fileName}`);
                             resolve({ document: retValue });
-                        } else { console.debug(`could not open file: ${retValue.document.fileName}`); }
+                        } else {
+                            logDebug(`could not open file: ${retValue.document.fileName}`);
+                            reject(`could not open file: ${retValue.document.fileName}`);
+                        }
                     });
                 }
             } catch (error) {
-                console.debug(`file coud not be created ${error.toString}`);
+                logError(`file coud not be created ${error.toString}`);
             }
         });
     }

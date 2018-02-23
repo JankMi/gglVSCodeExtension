@@ -8,7 +8,7 @@ import * as path from "path";
 import * as vscode from "vscode";
 
 import { CompletionItem } from "vscode";
-import { getTokenContent } from "./functions";
+import { getTokenContent, logDebug, logError, logInfo } from "./functions";
 import { GGLDocument } from "./gglDocument";
 import { IGGLBuiltinCompletionInformation, IGGLCompletionInformation, IGGLDefinitionInformation, IGGLSignatureInformation, IRelativeFile } from "./gglInterfaces";
 import { GGLParser } from "./gglParser";
@@ -40,14 +40,14 @@ export class GGLProjectLanguageSupport {
         const pathArray = filePath.split("\\");
         const file = pathArray[pathArray.length - 1].split(".")[0];
         const root = pathArray[pathArray.length - 3] + "\\" + pathArray[pathArray.length - 2];
-        const rootPath = pathArray.slice(0, pathArray.length - 3).join("/");
+        const gameRootPath = pathArray.slice(0, pathArray.length - 3).join("/");
 
         // read builtin doce
         const extensions = vscode.extensions;
         const extInfo = this.provideBuiltinSignatureInformations;
         fs.readFile(path.join(vscode.extensions.getExtension("JankMi.genesisvscode").extensionPath, "doc/allDocs_doc.json"), "utf-8", (errno, fileContent) => {
             if (errno !== null) {
-                console.debug("error on file read: " + errno.message);
+                logError("error on file read: " + errno.message);
                 return;
             }
             const docs = JSON.parse(fileContent);
@@ -57,8 +57,8 @@ export class GGLProjectLanguageSupport {
         });
 
         // if not main project file, import main.ggl too
-        if (fs.existsSync(rootPath + "/" + root + "/" + "main.ggl")) {
-            GGLDocument.createFromPair({ rootName: root, fileName: "main" }, rootPath).then((doc) => {
+        if (file !== "main" || fs.existsSync(gameRootPath + "/" + root + "/" + "main.ggl")) {
+            GGLDocument.createFromPair({ rootName: "~", fileName: "main" }, gameRootPath, root).then((doc) => {
                 GGLProjectLanguageSupport.documents.push(doc.document);
                 const importFilesI = doc.document.updateFile();
                 const mainImportFiles: IRelativeFile[] = [];
@@ -66,33 +66,29 @@ export class GGLProjectLanguageSupport {
                     if (importFile.rootName !== "~") {
                         mainImportFiles.push(importFile);
                     } else if (importFile.fileName === file) {
-                        console.debug(`file is direct include`);
+                        logDebug(`file is direct include`);
                     } else {
-                        console.debug(`include file: ${root}@${importFile.fileName}`);
-                        mainImportFiles.push({ rootName: root, fileName: importFile.fileName });
+                        logDebug(`include file: ${root}@${importFile.fileName}`);
+                        mainImportFiles.push(importFile);
                     }
                 });
-                mainImportFiles.forEach((pair) => this.addDocument(pair, rootPath));
+                mainImportFiles.forEach((pair) => this.addDocument(pair, gameRootPath, root));
             });
         } else {
-            console.debug(`no main.ggl in ${root} -> no Project?`);
+            logDebug(`no main.ggl in ${root} -> no Project?`);
         }
 
-        importFiles.forEach((importPair) => this.addDocument(importPair, rootPath));
+        importFiles.forEach((importPair) => this.addDocument(importPair, gameRootPath, root));
     }
 
     public provideCompletions(sourceDocument: vscode.TextDocument, sourcePosition: vscode.Position, token: vscode.CancellationToken): Promise<IGGLCompletionInformation[]> {
 
         return new Promise<IGGLCompletionInformation[]>((resolve, reject) => {
             const lineContent = sourceDocument.lineAt(sourcePosition.line).text;
-            // if (lineContent[position.character - 1] === ".") {
-            //     console.debug("last is .");
-            //     return reject("nomemberfuncionts in ggl files");
-            // }
 
             let matchingDef: GGLToken[] = [];
             GGLProjectLanguageSupport.documents.forEach((searchDocument) => {
-                console.debug(`search completions in ${searchDocument.Root}@${searchDocument.File}`);
+                logInfo(`search completions in ${searchDocument.Root}@${searchDocument.File}`);
 
                 matchingDef = matchingDef.concat(searchDocument.Parser.Definitions.filter((element) => this.findMatichingElement(element, searchDocument, sourceDocument, sourcePosition)));
             });
@@ -204,7 +200,7 @@ export class GGLProjectLanguageSupport {
             try {
                 return resolve(this.provideGGLSignatures(document, position).concat(this.provideBuiltinSignatureInformations(document, position)));
             } catch (error) {
-                console.debug(`error on creating SignatureInformation[]: ${error.message}`);
+                logError(`error on creating SignatureInformation[]: ${error.message}`);
             }
         });
     }
@@ -231,7 +227,7 @@ export class GGLProjectLanguageSupport {
 
             const matchingDef: Array<{ token: GGLToken, sourceLine: string }> = [];
             GGLProjectLanguageSupport.documents.forEach((searchDocument) => {
-                console.debug(`search Signatures in ${searchDocument.Root}@${searchDocument.File}`);
+                logInfo(`search Signatures in ${searchDocument.Root}@${searchDocument.File}`);
 
                 searchDocument.Parser.Definitions.forEach((element) => {
                     if (element.Type === TokenTypes.FunctionDeclatation && element.Content === selectedFunction) {
@@ -273,7 +269,7 @@ export class GGLProjectLanguageSupport {
 
             return signatures;
         } catch (error) {
-            console.debug(`error on creating GGLSignatureInformation[]: ${error.message}`);
+            logError(`error on creating GGLSignatureInformation[]: ${error.message}`);
             const signatures: IGGLSignatureInformation[] = [];
             return signatures;
         }
@@ -310,7 +306,7 @@ export class GGLProjectLanguageSupport {
 
             return signatures;
         } catch (error) {
-            console.debug(`error on creating BuiltinSignatureInformation[]: ${error.message}`);
+            logError(`error on creating BuiltinSignatureInformation[]: ${error.message}`);
             const signatures: IGGLSignatureInformation[] = [];
             return signatures;
         }
@@ -327,11 +323,11 @@ export class GGLProjectLanguageSupport {
         return GGLProjectLanguageSupport.instance || (GGLProjectLanguageSupport.instance = new this());
     }
 
-    private addDocument(importFileLocation: IRelativeFile, rootPath: string): void {
+    private addDocument(importFileLocation: IRelativeFile, rootPath: string, subRoot: string): void {
         if (GGLProjectLanguageSupport.documents.find((document: GGLDocument) => document.Root === importFileLocation["0"] && document.File === importFileLocation["1"]) !== undefined) {
             return;
         }
-        GGLDocument.createFromPair(importFileLocation, rootPath).then((doc) => {
+        GGLDocument.createFromPair(importFileLocation, rootPath, subRoot).then((doc) => {
             GGLProjectLanguageSupport.documents.push(doc.document);
         });
     }

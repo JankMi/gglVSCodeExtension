@@ -7,7 +7,7 @@ import * as path from "path";
 import * as vscode from "vscode";
 
 import { CompletionItem } from "vscode";
-import { getTokenContent } from "./functions";
+import { getTokenContent, logDebug, logError } from "./functions";
 import { GGLDocument } from "./gglDocument";
 import { IGGLBuiltinCompletionInformation, IGGLCompletionInformation, IGGLDefinitionInformation, IGGLSignatureInformation } from "./gglInterfaces";
 import { GGLParser } from "./gglParser";
@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
-    console.log("activate: createParser");
+    logDebug("activate: createParser");
     GGLParser.init();
     const gglLangSup = GGLProjectLanguageSupport.Instance;
     vscode.window.onDidChangeActiveTextEditor(gglLangSup.onActiveTexteditorChanged);
@@ -29,22 +29,23 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.languages.registerCompletionItemProvider(
             { language: "ggl", scheme: "file" }, new GGLCompletionItemProvider(), " ", '\"'));
-    console.log("activate: registered CompletionItemProvider");
+    logDebug("activate: registered CompletionItemProvider");
 
     // context.subscriptions.push(getDisposable());
     context.subscriptions.push(
         vscode.languages.registerCompletionItemProvider(
             { language: "ggl", scheme: "file" }, new GGLBuiltinCompletionItemProvider(), ".", '\"'));
-    console.log("activate: registered BuilinCompletionItemProvider");
+    logDebug("activate: registered BuilinCompletionItemProvider");
 
     context.subscriptions.push(
         vscode.languages.registerDefinitionProvider(
             { language: "ggl", scheme: "file" }, new GGLDefinitionProvider()));
-    console.log("activate: registered DefinitionProvider");
+    logDebug("activate: registered DefinitionProvider");
 
     context.subscriptions.push(
         vscode.languages.registerSignatureHelpProvider(
             { language: "ggl", scheme: "file" }, new GGLSignatureHelpProvider(), "(", ","));
+    logDebug("activate: registered SignatureHelpProvider");
 
     // context.subscriptions.push(disposable);
 }
@@ -59,7 +60,7 @@ export class GGLCompletionItemProvider implements vscode.CompletionItemProvider 
             return completionItems;
         }, (err) => {
             if (err) {
-                console.debug(`some error oO => ${err}`);
+                logError(`some error oO => ${err}`);
             }
             return Promise.resolve(null);
         });
@@ -88,7 +89,7 @@ export class GGLBuiltinCompletionItemProvider implements vscode.CompletionItemPr
             return completionItems;
         }, (err) => {
             if (err) {
-                console.debug(`some error oO => ${err}`);
+                logError(`some error oO => ${err}`);
             }
             return Promise.resolve(null);
         });
@@ -130,14 +131,14 @@ export class GGLDefinitionProvider implements vscode.DefinitionProvider {
                 definitionResource = vscode.Uri.file(definitionInfo.file);
 
             } catch (error) {
-                console.debug("could not create uri\n");
+                logError("could not create uri\n");
                 return undefined;
             }
             const pos = new vscode.Position(definitionInfo.line, definitionInfo.startPos);
             return new vscode.Location(definitionResource, pos);
         }, (err) => {
             if (err) {
-                console.debug(`some error oO => ${err}`);
+                logError(`some error oO => ${err}`);
             }
             return Promise.resolve(null);
         });
@@ -168,7 +169,7 @@ export class GGLSignatureHelpProvider implements vscode.SignatureHelpProvider {
             return signatures;
         }, (err) => {
             if (err) {
-                console.debug(`some error oO => ${err}`);
+                logError(`some error oO => ${err}`);
             }
             return Promise.resolve(null);
         });

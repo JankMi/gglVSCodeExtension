@@ -23,7 +23,11 @@ load time, the builtin docs, no doc for ggl functions, ...
 
 ## Release Notes
 
-initial, for beta-testing
+still beta
+
+### 0.1.1
+
+fixed relative path to 'default' ggl`s
 
 ### 0.1.0
 
