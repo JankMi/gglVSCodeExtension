@@ -27,7 +27,7 @@ still beta
 
 ### 0.1.4
 
-reload variables in active doc, builtins w/o completions, imports with @/...
+reload variables in active doc, builtins w/o completions, imports with @/..., syntax fixes
 
 ### 0.1.3
 
