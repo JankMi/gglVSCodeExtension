@@ -25,6 +25,9 @@ load time, the builtin docs, no doc for ggl functions, ...
 
 still beta
 
+### 0.1.3
+
+fixed Linux file path problem
 
 ### 0.1.2
 
