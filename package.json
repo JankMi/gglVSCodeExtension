@@ -2,7 +2,7 @@
   "name": "genesisvscode",
   "displayName": "genesisVSCode",
   "description": "language services for the genesis ggl",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "JankMi",
   "engines": {
     "vscode": "^1.20.0"
@@ -46,8 +46,10 @@
   },
   "main": "out/extension",
   "dependencies": {
+    "cache-base": "^2.0.2",
     "child-process": "^1.0.2",
     "child_process": "^1.0.2",
+    "expand-brackets": "^2.1.4",
     "fast-plist": "^0.1.2",
     "file-system": "^2.2.2",
     "gulp": "^3.9.1",
@@ -56,6 +58,7 @@
     "oniguruma": "^7.0.0",
     "orchestrator": "^0.3.8",
     "path": "^0.12.7",
+    "unset-value": "^1.0.0",
     "vscode": "^1.1.10",
     "vscode-textmate": "^3.2.0",
     "walk-up": "^1.0.2",

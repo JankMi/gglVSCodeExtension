@@ -37,10 +37,11 @@ export class GGLProjectLanguageSupport {
         GGLProjectLanguageSupport.documents.push(GGLProjectLanguageSupport.activeDoc);
         const importFiles = GGLProjectLanguageSupport.activeDoc.updateFile();
         const filePath = GGLProjectLanguageSupport.activeDoc.Document.fileName;
-        const pathArray = filePath.split("\\");
+        const pathArray = filePath.split(/[\\\/]/);
         const file = pathArray[pathArray.length - 1].split(".")[0];
-        const root = pathArray[pathArray.length - 3] + "\\" + pathArray[pathArray.length - 2];
+        const root = pathArray[pathArray.length - 3] + "/" + pathArray[pathArray.length - 2];
         const gameRootPath = pathArray.slice(0, pathArray.length - 3).join("/");
+        logDebug(`gameRootPath: ${gameRootPath}`);
 
         // read builtin doce
         const extensions = vscode.extensions;
@@ -57,6 +58,7 @@ export class GGLProjectLanguageSupport {
         });
 
         // if not main project file, import main.ggl too
+        // logDebug(`file: ${file}, mainFilePath: ${gameRootPath+"/"+root+"/"+"main.ggl"}`);
         if (file !== "main" && fs.existsSync(gameRootPath + "/" + root + "/" + "main.ggl")) {
             GGLDocument.createFromPair({ rootName: "~", fileName: "main" }, gameRootPath, root).then((doc) => {
                 GGLProjectLanguageSupport.documents.push(doc.document);
@@ -179,17 +181,12 @@ export class GGLProjectLanguageSupport {
             });
 
             if (matchingDef === undefined) { return reject("not found"); }
-            // var location: vscode.Location;
-            // location.range = new vscode.Range(new vscode.Position(matchingDef.LineNumber, matchingDef.StartPos), new vscode.Position(matchingDef.LineNumber, matchingDef.EndPos))
-            // location.uri = vscode.Uri.file(matchingDef.FileName);
             const defInfo = {
                 endPos: matchingDef.EndPos,
                 file: matchingDef.FileName,
                 line: matchingDef.LineNumber,
                 startPos: matchingDef.StartPos,
             };
-            // var uri = vscode.Uri.file(matchingDef.FileName);
-            // var range = new vscode.Range(new vscode.Position(matchingDef.LineNumber, matchingDef.StartPos), new vscode.Position(matchingDef.LineNumber, matchingDef.EndPos))
             return resolve(defInfo);
 
         });
@@ -330,6 +327,7 @@ export class GGLProjectLanguageSupport {
         }
         GGLDocument.createFromPair(importFileLocation, rootPath, subRoot).then((newDoc) => {
             GGLProjectLanguageSupport.documents.push(newDoc.document);
+            logInfo(`document: ${newDoc.document.Document.fileName} added`);
         });
     }
 

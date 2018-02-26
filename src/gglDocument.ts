@@ -31,7 +31,7 @@ export class GGLDocument {
                         logError("no project dir given");
                         return reject("no project dir given");
                     }
-                    vscode.workspace.openTextDocument(vscode.Uri.file(rootDir + "\\" + projectDir + "\\" + fileLocation.fileName + ".ggl")).then((element) => {
+                    vscode.workspace.openTextDocument(rootDir + "/" + projectDir + "/" + fileLocation.fileName + ".ggl").then((element) => {
                         const retValue = new GGLDocument(fileLocation, element);
                         if (retValue !== undefined) {
                             logDebug(`opended file: ${retValue.document.fileName}`);
@@ -42,8 +42,11 @@ export class GGLDocument {
                         }
                     });
                 } else {
+                    logInfo("splitPath");
                     const splitedPath = /([\S]+)genesis-([\w]+)[\\\/]([\w\.]+)/.exec(rootDir);
+                    if (splitedPath != null) {splitedPath.forEach((match) => logInfo(match)); } else {logInfo(rootDir); }
                     let absoluteFilePath: string;
+                    const importPaths: string[] = [];
                     if (splitedPath != null) {
                         const reposBasePath: string = splitedPath[1];
                         const gameType = splitedPath[2]; // playground or games
@@ -51,12 +54,11 @@ export class GGLDocument {
                         const basePackage = /([0-9\.]+)/.exec(gamePackage)[1]; // for stdggl and commons
 
                         // create import base pathes
-                        const importPathes: string[] = [];
-                        if (gamePackage !== basePackage) { importPathes.push(reposBasePath + "genesis-games/" + gamePackage); }
-                        importPathes.push(reposBasePath + "genesis-games/" + basePackage);
+                        if (gamePackage !== basePackage) { importPaths.push(reposBasePath + "genesis-games/" + gamePackage); }
+                        importPaths.push(reposBasePath + "genesis-games/" + basePackage);
                         // todo: add configuration path
                         const configuration: string = vscode.workspace.getConfiguration("JankMi.genesisvscode").get("gglConfiguration.gglVersion");
-                        importPathes.forEach((importPath) => {
+                        importPaths.forEach((importPath) => {
                             filesystem.recurseSync(`${importPath}/${fileLocation.rootName}`, `**/${fileLocation.fileName}.ggl`, (filepath, relative, filename) => {
                                 if (!filename) { return; }
                                 absoluteFilePath = filepath;
@@ -64,10 +66,12 @@ export class GGLDocument {
                             });
                         });
                         if (absoluteFilePath === undefined) {
-                            logDebug(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
+                            logError(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
+                            importPaths.forEach( (importPath) => logError(`import-path: ${importPath}`));
                             return reject(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
                         }
                     } else {
+                        logError(`could not split path: ${rootDir}`);
                         logDebug(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
                         return reject(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
                     }

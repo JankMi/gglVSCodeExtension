@@ -24,10 +24,10 @@
     },    {
         "type": "node",
         "request": "launch",
-        "name": "Gulp fixRequires",
+        "name": "Gulp fixRequire",
         "program": "${workspaceFolder}/node_modules/gulp/bin/gulp.js",
         "args": [
-            "fixRequires"
+            "fixRequire"
         ]
     }]
 }
