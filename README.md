@@ -25,6 +25,10 @@ load time, the builtin docs, no doc for ggl functions, ...
 
 still beta
 
+### 0.1.4
+
+reload variables in active doc, builtins w/o completions, imports with @/...
+
 ### 0.1.3
 
 fixed Linux file path problem

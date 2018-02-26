@@ -44,7 +44,7 @@ export class GGLDocument {
                 } else {
                     logInfo("splitPath");
                     const splitedPath = /([\S]+)genesis-([\w]+)[\\\/]([\w\.]+)/.exec(rootDir);
-                    if (splitedPath != null) {splitedPath.forEach((match) => logInfo(match)); } else {logInfo(rootDir); }
+                    if (splitedPath != null) { splitedPath.forEach((match) => logInfo(match)); } else { logInfo(rootDir); }
                     let absoluteFilePath: string;
                     const importPaths: string[] = [];
                     if (splitedPath != null) {
@@ -59,15 +59,17 @@ export class GGLDocument {
                         // todo: add configuration path
                         const configuration: string = vscode.workspace.getConfiguration("JankMi.genesisvscode").get("gglConfiguration.gglVersion");
                         importPaths.forEach((importPath) => {
-                            filesystem.recurseSync(`${importPath}/${fileLocation.rootName}`, `**/${fileLocation.fileName}.ggl`, (filepath, relative, filename) => {
-                                if (!filename) { return; }
-                                absoluteFilePath = filepath;
-                                return;
-                            });
+                            if (fs.existsSync(`${importPath}/${fileLocation.rootName}`)) {
+                                filesystem.recurseSync(`${importPath}/${fileLocation.rootName}`, `**/${fileLocation.fileName}.ggl`, (filepath, relative, filename) => {
+                                    if (!filename) { return; }
+                                    absoluteFilePath = filepath;
+                                    return;
+                                });
+                            }
                         });
                         if (absoluteFilePath === undefined) {
                             logError(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
-                            importPaths.forEach( (importPath) => logError(`import-path: ${importPath}`));
+                            importPaths.forEach((importPath) => logError(`import-path: ${importPath}`));
                             return reject(`file: ${fileLocation.rootName}@${fileLocation.fileName} coud not be opened`);
                         }
                     } else {
@@ -88,7 +90,7 @@ export class GGLDocument {
                     });
                 }
             } catch (error) {
-                logError(`file coud not be created ${error.toString}`);
+                logError(`file coud not be created ${error.message}`);
             }
         });
     }
@@ -111,5 +113,10 @@ export class GGLDocument {
 
     public updateFile(): IRelativeFile[] {
         return this.parser.updateTokens();
+    }
+
+    public reloadDoc(newDocument: vscode.TextDocument): IRelativeFile[] {
+        this.parser = new GGLParser(newDocument);
+        return this.updateFile();
     }
 }

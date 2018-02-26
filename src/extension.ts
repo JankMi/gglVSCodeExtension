@@ -24,6 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
     GGLParser.init();
     const gglLangSup = GGLProjectLanguageSupport.Instance;
     vscode.window.onDidChangeActiveTextEditor(gglLangSup.onActiveTexteditorChanged);
+    vscode.workspace.onDidChangeTextDocument(gglLangSup.onTextDocumentChanged);
 
     // context.subscriptions.push(getDisposable());
     context.subscriptions.push(

@@ -9,6 +9,12 @@
 			"include": "#strings"
 		},
 		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#literal"
+		},
+		{
 			"include": "#comment"
 		},
 		{
@@ -19,7 +25,7 @@
 		},
 		{
 			"comment": "imports",
-			"begin": "(import)\\(\\\"ga:\\/\\/([a-zA-Z~]+)@(\\w+)\\.ggl\\\"\\)",
+			"begin": "(import)\\(\\\"ga:\\/\\/([a-zA-Z~]+)@\\/?(\\w+)\\.ggl\\\"\\)",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.control.ggl.import"
@@ -35,7 +41,7 @@
 		},
 		{
 			"comment": "function implementation",
-			"begin": "(\\s*function\\s+)([a-z,A-Z,0-9,_]+)\\s*(\\([\\w, ,=,\\,]*\\))",
+			"begin": "(\\s*function\\s+)([a-z,A-Z,0-9,_]+)\\s*(\\([\\w, ,=,\\,\\(\\)\"\\.\\#\\'\\]\\[]*\\))",
 			"beginCaptures": {
 				"1": {
 					"name": "storage.type.function.ggl"
@@ -80,7 +86,7 @@
 					"name": "entity.name.function.ggl"
 				}
 			},
-			"end": "(\\([\\w, ,=,\\,]*\\))",
+			"end": "(\\([\\w, ,=,\\,\\(\\)\"\\.\\#\\'\\]\\[]*\\))",
 			"endCaptures": {
 				"1": {
 					"name": "variable.parameter.ggl"
@@ -94,7 +100,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ggl.nobuiltin",
-					"match": "(if|else|for|do|while|assert|then|case|switch|default|break)"
+					"match": "\\b(if|else|for|do|while|assert|then|case|switch|default|break|return)\\b"
 				}
 			]
 		},
@@ -118,6 +124,22 @@
 				{
 					"name": "constant.character.escape.ggl",
 					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.decimal.ggl",
+					"match": "(?x)\n(?<!\\$)\n(\n  \\b[0-9]([0-9_]*[0-9])?\\.\\B(?!\\.)\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([0-9]([0-9_]*[0-9])?)([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b\n  |\n  (?<!\\.)\\B\\.[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b\n  |\n  \\b(0|[1-9]([0-9_]*[0-9])?)(?!\\.)[Ll]?\\b\n)\n(?!\\$)"
+				}
+			]
+		},
+		"literal": {
+			"patterns": [
+				{
+					"name": "constant.language.ggl",
+					"match": "\\b(true|false|none)\\b"
 				}
 			]
 		},

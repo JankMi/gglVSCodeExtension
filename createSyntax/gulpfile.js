@@ -99,6 +99,11 @@ gulp.task('createMinDoc', function () {
                             var endPos = content.indexOf("*/", posDoc) + 2;
 
                             if (beginPos < 0 || endPos < 0) {
+                                docEntry.description = element;
+                                docEntry.name = element;
+                                docEntry.params.push({ name: "no docu", description: "no docu" });
+                                docEntry.returnValue = "no docu";
+                                docEntry.usages.push({ functionName: element, call: "no docu" });
                                 countBadDocus++;
                                 console.debug(`Builtin: ${element} not found, of file ${name}`);
                             } else {

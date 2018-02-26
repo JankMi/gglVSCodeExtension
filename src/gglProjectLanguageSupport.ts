@@ -31,6 +31,8 @@ export class GGLProjectLanguageSupport {
     private static activeDoc: GGLDocument;
     private static instance: GGLProjectLanguageSupport;
     private static docus: docEntry[];
+    private gameRootPath: string;
+    private root: string;
 
     private constructor() {
         GGLProjectLanguageSupport.activeDoc = GGLDocument.createFromTextDoc(vscode.window.activeTextEditor.document);
@@ -39,9 +41,9 @@ export class GGLProjectLanguageSupport {
         const filePath = GGLProjectLanguageSupport.activeDoc.Document.fileName;
         const pathArray = filePath.split(/[\\\/]/);
         const file = pathArray[pathArray.length - 1].split(".")[0];
-        const root = pathArray[pathArray.length - 3] + "/" + pathArray[pathArray.length - 2];
-        const gameRootPath = pathArray.slice(0, pathArray.length - 3).join("/");
-        logDebug(`gameRootPath: ${gameRootPath}`);
+        this.root = pathArray[pathArray.length - 3] + "/" + pathArray[pathArray.length - 2];
+        this.gameRootPath = pathArray.slice(0, pathArray.length - 3).join("/");
+        logDebug(`gameRootPath: ${this.gameRootPath}`);
 
         // read builtin doce
         const extensions = vscode.extensions;
@@ -59,28 +61,17 @@ export class GGLProjectLanguageSupport {
 
         // if not main project file, import main.ggl too
         // logDebug(`file: ${file}, mainFilePath: ${gameRootPath+"/"+root+"/"+"main.ggl"}`);
-        if (file !== "main" && fs.existsSync(gameRootPath + "/" + root + "/" + "main.ggl")) {
-            GGLDocument.createFromPair({ rootName: "~", fileName: "main" }, gameRootPath, root).then((doc) => {
+        if (file !== "main" && fs.existsSync(this.gameRootPath + "/" + this.root + "/" + "main.ggl")) {
+            GGLDocument.createFromPair({ rootName: "~", fileName: "main" }, this.gameRootPath, this.root).then((doc) => {
                 GGLProjectLanguageSupport.documents.push(doc.document);
                 const importFilesI = doc.document.updateFile();
-                const mainImportFiles: IRelativeFile[] = [];
-                importFilesI.forEach((importFile) => {
-                    if (importFile.rootName !== "~") {
-                        mainImportFiles.push(importFile);
-                    } else if (importFile.fileName === file) {
-                        logDebug(`file is direct include`);
-                    } else {
-                        logDebug(`include file: ${root}@${importFile.fileName}`);
-                        mainImportFiles.push(importFile);
-                    }
-                });
-                mainImportFiles.forEach((pair) => this.addDocument(pair, gameRootPath, root));
+                this.addImports(importFilesI, file);
             });
         } else {
-            logDebug(`no main.ggl in ${root} -> no Project?`);
+            logDebug(`no main.ggl in ${this.root} -> no Project?`);
         }
 
-        importFiles.forEach((importPair) => this.addDocument(importPair, gameRootPath, root));
+        importFiles.forEach((importPair) => this.addDocument(importPair, this.gameRootPath, this.root));
     }
 
     public provideCompletions(sourceDocument: vscode.TextDocument, sourcePosition: vscode.Position, token: vscode.CancellationToken): Promise<IGGLCompletionInformation[]> {
@@ -210,9 +201,25 @@ export class GGLProjectLanguageSupport {
             GGLProjectLanguageSupport.activeDoc = GGLDocument.createFromTextDoc(newEditor.document);
             GGLProjectLanguageSupport.documents.push(GGLProjectLanguageSupport.activeDoc);
         } else {
-            GGLProjectLanguageSupport.activeDoc = existingFile;
+            vscode.workspace.openTextDocument(GGLProjectLanguageSupport.activeDoc.Document.fileName).then((element) => {
+                GGLProjectLanguageSupport.Instance.updateFileTreeOnDocumentChange(element);
+                GGLProjectLanguageSupport.activeDoc = existingFile;
+            });
         }
+    }
 
+    public onTextDocumentChanged(event: vscode.TextDocumentChangeEvent): void {
+        if (GGLProjectLanguageSupport.activeDoc.Document.fileName !== event.document.fileName) {
+            logError(`changed Document is not active document!`);
+        } else if (event.contentChanges.length === 1 && event.contentChanges[0].text.indexOf("\n") >= 0) {
+            this.updateFileTreeOnDocumentChange(event.document);
+        }
+    }
+
+    private updateFileTreeOnDocumentChange(newDocument: vscode.TextDocument) {
+        const pathArray = newDocument.fileName.split(/[\\\/]/);
+        const file = pathArray[pathArray.length - 1].split(".")[0];
+        GGLProjectLanguageSupport.Instance.addImports(GGLProjectLanguageSupport.activeDoc.reloadDoc(newDocument), file);
     }
 
     private provideGGLSignatures(sourceDocument: vscode.TextDocument, sourcePosition: vscode.Position): IGGLSignatureInformation[] {
@@ -318,6 +325,21 @@ export class GGLProjectLanguageSupport {
 
     public static get Instance() {
         return GGLProjectLanguageSupport.instance || (GGLProjectLanguageSupport.instance = new this());
+    }
+
+    private addImports(importFilesI: IRelativeFile[], file: string) {
+        const mainImportFiles: IRelativeFile[] = [];
+        importFilesI.forEach((importFile) => {
+            if (importFile.rootName !== "~") {
+                mainImportFiles.push(importFile);
+            } else if (importFile.fileName === file) {
+                logDebug(`file is direct include`);
+            } else {
+                logDebug(`include file: ${this.root}@${importFile.fileName}`);
+                mainImportFiles.push(importFile);
+            }
+        });
+        mainImportFiles.forEach((pair) => this.addDocument(pair, this.gameRootPath, this.root));
     }
 
     private addDocument(importFileLocation: IRelativeFile, rootPath: string, subRoot: string): void {
