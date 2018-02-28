@@ -1,5 +1,39 @@
 [
 	{
+		"name": "makeBufferedSound",
+		"description": "makeBufferedSound",
+		"usages": [
+			{
+				"functionName": "makeBufferedSound",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "makeStreamedSound",
+		"description": "makeStreamedSound",
+		"usages": [
+			{
+				"functionName": "makeStreamedSound",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "soundPlay",
 		"description": "spielt einen Sound ab.",
 		"usages": [
@@ -206,5 +240,39 @@
 			}
 		],
 		"returnValue": "double"
+	},
+	{
+		"name": "soundGetVolume",
+		"description": "soundGetVolume",
+		"usages": [
+			{
+				"functionName": "soundGetVolume",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "soundSetVolume",
+		"description": "soundSetVolume",
+		"usages": [
+			{
+				"functionName": "soundSetVolume",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	}
 ]

@@ -105,6 +105,7 @@ gulp.task('createMinDoc', function () {
                                 docEntry.returnValue = "no docu";
                                 docEntry.usages.push({ functionName: element, call: "no docu" });
                                 countBadDocus++;
+                                jsonFileObject.push(docEntry);
                                 console.debug(`Builtin: ${element} not found, of file ${name}`);
                             } else {
                                 var doc = content.substring(beginPos, endPos)

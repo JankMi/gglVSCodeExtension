@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import {GGLToken} from "./gglToken";
+import {GGLVariableToken} from "./gglToken";
 
 export interface IGGLDefinitionInformation {
     file: string;
@@ -9,7 +9,7 @@ export interface IGGLDefinitionInformation {
 }
 
 export interface IGGLCompletionInformation {
-    token: GGLToken;
+    token: GGLVariableToken;
     type: vscode.CompletionItemKind;
 }
 

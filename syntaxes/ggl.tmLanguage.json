@@ -6,6 +6,9 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#punctuations"
+		},
+		{
 			"include": "#strings"
 		},
 		{
@@ -37,11 +40,16 @@
 					"name": "entity.name.section.ggl.import"
 				}
 			},
-			"end": ";"
+			"end": "(;)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.terminator.statement.ggl"
+				}
+			}
 		},
 		{
 			"comment": "function implementation",
-			"begin": "(\\s*function\\s+)([a-z,A-Z,0-9,_]+)\\s*(\\([\\w, ,=,\\,\\(\\)\"\\.\\#\\'\\]\\[]*\\))",
+			"begin": "(\\s*function\\s+)(\\w+)\\s*(\\([\\S ]*\\))",
 			"beginCaptures": {
 				"1": {
 					"name": "storage.type.function.ggl"
@@ -50,7 +58,23 @@
 					"name": "entity.name.function.ggl"
 				},
 				"3": {
-					"name": "variable.parameter.ggl"
+					"name": "variable.parameter.ggl",
+					"patterns": [
+						{
+							"match": "(var) (\\w+)\\s*?=?\\s*(\\w*\\((?>[^)(]+|\\g<1>)*\\))*",
+							"captures": {
+								"1": {
+									"name": "storage.type.variable.ggl"
+								},
+								"2": {
+									"name": "variable.other.readwrite.ggl.local"
+								},
+								"3": {
+									"name": "meta.tag.defaultValue"
+								}
+							}
+						}
+					]
 				}
 			},
 			"patterns": [
@@ -72,8 +96,15 @@
 					"name": "variable.other.readwrite.ggl"
 				}
 			},
-			"end": "(\\s*[=|;])",
-			"name": "meta.initialization.ggl"
+			"end": "\\s*(=)?(;)?",
+			"endCaptures": {
+				"1": {
+					"name": "keyword.operator.ggl"
+				},
+				"2": {
+					"name": "punctuation.terminator.statement.ggl"
+				}
+			}
 		},
 		{
 			"comment": "function declaration",
@@ -101,6 +132,22 @@
 				{
 					"name": "keyword.control.ggl.nobuiltin",
 					"match": "\\b(if|else|for|do|while|assert|then|case|switch|default|break|return)\\b"
+				},
+				{
+					"name": "keyword.operator.ggl",
+					"match": "(\\=|\\+|\\-|\\<|\\>|\\*)"
+				}
+			]
+		},
+		"punctuations": {
+			"patterns": [
+				{
+					"match": "(;)",
+					"name": "punctuation.terminator.statement.ggl"
+				},
+				{
+					"match": "(,)",
+					"name": "punctuation.separator.delimiter.ggl"
 				}
 			]
 		},
@@ -146,9 +193,14 @@
 		"comment": {
 			"patterns": [
 				{
-					"name": "comment.line",
+					"name": "comment.line.ggl",
 					"begin": "//",
 					"end": "\n"
+				},
+				{
+					"name": "comment.block",
+					"begin": "/\\*",
+					"end": "\\*/"
 				}
 			]
 		},

@@ -6,7 +6,7 @@ import * as vsTM from "vscode-textmate";
 // import * as cp from "child_process";
 import { getTokenContent } from "./functions";
 import { IGGLCompletionInformation, IGGLDefinitionInformation, IRelativeFile, ISection } from "./gglInterfaces";
-import { GGLToken, TokenTypes } from "./gglToken";
+import { GGLFunctionToken, GGLVariableToken, TokenTypes } from "./gglToken";
 
 export class GGLParser {
 
@@ -21,8 +21,10 @@ export class GGLParser {
 
     private document: vscode.TextDocument;
     public static get TM_Grammar() { return GGLParser.tmGrammar; }
-    private tokens: GGLToken[] = [];
-    public get Definitions() { return this.tokens; }
+    private variables: GGLVariableToken[] = [];
+    public get VariableDefinitions() { return this.variables; }
+    private functions: GGLFunctionToken[] = [];
+    public get FunctionDefinitions() { return this.functions; }
     private sections: ISection[] = []; // level, beginLine, endLine
     private imports: IRelativeFile[] = [];
     public get Sections() { return this.sections; }
@@ -37,7 +39,7 @@ export class GGLParser {
     public updateTokens(): IRelativeFile[] {
         if (this.document === undefined) { return undefined; }
         const lines = this.readFile(this.document);
-        [this.tokens, this.sections, this.imports] = this.getTokensFromString(lines);
+        [this.variables, this.functions, this.sections, this.imports] = this.getTokensFromString(lines);
         return this.imports;
     }
 
@@ -52,14 +54,15 @@ export class GGLParser {
         return lines;
     }
 
-    private getTokensFromString(fileContent): [GGLToken[], ISection[], IRelativeFile[] ] {
+    private getTokensFromString(fileContent): [GGLVariableToken[], GGLFunctionToken[], ISection[], IRelativeFile[] ] {
 
         let tokenStack = null;
         let nestedGroupID = 0;
         const nestedGroups: number[] = [nestedGroupID];
 
-        const tokens: GGLToken[] = [];
-        const importTokens: GGLToken[] = [];
+        const functionDeclarations: GGLFunctionToken[] = [];
+        const variableDeclarations: GGLVariableToken[] = [];
+        const importTokens: GGLVariableToken[] = [];
         const sections: ISection[] = []; // id, begin,end
         const imports: IRelativeFile[] = [];
         // read tokens form lines
@@ -74,7 +77,7 @@ export class GGLParser {
                         const lastScope = element.scopes[element.scopes.length - 1];
                         const strSecEntry = "meta.declaration.ggl.secentry";
                         const strSecExit = "meta.declaration.ggl.secexit";
-                        let toPush: GGLToken;
+                        let toPush: GGLVariableToken;
                         if (element.scopes.find((scope: string) => scope === strSecEntry)) {
                             nestedGroups.push(++nestedGroupID);
                             sections.push({
@@ -87,15 +90,21 @@ export class GGLParser {
                             const helper = sections.pop();
                             helper.endAtLine = i;
                             sections.push(helper);
-                        } else if (lastScope === "entity.name.function.ggl") {
-                            toPush = new GGLToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups), this.document.fileName);
-                            tokens.push(toPush);
-                        } else if (lastScope === "variable.other.readwrite.ggl") {
-                            toPush = new GGLToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups), this.document.fileName);
-                            tokens.push(toPush);
+                        } else if (lastScope.search("entity.name.function.ggl") >= 0) {
+                            const toPushFunc = new GGLFunctionToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups), this.document.fileName);
+                            functionDeclarations.push(toPushFunc);
+                        } else if (lastScope.indexOf("variable.other.readwrite.ggl") >= 0) {
+                            toPush = new GGLVariableToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups.concat(nestedGroupID + 1)), this.document.fileName, TokenTypes.VariableDeclaration);
+                            variableDeclarations.push(toPush);
+                            if (lastScope === "variable.other.readwrite.ggl.local") {
+                                functionDeclarations[functionDeclarations.length - 1].Parameters.push(toPush);
+                            }
                         } else if (lastScope.search("import") >= 0) {
-                            toPush = new GGLToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups), this.document.fileName);
+                            toPush = new GGLVariableToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups), this.document.fileName, TokenTypes.Keyword);
                             importTokens.push(toPush);
+                        } else if (lastScope === "meta.tag.defaultValue") {
+                            variableDeclarations[variableDeclarations.length - 1].DefaultValue = getTokenContent(fileContent[i], element);
+                            functionDeclarations[functionDeclarations.length - 1].Parameters[functionDeclarations[functionDeclarations.length - 1].Parameters.length - 1 ].DefaultValue = getTokenContent(fileContent[i], element);
                         }
 
                     }
@@ -124,7 +133,7 @@ export class GGLParser {
             continue;
             // }
         }
-        return [tokens, sections, imports];
+        return [variableDeclarations, functionDeclarations, sections, imports];
     }
 
 }

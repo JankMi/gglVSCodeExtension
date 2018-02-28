@@ -1,1 +1,19 @@
-[]
+[
+	{
+		"name": "simStartConfigurator",
+		"description": "simStartConfigurator",
+		"usages": [
+			{
+				"functionName": "simStartConfigurator",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	}
+]

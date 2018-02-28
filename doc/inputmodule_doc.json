@@ -108,6 +108,23 @@
 		"returnValue": "GGLObject::None"
 	},
 	{
+		"name": "unblockInput",
+		"description": "unblockInput",
+		"usages": [
+			{
+				"functionName": "unblockInput",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "processEvents",
 		"description": "Verarbeitet alle Events in der Eventqueue.",
 		"usages": [

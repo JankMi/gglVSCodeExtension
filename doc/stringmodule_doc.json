@@ -182,6 +182,23 @@
 		"returnValue": "string"
 	},
 	{
+		"name": "stringRemove",
+		"description": "stringRemove",
+		"usages": [
+			{
+				"functionName": "stringRemove",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "stringReplace",
 		"description": "ersetzt im String <em>src</em> einen Teilstring <em>oldStr</em> durch den String <em>newStr</em>",
 		"usages": [

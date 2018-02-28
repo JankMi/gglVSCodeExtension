@@ -6,7 +6,7 @@ import * as vscode from "vscode";
 import { CompletionItem } from "vscode";
 
 import { GGLParser } from "./gglParser";
-import { GGLToken } from "./gglToken";
+import { GGLVariableToken } from "./gglToken";
 
 export function getTokenContent(line: string, token: vsTM.IToken): string {
     return line.substring(token.startIndex, token.endIndex);
@@ -18,7 +18,7 @@ export function logInfo(message: string) {
 
 export function logDebug(message: string) {
     console.log(message);
-    vscode.window.showInformationMessage(message);
+    // vscode.window.showInformationMessage(message);
 }
 
 export function logError(message: string) {

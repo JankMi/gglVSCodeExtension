@@ -258,6 +258,23 @@
 		"returnValue": "bool"
 	},
 	{
+		"name": "animIsPaused",
+		"description": "animIsPaused",
+		"usages": [
+			{
+				"functionName": "animIsPaused",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "animIsStopped",
 		"description": "Prüft ob eine Animation gerade gestoppt ist.",
 		"usages": [
@@ -294,6 +311,23 @@
 			}
 		],
 		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animGetLoopCount",
+		"description": "animGetLoopCount",
+		"usages": [
+			{
+				"functionName": "animGetLoopCount",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "animSetDuration",
@@ -443,6 +477,23 @@
 			}
 		],
 		"returnValue": "string"
+	},
+	{
+		"name": "animToggleDirection",
+		"description": "animToggleDirection",
+		"usages": [
+			{
+				"functionName": "animToggleDirection",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "animSetEasingCurve",

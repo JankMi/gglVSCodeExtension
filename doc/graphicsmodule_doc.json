@@ -389,6 +389,23 @@
 		"returnValue": "GGLObject::None"
 	},
 	{
+		"name": "gfxGetScale",
+		"description": "gfxGetScale",
+		"usages": [
+			{
+				"functionName": "gfxGetScale",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "gfxSetRotation",
 		"description": "Rotiert ein Grafikelement",
 		"usages": [
@@ -772,6 +789,23 @@
 		"returnValue": "rect"
 	},
 	{
+		"name": "gfxGetGeometry",
+		"description": "gfxGetGeometry",
+		"usages": [
+			{
+				"functionName": "gfxGetGeometry",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "gfxCenterOn",
 		"description": "Zentriert ein Element auf einem anderen",
 		"usages": [
@@ -933,6 +967,23 @@
 			{}
 		],
 		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetAlignment",
+		"description": "gfxGetAlignment",
+		"usages": [
+			{
+				"functionName": "gfxGetAlignment",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "gfxSetElideMode",

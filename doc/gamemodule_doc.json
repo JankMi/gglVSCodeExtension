@@ -52,5 +52,209 @@
 			}
 		],
 		"returnValue": "int"
+	},
+	{
+		"name": "gameGetMedia",
+		"description": "gameGetMedia",
+		"usages": [
+			{
+				"functionName": "gameGetMedia",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetDisplayName",
+		"description": "gameGetDisplayName",
+		"usages": [
+			{
+				"functionName": "gameGetDisplayName",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetId",
+		"description": "gameGetId",
+		"usages": [
+			{
+				"functionName": "gameGetId",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetDescription",
+		"description": "gameGetDescription",
+		"usages": [
+			{
+				"functionName": "gameGetDescription",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMediasetDescription",
+		"description": "gameGetMediasetDescription",
+		"usages": [
+			{
+				"functionName": "gameGetMediasetDescription",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMinPlayers",
+		"description": "gameGetMinPlayers",
+		"usages": [
+			{
+				"functionName": "gameGetMinPlayers",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMaxPlayers",
+		"description": "gameGetMaxPlayers",
+		"usages": [
+			{
+				"functionName": "gameGetMaxPlayers",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameHasComputerPlayer",
+		"description": "gameHasComputerPlayer",
+		"usages": [
+			{
+				"functionName": "gameHasComputerPlayer",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetLoadPicturePath",
+		"description": "gameGetLoadPicturePath",
+		"usages": [
+			{
+				"functionName": "gameGetLoadPicturePath",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMediasetDisplayName",
+		"description": "gameGetMediasetDisplayName",
+		"usages": [
+			{
+				"functionName": "gameGetMediasetDisplayName",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMediasetId",
+		"description": "gameGetMediasetId",
+		"usages": [
+			{
+				"functionName": "gameGetMediasetId",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMediaDescription",
+		"description": "gameGetMediaDescription",
+		"usages": [
+			{
+				"functionName": "gameGetMediaDescription",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	}
 ]

@@ -1,1 +1,36 @@
-[]
+[
+	{
+		"name": "makeWebView",
+		"description": "makeWebView",
+		"usages": [
+			{
+				"functionName": "makeWebView",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "webSetUrl",
+		"description": "webSetUrl",
+		"usages": [
+			{
+				"functionName": "webSetUrl",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	}
+]

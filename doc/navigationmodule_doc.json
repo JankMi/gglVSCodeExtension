@@ -257,6 +257,23 @@
 		"returnValue": "GGLObject::None"
 	},
 	{
+		"name": "naviSetLast",
+		"description": "naviSetLast",
+		"usages": [
+			{
+				"functionName": "naviSetLast",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "naviSetEnabled",
 		"description": "Aktiviert oder Deaktiviert einen Eintrag in der Matrix.",
 		"usages": [
@@ -331,6 +348,23 @@
 		"returnValue": "GGLObject::None"
 	},
 	{
+		"name": "naviHasEnabledPos",
+		"description": "naviHasEnabledPos",
+		"usages": [
+			{
+				"functionName": "naviHasEnabledPos",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "naviSetQObject",
 		"description": "Setzt für eine Matrix-Position ein QObjekt als Referenz-Objekt.",
 		"usages": [
@@ -390,6 +424,57 @@
 				"description": "matrix"
 			}
 		]
+	},
+	{
+		"name": "naviSetRowQObject",
+		"description": "naviSetRowQObject",
+		"usages": [
+			{
+				"functionName": "naviSetRowQObject",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "naviGetRowQObject",
+		"description": "naviGetRowQObject",
+		"usages": [
+			{
+				"functionName": "naviGetRowQObject",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "naviGetQObjectPos",
+		"description": "naviGetQObjectPos",
+		"usages": [
+			{
+				"functionName": "naviGetQObjectPos",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "naviSetExceededCallback",
@@ -453,6 +538,23 @@
 			}
 		],
 		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetRowChangedCallback",
+		"description": "naviSetRowChangedCallback",
+		"usages": [
+			{
+				"functionName": "naviSetRowChangedCallback",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "naviSetCallbackArgs",
@@ -580,6 +682,23 @@
 			}
 		],
 		"returnValue": "bool"
+	},
+	{
+		"name": "naviSetWrapAround",
+		"description": "naviSetWrapAround",
+		"usages": [
+			{
+				"functionName": "naviSetWrapAround",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "naviIsWrapAround",

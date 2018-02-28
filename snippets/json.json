@@ -1,0 +1,15 @@
+{
+    "Info.json Template": {
+        "prefix": "template info.json",
+        "body": [
+            "{",
+            "\t\"description\"     :\"${1:name}\",",
+            "\t\"display_name\"    :\"${1:name}\",",
+            "\t\"computer_player\" : ${2:bool},",
+            "\t\"min_players\"     : ${3:number},",
+            "\t\"max_players\"     : ${4:number}",
+            "}"
+        ],
+        "description": "Template for new info.json"
+    }
+}

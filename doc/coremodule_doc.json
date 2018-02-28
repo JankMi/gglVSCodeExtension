@@ -42,6 +42,23 @@
 		"returnValue": "none"
 	},
 	{
+		"name": "sorted",
+		"description": "sorted",
+		"usages": [
+			{
+				"functionName": "sorted",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "list",
 		"description": "liefert die Anzahl der Elemente in der Liste <em>l</em> bzw. die Anzahl der Einträge im Dictionary <em>d</em>",
 		"usages": [

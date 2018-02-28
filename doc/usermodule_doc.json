@@ -387,6 +387,23 @@
 		"returnValue": "int"
 	},
 	{
+		"name": "userHasTouchscreen",
+		"description": "userHasTouchscreen",
+		"usages": [
+			{
+				"functionName": "userHasTouchscreen",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "userHasGamePad",
 		"description": "prüft, ob ein User mit Gamepad spielen kann.",
 		"usages": [
@@ -576,6 +593,23 @@
 		"returnValue": "bool"
 	},
 	{
+		"name": "userHasHighscoreOption",
+		"description": "userHasHighscoreOption",
+		"usages": [
+			{
+				"functionName": "userHasHighscoreOption",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "userHasAlwaysGameSettingsOption",
 		"description": "prüft, ob ein User das AlwaysGameSettings Flag gesetzt hat",
 		"usages": [
@@ -723,6 +757,23 @@
 		"returnValue": "GGLList"
 	},
 	{
+		"name": "userGetGlobalSwitchKeys",
+		"description": "userGetGlobalSwitchKeys",
+		"usages": [
+			{
+				"functionName": "userGetGlobalSwitchKeys",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "userCreateGuest",
 		"description": "erzeugt einen Gast-User.",
 		"usages": [
@@ -774,6 +825,23 @@
 			}
 		],
 		"returnValue": "string"
+	},
+	{
+		"name": "userCreateGUrl",
+		"description": "userCreateGUrl",
+		"usages": [
+			{
+				"functionName": "userCreateGUrl",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "userAllCreateArchivGUrl",

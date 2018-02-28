@@ -12,7 +12,7 @@ import { getTokenContent, logDebug, logError, logInfo } from "./functions";
 import { GGLDocument } from "./gglDocument";
 import { IGGLBuiltinCompletionInformation, IGGLCompletionInformation, IGGLDefinitionInformation, IGGLSignatureInformation, IRelativeFile } from "./gglInterfaces";
 import { GGLParser } from "./gglParser";
-import { GGLToken, TokenTypes } from "./gglToken";
+import { GGLVariableToken, TokenTypes } from "./gglToken";
 
 const regexCompletionInput = /(\s*(\w+))+/;
 
@@ -79,11 +79,12 @@ export class GGLProjectLanguageSupport {
         return new Promise<IGGLCompletionInformation[]>((resolve, reject) => {
             const lineContent = sourceDocument.lineAt(sourcePosition.line).text;
 
-            let matchingDef: GGLToken[] = [];
+            let matchingDef: GGLVariableToken[] = [];
             GGLProjectLanguageSupport.documents.forEach((searchDocument) => {
                 logInfo(`search completions in ${searchDocument.Root}@${searchDocument.File}`);
 
-                matchingDef = matchingDef.concat(searchDocument.Parser.Definitions.filter((element) => this.findMatichingElement(element, searchDocument, sourceDocument, sourcePosition)));
+                matchingDef = matchingDef.concat(searchDocument.Parser.VariableDefinitions.filter((canidate) => this.findMatichingElement(canidate, searchDocument, sourceDocument, sourcePosition)));
+                matchingDef = matchingDef.concat(searchDocument.Parser.FunctionDefinitions.filter((canidate) => this.findMatichingElement(canidate, searchDocument, sourceDocument, sourcePosition)));
             });
 
             const completions: IGGLCompletionInformation[] = [];
@@ -163,9 +164,9 @@ export class GGLProjectLanguageSupport {
 
             const searched = this.getSearchContent(sourceDocument, sourcePosition);
 
-            let matchingDef: GGLToken;
+            let matchingDef: GGLVariableToken;
             GGLProjectLanguageSupport.documents.forEach((gglDocument) => {
-                const matchingDocDef = gglDocument.Parser.Definitions.find((element) => this.findMatichingElement(element, gglDocument, sourceDocument, sourcePosition)); // searched === element.Content; /(\w+)/.exec(element.Content)[1]);
+                const matchingDocDef = gglDocument.Parser.VariableDefinitions.find((element) => this.findMatichingElement(element, gglDocument, sourceDocument, sourcePosition)); // searched === element.Content; /(\w+)/.exec(element.Content)[1]);
                 if (matchingDocDef !== undefined) {
                     matchingDef = matchingDocDef;
                 }
@@ -212,7 +213,7 @@ export class GGLProjectLanguageSupport {
         if (GGLProjectLanguageSupport.activeDoc.Document.fileName !== event.document.fileName) {
             logError(`changed Document is not active document!`);
         } else if (event.contentChanges.length === 1 && event.contentChanges[0].text.indexOf("\n") >= 0) {
-            this.updateFileTreeOnDocumentChange(event.document);
+            GGLProjectLanguageSupport.Instance.updateFileTreeOnDocumentChange(event.document);
         }
     }
 
@@ -229,14 +230,14 @@ export class GGLProjectLanguageSupport {
 
             const selectedFunction: string = /(\w+)\(.*\)/.exec(lineContent)[1];
 
-            const matchingDef: Array<{ token: GGLToken, sourceLine: string }> = [];
+            const matchingDef: Array<{ token: GGLVariableToken, parameters: GGLVariableToken[] }> = [];
             GGLProjectLanguageSupport.documents.forEach((searchDocument) => {
                 logInfo(`search Signatures in ${searchDocument.Root}@${searchDocument.File}`);
 
-                searchDocument.Parser.Definitions.forEach((element) => {
-                    if (element.Type === TokenTypes.FunctionDeclatation && element.Content === selectedFunction) {
+                searchDocument.Parser.FunctionDefinitions.forEach((element) => {
+                    if (element.Content === selectedFunction) {
                         matchingDef.push({
-                            sourceLine: searchDocument.Document.lineAt(element.LineNumber).text,
+                            parameters: element.Parameters,
                             token: element,
                         });
                     }
@@ -245,27 +246,37 @@ export class GGLProjectLanguageSupport {
 
             const signatures: IGGLSignatureInformation[] = [];
             matchingDef.forEach((element) => {
-                const functionDefinition = /function\s*(\w+)\s*\((.*)\)/.exec(element.sourceLine);
-                const paramsArray: Array<{ name: string, description: string }> = [];
-                if (functionDefinition[2].length > 1) {
-                    const paramsText = functionDefinition[2].split(`,`);
-                    paramsText.forEach((parameter) => {
-                        const parameterMatch = /\s*(\w+)\s*(.*)/.exec(parameter);
-                        paramsArray.push({
-                            description: parameterMatch[2],
-                            name: parameterMatch[1],
-                        });
-                    });
-                }
+                // const functionDefinition = /function\s*(\w+)\s*\((.*)\)/.exec(element.sourceLine);
+                // const paramsArray: Array<{ name: string, description: string }> = [];
+                // if (functionDefinition[2].length > 1) {
+                //     const paramsText = functionDefinition[2].split(`,`);
+                //     paramsText.forEach((parameter) => {
+                //         const parameterMatch = /\s*(\w+)\s*(.*)/.exec(parameter);
+                //         paramsArray.push({
+                //             description: parameterMatch[2],
+                //             name: parameterMatch[1],
+                //         });
+                //     });
+                // }
+                const paramsArray: Array<{name: string, description: string}> = [];
+                const paramNames: string[] = [];
+                element.parameters.forEach( (parameter) => {
+                    if (parameter.DefaultValue === undefined) {
+                        paramsArray.push({name: "var", description: parameter.Content + "=" + parameter.DefaultValue});
+                    } else {
+                        paramsArray.push({name: "var", description: parameter.Content});
+                    }
+                    paramNames.push(`var ${parameter.Content}`);
+                });
                 const completionInfo: IGGLSignatureInformation = {
                     activeParameter: this.getActiveParameter(lineContent, sourcePosition.character),
-                    comment: `function ${functionDefinition[1]}(${functionDefinition[2]})`,
+                    comment: `function ${element.token.Content}(${paramNames.join(", ")})`,
                     label: element.token.Content,
                     params: paramsArray,
                     returnValue: "do GGL-Functions have a return value?",
                     usages: [{
-                        call: `${functionDefinition[1]}(${functionDefinition[2]})`,
-                        functionName: functionDefinition[1],
+                        call: `${paramNames.join(", ")}`,
+                        functionName: element.token.Content,
                     }],
                 };
                 signatures.push(completionInfo);
@@ -359,7 +370,7 @@ export class GGLProjectLanguageSupport {
         return content;
     }
 
-    private findMatichingElement(element: GGLToken, searchDocument: GGLDocument, sourceDocument: vscode.TextDocument, sourcePosition: vscode.Position): boolean {
+    private findMatichingElement(canidate: GGLVariableToken, searchDocument: GGLDocument, sourceDocument: vscode.TextDocument, sourcePosition: vscode.Position): boolean {
         const content: string = this.getSearchContent(sourceDocument, sourcePosition);
 
         const groups: number[] = [];
@@ -368,15 +379,15 @@ export class GGLProjectLanguageSupport {
             if (sourcePosition.line >= section.beginAtLine && sourcePosition.line <= section.endAtLine) { groups.push(section.groupID); }
         });
         // in scope, if 0->global or in same file
-        if (element.NestedGroups[0] !== 0 && element.FileName !== searchDocument.Document.fileName) { return false; }
+        if (canidate.NestedGroups.length !== 1 && canidate.FileName !== searchDocument.Document.fileName) { return false; }
 
         // in same scope to do
-        element.NestedGroups.sort();
-        const sharedGroup = groups.indexOf(element.NestedGroups[element.NestedGroups.length - 1]) < 0 ? false : true;
+        canidate.NestedGroups.sort();
+        const sharedGroup = groups.indexOf(canidate.NestedGroups[canidate.NestedGroups.length - 1]) < 0 ? false : true;
         if (sharedGroup) {
             // since same scope search matches
-            if (element.Type !== TokenTypes.FunctionDeclatation && element.Type !== TokenTypes.VariableDeclaration) { return false; }
-            const isFound = element.Content.indexOf(content) >= 0;
+            if (canidate.Type !== TokenTypes.FunctionDeclatation && canidate.Type !== TokenTypes.VariableDeclaration) { return false; }
+            const isFound = canidate.Content.indexOf(content) >= 0;
             return isFound;
         }
 

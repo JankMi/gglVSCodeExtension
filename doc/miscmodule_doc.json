@@ -179,5 +179,39 @@
 			}
 		],
 		"returnValue": "color-string"
+	},
+	{
+		"name": "miscPointsDistance",
+		"description": "miscPointsDistance",
+		"usages": [
+			{
+				"functionName": "miscPointsDistance",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "miscPointsRotation",
+		"description": "miscPointsRotation",
+		"usages": [
+			{
+				"functionName": "miscPointsRotation",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	}
 ]

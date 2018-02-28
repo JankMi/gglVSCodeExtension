@@ -42,6 +42,23 @@
 		"returnValue": "none"
 	},
 	{
+		"name": "sorted",
+		"description": "sorted",
+		"usages": [
+			{
+				"functionName": "sorted",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "list",
 		"description": "liefert die Anzahl der Elemente in der Liste <em>l</em> bzw. die Anzahl der Einträge im Dictionary <em>d</em>",
 		"usages": [
@@ -1290,6 +1307,23 @@
 		"returnValue": "string"
 	},
 	{
+		"name": "stringRemove",
+		"description": "stringRemove",
+		"usages": [
+			{
+				"functionName": "stringRemove",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "stringReplace",
 		"description": "ersetzt im String <em>src</em> einen Teilstring <em>oldStr</em> durch den String <em>newStr</em>",
 		"usages": [
@@ -1662,6 +1696,23 @@
 		"returnValue": "bool"
 	},
 	{
+		"name": "animIsPaused",
+		"description": "animIsPaused",
+		"usages": [
+			{
+				"functionName": "animIsPaused",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "animIsStopped",
 		"description": "Prüft ob eine Animation gerade gestoppt ist.",
 		"usages": [
@@ -1698,6 +1749,23 @@
 			}
 		],
 		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "animGetLoopCount",
+		"description": "animGetLoopCount",
+		"usages": [
+			{
+				"functionName": "animGetLoopCount",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "animSetDuration",
@@ -1847,6 +1915,23 @@
 			}
 		],
 		"returnValue": "string"
+	},
+	{
+		"name": "animToggleDirection",
+		"description": "animToggleDirection",
+		"usages": [
+			{
+				"functionName": "animToggleDirection",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "animSetEasingCurve",
@@ -2002,6 +2087,210 @@
 			}
 		],
 		"returnValue": "int"
+	},
+	{
+		"name": "gameGetMedia",
+		"description": "gameGetMedia",
+		"usages": [
+			{
+				"functionName": "gameGetMedia",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetDisplayName",
+		"description": "gameGetDisplayName",
+		"usages": [
+			{
+				"functionName": "gameGetDisplayName",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetId",
+		"description": "gameGetId",
+		"usages": [
+			{
+				"functionName": "gameGetId",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetDescription",
+		"description": "gameGetDescription",
+		"usages": [
+			{
+				"functionName": "gameGetDescription",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMediasetDescription",
+		"description": "gameGetMediasetDescription",
+		"usages": [
+			{
+				"functionName": "gameGetMediasetDescription",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMinPlayers",
+		"description": "gameGetMinPlayers",
+		"usages": [
+			{
+				"functionName": "gameGetMinPlayers",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMaxPlayers",
+		"description": "gameGetMaxPlayers",
+		"usages": [
+			{
+				"functionName": "gameGetMaxPlayers",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameHasComputerPlayer",
+		"description": "gameHasComputerPlayer",
+		"usages": [
+			{
+				"functionName": "gameHasComputerPlayer",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetLoadPicturePath",
+		"description": "gameGetLoadPicturePath",
+		"usages": [
+			{
+				"functionName": "gameGetLoadPicturePath",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMediasetDisplayName",
+		"description": "gameGetMediasetDisplayName",
+		"usages": [
+			{
+				"functionName": "gameGetMediasetDisplayName",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMediasetId",
+		"description": "gameGetMediasetId",
+		"usages": [
+			{
+				"functionName": "gameGetMediasetId",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "gameGetMediaDescription",
+		"description": "gameGetMediaDescription",
+		"usages": [
+			{
+				"functionName": "gameGetMediaDescription",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "makeGraphicsObject",
@@ -2393,6 +2682,23 @@
 		"returnValue": "GGLObject::None"
 	},
 	{
+		"name": "gfxGetScale",
+		"description": "gfxGetScale",
+		"usages": [
+			{
+				"functionName": "gfxGetScale",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "gfxSetRotation",
 		"description": "Rotiert ein Grafikelement",
 		"usages": [
@@ -2776,6 +3082,23 @@
 		"returnValue": "rect"
 	},
 	{
+		"name": "gfxGetGeometry",
+		"description": "gfxGetGeometry",
+		"usages": [
+			{
+				"functionName": "gfxGetGeometry",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "gfxCenterOn",
 		"description": "Zentriert ein Element auf einem anderen",
 		"usages": [
@@ -2937,6 +3260,23 @@
 			{}
 		],
 		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "gfxGetAlignment",
+		"description": "gfxGetAlignment",
+		"usages": [
+			{
+				"functionName": "gfxGetAlignment",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "gfxSetElideMode",
@@ -4222,6 +4562,23 @@
 		"returnValue": "GGLObject::None"
 	},
 	{
+		"name": "unblockInput",
+		"description": "unblockInput",
+		"usages": [
+			{
+				"functionName": "unblockInput",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "processEvents",
 		"description": "Verarbeitet alle Events in der Eventqueue.",
 		"usages": [
@@ -4508,6 +4865,40 @@
 		"returnValue": "color-string"
 	},
 	{
+		"name": "miscPointsDistance",
+		"description": "miscPointsDistance",
+		"usages": [
+			{
+				"functionName": "miscPointsDistance",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "miscPointsRotation",
+		"description": "miscPointsRotation",
+		"usages": [
+			{
+				"functionName": "miscPointsRotation",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "naviMakeMatrix",
 		"description": "Erstellt ein Navigation-Matrix-Objekt.",
 		"usages": [
@@ -4765,6 +5156,23 @@
 		"returnValue": "GGLObject::None"
 	},
 	{
+		"name": "naviSetLast",
+		"description": "naviSetLast",
+		"usages": [
+			{
+				"functionName": "naviSetLast",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "naviSetEnabled",
 		"description": "Aktiviert oder Deaktiviert einen Eintrag in der Matrix.",
 		"usages": [
@@ -4839,6 +5247,23 @@
 		"returnValue": "GGLObject::None"
 	},
 	{
+		"name": "naviHasEnabledPos",
+		"description": "naviHasEnabledPos",
+		"usages": [
+			{
+				"functionName": "naviHasEnabledPos",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "naviSetQObject",
 		"description": "Setzt für eine Matrix-Position ein QObjekt als Referenz-Objekt.",
 		"usages": [
@@ -4898,6 +5323,57 @@
 				"description": "matrix"
 			}
 		]
+	},
+	{
+		"name": "naviSetRowQObject",
+		"description": "naviSetRowQObject",
+		"usages": [
+			{
+				"functionName": "naviSetRowQObject",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "naviGetRowQObject",
+		"description": "naviGetRowQObject",
+		"usages": [
+			{
+				"functionName": "naviGetRowQObject",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "naviGetQObjectPos",
+		"description": "naviGetQObjectPos",
+		"usages": [
+			{
+				"functionName": "naviGetQObjectPos",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "naviSetExceededCallback",
@@ -4961,6 +5437,23 @@
 			}
 		],
 		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviSetRowChangedCallback",
+		"description": "naviSetRowChangedCallback",
+		"usages": [
+			{
+				"functionName": "naviSetRowChangedCallback",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "naviSetCallbackArgs",
@@ -5088,6 +5581,23 @@
 			}
 		],
 		"returnValue": "bool"
+	},
+	{
+		"name": "naviSetWrapAround",
+		"description": "naviSetWrapAround",
+		"usages": [
+			{
+				"functionName": "naviSetWrapAround",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "naviIsWrapAround",
@@ -5502,6 +6012,23 @@
 		"returnValue": "double"
 	},
 	{
+		"name": "shapeGetSlopeAtPercent",
+		"description": "shapeGetSlopeAtPercent",
+		"usages": [
+			{
+				"functionName": "shapeGetSlopeAtPercent",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "shapeGetPointAtPercent",
 		"description": "liefert den Punkt, der an der Prozentzahl <em>t</em> im Shape <em>s</em> liegt.",
 		"usages": [
@@ -5578,6 +6105,23 @@
 				"description": "s"
 			}
 		]
+	},
+	{
+		"name": "shapeCloseSubpath",
+		"description": "shapeCloseSubpath",
+		"usages": [
+			{
+				"functionName": "shapeCloseSubpath",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "shapeCubicTo",
@@ -5716,6 +6260,91 @@
 			}
 		],
 		"returnValue": "bool"
+	},
+	{
+		"name": "shapeToReversed",
+		"description": "shapeToReversed",
+		"usages": [
+			{
+				"functionName": "shapeToReversed",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "shapeClone",
+		"description": "shapeClone",
+		"usages": [
+			{
+				"functionName": "shapeClone",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "shapeSetFillRule",
+		"description": "shapeSetFillRule",
+		"usages": [
+			{
+				"functionName": "shapeSetFillRule",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "shapeSimplify",
+		"description": "shapeSimplify",
+		"usages": [
+			{
+				"functionName": "shapeSimplify",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "shapeUnited",
+		"description": "shapeUnited",
+		"usages": [
+			{
+				"functionName": "shapeUnited",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "simExit",
@@ -5936,6 +6565,40 @@
 		"returnValue": "dict"
 	},
 	{
+		"name": "makeBufferedSound",
+		"description": "makeBufferedSound",
+		"usages": [
+			{
+				"functionName": "makeBufferedSound",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "makeStreamedSound",
+		"description": "makeStreamedSound",
+		"usages": [
+			{
+				"functionName": "makeStreamedSound",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "soundPlay",
 		"description": "spielt einen Sound ab.",
 		"usages": [
@@ -6144,6 +6807,40 @@
 		"returnValue": "double"
 	},
 	{
+		"name": "soundGetVolume",
+		"description": "soundGetVolume",
+		"usages": [
+			{
+				"functionName": "soundGetVolume",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "soundSetVolume",
+		"description": "soundSetVolume",
+		"usages": [
+			{
+				"functionName": "soundSetVolume",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "makeTimer",
 		"description": "erstellt einen Timer",
 		"usages": [
@@ -6260,6 +6957,23 @@
 			}
 		],
 		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "timerIsPaused",
+		"description": "timerIsPaused",
+		"usages": [
+			{
+				"functionName": "timerIsPaused",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "timerIsActive",
@@ -6666,6 +7380,23 @@
 		"returnValue": "int"
 	},
 	{
+		"name": "userHasTouchscreen",
+		"description": "userHasTouchscreen",
+		"usages": [
+			{
+				"functionName": "userHasTouchscreen",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "userHasGamePad",
 		"description": "prüft, ob ein User mit Gamepad spielen kann.",
 		"usages": [
@@ -6855,6 +7586,23 @@
 		"returnValue": "bool"
 	},
 	{
+		"name": "userHasHighscoreOption",
+		"description": "userHasHighscoreOption",
+		"usages": [
+			{
+				"functionName": "userHasHighscoreOption",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "userHasAlwaysGameSettingsOption",
 		"description": "prüft, ob ein User das AlwaysGameSettings Flag gesetzt hat",
 		"usages": [
@@ -7002,6 +7750,23 @@
 		"returnValue": "GGLList"
 	},
 	{
+		"name": "userGetGlobalSwitchKeys",
+		"description": "userGetGlobalSwitchKeys",
+		"usages": [
+			{
+				"functionName": "userGetGlobalSwitchKeys",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "userCreateGuest",
 		"description": "erzeugt einen Gast-User.",
 		"usages": [
@@ -7055,6 +7820,23 @@
 		"returnValue": "string"
 	},
 	{
+		"name": "userCreateGUrl",
+		"description": "userCreateGUrl",
+		"usages": [
+			{
+				"functionName": "userCreateGUrl",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "userAllCreateArchivGUrl",
 		"description": "erzeugt einen GUrl um auf Daten zuzugreifen, die für alle User zugänglich sind jedoch Archiv spezifisch sein sollen.",
 		"usages": [
@@ -7103,5 +7885,56 @@
 		],
 		"params": [],
 		"returnValue": "None"
+	},
+	{
+		"name": "makeWebView",
+		"description": "makeWebView",
+		"usages": [
+			{
+				"functionName": "makeWebView",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "webSetUrl",
+		"description": "webSetUrl",
+		"usages": [
+			{
+				"functionName": "webSetUrl",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "simStartConfigurator",
+		"description": "simStartConfigurator",
+		"usages": [
+			{
+				"functionName": "simStartConfigurator",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	}
 ]

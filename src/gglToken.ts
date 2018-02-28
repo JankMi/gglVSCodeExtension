@@ -1,4 +1,4 @@
-export class GGLToken {
+export class GGLVariableToken {
     private content: string;
     private type: TokenTypes = TokenTypes.NotDeclared;
     private scopes: string[];
@@ -7,8 +7,9 @@ export class GGLToken {
     private lineNo: number;
     private startPos: number;
     private endPos: number;
+    private defaultValue: string;
 
-    constructor(content: string, scopes: string[], lineNo: number, startPos: number, endPos: number, nestedGroups: number[], file: string) {
+    constructor(content: string, scopes: string[], lineNo: number, startPos: number, endPos: number, nestedGroups: number[], file: string, type: TokenTypes) {
         const helper = /([\w]+|~)/.exec(content);
         if (helper === null) {
             console.debug(file + lineNo);
@@ -21,14 +22,7 @@ export class GGLToken {
         this.nestedGroups = nestedGroups;
         this.startPos = startPos;
         this.endPos = endPos;
-
-        if (/\bkeyword\.control\.[\w\.]*/.exec(scopes[scopes.length - 1])) {
-            this.type = TokenTypes.Keyword;
-        } else if (/variable.other.readwrite.ggl/.exec(scopes[scopes.length - 1])) {
-            this.type = TokenTypes.VariableDeclaration;
-        } else if (scopes[scopes.length - 1].startsWith("entity.name.function.ggl")) {
-            this.type = TokenTypes.FunctionDeclatation;
-        }
+        this.type = type;
     }
 
     public get Content(): string { return this.content; }
@@ -39,6 +33,22 @@ export class GGLToken {
     public get LineNumber(): number { return this.lineNo; }
     public get StartPos(): number { return this.startPos; }
     public get EndPos(): number { return this.endPos; }
+    public get DefaultValue(): string {return this.defaultValue; }
+    public set DefaultValue(toSet: string) { this.defaultValue = toSet; }
+}
+
+export class GGLFunctionToken extends GGLVariableToken {
+    private parameters: GGLVariableToken[] = [];
+
+    constructor(content: string, scopes: string[], lineNo: number, startPos: number, endPos: number, nestedGroups: number[], file: string) {
+        super(content, scopes, lineNo, startPos, endPos, nestedGroups, file, TokenTypes.FunctionDeclatation);
+    }
+
+    public addParameter(parameter: GGLVariableToken) {
+        this.parameters.push(parameter);
+    }
+
+    public get Parameters(): GGLVariableToken[] { return this.parameters; }
 }
 
 export enum TokenTypes {

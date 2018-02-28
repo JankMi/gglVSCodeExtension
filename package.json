@@ -2,7 +2,7 @@
   "name": "genesisvscode",
   "displayName": "genesisVSCode",
   "description": "language services for the genesis ggl",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "publisher": "JankMi",
   "engines": {
     "vscode": "^1.20.0"
@@ -22,6 +22,16 @@
           ".ggl"
         ],
         "configuration": "./language-configuration.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "ggl",
+        "path": "./snippets/ggl.json"
+      },
+      {
+        "language": "json",
+        "path": "./snippets/json.json"
       }
     ],
     "grammars": [

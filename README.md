@@ -25,6 +25,10 @@ load time, the builtin docs, no doc for ggl functions, ...
 
 still beta
 
+### 0.1.5
+
+parameter in scope, default values, improved signature support, snippets by marius
+
 ### 0.1.4
 
 reload variables in active doc, builtins w/o completions, imports with @/..., syntax fixes

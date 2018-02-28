@@ -118,6 +118,23 @@
 		"returnValue": "GGLObject::None"
 	},
 	{
+		"name": "timerIsPaused",
+		"description": "timerIsPaused",
+		"usages": [
+			{
+				"functionName": "timerIsPaused",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "timerIsActive",
 		"description": "prüft ob ein Timer gerade läuft.",
 		"usages": [

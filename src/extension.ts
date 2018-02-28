@@ -12,7 +12,7 @@ import { GGLDocument } from "./gglDocument";
 import { IGGLBuiltinCompletionInformation, IGGLCompletionInformation, IGGLDefinitionInformation, IGGLSignatureInformation } from "./gglInterfaces";
 import { GGLParser } from "./gglParser";
 import { GGLProjectLanguageSupport } from "./gglProjectLanguageSupport";
-import { GGLToken, TokenTypes } from "./gglToken";
+import { GGLVariableToken, TokenTypes } from "./gglToken";
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -106,14 +106,6 @@ export class GGLBuiltinCompletionItemProvider implements vscode.CompletionItemPr
         }
 
         const snippet: vscode.SnippetString = new vscode.SnippetString(`${element.label}(`);
-        let prevAppend: boolean = false;
-        element.params.forEach((parameter: { name: string; description: string; }) => {
-            documentation.push(`parameter: ${parameter.name}: ${parameter.description}`);
-            if (prevAppend) { snippet.appendText(", "); }
-            snippet.appendText(`${parameter.name}`);
-            prevAppend = true;
-        });
-        snippet.appendText(`)`);
         newEntry.insertText = snippet;
         documentation.push(`returnValue: ${element.returnValue}`);
         newEntry.documentation = documentation.join("\n");

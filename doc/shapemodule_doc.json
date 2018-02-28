@@ -148,6 +148,23 @@
 		"returnValue": "double"
 	},
 	{
+		"name": "shapeGetSlopeAtPercent",
+		"description": "shapeGetSlopeAtPercent",
+		"usages": [
+			{
+				"functionName": "shapeGetSlopeAtPercent",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
 		"name": "shapeGetPointAtPercent",
 		"description": "liefert den Punkt, der an der Prozentzahl <em>t</em> im Shape <em>s</em> liegt.",
 		"usages": [
@@ -224,6 +241,23 @@
 				"description": "s"
 			}
 		]
+	},
+	{
+		"name": "shapeCloseSubpath",
+		"description": "shapeCloseSubpath",
+		"usages": [
+			{
+				"functionName": "shapeCloseSubpath",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	},
 	{
 		"name": "shapeCubicTo",
@@ -362,5 +396,90 @@
 			}
 		],
 		"returnValue": "bool"
+	},
+	{
+		"name": "shapeToReversed",
+		"description": "shapeToReversed",
+		"usages": [
+			{
+				"functionName": "shapeToReversed",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "shapeClone",
+		"description": "shapeClone",
+		"usages": [
+			{
+				"functionName": "shapeClone",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "shapeSetFillRule",
+		"description": "shapeSetFillRule",
+		"usages": [
+			{
+				"functionName": "shapeSetFillRule",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "shapeSimplify",
+		"description": "shapeSimplify",
+		"usages": [
+			{
+				"functionName": "shapeSimplify",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
+	},
+	{
+		"name": "shapeUnited",
+		"description": "shapeUnited",
+		"usages": [
+			{
+				"functionName": "shapeUnited",
+				"call": "no docu"
+			}
+		],
+		"params": [
+			{
+				"name": "no docu",
+				"description": "no docu"
+			}
+		],
+		"returnValue": "no docu"
 	}
 ]
