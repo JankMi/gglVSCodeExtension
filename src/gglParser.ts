@@ -16,8 +16,8 @@ export class GGLParser {
         GGLParser.tmGrammar = GGLParser.tmRegistry.loadGrammarFromPathSync(pathToGrammar);
     }
 
-        private static tmRegistry: vsTM.Registry;
-        private static tmGrammar: vsTM.IGrammar;
+    private static tmRegistry: vsTM.Registry;
+    private static tmGrammar: vsTM.IGrammar;
 
     private document: vscode.TextDocument;
     public static get TM_Grammar() { return GGLParser.tmGrammar; }
@@ -54,7 +54,7 @@ export class GGLParser {
         return lines;
     }
 
-    private getTokensFromString(fileContent): [GGLVariableToken[], GGLFunctionToken[], ISection[], IRelativeFile[] ] {
+    private getTokensFromString(fileContent): [GGLVariableToken[], GGLFunctionToken[], ISection[], IRelativeFile[]] {
 
         let tokenStack = null;
         let nestedGroupID = 0;
@@ -88,22 +88,23 @@ export class GGLParser {
                             });
                         } else if (element.scopes.find((scope: string) => scope === strSecExit)) {
                             const closedGroupID = nestedGroups.pop();
-                            sections.find((section) => section.groupID === closedGroupID ).endAtLine = i;
+                            sections.find((section) => section.groupID === closedGroupID).endAtLine = i;
                         } else if (lastScope.search("entity.name.function.ggl") >= 0) {
                             const toPushFunc = new GGLFunctionToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups), this.document.fileName);
                             functionDeclarations.push(toPushFunc);
-                        } else if (lastScope.indexOf("variable.other.readwrite.ggl") >= 0) {
+                        } else if (lastScope === "variable.other.readwrite.ggl") {
+                            toPush = new GGLVariableToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups), this.document.fileName, TokenTypes.VariableDeclaration);
+                            variableDeclarations.push(toPush);
+                        } else if (lastScope === "variable.other.readwrite.ggl.local") {
                             toPush = new GGLVariableToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups.concat(nestedGroupID + 1)), this.document.fileName, TokenTypes.VariableDeclaration);
                             variableDeclarations.push(toPush);
-                            if (lastScope === "variable.other.readwrite.ggl.local") {
-                                functionDeclarations[functionDeclarations.length - 1].Parameters.push(toPush);
-                            }
+                            functionDeclarations[functionDeclarations.length - 1].Parameters.push(toPush);
                         } else if (lastScope.search("import") >= 0) {
                             toPush = new GGLVariableToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups), this.document.fileName, TokenTypes.Keyword);
                             importTokens.push(toPush);
                         } else if (lastScope === "meta.tag.defaultValue.ggl") {
                             variableDeclarations[variableDeclarations.length - 1].DefaultValue = getTokenContent(fileContent[i], element);
-                            functionDeclarations[functionDeclarations.length - 1].Parameters[functionDeclarations[functionDeclarations.length - 1].Parameters.length - 1 ].DefaultValue = getTokenContent(fileContent[i], element);
+                            functionDeclarations[functionDeclarations.length - 1].Parameters[functionDeclarations[functionDeclarations.length - 1].Parameters.length - 1].DefaultValue = getTokenContent(fileContent[i], element);
                         }
 
                     }
