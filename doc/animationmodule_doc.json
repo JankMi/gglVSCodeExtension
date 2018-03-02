@@ -259,20 +259,20 @@
 	},
 	{
 		"name": "animIsPaused",
-		"description": "animIsPaused",
+		"description": "Prüft ob eine Animation gerade pausiert ist.",
 		"usages": [
 			{
 				"functionName": "animIsPaused",
-				"call": "no docu"
+				"call": "GGLObject<Animation> animation"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "animation",
+				"description": "gibt die Animation an."
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "animIsStopped",
@@ -314,20 +314,20 @@
 	},
 	{
 		"name": "animGetLoopCount",
-		"description": "animGetLoopCount",
+		"description": "Fragt wie oft eine Animation wiederholt wird.",
 		"usages": [
 			{
 				"functionName": "animGetLoopCount",
-				"call": "no docu"
+				"call": "GGLObject<Animation> animation"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "animation",
+				"description": "gibt die Animation an."
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "int"
 	},
 	{
 		"name": "animSetDuration",
@@ -480,20 +480,20 @@
 	},
 	{
 		"name": "animToggleDirection",
-		"description": "animToggleDirection",
+		"description": "Ändert die Laufrichtung einer Animation.",
 		"usages": [
 			{
 				"functionName": "animToggleDirection",
-				"call": "no docu"
+				"call": "GGLObject<Animation> animation"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "animation",
+				"description": "gibt die Animation an."
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "string"
 	},
 	{
 		"name": "animSetEasingCurve",

@@ -25,6 +25,10 @@ load time, the builtin docs, no doc for ggl functions, ...
 
 still beta
 
+### 0.1.6
+
+scope issue fixed, signatures for functioncalls in functioncalls, default values in signatures
+
 ### 0.1.5
 
 parameter in scope, default values, improved signature support, snippets by marius

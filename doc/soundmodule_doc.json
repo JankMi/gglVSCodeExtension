@@ -1,37 +1,53 @@
 [
 	{
 		"name": "makeBufferedSound",
-		"description": "makeBufferedSound",
+		"description": "legt ein gepuffertes Sound-Object an",
 		"usages": [
 			{
 				"functionName": "makeBufferedSound",
-				"call": "no docu"
+				"call": "   string file ,  string channel  [,  looped  = false]  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "file",
+				"description": "genesis-Url zur Sound Datei"
+			},
+			{
+				"name": "channel",
+				"description": "Kanal zu welchem Sound zugeordnet wird (\"sfx\", \"music\" oder \"voice\")"
+			},
+			{
+				"name": "loop",
+				"description": "Gibt an ob Sound gelooped abgespielt werden soll"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "Sound-Objekt"
 	},
 	{
 		"name": "makeStreamedSound",
-		"description": "makeStreamedSound",
+		"description": "legt ein gestreamtes Sound-Object an",
 		"usages": [
 			{
 				"functionName": "makeStreamedSound",
-				"call": "no docu"
+				"call": "   string file  ,  string channel  [,  looped  = false]  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "file",
+				"description": "genesis-Url zur Sound Datei"
+			},
+			{
+				"name": "channel",
+				"description": "Kanal zu welchem Sound zugeordnet wird (\"sfx\", \"music\" oder \"voice\")"
+			},
+			{
+				"name": "loop",
+				"description": "Gibt an ob Sound gelooped abgespielt werden soll"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "Sound-Objekt"
 	},
 	{
 		"name": "soundPlay",
@@ -103,7 +119,7 @@
 	},
 	{
 		"name": "soundIsPlaying",
-		"description": "liefert <em> true </em> zurück wenn der Sound gerade abgespielt wird sonst <em> false </em>.",
+		"description": "liefert  true  zurück wenn der Sound gerade abgespielt wird sonst  false .",
 		"usages": [
 			{
 				"functionName": "soundIsPlaying",
@@ -120,7 +136,7 @@
 	},
 	{
 		"name": "soundIsPaused",
-		"description": "liefert <em> true </em> zurück wenn der Sound gerade pausiert ist sonst <em> false </em>.",
+		"description": "liefert  true  zurück wenn der Sound gerade pausiert ist sonst  false .",
 		"usages": [
 			{
 				"functionName": "soundIsPaused",
@@ -137,7 +153,7 @@
 	},
 	{
 		"name": "soundIsStopped",
-		"description": "liefert <em> true </em> zurück wenn der Sound gerade gestoppt ist sonst <em> false </em>.",
+		"description": "liefert  true  zurück wenn der Sound gerade gestoppt ist sonst  false .",
 		"usages": [
 			{
 				"functionName": "soundIsStopped",
@@ -243,36 +259,36 @@
 	},
 	{
 		"name": "soundGetVolume",
-		"description": "soundGetVolume",
+		"description": "gibt die aktuelle Abspielzeit eines Sounds zurück.",
 		"usages": [
 			{
 				"functionName": "soundGetVolume",
-				"call": "no docu"
+				"call": "   Sound obj  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	},
 	{
 		"name": "soundSetVolume",
-		"description": "soundSetVolume",
+		"description": "gibt die aktuelle Abspielzeit eines Sounds zurück.",
 		"usages": [
 			{
 				"functionName": "soundSetVolume",
-				"call": "no docu"
+				"call": "   Sound obj  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	}
 ]

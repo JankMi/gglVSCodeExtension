@@ -1,7 +1,7 @@
 [
 	{
 		"name": "len",
-		"description": "liefert die Anzahl der Elemente in der Liste <em>l</em> bzw. die Anzahl der Einträge im Dictionary <em>d</em>",
+		"description": "liefert die Anzahl der Elemente in der Liste l bzw. die Anzahl der Einträge im Dictionary d",
 		"usages": [
 			{
 				"functionName": "len",
@@ -18,7 +18,7 @@
 	},
 	{
 		"name": "sort",
-		"description": "sortiert die Liste <em>l</em> und gibt sortierte Liste zurück",
+		"description": "sortiert die Liste l und gibt sortierte Liste zurück",
 		"usages": [
 			{
 				"functionName": "sort",
@@ -43,37 +43,48 @@
 	},
 	{
 		"name": "sorted",
-		"description": "sorted",
+		"description": "sortiert die Liste l und gibt sortierte Liste zurück",
 		"usages": [
 			{
 				"functionName": "sorted",
-				"call": "no docu"
+				"call": "   list l  [ ,  bool reverse = false   ]  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "reverse",
+				"description": "legt fest, ob vorwärts (false) oder rückwärts (true) zu sortieren ist"
+			},
+			{
+				"name": "cmp_func",
+				"description": "legt die Vergleichsfunktion fest, die zum Sortieren aufzurufen ist"
+			},
+			{
+				"name": "cmp_key",
+				"description": "legt den Schlüssel für die Dictionaries fest, die in einer Liste zu sortieren sind."
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "none"
 	},
 	{
 		"name": "list",
-		"description": "liefert die Anzahl der Elemente in der Liste <em>l</em> bzw. die Anzahl der Einträge im Dictionary <em>d</em>",
+		"description": "legt eine Liste an",
 		"usages": [
 			{
-				"functionName": "len",
-				"call": "  list l   "
+				"functionName": "list",
+				"call": "  [  n = 0  [,  defaultValue = none ] ] "
 			}
 		],
 		"params": [
 			{
-				"name": "list",
-				"description": "l"
+				"name": "n",
+				"description": "legt die Länge der Liste fest (Beachte von 0 bis n - 1)"
+			},
+			{
+				"name": "defaultValue",
+				"description": "legt fest, wie die Elemente der Liste zu initialisieren sind."
 			}
-		],
-		"returnValue": "int"
+		]
 	},
 	{
 		"name": "dict",
@@ -172,7 +183,7 @@
 	},
 	{
 		"name": "append",
-		"description": "hängt <em>o</em> an die Liste <em>l</em> und liefert diese erweiterte Liste als Rückgabe",
+		"description": "hängt o an die Liste l und liefert diese erweiterte Liste als Rückgabe",
 		"usages": [
 			{
 				"functionName": "append",
@@ -213,7 +224,7 @@
 	},
 	{
 		"name": "insert",
-		"description": "fügt <em>value</em> mit dem Schlüssel <em>key</em> in dem Dictionary <em>d</em> ein und liefert dieses erweiterte Dictionary als Rückgabe",
+		"description": "fügt value mit dem Schlüssel key in dem Dictionary d ein und liefert dieses erweiterte Dictionary als Rückgabe",
 		"usages": [
 			{
 				"functionName": "insert",
@@ -237,7 +248,7 @@
 	},
 	{
 		"name": "removeAll",
-		"description": "entfernt alle Elemente, die gleich dem Objekt <em>o</em> sind, aus der Liste <em>l</em> und gibt die Anzahl entfernter Elemente zurück",
+		"description": "entfernt alle Elemente, die gleich dem Objekt o sind, aus der Liste l und gibt die Anzahl entfernter Elemente zurück",
 		"usages": [
 			{
 				"functionName": "removeAll",
@@ -258,7 +269,7 @@
 	},
 	{
 		"name": "del",
-		"description": "löscht aus der Liste <em>l</em> das Element mit dem Index <em>idx</em> bzw. aus dem Dictionary <em>d</em> das Element mit dem Schlüssel <em>key</em>",
+		"description": "löscht aus der Liste l das Element mit dem Index idx bzw. aus dem Dictionary d das Element mit dem Schlüssel key",
 		"usages": [
 			{
 				"functionName": "del",
@@ -279,7 +290,7 @@
 	},
 	{
 		"name": "str",
-		"description": "wandelt den Inhalt der übergebenen Variable <em>v</em> in einen String um und gibt diesen zurück",
+		"description": "wandelt den Inhalt der übergebenen Variable v in einen String um und gibt diesen zurück",
 		"usages": [
 			{
 				"functionName": "str",
@@ -296,7 +307,7 @@
 	},
 	{
 		"name": "deepcopy",
-		"description": "führt eine tiefe Kopie durch, indem es den Inhalt von <em>v</em> physikalisch umkopiert und nicht nur",
+		"description": "führt eine tiefe Kopie durch, indem es den Inhalt von v physikalisch umkopiert und nicht nur",
 		"usages": [
 			{
 				"functionName": "deepcopy",
@@ -312,27 +323,24 @@
 	},
 	{
 		"name": "id",
-		"description": "liefert ein Größen-Objekt",
+		"description": "liefert die intern vergebene Id der übergebenen Variable v",
 		"usages": [
 			{
-				"functionName": "size",
-				"call": "   int width  ,  int height   "
+				"functionName": "id",
+				"call": "   var v   "
 			}
 		],
 		"params": [
 			{
-				"name": "width",
-				"description": "legt die Breite des size()-Objekts fest"
-			},
-			{
-				"name": "height",
-				"description": "legt die Höhe des size()-Objekts fest"
+				"name": "v",
+				"description": "Variable, deren Id zurückzugeben ist"
 			}
-		]
+		],
+		"returnValue": "int"
 	},
 	{
 		"name": "type",
-		"description": "liefert den Typ der übergebenen Variable <em>v</em>",
+		"description": "liefert den Typ der übergebenen Variable v",
 		"usages": [
 			{
 				"functionName": "type",
@@ -349,7 +357,7 @@
 	},
 	{
 		"name": "contains",
-		"description": "überprüft zum einen, ob ein bestimmter Wert <em>value</em> in der Liste <em>l</em> bzw. im Dictionary <em>d</em> vorhanden ist, und",
+		"description": "überprüft zum einen, ob ein bestimmter Wert value in der Liste l bzw. im Dictionary d vorhanden ist, und",
 		"usages": [
 			{
 				"functionName": "contains",
@@ -374,7 +382,7 @@
 	},
 	{
 		"name": "getX",
-		"description": "gibt zu dem Punkt <em>p</em> dessen x-Koordinate bzw. zu dem Rechteck <em>r</em> die x-Koordinate der linken oberen Ecke zurück",
+		"description": "gibt zu dem Punkt p dessen x-Koordinate bzw. zu dem Rechteck r die x-Koordinate der linken oberen Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getX",
@@ -391,7 +399,7 @@
 	},
 	{
 		"name": "getY",
-		"description": "gibt zu dem Punkt <em>p</em> dessen y-Koordinate bzw. zu dem Rechteck <em>r</em> die y-Koordinate der linken oberen Ecke zurück",
+		"description": "gibt zu dem Punkt p dessen y-Koordinate bzw. zu dem Rechteck r die y-Koordinate der linken oberen Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getY",
@@ -408,7 +416,7 @@
 	},
 	{
 		"name": "getWidth",
-		"description": "gibt zu dem Rechteck <em>r</em> oder zu dem size()-Objekt <em>s</em> deren Breite zurück",
+		"description": "gibt zu dem Rechteck r oder zu dem size()-Objekt s deren Breite zurück",
 		"usages": [
 			{
 				"functionName": "getWidth",
@@ -425,7 +433,7 @@
 	},
 	{
 		"name": "getHeight",
-		"description": "gibt zu dem Rechteck <em>r</em> oder zu dem size()-Objekt <em>s</em> deren Höhe zurück",
+		"description": "gibt zu dem Rechteck r oder zu dem size()-Objekt s deren Höhe zurück",
 		"usages": [
 			{
 				"functionName": "getHeight",
@@ -442,7 +450,7 @@
 	},
 	{
 		"name": "getSize",
-		"description": "gibt zu dem Rechteck <em>r</em> dessen Größe zurück",
+		"description": "gibt zu dem Rechteck r dessen Größe zurück",
 		"usages": [
 			{
 				"functionName": "getSize",
@@ -458,7 +466,7 @@
 	},
 	{
 		"name": "getCenter",
-		"description": "gibt zu dem Rechteck <em>r</em> oder einer Größe <em>s</em> den Mittelpunkt zurück",
+		"description": "gibt zu dem Rechteck r oder einer Größe s den Mittelpunkt zurück",
 		"usages": [
 			{
 				"functionName": "getCenter",
@@ -474,7 +482,7 @@
 	},
 	{
 		"name": "getTopLeft",
-		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner linken oberen Ecke zurück",
+		"description": "gibt zu dem Rechteck r die Koordinaten seiner linken oberen Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getTopLeft",
@@ -490,7 +498,7 @@
 	},
 	{
 		"name": "getTopRight",
-		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner rechten oberen Ecke zurück",
+		"description": "gibt zu dem Rechteck r die Koordinaten seiner rechten oberen Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getTopRight",
@@ -506,7 +514,7 @@
 	},
 	{
 		"name": "getBottomLeft",
-		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner linken unteren Ecke zurück",
+		"description": "gibt zu dem Rechteck r die Koordinaten seiner linken unteren Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getBottomLeft",
@@ -522,7 +530,7 @@
 	},
 	{
 		"name": "getBottomRight",
-		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner rechten unteren Ecke zurück",
+		"description": "gibt zu dem Rechteck r die Koordinaten seiner rechten unteren Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getBottomRight",
@@ -538,7 +546,7 @@
 	},
 	{
 		"name": "movedTopLeft",
-		"description": "verschiebt die linke obere Ecke des Rechtecks <em>r</em> an den Punkt <em>p</em> und gibt das verschobene Rechteck als rect() zurück",
+		"description": "verschiebt die linke obere Ecke des Rechtecks r an den Punkt p und gibt das verschobene Rechteck als rect() zurück",
 		"usages": [
 			{
 				"functionName": "movedTopLeft",
@@ -554,7 +562,7 @@
 	},
 	{
 		"name": "united",
-		"description": " liefert ein neues Rechteck, das die beiden beteiligten Rechtecke <em>r1</em> und <em>r2</em> enthält",
+		"description": " liefert ein neues Rechteck, das die beiden beteiligten Rechtecke r1 und r2 enthält",
 		"usages": [
 			{
 				"functionName": "united",
@@ -570,7 +578,7 @@
 	},
 	{
 		"name": "intersected",
-		"description": "liefert ein neues Rechteck, das die Schnittmenge der beiden Rechtecke <em>r1</em> und <em>r2</em> enthält",
+		"description": "liefert ein neues Rechteck, das die Schnittmenge der beiden Rechtecke r1 und r2 enthält",
 		"usages": [
 			{
 				"functionName": "intersected",
@@ -586,7 +594,7 @@
 	},
 	{
 		"name": "adjusted",
-		"description": "liefert ein neues Rechteck, bei dem die übergebenen Werte auf die Koordinaten des Originalrechtecks <em>r</em> addiert sind",
+		"description": "liefert ein neues Rechteck, bei dem die übergebenen Werte auf die Koordinaten des Originalrechtecks r addiert sind",
 		"usages": [
 			{
 				"functionName": "adjusted",
@@ -614,7 +622,7 @@
 	},
 	{
 		"name": "boundedTo",
-		"description": "liefert ein size()-Objekt, das die minimale Breite und Höhe den beiden size()-Objekten <em>s1</em> und <em>s2</em> </em> enthält",
+		"description": "liefert ein size()-Objekt, das die minimale Breite und Höhe den beiden size()-Objekten s1 und s2  enthält",
 		"usages": [
 			{
 				"functionName": "boundedTo",
@@ -630,7 +638,7 @@
 	},
 	{
 		"name": "expandedTo",
-		"description": "liefert ein size()-Objekt, das die maximale Breite und Höhe den beiden size()-Objekten <em>s1</em> und <em>s2</em> </em> enthält",
+		"description": "liefert ein size()-Objekt, das die maximale Breite und Höhe den beiden size()-Objekten s1 und s2  enthält",
 		"usages": [
 			{
 				"functionName": "expandedTo",
@@ -646,7 +654,7 @@
 	},
 	{
 		"name": "scaled",
-		"description": "liefert ein size()-Objekt, das das existierende size()-Objekt <em>s1</em> entsprechend dem übergebenen size()-Objekt <em>s2</em> skaliert",
+		"description": "liefert ein size()-Objekt, das das existierende size()-Objekt s1 entsprechend dem übergebenen size()-Objekt s2 skaliert",
 		"usages": [
 			{
 				"functionName": "scaled",

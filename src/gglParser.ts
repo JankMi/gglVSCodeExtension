@@ -69,6 +69,7 @@ export class GGLParser {
         for (let i = 0; i < fileContent.length; i++) {
             const r = GGLParser.tmGrammar.tokenizeLine(fileContent[i], tokenStack);
 
+            const tokens = r.tokens;
             r.tokens.forEach((element) => {
 
                 // no ggl named tokens
@@ -82,14 +83,12 @@ export class GGLParser {
                             nestedGroups.push(++nestedGroupID);
                             sections.push({
                                 beginAtLine: i,
-                                endAtLine: i + 100,
+                                endAtLine: i + 1000,
                                 groupID: nestedGroupID,
                             });
                         } else if (element.scopes.find((scope: string) => scope === strSecExit)) {
-                            nestedGroups.pop();
-                            const helper = sections.pop();
-                            helper.endAtLine = i;
-                            sections.push(helper);
+                            const closedGroupID = nestedGroups.pop();
+                            sections.find((section) => section.groupID === closedGroupID ).endAtLine = i;
                         } else if (lastScope.search("entity.name.function.ggl") >= 0) {
                             const toPushFunc = new GGLFunctionToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups), this.document.fileName);
                             functionDeclarations.push(toPushFunc);
@@ -102,7 +101,7 @@ export class GGLParser {
                         } else if (lastScope.search("import") >= 0) {
                             toPush = new GGLVariableToken(getTokenContent(fileContent[i], element), [].concat(element.scopes), i, element.startIndex, element.endIndex, [].concat(nestedGroups), this.document.fileName, TokenTypes.Keyword);
                             importTokens.push(toPush);
-                        } else if (lastScope === "meta.tag.defaultValue") {
+                        } else if (lastScope === "meta.tag.defaultValue.ggl") {
                             variableDeclarations[variableDeclarations.length - 1].DefaultValue = getTokenContent(fileContent[i], element);
                             functionDeclarations[functionDeclarations.length - 1].Parameters[functionDeclarations[functionDeclarations.length - 1].Parameters.length - 1 ].DefaultValue = getTokenContent(fileContent[i], element);
                         }

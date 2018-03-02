@@ -1,36 +1,20 @@
 [
 	{
 		"name": "makeWebView",
-		"description": "makeWebView",
-		"usages": [
-			{
-				"functionName": "makeWebView",
-				"call": "no docu"
-			}
-		],
+		"description": "\\addtogroup builtins",
+		"usages": [],
 		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
+			{}
 		],
-		"returnValue": "no docu"
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "webSetUrl",
-		"description": "webSetUrl",
-		"usages": [
-			{
-				"functionName": "webSetUrl",
-				"call": "no docu"
-			}
-		],
+		"description": "\\addtogroup builtins",
+		"usages": [],
 		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
+			{}
 		],
-		"returnValue": "no docu"
+		"returnValue": "returnValue"
 	}
 ]

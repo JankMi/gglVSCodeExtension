@@ -1,7 +1,7 @@
 [
 	{
 		"name": "stringLen",
-		"description": "liefert die Länge des String <em>s</em> (ähnlich wie strlen() in C)",
+		"description": "liefert die Länge des String s (ähnlich wie strlen() in C)",
 		"usages": [
 			{
 				"functionName": "stringLen",
@@ -18,7 +18,7 @@
 	},
 	{
 		"name": "stringStartsWith",
-		"description": "liefert <em>true</em>, wenn der String <em>src</em> mit dem als Parameter angegebenen String <em>search</em> beginnt, andernfalls <em>false</em>",
+		"description": "liefert true, wenn der String src mit dem als Parameter angegebenen String search beginnt, andernfalls false",
 		"usages": [
 			{
 				"functionName": "stringStartsWith",
@@ -35,7 +35,7 @@
 	},
 	{
 		"name": "stringEndsWith",
-		"description": "liefert <em>true</em>, wenn der String <em>src</em> mit dem als Parameter angegebenen String <em>search</em> endet, andernfalls <em>false</em>",
+		"description": "liefert true, wenn der String src mit dem als Parameter angegebenen String search endet, andernfalls false",
 		"usages": [
 			{
 				"functionName": "stringEndsWith",
@@ -52,7 +52,7 @@
 	},
 	{
 		"name": "stringContains",
-		"description": "liefert <em>true</em>, wenn der String <em>src</em> den als Parameter angegebenen String <em>search</em> enthält, andernfalls <em>false</em>",
+		"description": "liefert true, wenn der String src den als Parameter angegebenen String search enthält, andernfalls false",
 		"usages": [
 			{
 				"functionName": "stringContains",
@@ -73,7 +73,7 @@
 	},
 	{
 		"name": "stringIndexOf",
-		"description": "liefert die erste Position, an der sich der als Parameter angegebene String <em>search</em> im String <em>src</em> befindet.",
+		"description": "liefert die erste Position, an der sich der als Parameter angegebene String search im String src befindet.",
 		"usages": [
 			{
 				"functionName": "stringIndexOf",
@@ -90,7 +90,7 @@
 	},
 	{
 		"name": "stringLastIndexOf",
-		"description": "liefert die letzte Position, an der sich der als Parameter angegebene String <em>search</em> im String <em>src</em> befindet.",
+		"description": "liefert die letzte Position, an der sich der als Parameter angegebene String search im String src befindet.",
 		"usages": [
 			{
 				"functionName": "stringLastIndexOf",
@@ -107,7 +107,7 @@
 	},
 	{
 		"name": "stringInsert",
-		"description": "fügt im String <em>src</em> an der Position <em>index</em> den als 2. Parameter angegebene String <em>search</em> ein",
+		"description": "fügt im String src an der Position index den als 2. Parameter angegebene String search ein",
 		"usages": [
 			{
 				"functionName": "stringInsert",
@@ -128,7 +128,7 @@
 	},
 	{
 		"name": "stringLeft",
-		"description": "liefert die <em> n </em> am weitesten links stehenden Zeichen des Strings <em>src</em> zurück",
+		"description": "liefert die  n  am weitesten links stehenden Zeichen des Strings src zurück",
 		"usages": [
 			{
 				"functionName": "stringLeft",
@@ -145,7 +145,7 @@
 	},
 	{
 		"name": "stringMid",
-		"description": "liefert ab Position <em>pos</em> die <em>n</em> nächsten Zeichen des Strings <em>src</em>  zurück.",
+		"description": "liefert ab Position pos die n nächsten Zeichen des Strings src  zurück.",
 		"usages": [
 			{
 				"functionName": "stringMid",
@@ -166,7 +166,7 @@
 	},
 	{
 		"name": "stringRight",
-		"description": "liefert die <em>n</em> am weitesten rechts stehenden Zeichen des Strings <em>src</em> zurück",
+		"description": "liefert die n am weitesten rechts stehenden Zeichen des Strings src zurück",
 		"usages": [
 			{
 				"functionName": "stringRight",
@@ -183,24 +183,27 @@
 	},
 	{
 		"name": "stringRemove",
-		"description": "stringRemove",
-		"usages": [
-			{
-				"functionName": "stringRemove",
-				"call": "no docu"
-			}
-		],
+		"description": "entfernt einen Teilstring aus dem String src und liefert diesen gekürzten String als Rückgabe.",
+		"usages": [],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "remove",
+				"description": "der Teilstring, der aus dem String src zu entfernen ist "
+			},
+			{
+				"name": "pos",
+				"description": "Position, ab der Zeichen aus dem String src zu entfernen sind "
+			},
+			{
+				"name": "n",
+				"description": "Anzahl der Zeichen, die aus dem String src zu entfernen sind "
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "string"
 	},
 	{
 		"name": "stringReplace",
-		"description": "ersetzt im String <em>src</em> einen Teilstring <em>oldStr</em> durch den String <em>newStr</em>",
+		"description": "ersetzt im String src einen Teilstring oldStr durch den String newStr",
 		"usages": [
 			{
 				"functionName": "stringReplace",
@@ -221,7 +224,7 @@
 	},
 	{
 		"name": "stringSplit",
-		"description": "zerteilt den String <em>str</em> an den durch <em>sep</em> festgelegten Schnittstellen und gibt die hieraus",
+		"description": "zerteilt den String str an den durch sep festgelegten Schnittstellen und gibt die hieraus",
 		"usages": [
 			{
 				"functionName": "stringSplit",
@@ -242,7 +245,7 @@
 	},
 	{
 		"name": "stringListJoin",
-		"description": "fügt alle Strings aus der String-Liste <em>strList</em> zu einem String zusammen, wobei zwischen den einzelnen",
+		"description": "fügt alle Strings aus der String-Liste strList zu einem String zusammen, wobei zwischen den einzelnen",
 		"usages": [
 			{
 				"functionName": "stringListJoin",

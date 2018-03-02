@@ -258,20 +258,28 @@
 	},
 	{
 		"name": "naviSetLast",
-		"description": "naviSetLast",
+		"description": "Setzt die aktuelle Position der Matrix auf die letzte Position.",
 		"usages": [
 			{
-				"functionName": "naviSetLast",
-				"call": "no docu"
+				"functionName": "naviSetFirst",
+				"call": " naviMatrix matrix, [\\, bool forceSkipDisabled = true ]"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "GGLObject::None"
 	},
 	{
 		"name": "naviSetEnabled",
@@ -349,20 +357,20 @@
 	},
 	{
 		"name": "naviHasEnabledPos",
-		"description": "naviHasEnabledPos",
+		"description": "Prüft, ob eine Matrix aktivierte Einträge besitzt. ",
 		"usages": [
 			{
-				"functionName": "naviHasEnabledPos",
-				"call": "no docu"
+				"functionName": "naviIsEnabled",
+				"call": " naviMatrix matrix"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "naviMatrix",
+				"description": "matrix"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "GGLObject::Bool"
 	},
 	{
 		"name": "naviSetQObject",
@@ -407,6 +415,64 @@
 	},
 	{
 		"name": "naviGetQObject",
+		"description": "Fragt nach einem QObjekt an einer Matrix-Position.",
+		"usages": [
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, int row, int col "
+			},
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, list[row, col] "
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject<QObject>"
+	},
+	{
+		"name": "naviSetRowQObject",
+		"description": "Setzt für eine Matrix-Reihe ein QObjekt als Referenz-Objekt.",
+		"usages": [
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, int row, GGLQObject obj "
+			},
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, int row, none "
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviGetRowQObject",
 		"description": "Holt für eine Matrix-Reihe das gesetzte QObjekt.",
 		"usages": [
 			{
@@ -426,55 +492,25 @@
 		]
 	},
 	{
-		"name": "naviSetRowQObject",
-		"description": "naviSetRowQObject",
-		"usages": [
-			{
-				"functionName": "naviSetRowQObject",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
-	},
-	{
-		"name": "naviGetRowQObject",
-		"description": "naviGetRowQObject",
-		"usages": [
-			{
-				"functionName": "naviGetRowQObject",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
-	},
-	{
 		"name": "naviGetQObjectPos",
-		"description": "naviGetQObjectPos",
+		"description": "Fragt nach der Position eines QObjekts in einer Matrix.",
 		"usages": [
 			{
-				"functionName": "naviGetQObjectPos",
-				"call": "no docu"
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, GGLQObject obj"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "GGLList[row,"
 	},
 	{
 		"name": "naviSetExceededCallback",
@@ -541,20 +577,24 @@
 	},
 	{
 		"name": "naviSetRowChangedCallback",
-		"description": "naviSetRowChangedCallback",
+		"description": "Setzt die RowChanged-Callback-Funktion.",
 		"usages": [
 			{
-				"functionName": "naviSetRowChangedCallback",
-				"call": "no docu"
+				"functionName": "naviSetItemChangedCallback",
+				"call": " naviMatrix matrix, GGLFunction callback"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "GGLObject::None"
 	},
 	{
 		"name": "naviSetCallbackArgs",
@@ -685,20 +725,24 @@
 	},
 	{
 		"name": "naviSetWrapAround",
-		"description": "naviSetWrapAround",
+		"description": "Aktiviert oder Deaktiviert den WrapAournd Modus der NavigationsMatrix",
 		"usages": [
 			{
-				"functionName": "naviSetWrapAround",
-				"call": "no docu"
+				"functionName": "naviSetRowSelectionMode",
+				"call": " NaviMatrix matrix, bool enabled = true"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "NaviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "NaviMatrix",
+				"description": "matrix"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "naviIsWrapAround",

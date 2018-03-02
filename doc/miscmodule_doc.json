@@ -1,7 +1,7 @@
 [
 	{
 		"name": "miscRandom",
-		"description": "liefert eine Zufallszahl zwischen 0 und <em>count-1</em>",
+		"description": "liefert eine Zufallszahl zwischen 0 und count-1",
 		"usages": [
 			{
 				"functionName": "miscRandom",
@@ -18,7 +18,7 @@
 	},
 	{
 		"name": "miscShuffle",
-		"description": "tauscht in der Liste <em>l</em> zufällig die Elemente",
+		"description": "tauscht in der Liste l zufällig die Elemente",
 		"usages": [
 			{
 				"functionName": "miscShuffle",
@@ -92,7 +92,7 @@
 	},
 	{
 		"name": "miscFindFirstIndexRecursive",
-		"description": "sucht in  der Liste <em>l</em> bzw. im Dictionary <em>d</em> das erste Vorkommen von <em>v</em>",
+		"description": "sucht in  der Liste l bzw. im Dictionary d das erste Vorkommen von v",
 		"usages": [
 			{
 				"functionName": "miscFindFirstIndexRecursive",
@@ -182,36 +182,44 @@
 	},
 	{
 		"name": "miscPointsDistance",
-		"description": "miscPointsDistance",
+		"description": "Gibt den Abstand zweier Punkte zurück",
 		"usages": [
 			{
-				"functionName": "miscPointsDistance",
-				"call": "no docu"
+				"functionName": "miscRandomColor",
+				"call": " point a, point b"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "a",
+				"description": "erster  Punkt"
+			},
+			{
+				"name": "b",
+				"description": "zweiter Punkt"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	},
 	{
 		"name": "miscPointsRotation",
-		"description": "miscPointsRotation",
+		"description": "Gibt den Winkel zweier Punkte zurück. Dieser hat die Werte [0;360[ und hat",
 		"usages": [
 			{
-				"functionName": "miscPointsRotation",
-				"call": "no docu"
+				"functionName": "miscRandomColor",
+				"call": " point a, point b"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "a",
+				"description": "erster  Punkt"
+			},
+			{
+				"name": "b",
+				"description": "zweiter Punkt"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	}
 ]

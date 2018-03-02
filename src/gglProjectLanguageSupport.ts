@@ -166,7 +166,10 @@ export class GGLProjectLanguageSupport {
 
             let matchingDef: GGLVariableToken;
             GGLProjectLanguageSupport.documents.forEach((gglDocument) => {
-                const matchingDocDef = gglDocument.Parser.VariableDefinitions.find((element) => this.findMatichingElement(element, gglDocument, sourceDocument, sourcePosition)); // searched === element.Content; /(\w+)/.exec(element.Content)[1]);
+                // try variables
+                let matchingDocDef = gglDocument.Parser.VariableDefinitions.find((element) => this.findMatichingElement(element, gglDocument, sourceDocument, sourcePosition)); // searched === element.Content; /(\w+)/.exec(element.Content)[1]);
+                // try functions
+                if (matchingDocDef === undefined) {matchingDocDef = gglDocument.Parser.FunctionDefinitions.find((element) => this.findMatichingElement(element, gglDocument, sourceDocument, sourcePosition)); }
                 if (matchingDocDef !== undefined) {
                     matchingDef = matchingDocDef;
                 }
@@ -226,9 +229,9 @@ export class GGLProjectLanguageSupport {
     private provideGGLSignatures(sourceDocument: vscode.TextDocument, sourcePosition: vscode.Position): IGGLSignatureInformation[] {
 
         try {
-            const lineContent = sourceDocument.lineAt(sourcePosition.line).text;
+            const lineContent = sourceDocument.lineAt(sourcePosition.line).text.substr(0, sourcePosition.character);
 
-            const selectedFunction: string = /(\w+)\(.*\)/.exec(lineContent)[1];
+            const selectedFunction = this.searchCurrentFunction(lineContent);
 
             const matchingDef: Array<{ token: GGLVariableToken, parameters: GGLVariableToken[] }> = [];
             GGLProjectLanguageSupport.documents.forEach((searchDocument) => {
@@ -258,18 +261,18 @@ export class GGLProjectLanguageSupport {
                 //         });
                 //     });
                 // }
-                const paramsArray: Array<{name: string, description: string}> = [];
+                const paramsArray: Array<{ name: string, description: string }> = [];
                 const paramNames: string[] = [];
-                element.parameters.forEach( (parameter) => {
-                    if (parameter.DefaultValue === undefined) {
-                        paramsArray.push({name: "var", description: parameter.Content + "=" + parameter.DefaultValue});
+                element.parameters.forEach((parameter) => {
+                    if (parameter.DefaultValue !== undefined) {
+                        paramsArray.push({ name: "var", description: parameter.Content + "=" + parameter.DefaultValue });
                     } else {
-                        paramsArray.push({name: "var", description: parameter.Content});
+                        paramsArray.push({ name: "var", description: parameter.Content });
                     }
                     paramNames.push(`var ${parameter.Content}`);
                 });
                 const completionInfo: IGGLSignatureInformation = {
-                    activeParameter: this.getActiveParameter(lineContent, sourcePosition.character),
+                    activeParameter: this.getActiveParameter(lineContent, sourcePosition.character, element.token.Content),
                     comment: `function ${element.token.Content}(${paramNames.join(", ")})`,
                     label: element.token.Content,
                     params: paramsArray,
@@ -293,9 +296,9 @@ export class GGLProjectLanguageSupport {
 
     private provideBuiltinSignatureInformations(sourceDocument: vscode.TextDocument, sourcePosition: vscode.Position): IGGLSignatureInformation[] {
         try {
-            const lineContent = sourceDocument.lineAt(sourcePosition.line).text;
+            const lineContent = sourceDocument.lineAt(sourcePosition.line).text.substr(0, sourcePosition.character);
 
-            const selectedFunction: string = /(\w+)\(.*\)/.exec(lineContent)[1];
+            const selectedFunction = this.searchCurrentFunction(lineContent);
 
             const matchingDef: docEntry[] = [];
             GGLProjectLanguageSupport.docus.forEach((docFunc) => {
@@ -309,7 +312,7 @@ export class GGLProjectLanguageSupport {
             matchingDef.forEach((element) => {
                 const kind: vscode.CompletionItemKind = vscode.CompletionItemKind.Method;
                 const completionInfo: IGGLSignatureInformation = {
-                    activeParameter: this.getActiveParameter(lineContent, sourcePosition.character),
+                    activeParameter: this.getActiveParameter(lineContent, sourcePosition.character, element.name),
                     comment: element.description,
                     label: element.name,
                     params: element.params,
@@ -327,11 +330,36 @@ export class GGLProjectLanguageSupport {
         }
     }
 
-    private getActiveParameter(text: string, position: number): number {
+    private searchCurrentFunction(content: string, functionTree: string[] = []): string {
+        const posOpening = content.indexOf("(");
+        const posClosing = content.indexOf(")");
+        if ((posClosing < posOpening || posOpening < 0) && posClosing >= 0) {                                                                // funktion closed, move one up
+            functionTree.pop();
+            let remainingContent: string[] = content.split(")");
+            remainingContent = remainingContent.slice(1);
+            return this.searchCurrentFunction(remainingContent.join(")"), functionTree);
+        } else if (posClosing < 0 && posOpening < 0) {                                                                  // no further calls, end of recursion
+            return functionTree.pop();
+        } else {                                                                                                        // next is a funciton call
+            const selectedFunction: RegExpExecArray = /(\w+)\s*\(/.exec(content);
+            functionTree.push(selectedFunction[1]);
+            let remainingContent: string[] = content.split(selectedFunction[0]);
+            remainingContent = remainingContent.slice(1);
+            return this.searchCurrentFunction(remainingContent.join(selectedFunction[0]), functionTree);
+        }
+    }
+
+    private getActiveParameter(text: string, position: number, functionName: string): number {
         let substring: string = text.substr(0, position);
-        substring = substring.split("(").pop();
+        substring = substring.split(functionName).pop();
+        substring = substring.split("(").slice(1).join("(");
+        substring = substring.split(/\w*\([\w ,\(\=\)\[\]]*\)/).join("");
         const substrings = substring.split(",");
-        return substrings.length - 1;
+        if (substrings === null) {
+            return 0;
+        } else {
+            return substrings.length - 1;
+        }
     }
 
     public static get Instance() {
@@ -371,15 +399,24 @@ export class GGLProjectLanguageSupport {
     }
 
     private findMatichingElement(canidate: GGLVariableToken, searchDocument: GGLDocument, sourceDocument: vscode.TextDocument, sourcePosition: vscode.Position): boolean {
+        // in scope, if 0->global or in same file
+        if (canidate.NestedGroups.length !== 1 && canidate.FileName !== searchDocument.Document.fileName) { return false; }
+
         const content: string = this.getSearchContent(sourceDocument, sourcePosition);
 
+        // global candidate -> check if names match
+        if (canidate.NestedGroups.length === 1) {
+            if (canidate.Type !== TokenTypes.FunctionDeclatation && canidate.Type !== TokenTypes.VariableDeclaration) { return false; }
+            const isFound = canidate.Content.indexOf(content) >= 0;
+            return isFound;
+        }
+
+        // local candidate, check if group match -> check if names match
         const groups: number[] = [];
         groups.push(0);
         searchDocument.Parser.Sections.forEach((section) => {
             if (sourcePosition.line >= section.beginAtLine && sourcePosition.line <= section.endAtLine) { groups.push(section.groupID); }
         });
-        // in scope, if 0->global or in same file
-        if (canidate.NestedGroups.length !== 1 && canidate.FileName !== searchDocument.Document.fileName) { return false; }
 
         // in same scope to do
         canidate.NestedGroups.sort();

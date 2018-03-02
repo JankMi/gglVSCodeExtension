@@ -76,7 +76,7 @@
 	},
 	{
 		"name": "wait",
-		"description": "Wartet mit der weiteren Programmausführung auf das Signal <em>finish</em> eines QObjects.",
+		"description": "Wartet mit der weiteren Programmausführung auf das Signal finish eines QObjects.",
 		"usages": [
 			{
 				"functionName": "wait",
@@ -109,20 +109,15 @@
 	},
 	{
 		"name": "unblockInput",
-		"description": "unblockInput",
+		"description": "Gibt alle Input-Events wieder frei.",
 		"usages": [
 			{
 				"functionName": "unblockInput",
-				"call": "no docu"
+				"call": ""
 			}
 		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"params": [],
+		"returnValue": "GGLObject::None"
 	},
 	{
 		"name": "processEvents",

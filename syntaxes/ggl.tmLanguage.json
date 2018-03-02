@@ -24,7 +24,7 @@
 			"include": "#support"
 		},
 		{
-			"include": "#helper"
+			"include": "#sectionSymbols"
 		},
 		{
 			"comment": "imports",
@@ -70,7 +70,7 @@
 									"name": "variable.other.readwrite.ggl.local"
 								},
 								"3": {
-									"name": "meta.tag.defaultValue"
+									"name": "meta.tag.defaultValue.ggl"
 								}
 							}
 						}
@@ -151,7 +151,7 @@
 				}
 			]
 		},
-		"helper": {
+		"sectionSymbols": {
 			"patterns": [
 				{
 					"name": "meta.declaration.ggl.secexit",

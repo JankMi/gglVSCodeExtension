@@ -1,19 +1,11 @@
 [
 	{
 		"name": "simStartConfigurator",
-		"description": "simStartConfigurator",
-		"usages": [
-			{
-				"functionName": "simStartConfigurator",
-				"call": "no docu"
-			}
-		],
+		"description": "\\addtogroup builtins",
+		"usages": [],
 		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
+			{}
 		],
-		"returnValue": "no docu"
+		"returnValue": "returnValue"
 	}
 ]

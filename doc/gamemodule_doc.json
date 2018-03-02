@@ -55,206 +55,86 @@
 	},
 	{
 		"name": "gameGetMedia",
-		"description": "gameGetMedia",
-		"usages": [
-			{
-				"functionName": "gameGetMedia",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "gibt nen zusammen gefügten Inhalt der media.json aus dem spiel und dem mediensatz zurück",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetDisplayName",
-		"description": "gameGetDisplayName",
-		"usages": [
-			{
-				"functionName": "gameGetDisplayName",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt den Anzeigename des Spiels zurück.",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetId",
-		"description": "gameGetId",
-		"usages": [
-			{
-				"functionName": "gameGetId",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die ArchiveId des akutell geladenen Spiels zurück.",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetDescription",
-		"description": "gameGetDescription",
-		"usages": [
-			{
-				"functionName": "gameGetDescription",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die Beschreibung eines Spiels zurück, die in der info.json unter dem",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMediasetDescription",
-		"description": "gameGetMediasetDescription",
-		"usages": [
-			{
-				"functionName": "gameGetMediasetDescription",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die Beschreibung des Mediensatzes zurück, die in der info.json unter",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMinPlayers",
-		"description": "gameGetMinPlayers",
-		"usages": [
-			{
-				"functionName": "gameGetMinPlayers",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die Mindestanzahl von geforderten Spieler für Spiel zurück, die in der info.json unter dem",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMaxPlayers",
-		"description": "gameGetMaxPlayers",
-		"usages": [
-			{
-				"functionName": "gameGetMaxPlayers",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die Maximalanzahl von erlaubten Spieler für Spiel zurück, die in der info.json unter dem",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameHasComputerPlayer",
-		"description": "gameHasComputerPlayer",
-		"usages": [
-			{
-				"functionName": "gameHasComputerPlayer",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die zurück, ob zum Spiel ein Computerspieler vorhanden ist, das in der info.json unter dem",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetLoadPicturePath",
-		"description": "gameGetLoadPicturePath",
-		"usages": [
-			{
-				"functionName": "gameGetLoadPicturePath",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die GUrl für das Ladebild für ein Spiel zurück, z.B.",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMediasetDisplayName",
-		"description": "gameGetMediasetDisplayName",
-		"usages": [
-			{
-				"functionName": "gameGetMediasetDisplayName",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt den Anzeigename des Mediensatzes zurück. Wird keine mediaset-id mitgegeben wird der",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMediasetId",
-		"description": "gameGetMediasetId",
-		"usages": [
-			{
-				"functionName": "gameGetMediasetId",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die ArchiveId des akutell geladenen Mediensatzes des Spiels zurück.",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMediaDescription",
-		"description": "gameGetMediaDescription",
-		"usages": [
-			{
-				"functionName": "gameGetMediaDescription",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt den Inhalt der Datei mediaDesrc.json aus dem Mediensatz zurück.",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	}
 ]

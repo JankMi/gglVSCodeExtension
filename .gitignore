@@ -4,3 +4,7 @@ node_modules
 test
 out/*.js
 out/*.js.map
+genesisvscode-0.1.1.vsix
+genesisvscode-0.1.2.vsix
+genesisvscode-0.1.3.vsix
+genesisvscode-0.1.4.vsix

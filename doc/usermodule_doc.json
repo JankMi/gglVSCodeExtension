@@ -388,20 +388,24 @@
 	},
 	{
 		"name": "userHasTouchscreen",
-		"description": "userHasTouchscreen",
+		"description": "prüft, ob ein User die Touchscreen Optimization eingeschaltet hat",
 		"usages": [
 			{
-				"functionName": "userHasTouchscreen",
-				"call": "no docu"
+				"functionName": "userHasMouse",
+				"call": " int index | qobject<user>"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "userHasGamePad",
@@ -594,20 +598,24 @@
 	},
 	{
 		"name": "userHasHighscoreOption",
-		"description": "userHasHighscoreOption",
+		"description": "prüft, ob ein User das Highscore Flag besitzt",
 		"usages": [
 			{
-				"functionName": "userHasHighscoreOption",
-				"call": "no docu"
+				"functionName": "userHasGroupOptimizationOption",
+				"call": " int index | qobject<user>"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "userHasAlwaysGameSettingsOption",
@@ -758,20 +766,24 @@
 	},
 	{
 		"name": "userGetGlobalSwitchKeys",
-		"description": "userGetGlobalSwitchKeys",
+		"description": "Gibt eine Liste der globalen Tasten zurück, mit denen man während eines Spiels auf eine andere Bedienart umschalten kann",
 		"usages": [
 			{
-				"functionName": "userGetGlobalSwitchKeys",
-				"call": "no docu"
+				"functionName": "userGetGlobalStopKeys",
+				"call": " int index | qobject<user>"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "GGLList"
 	},
 	{
 		"name": "userCreateGuest",
@@ -828,20 +840,28 @@
 	},
 	{
 		"name": "userCreateGUrl",
-		"description": "userCreateGUrl",
+		"description": "erzeugt einen GUrl um auf User spezifische Daten zuzugreifen.",
 		"usages": [
 			{
-				"functionName": "userCreateGUrl",
-				"call": "no docu"
+				"functionName": "userCreateArchivGUrl",
+				"call": " string filename, int index | qobject<user> , string archiveId"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "filename",
+				"description": "der Name des Files"
+			},
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "string"
 	},
 	{
 		"name": "userAllCreateArchivGUrl",

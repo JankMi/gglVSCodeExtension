@@ -1,7 +1,7 @@
 [
 	{
 		"name": "mathFloor",
-		"description": "liefert größte ganze Zahl, die nicht größer als die Zahl <em>value</em> ist; wird zum Abrunden verwendet",
+		"description": "liefert größte ganze Zahl, die nicht größer als die Zahl value ist; wird zum Abrunden verwendet",
 		"usages": [
 			{
 				"functionName": "mathFloor",
@@ -18,7 +18,7 @@
 	},
 	{
 		"name": "mathCeil",
-		"description": "liefert kleinste ganze Zahl, die nicht kleiner als die Zahl <em>value</em> ist; wird zum Aufrunden verwendet",
+		"description": "liefert kleinste ganze Zahl, die nicht kleiner als die Zahl value ist; wird zum Aufrunden verwendet",
 		"usages": [
 			{
 				"functionName": "mathCeil",
@@ -35,7 +35,7 @@
 	},
 	{
 		"name": "mathDecToHex",
-		"description": "liefert zu der Dezimalzahl <em>decZahl</em> die entsprechende Hexadezimalzahl",
+		"description": "liefert zu der Dezimalzahl decZahl die entsprechende Hexadezimalzahl",
 		"usages": [
 			{
 				"functionName": "mathDecToHex",
@@ -52,7 +52,7 @@
 	},
 	{
 		"name": "mathHexToDec",
-		"description": "liefert zu der Hexadezimalzahl <em>hexZahl</em> die entsprechende Dezimalzahl",
+		"description": "liefert zu der Hexadezimalzahl hexZahl die entsprechende Dezimalzahl",
 		"usages": [
 			{
 				"functionName": "mathHexToDec",
@@ -69,7 +69,7 @@
 	},
 	{
 		"name": "mathAbs",
-		"description": "liefert zu der Zahl <em>value</em> den entsprechenden Absolutwert",
+		"description": "liefert zu der Zahl value den entsprechenden Absolutwert",
 		"usages": [
 			{
 				"functionName": "mathAbs",
@@ -86,7 +86,7 @@
 	},
 	{
 		"name": "mathSin",
-		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Sinus-Wert",
+		"description": "liefert zu dem Winkel grad den entsprechenden Sinus-Wert",
 		"usages": [
 			{
 				"functionName": "mathSin",
@@ -103,7 +103,7 @@
 	},
 	{
 		"name": "mathCos",
-		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Cosinus-Wert",
+		"description": "liefert zu dem Winkel grad den entsprechenden Cosinus-Wert",
 		"usages": [
 			{
 				"functionName": "mathCos",
@@ -120,7 +120,7 @@
 	},
 	{
 		"name": "mathTan",
-		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Tangens-Wert",
+		"description": "liefert zu dem Winkel grad den entsprechenden Tangens-Wert",
 		"usages": [
 			{
 				"functionName": "mathTan",
@@ -137,7 +137,7 @@
 	},
 	{
 		"name": "mathArcSin",
-		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Arcussinus-Wert",
+		"description": "liefert zu dem Winkel grad den entsprechenden Arcussinus-Wert",
 		"usages": [
 			{
 				"functionName": "mathArcSin",
@@ -154,7 +154,7 @@
 	},
 	{
 		"name": "mathArcCos",
-		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Arcuscosinus-Wert",
+		"description": "liefert zu dem Winkel grad den entsprechenden Arcuscosinus-Wert",
 		"usages": [
 			{
 				"functionName": "mathArcCos",
@@ -171,7 +171,7 @@
 	},
 	{
 		"name": "mathArcTan",
-		"description": "liefert zu den zwei übergebenen Zahlen <em>zähler</em> und <em>nenner</em> den entsprechenden Arcustagens-Wert",
+		"description": "liefert zu den zwei übergebenen Zahlen zähler und nenner den entsprechenden Arcustagens-Wert",
 		"usages": [
 			{
 				"functionName": "mathArcTan",
@@ -189,7 +189,7 @@
 	},
 	{
 		"name": "mathSqrt",
-		"description": "liefert zu der Zahl <em>value</em> die Quadratwurzel",
+		"description": "liefert zu der Zahl value die Quadratwurzel",
 		"usages": [
 			{
 				"functionName": "mathSqrt",
@@ -206,7 +206,7 @@
 	},
 	{
 		"name": "mathPow",
-		"description": "liefert die Potenz: <em>base</em>^<em>exponent</em>",
+		"description": "liefert die Potenz: base^exponent",
 		"usages": [
 			{
 				"functionName": "mathPow",
@@ -227,7 +227,7 @@
 	},
 	{
 		"name": "mathLn",
-		"description": "liefert zu der Zahl <em>value</em> den natürlichen Logarithmus",
+		"description": "liefert zu der Zahl value den natürlichen Logarithmus",
 		"usages": [
 			{
 				"functionName": "mathLn",
@@ -244,7 +244,7 @@
 	},
 	{
 		"name": "mathLog",
-		"description": "liefert zu der Zahl <em>value</em> den Zehner-Logarithmus",
+		"description": "liefert zu der Zahl value den Zehner-Logarithmus",
 		"usages": [
 			{
 				"functionName": "mathLog",
@@ -261,7 +261,7 @@
 	},
 	{
 		"name": "mathExp",
-		"description": "liefert <em>n</em>. Potenz zur Zahl e (=2.71828)",
+		"description": "liefert n. Potenz zur Zahl e (=2.71828)",
 		"usages": [
 			{
 				"functionName": "mathExp",
@@ -290,7 +290,7 @@
 	},
 	{
 		"name": "mathRound",
-		"description": "liefert gerundete Zahl zu <em>value</em>",
+		"description": "liefert gerundete Zahl zu value",
 		"usages": [
 			{
 				"functionName": "mathRound",
@@ -307,7 +307,7 @@
 	},
 	{
 		"name": "mathRadToDeg",
-		"description": "liefert zum übergebenen Bogenmaß <em>rad</em> die entsprechende Grad-Zahl",
+		"description": "liefert zum übergebenen Bogenmaß rad die entsprechende Grad-Zahl",
 		"usages": [
 			{
 				"functionName": "mathRadToDeg",
@@ -324,7 +324,7 @@
 	},
 	{
 		"name": "mathDegToRad",
-		"description": "liefert zur übergebenen Grad-Zahl <em>deg</em> das entsprechende Bogenmaß",
+		"description": "liefert zur übergebenen Grad-Zahl deg das entsprechende Bogenmaß",
 		"usages": [
 			{
 				"functionName": "mathDegToRad",
@@ -341,7 +341,7 @@
 	},
 	{
 		"name": "mathSignum",
-		"description": "liefert 1 bei positiven <em>value</em>, -1 bei negativen <em>value</em> und 0, wenn <em>value</em> gleich 0 ist",
+		"description": "liefert 1 bei positiven value, -1 bei negativen value und 0, wenn value gleich 0 ist",
 		"usages": [
 			{
 				"functionName": "mathSignum",

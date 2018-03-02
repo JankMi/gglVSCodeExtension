@@ -119,20 +119,20 @@
 	},
 	{
 		"name": "timerIsPaused",
-		"description": "timerIsPaused",
+		"description": "prüft ob ein Timer gerade Pausiert ist.",
 		"usages": [
 			{
 				"functionName": "timerIsPaused",
-				"call": "no docu"
+				"call": "  GGLObject<Timer> timer "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "GGLObject",
+				"description": ""
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "timerIsActive",

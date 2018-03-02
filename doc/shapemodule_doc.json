@@ -22,7 +22,7 @@
 	},
 	{
 		"name": "shapeAddRect",
-		"description": "Fügt das Rechteck <em>rect</em> zu dem Shape <em>s</em> hinzu.\\n",
+		"description": "Fügt das Rechteck rect zu dem Shape s hinzu.\\n",
 		"usages": [
 			{
 				"functionName": "shapeAddRect",
@@ -39,7 +39,7 @@
 	},
 	{
 		"name": "shapeAddEllipse",
-		"description": "Fügt eine Ellipse zu dem Shape <em>s</em> hinzu.\\n",
+		"description": "Fügt eine Ellipse zu dem Shape s hinzu.\\n",
 		"usages": [
 			{
 				"functionName": "shapeAddEllipse",
@@ -56,7 +56,7 @@
 	},
 	{
 		"name": "shapeAddPolygon",
-		"description": "Fügt das Polygon aus der Liste <em>l</em> zu dem Shape <em>s</em> hinzu.\\n",
+		"description": "Fügt das Polygon aus der Liste l zu dem Shape s hinzu.\\n",
 		"usages": [
 			{
 				"functionName": "shapeAddPolygon",
@@ -73,7 +73,7 @@
 	},
 	{
 		"name": "shapeAddShape",
-		"description": "Fügt das Shape <em>s1</em> zu dem Shape <em>s2</em> hinzu.\\n",
+		"description": "Fügt das Shape s1 zu dem Shape s2 hinzu.\\n",
 		"usages": [
 			{
 				"functionName": "shapeAddShape",
@@ -111,7 +111,7 @@
 	},
 	{
 		"name": "shapeAddRoundedRect",
-		"description": "Fügt das an den Ecken abgerundete Rechteck <em>r</em> zu dem Shape <em>s</em> hinzu.",
+		"description": "Fügt das an den Ecken abgerundete Rechteck r zu dem Shape s hinzu.",
 		"usages": [
 			{
 				"functionName": "shapeAddRoundedRect",
@@ -132,7 +132,7 @@
 	},
 	{
 		"name": "shapeGetAngleAtPercent",
-		"description": "liefert den Winkel an der Prozentzahl <em>t</em> im Shape <em>s</em>.",
+		"description": "liefert den Winkel an der Prozentzahl t im Shape s.",
 		"usages": [
 			{
 				"functionName": "shapeGetAngleAtPercent",
@@ -149,24 +149,24 @@
 	},
 	{
 		"name": "shapeGetSlopeAtPercent",
-		"description": "shapeGetSlopeAtPercent",
+		"description": "liefert den Winkel an der Prozentzahl t im Shape s.",
 		"usages": [
 			{
 				"functionName": "shapeGetSlopeAtPercent",
-				"call": "no docu"
+				"call": "   Shape s ,  double t   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "t",
+				"description": "legt die Prozentzahl zwischen 0 und 1 fest, zu der der entsprechende Winkel zu finden ist "
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	},
 	{
 		"name": "shapeGetPointAtPercent",
-		"description": "liefert den Punkt, der an der Prozentzahl <em>t</em> im Shape <em>s</em> liegt.",
+		"description": "liefert den Punkt, der an der Prozentzahl t im Shape s liegt.",
 		"usages": [
 			{
 				"functionName": "shapeGetPointAtPercent",
@@ -182,7 +182,7 @@
 	},
 	{
 		"name": "shapeArcMoveTo",
-		"description": "legt im Shape <em>s</em> innerhalb des Rechtecks <em>r</em> den Startwinkel <em>startAngle</em> für das Zeichnen eines Bogens fest.",
+		"description": "legt im Shape s innerhalb des Rechtecks r den Startwinkel startAngle für das Zeichnen eines Bogens fest.",
 		"usages": [
 			{
 				"functionName": "shapeArcMoveTo",
@@ -203,7 +203,7 @@
 	},
 	{
 		"name": "shapeArcTo",
-		"description": "Fügt einen Bogen im Shape <em>s</em> ein, der am Startwinkel <em>startAngle</em> und sich über <em>sweepLength</em> Grad",
+		"description": "Fügt einen Bogen im Shape s ein, der am Startwinkel startAngle und sich über sweepLength Grad",
 		"usages": [
 			{
 				"functionName": "shapeArcTo",
@@ -228,7 +228,7 @@
 	},
 	{
 		"name": "shapeGetBoundingRect",
-		"description": "Liefert das Rechteck, das den Shape <em>s</em> umfasst",
+		"description": "Liefert das Rechteck, das den Shape s umfasst",
 		"usages": [
 			{
 				"functionName": "shapeGetBoundingRect",
@@ -244,24 +244,23 @@
 	},
 	{
 		"name": "shapeCloseSubpath",
-		"description": "shapeCloseSubpath",
+		"description": "Liefert das Rechteck, das den Shape s umfasst",
 		"usages": [
 			{
 				"functionName": "shapeCloseSubpath",
-				"call": "no docu"
+				"call": "   Shape s  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "Shape",
+				"description": "s"
 			}
-		],
-		"returnValue": "no docu"
+		]
 	},
 	{
 		"name": "shapeCubicTo",
-		"description": "Fügt im Shape <em>s</em> eine kubische Bezier-Kurve zwischen der aktuellen Position und der Position <em>endPoint</em>",
+		"description": "Fügt im Shape s eine kubische Bezier-Kurve zwischen der aktuellen Position und der Position endPoint",
 		"usages": [
 			{
 				"functionName": "shapeCubicTo",
@@ -286,7 +285,7 @@
 	},
 	{
 		"name": "shapeQuadTo",
-		"description": "Fügt im Shape <em>s</em> eine quadratische Bezier-Kurve zwischen der aktuellen Position und der Position <em>endPoint</em>",
+		"description": "Fügt im Shape s eine quadratische Bezier-Kurve zwischen der aktuellen Position und der Position endPoint",
 		"usages": [
 			{
 				"functionName": "shapeQuadTo",
@@ -311,7 +310,7 @@
 	},
 	{
 		"name": "shapeGetCurrentPosition",
-		"description": "liefert die aktuelle Position für das Zeichnen im Shape <em>s</em> (z.B. nach shapeArcTo(), shapeCubicTo(), shapeQuadTo() und shapeLineTo())",
+		"description": "liefert die aktuelle Position für das Zeichnen im Shape s (z.B. nach shapeArcTo(), shapeCubicTo(), shapeQuadTo() und shapeLineTo())",
 		"usages": [
 			{
 				"functionName": "shapeGetCurrentPosition",
@@ -331,7 +330,7 @@
 	},
 	{
 		"name": "shapeGetLength",
-		"description": "liefert die die Länge des Pfads vom Shape <em>s</em>",
+		"description": "liefert die die Länge des Pfads vom Shape s",
 		"usages": [
 			{
 				"functionName": "shapeGetLength",
@@ -348,7 +347,7 @@
 	},
 	{
 		"name": "shapeLineTo",
-		"description": "Zeichnet von der aktuellen Position (zu Beginn (0,0)) Linie zu dem Punkt <em>p</em> im Shape <em>s</em>.\\n",
+		"description": "Zeichnet von der aktuellen Position (zu Beginn (0,0)) Linie zu dem Punkt p im Shape s.\\n",
 		"usages": [
 			{
 				"functionName": "shapeLineTo",
@@ -365,7 +364,7 @@
 	},
 	{
 		"name": "shapeMoveTo",
-		"description": "verschiebt im Shape <em>s</em> den Startpunkt für das Zeichnen von shapeArcTo(), shapeCubicTo(), shapeQuadTo() und shapeLineTo() ",
+		"description": "verschiebt im Shape s den Startpunkt für das Zeichnen von shapeArcTo(), shapeCubicTo(), shapeQuadTo() und shapeLineTo() ",
 		"usages": [
 			{
 				"functionName": "shapeMoveTo",
@@ -382,7 +381,7 @@
 	},
 	{
 		"name": "shapeIntersects",
-		"description": "Liefert true, wenn Shape <em>s1</em> eine Schnittmenge mit Shape <em>s2</em besitzt, andernfalls false.\\n",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeIntersects",
@@ -399,87 +398,87 @@
 	},
 	{
 		"name": "shapeToReversed",
-		"description": "shapeToReversed",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeToReversed",
-				"call": "no docu"
+				"call": "   Shape s1 ,  Shape s2   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "s2",
+				"description": "Shape, das auf eine Schnittmenge mit Shape s2 zu prüfen ist"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "shapeClone",
-		"description": "shapeClone",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeClone",
-				"call": "no docu"
+				"call": "   Shape s1 ,  Shape s2   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "s2",
+				"description": "Shape, das auf eine Schnittmenge mit Shape s2 zu prüfen ist"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "shapeSetFillRule",
-		"description": "shapeSetFillRule",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeSetFillRule",
-				"call": "no docu"
+				"call": "   Shape s1 ,  Shape s2   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "s2",
+				"description": "Shape, das auf eine Schnittmenge mit Shape s2 zu prüfen ist"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "shapeSimplify",
-		"description": "shapeSimplify",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeSimplify",
-				"call": "no docu"
+				"call": "   Shape s1 ,  Shape s2   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "s2",
+				"description": "Shape, das auf eine Schnittmenge mit Shape s2 zu prüfen ist"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "shapeUnited",
-		"description": "shapeUnited",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeUnited",
-				"call": "no docu"
+				"call": "   Shape s1 ,  Shape s2   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "s2",
+				"description": "Shape, das auf eine Schnittmenge mit Shape s2 zu prüfen ist"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	}
 ]

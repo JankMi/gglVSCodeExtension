@@ -1,7 +1,7 @@
 [
 	{
 		"name": "len",
-		"description": "liefert die Anzahl der Elemente in der Liste <em>l</em> bzw. die Anzahl der Einträge im Dictionary <em>d</em>",
+		"description": "liefert die Anzahl der Elemente in der Liste l bzw. die Anzahl der Einträge im Dictionary d",
 		"usages": [
 			{
 				"functionName": "len",
@@ -18,7 +18,7 @@
 	},
 	{
 		"name": "sort",
-		"description": "sortiert die Liste <em>l</em> und gibt sortierte Liste zurück",
+		"description": "sortiert die Liste l und gibt sortierte Liste zurück",
 		"usages": [
 			{
 				"functionName": "sort",
@@ -43,37 +43,48 @@
 	},
 	{
 		"name": "sorted",
-		"description": "sorted",
+		"description": "sortiert die Liste l und gibt sortierte Liste zurück",
 		"usages": [
 			{
 				"functionName": "sorted",
-				"call": "no docu"
+				"call": "   list l  [ ,  bool reverse = false   ]  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "reverse",
+				"description": "legt fest, ob vorwärts (false) oder rückwärts (true) zu sortieren ist"
+			},
+			{
+				"name": "cmp_func",
+				"description": "legt die Vergleichsfunktion fest, die zum Sortieren aufzurufen ist"
+			},
+			{
+				"name": "cmp_key",
+				"description": "legt den Schlüssel für die Dictionaries fest, die in einer Liste zu sortieren sind."
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "none"
 	},
 	{
 		"name": "list",
-		"description": "liefert die Anzahl der Elemente in der Liste <em>l</em> bzw. die Anzahl der Einträge im Dictionary <em>d</em>",
+		"description": "legt eine Liste an",
 		"usages": [
 			{
-				"functionName": "len",
-				"call": "  list l   "
+				"functionName": "list",
+				"call": "  [  n = 0  [,  defaultValue = none ] ] "
 			}
 		],
 		"params": [
 			{
-				"name": "list",
-				"description": "l"
+				"name": "n",
+				"description": "legt die Länge der Liste fest (Beachte von 0 bis n - 1)"
+			},
+			{
+				"name": "defaultValue",
+				"description": "legt fest, wie die Elemente der Liste zu initialisieren sind."
 			}
-		],
-		"returnValue": "int"
+		]
 	},
 	{
 		"name": "dict",
@@ -172,7 +183,7 @@
 	},
 	{
 		"name": "append",
-		"description": "hängt <em>o</em> an die Liste <em>l</em> und liefert diese erweiterte Liste als Rückgabe",
+		"description": "hängt o an die Liste l und liefert diese erweiterte Liste als Rückgabe",
 		"usages": [
 			{
 				"functionName": "append",
@@ -213,7 +224,7 @@
 	},
 	{
 		"name": "insert",
-		"description": "fügt <em>value</em> mit dem Schlüssel <em>key</em> in dem Dictionary <em>d</em> ein und liefert dieses erweiterte Dictionary als Rückgabe",
+		"description": "fügt value mit dem Schlüssel key in dem Dictionary d ein und liefert dieses erweiterte Dictionary als Rückgabe",
 		"usages": [
 			{
 				"functionName": "insert",
@@ -237,7 +248,7 @@
 	},
 	{
 		"name": "removeAll",
-		"description": "entfernt alle Elemente, die gleich dem Objekt <em>o</em> sind, aus der Liste <em>l</em> und gibt die Anzahl entfernter Elemente zurück",
+		"description": "entfernt alle Elemente, die gleich dem Objekt o sind, aus der Liste l und gibt die Anzahl entfernter Elemente zurück",
 		"usages": [
 			{
 				"functionName": "removeAll",
@@ -258,7 +269,7 @@
 	},
 	{
 		"name": "del",
-		"description": "löscht aus der Liste <em>l</em> das Element mit dem Index <em>idx</em> bzw. aus dem Dictionary <em>d</em> das Element mit dem Schlüssel <em>key</em>",
+		"description": "löscht aus der Liste l das Element mit dem Index idx bzw. aus dem Dictionary d das Element mit dem Schlüssel key",
 		"usages": [
 			{
 				"functionName": "del",
@@ -279,7 +290,7 @@
 	},
 	{
 		"name": "str",
-		"description": "wandelt den Inhalt der übergebenen Variable <em>v</em> in einen String um und gibt diesen zurück",
+		"description": "wandelt den Inhalt der übergebenen Variable v in einen String um und gibt diesen zurück",
 		"usages": [
 			{
 				"functionName": "str",
@@ -296,7 +307,7 @@
 	},
 	{
 		"name": "deepcopy",
-		"description": "führt eine tiefe Kopie durch, indem es den Inhalt von <em>v</em> physikalisch umkopiert und nicht nur",
+		"description": "führt eine tiefe Kopie durch, indem es den Inhalt von v physikalisch umkopiert und nicht nur",
 		"usages": [
 			{
 				"functionName": "deepcopy",
@@ -312,27 +323,24 @@
 	},
 	{
 		"name": "id",
-		"description": "liefert ein Größen-Objekt",
+		"description": "liefert die intern vergebene Id der übergebenen Variable v",
 		"usages": [
 			{
-				"functionName": "size",
-				"call": "   int width  ,  int height   "
+				"functionName": "id",
+				"call": "   var v   "
 			}
 		],
 		"params": [
 			{
-				"name": "width",
-				"description": "legt die Breite des size()-Objekts fest"
-			},
-			{
-				"name": "height",
-				"description": "legt die Höhe des size()-Objekts fest"
+				"name": "v",
+				"description": "Variable, deren Id zurückzugeben ist"
 			}
-		]
+		],
+		"returnValue": "int"
 	},
 	{
 		"name": "type",
-		"description": "liefert den Typ der übergebenen Variable <em>v</em>",
+		"description": "liefert den Typ der übergebenen Variable v",
 		"usages": [
 			{
 				"functionName": "type",
@@ -349,7 +357,7 @@
 	},
 	{
 		"name": "contains",
-		"description": "überprüft zum einen, ob ein bestimmter Wert <em>value</em> in der Liste <em>l</em> bzw. im Dictionary <em>d</em> vorhanden ist, und",
+		"description": "überprüft zum einen, ob ein bestimmter Wert value in der Liste l bzw. im Dictionary d vorhanden ist, und",
 		"usages": [
 			{
 				"functionName": "contains",
@@ -374,7 +382,7 @@
 	},
 	{
 		"name": "getX",
-		"description": "gibt zu dem Punkt <em>p</em> dessen x-Koordinate bzw. zu dem Rechteck <em>r</em> die x-Koordinate der linken oberen Ecke zurück",
+		"description": "gibt zu dem Punkt p dessen x-Koordinate bzw. zu dem Rechteck r die x-Koordinate der linken oberen Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getX",
@@ -391,7 +399,7 @@
 	},
 	{
 		"name": "getY",
-		"description": "gibt zu dem Punkt <em>p</em> dessen y-Koordinate bzw. zu dem Rechteck <em>r</em> die y-Koordinate der linken oberen Ecke zurück",
+		"description": "gibt zu dem Punkt p dessen y-Koordinate bzw. zu dem Rechteck r die y-Koordinate der linken oberen Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getY",
@@ -408,7 +416,7 @@
 	},
 	{
 		"name": "getWidth",
-		"description": "gibt zu dem Rechteck <em>r</em> oder zu dem size()-Objekt <em>s</em> deren Breite zurück",
+		"description": "gibt zu dem Rechteck r oder zu dem size()-Objekt s deren Breite zurück",
 		"usages": [
 			{
 				"functionName": "getWidth",
@@ -425,7 +433,7 @@
 	},
 	{
 		"name": "getHeight",
-		"description": "gibt zu dem Rechteck <em>r</em> oder zu dem size()-Objekt <em>s</em> deren Höhe zurück",
+		"description": "gibt zu dem Rechteck r oder zu dem size()-Objekt s deren Höhe zurück",
 		"usages": [
 			{
 				"functionName": "getHeight",
@@ -442,7 +450,7 @@
 	},
 	{
 		"name": "getSize",
-		"description": "gibt zu dem Rechteck <em>r</em> dessen Größe zurück",
+		"description": "gibt zu dem Rechteck r dessen Größe zurück",
 		"usages": [
 			{
 				"functionName": "getSize",
@@ -458,7 +466,7 @@
 	},
 	{
 		"name": "getCenter",
-		"description": "gibt zu dem Rechteck <em>r</em> oder einer Größe <em>s</em> den Mittelpunkt zurück",
+		"description": "gibt zu dem Rechteck r oder einer Größe s den Mittelpunkt zurück",
 		"usages": [
 			{
 				"functionName": "getCenter",
@@ -474,7 +482,7 @@
 	},
 	{
 		"name": "getTopLeft",
-		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner linken oberen Ecke zurück",
+		"description": "gibt zu dem Rechteck r die Koordinaten seiner linken oberen Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getTopLeft",
@@ -490,7 +498,7 @@
 	},
 	{
 		"name": "getTopRight",
-		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner rechten oberen Ecke zurück",
+		"description": "gibt zu dem Rechteck r die Koordinaten seiner rechten oberen Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getTopRight",
@@ -506,7 +514,7 @@
 	},
 	{
 		"name": "getBottomLeft",
-		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner linken unteren Ecke zurück",
+		"description": "gibt zu dem Rechteck r die Koordinaten seiner linken unteren Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getBottomLeft",
@@ -522,7 +530,7 @@
 	},
 	{
 		"name": "getBottomRight",
-		"description": "gibt zu dem Rechteck <em>r</em> die Koordinaten seiner rechten unteren Ecke zurück",
+		"description": "gibt zu dem Rechteck r die Koordinaten seiner rechten unteren Ecke zurück",
 		"usages": [
 			{
 				"functionName": "getBottomRight",
@@ -538,7 +546,7 @@
 	},
 	{
 		"name": "movedTopLeft",
-		"description": "verschiebt die linke obere Ecke des Rechtecks <em>r</em> an den Punkt <em>p</em> und gibt das verschobene Rechteck als rect() zurück",
+		"description": "verschiebt die linke obere Ecke des Rechtecks r an den Punkt p und gibt das verschobene Rechteck als rect() zurück",
 		"usages": [
 			{
 				"functionName": "movedTopLeft",
@@ -554,7 +562,7 @@
 	},
 	{
 		"name": "united",
-		"description": " liefert ein neues Rechteck, das die beiden beteiligten Rechtecke <em>r1</em> und <em>r2</em> enthält",
+		"description": " liefert ein neues Rechteck, das die beiden beteiligten Rechtecke r1 und r2 enthält",
 		"usages": [
 			{
 				"functionName": "united",
@@ -570,7 +578,7 @@
 	},
 	{
 		"name": "intersected",
-		"description": "liefert ein neues Rechteck, das die Schnittmenge der beiden Rechtecke <em>r1</em> und <em>r2</em> enthält",
+		"description": "liefert ein neues Rechteck, das die Schnittmenge der beiden Rechtecke r1 und r2 enthält",
 		"usages": [
 			{
 				"functionName": "intersected",
@@ -586,7 +594,7 @@
 	},
 	{
 		"name": "adjusted",
-		"description": "liefert ein neues Rechteck, bei dem die übergebenen Werte auf die Koordinaten des Originalrechtecks <em>r</em> addiert sind",
+		"description": "liefert ein neues Rechteck, bei dem die übergebenen Werte auf die Koordinaten des Originalrechtecks r addiert sind",
 		"usages": [
 			{
 				"functionName": "adjusted",
@@ -614,7 +622,7 @@
 	},
 	{
 		"name": "boundedTo",
-		"description": "liefert ein size()-Objekt, das die minimale Breite und Höhe den beiden size()-Objekten <em>s1</em> und <em>s2</em> </em> enthält",
+		"description": "liefert ein size()-Objekt, das die minimale Breite und Höhe den beiden size()-Objekten s1 und s2  enthält",
 		"usages": [
 			{
 				"functionName": "boundedTo",
@@ -630,7 +638,7 @@
 	},
 	{
 		"name": "expandedTo",
-		"description": "liefert ein size()-Objekt, das die maximale Breite und Höhe den beiden size()-Objekten <em>s1</em> und <em>s2</em> </em> enthält",
+		"description": "liefert ein size()-Objekt, das die maximale Breite und Höhe den beiden size()-Objekten s1 und s2  enthält",
 		"usages": [
 			{
 				"functionName": "expandedTo",
@@ -646,7 +654,7 @@
 	},
 	{
 		"name": "scaled",
-		"description": "liefert ein size()-Objekt, das das existierende size()-Objekt <em>s1</em> entsprechend dem übergebenen size()-Objekt <em>s2</em> skaliert",
+		"description": "liefert ein size()-Objekt, das das existierende size()-Objekt s1 entsprechend dem übergebenen size()-Objekt s2 skaliert",
 		"usages": [
 			{
 				"functionName": "scaled",
@@ -708,7 +716,7 @@
 	},
 	{
 		"name": "mathFloor",
-		"description": "liefert größte ganze Zahl, die nicht größer als die Zahl <em>value</em> ist; wird zum Abrunden verwendet",
+		"description": "liefert größte ganze Zahl, die nicht größer als die Zahl value ist; wird zum Abrunden verwendet",
 		"usages": [
 			{
 				"functionName": "mathFloor",
@@ -725,7 +733,7 @@
 	},
 	{
 		"name": "mathCeil",
-		"description": "liefert kleinste ganze Zahl, die nicht kleiner als die Zahl <em>value</em> ist; wird zum Aufrunden verwendet",
+		"description": "liefert kleinste ganze Zahl, die nicht kleiner als die Zahl value ist; wird zum Aufrunden verwendet",
 		"usages": [
 			{
 				"functionName": "mathCeil",
@@ -742,7 +750,7 @@
 	},
 	{
 		"name": "mathDecToHex",
-		"description": "liefert zu der Dezimalzahl <em>decZahl</em> die entsprechende Hexadezimalzahl",
+		"description": "liefert zu der Dezimalzahl decZahl die entsprechende Hexadezimalzahl",
 		"usages": [
 			{
 				"functionName": "mathDecToHex",
@@ -759,7 +767,7 @@
 	},
 	{
 		"name": "mathHexToDec",
-		"description": "liefert zu der Hexadezimalzahl <em>hexZahl</em> die entsprechende Dezimalzahl",
+		"description": "liefert zu der Hexadezimalzahl hexZahl die entsprechende Dezimalzahl",
 		"usages": [
 			{
 				"functionName": "mathHexToDec",
@@ -776,7 +784,7 @@
 	},
 	{
 		"name": "mathAbs",
-		"description": "liefert zu der Zahl <em>value</em> den entsprechenden Absolutwert",
+		"description": "liefert zu der Zahl value den entsprechenden Absolutwert",
 		"usages": [
 			{
 				"functionName": "mathAbs",
@@ -793,7 +801,7 @@
 	},
 	{
 		"name": "mathSin",
-		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Sinus-Wert",
+		"description": "liefert zu dem Winkel grad den entsprechenden Sinus-Wert",
 		"usages": [
 			{
 				"functionName": "mathSin",
@@ -810,7 +818,7 @@
 	},
 	{
 		"name": "mathCos",
-		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Cosinus-Wert",
+		"description": "liefert zu dem Winkel grad den entsprechenden Cosinus-Wert",
 		"usages": [
 			{
 				"functionName": "mathCos",
@@ -827,7 +835,7 @@
 	},
 	{
 		"name": "mathTan",
-		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Tangens-Wert",
+		"description": "liefert zu dem Winkel grad den entsprechenden Tangens-Wert",
 		"usages": [
 			{
 				"functionName": "mathTan",
@@ -844,7 +852,7 @@
 	},
 	{
 		"name": "mathArcSin",
-		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Arcussinus-Wert",
+		"description": "liefert zu dem Winkel grad den entsprechenden Arcussinus-Wert",
 		"usages": [
 			{
 				"functionName": "mathArcSin",
@@ -861,7 +869,7 @@
 	},
 	{
 		"name": "mathArcCos",
-		"description": "liefert zu dem Winkel <em>grad</em> den entsprechenden Arcuscosinus-Wert",
+		"description": "liefert zu dem Winkel grad den entsprechenden Arcuscosinus-Wert",
 		"usages": [
 			{
 				"functionName": "mathArcCos",
@@ -878,7 +886,7 @@
 	},
 	{
 		"name": "mathArcTan",
-		"description": "liefert zu den zwei übergebenen Zahlen <em>zähler</em> und <em>nenner</em> den entsprechenden Arcustagens-Wert",
+		"description": "liefert zu den zwei übergebenen Zahlen zähler und nenner den entsprechenden Arcustagens-Wert",
 		"usages": [
 			{
 				"functionName": "mathArcTan",
@@ -896,7 +904,7 @@
 	},
 	{
 		"name": "mathSqrt",
-		"description": "liefert zu der Zahl <em>value</em> die Quadratwurzel",
+		"description": "liefert zu der Zahl value die Quadratwurzel",
 		"usages": [
 			{
 				"functionName": "mathSqrt",
@@ -913,7 +921,7 @@
 	},
 	{
 		"name": "mathPow",
-		"description": "liefert die Potenz: <em>base</em>^<em>exponent</em>",
+		"description": "liefert die Potenz: base^exponent",
 		"usages": [
 			{
 				"functionName": "mathPow",
@@ -934,7 +942,7 @@
 	},
 	{
 		"name": "mathLn",
-		"description": "liefert zu der Zahl <em>value</em> den natürlichen Logarithmus",
+		"description": "liefert zu der Zahl value den natürlichen Logarithmus",
 		"usages": [
 			{
 				"functionName": "mathLn",
@@ -951,7 +959,7 @@
 	},
 	{
 		"name": "mathLog",
-		"description": "liefert zu der Zahl <em>value</em> den Zehner-Logarithmus",
+		"description": "liefert zu der Zahl value den Zehner-Logarithmus",
 		"usages": [
 			{
 				"functionName": "mathLog",
@@ -968,7 +976,7 @@
 	},
 	{
 		"name": "mathExp",
-		"description": "liefert <em>n</em>. Potenz zur Zahl e (=2.71828)",
+		"description": "liefert n. Potenz zur Zahl e (=2.71828)",
 		"usages": [
 			{
 				"functionName": "mathExp",
@@ -997,7 +1005,7 @@
 	},
 	{
 		"name": "mathRound",
-		"description": "liefert gerundete Zahl zu <em>value</em>",
+		"description": "liefert gerundete Zahl zu value",
 		"usages": [
 			{
 				"functionName": "mathRound",
@@ -1014,7 +1022,7 @@
 	},
 	{
 		"name": "mathRadToDeg",
-		"description": "liefert zum übergebenen Bogenmaß <em>rad</em> die entsprechende Grad-Zahl",
+		"description": "liefert zum übergebenen Bogenmaß rad die entsprechende Grad-Zahl",
 		"usages": [
 			{
 				"functionName": "mathRadToDeg",
@@ -1031,7 +1039,7 @@
 	},
 	{
 		"name": "mathDegToRad",
-		"description": "liefert zur übergebenen Grad-Zahl <em>deg</em> das entsprechende Bogenmaß",
+		"description": "liefert zur übergebenen Grad-Zahl deg das entsprechende Bogenmaß",
 		"usages": [
 			{
 				"functionName": "mathDegToRad",
@@ -1048,7 +1056,7 @@
 	},
 	{
 		"name": "mathSignum",
-		"description": "liefert 1 bei positiven <em>value</em>, -1 bei negativen <em>value</em> und 0, wenn <em>value</em> gleich 0 ist",
+		"description": "liefert 1 bei positiven value, -1 bei negativen value und 0, wenn value gleich 0 ist",
 		"usages": [
 			{
 				"functionName": "mathSignum",
@@ -1126,7 +1134,7 @@
 	},
 	{
 		"name": "stringLen",
-		"description": "liefert die Länge des String <em>s</em> (ähnlich wie strlen() in C)",
+		"description": "liefert die Länge des String s (ähnlich wie strlen() in C)",
 		"usages": [
 			{
 				"functionName": "stringLen",
@@ -1143,7 +1151,7 @@
 	},
 	{
 		"name": "stringStartsWith",
-		"description": "liefert <em>true</em>, wenn der String <em>src</em> mit dem als Parameter angegebenen String <em>search</em> beginnt, andernfalls <em>false</em>",
+		"description": "liefert true, wenn der String src mit dem als Parameter angegebenen String search beginnt, andernfalls false",
 		"usages": [
 			{
 				"functionName": "stringStartsWith",
@@ -1160,7 +1168,7 @@
 	},
 	{
 		"name": "stringEndsWith",
-		"description": "liefert <em>true</em>, wenn der String <em>src</em> mit dem als Parameter angegebenen String <em>search</em> endet, andernfalls <em>false</em>",
+		"description": "liefert true, wenn der String src mit dem als Parameter angegebenen String search endet, andernfalls false",
 		"usages": [
 			{
 				"functionName": "stringEndsWith",
@@ -1177,7 +1185,7 @@
 	},
 	{
 		"name": "stringContains",
-		"description": "liefert <em>true</em>, wenn der String <em>src</em> den als Parameter angegebenen String <em>search</em> enthält, andernfalls <em>false</em>",
+		"description": "liefert true, wenn der String src den als Parameter angegebenen String search enthält, andernfalls false",
 		"usages": [
 			{
 				"functionName": "stringContains",
@@ -1198,7 +1206,7 @@
 	},
 	{
 		"name": "stringIndexOf",
-		"description": "liefert die erste Position, an der sich der als Parameter angegebene String <em>search</em> im String <em>src</em> befindet.",
+		"description": "liefert die erste Position, an der sich der als Parameter angegebene String search im String src befindet.",
 		"usages": [
 			{
 				"functionName": "stringIndexOf",
@@ -1215,7 +1223,7 @@
 	},
 	{
 		"name": "stringLastIndexOf",
-		"description": "liefert die letzte Position, an der sich der als Parameter angegebene String <em>search</em> im String <em>src</em> befindet.",
+		"description": "liefert die letzte Position, an der sich der als Parameter angegebene String search im String src befindet.",
 		"usages": [
 			{
 				"functionName": "stringLastIndexOf",
@@ -1232,7 +1240,7 @@
 	},
 	{
 		"name": "stringInsert",
-		"description": "fügt im String <em>src</em> an der Position <em>index</em> den als 2. Parameter angegebene String <em>search</em> ein",
+		"description": "fügt im String src an der Position index den als 2. Parameter angegebene String search ein",
 		"usages": [
 			{
 				"functionName": "stringInsert",
@@ -1253,7 +1261,7 @@
 	},
 	{
 		"name": "stringLeft",
-		"description": "liefert die <em> n </em> am weitesten links stehenden Zeichen des Strings <em>src</em> zurück",
+		"description": "liefert die  n  am weitesten links stehenden Zeichen des Strings src zurück",
 		"usages": [
 			{
 				"functionName": "stringLeft",
@@ -1270,7 +1278,7 @@
 	},
 	{
 		"name": "stringMid",
-		"description": "liefert ab Position <em>pos</em> die <em>n</em> nächsten Zeichen des Strings <em>src</em>  zurück.",
+		"description": "liefert ab Position pos die n nächsten Zeichen des Strings src  zurück.",
 		"usages": [
 			{
 				"functionName": "stringMid",
@@ -1291,7 +1299,7 @@
 	},
 	{
 		"name": "stringRight",
-		"description": "liefert die <em>n</em> am weitesten rechts stehenden Zeichen des Strings <em>src</em> zurück",
+		"description": "liefert die n am weitesten rechts stehenden Zeichen des Strings src zurück",
 		"usages": [
 			{
 				"functionName": "stringRight",
@@ -1308,24 +1316,27 @@
 	},
 	{
 		"name": "stringRemove",
-		"description": "stringRemove",
-		"usages": [
-			{
-				"functionName": "stringRemove",
-				"call": "no docu"
-			}
-		],
+		"description": "entfernt einen Teilstring aus dem String src und liefert diesen gekürzten String als Rückgabe.",
+		"usages": [],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "remove",
+				"description": "der Teilstring, der aus dem String src zu entfernen ist "
+			},
+			{
+				"name": "pos",
+				"description": "Position, ab der Zeichen aus dem String src zu entfernen sind "
+			},
+			{
+				"name": "n",
+				"description": "Anzahl der Zeichen, die aus dem String src zu entfernen sind "
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "string"
 	},
 	{
 		"name": "stringReplace",
-		"description": "ersetzt im String <em>src</em> einen Teilstring <em>oldStr</em> durch den String <em>newStr</em>",
+		"description": "ersetzt im String src einen Teilstring oldStr durch den String newStr",
 		"usages": [
 			{
 				"functionName": "stringReplace",
@@ -1346,7 +1357,7 @@
 	},
 	{
 		"name": "stringSplit",
-		"description": "zerteilt den String <em>str</em> an den durch <em>sep</em> festgelegten Schnittstellen und gibt die hieraus",
+		"description": "zerteilt den String str an den durch sep festgelegten Schnittstellen und gibt die hieraus",
 		"usages": [
 			{
 				"functionName": "stringSplit",
@@ -1367,7 +1378,7 @@
 	},
 	{
 		"name": "stringListJoin",
-		"description": "fügt alle Strings aus der String-Liste <em>strList</em> zu einem String zusammen, wobei zwischen den einzelnen",
+		"description": "fügt alle Strings aus der String-Liste strList zu einem String zusammen, wobei zwischen den einzelnen",
 		"usages": [
 			{
 				"functionName": "stringListJoin",
@@ -1697,20 +1708,20 @@
 	},
 	{
 		"name": "animIsPaused",
-		"description": "animIsPaused",
+		"description": "Prüft ob eine Animation gerade pausiert ist.",
 		"usages": [
 			{
 				"functionName": "animIsPaused",
-				"call": "no docu"
+				"call": "GGLObject<Animation> animation"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "animation",
+				"description": "gibt die Animation an."
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "animIsStopped",
@@ -1752,20 +1763,20 @@
 	},
 	{
 		"name": "animGetLoopCount",
-		"description": "animGetLoopCount",
+		"description": "Fragt wie oft eine Animation wiederholt wird.",
 		"usages": [
 			{
 				"functionName": "animGetLoopCount",
-				"call": "no docu"
+				"call": "GGLObject<Animation> animation"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "animation",
+				"description": "gibt die Animation an."
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "int"
 	},
 	{
 		"name": "animSetDuration",
@@ -1918,20 +1929,20 @@
 	},
 	{
 		"name": "animToggleDirection",
-		"description": "animToggleDirection",
+		"description": "Ändert die Laufrichtung einer Animation.",
 		"usages": [
 			{
 				"functionName": "animToggleDirection",
-				"call": "no docu"
+				"call": "GGLObject<Animation> animation"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "animation",
+				"description": "gibt die Animation an."
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "string"
 	},
 	{
 		"name": "animSetEasingCurve",
@@ -2090,207 +2101,87 @@
 	},
 	{
 		"name": "gameGetMedia",
-		"description": "gameGetMedia",
-		"usages": [
-			{
-				"functionName": "gameGetMedia",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "gibt nen zusammen gefügten Inhalt der media.json aus dem spiel und dem mediensatz zurück",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetDisplayName",
-		"description": "gameGetDisplayName",
-		"usages": [
-			{
-				"functionName": "gameGetDisplayName",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt den Anzeigename des Spiels zurück.",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetId",
-		"description": "gameGetId",
-		"usages": [
-			{
-				"functionName": "gameGetId",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die ArchiveId des akutell geladenen Spiels zurück.",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetDescription",
-		"description": "gameGetDescription",
-		"usages": [
-			{
-				"functionName": "gameGetDescription",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die Beschreibung eines Spiels zurück, die in der info.json unter dem",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMediasetDescription",
-		"description": "gameGetMediasetDescription",
-		"usages": [
-			{
-				"functionName": "gameGetMediasetDescription",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die Beschreibung des Mediensatzes zurück, die in der info.json unter",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMinPlayers",
-		"description": "gameGetMinPlayers",
-		"usages": [
-			{
-				"functionName": "gameGetMinPlayers",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die Mindestanzahl von geforderten Spieler für Spiel zurück, die in der info.json unter dem",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMaxPlayers",
-		"description": "gameGetMaxPlayers",
-		"usages": [
-			{
-				"functionName": "gameGetMaxPlayers",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die Maximalanzahl von erlaubten Spieler für Spiel zurück, die in der info.json unter dem",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameHasComputerPlayer",
-		"description": "gameHasComputerPlayer",
-		"usages": [
-			{
-				"functionName": "gameHasComputerPlayer",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die zurück, ob zum Spiel ein Computerspieler vorhanden ist, das in der info.json unter dem",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetLoadPicturePath",
-		"description": "gameGetLoadPicturePath",
-		"usages": [
-			{
-				"functionName": "gameGetLoadPicturePath",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die GUrl für das Ladebild für ein Spiel zurück, z.B.",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMediasetDisplayName",
-		"description": "gameGetMediasetDisplayName",
-		"usages": [
-			{
-				"functionName": "gameGetMediasetDisplayName",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt den Anzeigename des Mediensatzes zurück. Wird keine mediaset-id mitgegeben wird der",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMediasetId",
-		"description": "gameGetMediasetId",
-		"usages": [
-			{
-				"functionName": "gameGetMediasetId",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt die ArchiveId des akutell geladenen Mediensatzes des Spiels zurück.",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "gameGetMediaDescription",
-		"description": "gameGetMediaDescription",
-		"usages": [
-			{
-				"functionName": "gameGetMediaDescription",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"description": "Gibt den Inhalt der Datei mediaDesrc.json aus dem Mediensatz zurück.",
+		"usages": [],
+		"params": [],
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "makeGraphicsObject",
@@ -2683,20 +2574,20 @@
 	},
 	{
 		"name": "gfxGetScale",
-		"description": "gfxGetScale",
+		"description": "Gibt den Skalierungsfaktor eines Grafikelement zurück",
 		"usages": [
 			{
 				"functionName": "gfxGetScale",
-				"call": "no docu"
+				"call": "Graphicsobject objekt"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "Graphicsobject",
+				"description": "objekt"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	},
 	{
 		"name": "gfxSetRotation",
@@ -3083,20 +2974,20 @@
 	},
 	{
 		"name": "gfxGetGeometry",
-		"description": "gfxGetGeometry",
+		"description": "Gibt die wahre Geometrie eines Grafikelements zurück",
 		"usages": [
 			{
 				"functionName": "gfxGetGeometry",
-				"call": "no docu"
+				"call": "Graphicsobject objekt"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "Graphicsobject",
+				"description": "objekt"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "rect"
 	},
 	{
 		"name": "gfxCenterOn",
@@ -3263,20 +3154,20 @@
 	},
 	{
 		"name": "gfxGetAlignment",
-		"description": "gfxGetAlignment",
+		"description": "Gibt das ein Alignment für ein Textobjekt zurück.",
 		"usages": [
 			{
 				"functionName": "gfxGetAlignment",
-				"call": "no docu"
+				"call": "Text objekt"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "Text",
+				"description": "objekt"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "string"
 	},
 	{
 		"name": "gfxSetElideMode",
@@ -3465,7 +3356,7 @@
 	},
 	{
 		"name": "gfxGetTextMargin",
-		"description": "Gibt den Abstand zwischen dem Text und dem Rahmen des Textfeldes als <em>dict</em> zurück.",
+		"description": "Gibt den Abstand zwischen dem Text und dem Rahmen des Textfeldes als dict zurück.",
 		"usages": [
 			{
 				"functionName": "gfxGetTextMargin",
@@ -3906,11 +3797,11 @@
 	},
 	{
 		"name": "gfxSetAngle",
-		"description": "Setzt den \"Angle Origin Point\" des Grafikelements auf den angegeben Punkt.",
+		"description": "Dreht das Grafikelement um einen angegebenen Winkel im Rahmen der",
 		"usages": [
 			{
-				"functionName": "gfxSetAngleOriginPoint",
-				"call": "Graphicsobject object, point origin"
+				"functionName": "gfxSetAngle",
+				"call": "Graphicsobject object, double winkel"
 			}
 		],
 		"params": [
@@ -4530,7 +4421,7 @@
 	},
 	{
 		"name": "wait",
-		"description": "Wartet mit der weiteren Programmausführung auf das Signal <em>finish</em> eines QObjects.",
+		"description": "Wartet mit der weiteren Programmausführung auf das Signal finish eines QObjects.",
 		"usages": [
 			{
 				"functionName": "wait",
@@ -4563,20 +4454,15 @@
 	},
 	{
 		"name": "unblockInput",
-		"description": "unblockInput",
+		"description": "Gibt alle Input-Events wieder frei.",
 		"usages": [
 			{
 				"functionName": "unblockInput",
-				"call": "no docu"
+				"call": ""
 			}
 		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
+		"params": [],
+		"returnValue": "GGLObject::None"
 	},
 	{
 		"name": "processEvents",
@@ -4685,7 +4571,7 @@
 	},
 	{
 		"name": "miscRandom",
-		"description": "liefert eine Zufallszahl zwischen 0 und <em>count-1</em>",
+		"description": "liefert eine Zufallszahl zwischen 0 und count-1",
 		"usages": [
 			{
 				"functionName": "miscRandom",
@@ -4702,7 +4588,7 @@
 	},
 	{
 		"name": "miscShuffle",
-		"description": "tauscht in der Liste <em>l</em> zufällig die Elemente",
+		"description": "tauscht in der Liste l zufällig die Elemente",
 		"usages": [
 			{
 				"functionName": "miscShuffle",
@@ -4776,7 +4662,7 @@
 	},
 	{
 		"name": "miscFindFirstIndexRecursive",
-		"description": "sucht in  der Liste <em>l</em> bzw. im Dictionary <em>d</em> das erste Vorkommen von <em>v</em>",
+		"description": "sucht in  der Liste l bzw. im Dictionary d das erste Vorkommen von v",
 		"usages": [
 			{
 				"functionName": "miscFindFirstIndexRecursive",
@@ -4866,37 +4752,45 @@
 	},
 	{
 		"name": "miscPointsDistance",
-		"description": "miscPointsDistance",
+		"description": "Gibt den Abstand zweier Punkte zurück",
 		"usages": [
 			{
-				"functionName": "miscPointsDistance",
-				"call": "no docu"
+				"functionName": "miscRandomColor",
+				"call": " point a, point b"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "a",
+				"description": "erster  Punkt"
+			},
+			{
+				"name": "b",
+				"description": "zweiter Punkt"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	},
 	{
 		"name": "miscPointsRotation",
-		"description": "miscPointsRotation",
+		"description": "Gibt den Winkel zweier Punkte zurück. Dieser hat die Werte [0;360[ und hat",
 		"usages": [
 			{
-				"functionName": "miscPointsRotation",
-				"call": "no docu"
+				"functionName": "miscRandomColor",
+				"call": " point a, point b"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "a",
+				"description": "erster  Punkt"
+			},
+			{
+				"name": "b",
+				"description": "zweiter Punkt"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	},
 	{
 		"name": "naviMakeMatrix",
@@ -5157,20 +5051,28 @@
 	},
 	{
 		"name": "naviSetLast",
-		"description": "naviSetLast",
+		"description": "Setzt die aktuelle Position der Matrix auf die letzte Position.",
 		"usages": [
 			{
-				"functionName": "naviSetLast",
-				"call": "no docu"
+				"functionName": "naviSetFirst",
+				"call": " naviMatrix matrix, [\\, bool forceSkipDisabled = true ]"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "GGLObject::None"
 	},
 	{
 		"name": "naviSetEnabled",
@@ -5248,20 +5150,20 @@
 	},
 	{
 		"name": "naviHasEnabledPos",
-		"description": "naviHasEnabledPos",
+		"description": "Prüft, ob eine Matrix aktivierte Einträge besitzt. ",
 		"usages": [
 			{
-				"functionName": "naviHasEnabledPos",
-				"call": "no docu"
+				"functionName": "naviIsEnabled",
+				"call": " naviMatrix matrix"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "naviMatrix",
+				"description": "matrix"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "GGLObject::Bool"
 	},
 	{
 		"name": "naviSetQObject",
@@ -5306,6 +5208,64 @@
 	},
 	{
 		"name": "naviGetQObject",
+		"description": "Fragt nach einem QObjekt an einer Matrix-Position.",
+		"usages": [
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, int row, int col "
+			},
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, list[row, col] "
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject<QObject>"
+	},
+	{
+		"name": "naviSetRowQObject",
+		"description": "Setzt für eine Matrix-Reihe ein QObjekt als Referenz-Objekt.",
+		"usages": [
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, int row, GGLQObject obj "
+			},
+			{
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, int row, none "
+			}
+		],
+		"params": [
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
+			}
+		],
+		"returnValue": "GGLObject::None"
+	},
+	{
+		"name": "naviGetRowQObject",
 		"description": "Holt für eine Matrix-Reihe das gesetzte QObjekt.",
 		"usages": [
 			{
@@ -5325,55 +5285,25 @@
 		]
 	},
 	{
-		"name": "naviSetRowQObject",
-		"description": "naviSetRowQObject",
-		"usages": [
-			{
-				"functionName": "naviSetRowQObject",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
-	},
-	{
-		"name": "naviGetRowQObject",
-		"description": "naviGetRowQObject",
-		"usages": [
-			{
-				"functionName": "naviGetRowQObject",
-				"call": "no docu"
-			}
-		],
-		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
-		],
-		"returnValue": "no docu"
-	},
-	{
 		"name": "naviGetQObjectPos",
-		"description": "naviGetQObjectPos",
+		"description": "Fragt nach der Position eines QObjekts in einer Matrix.",
 		"usages": [
 			{
-				"functionName": "naviGetQObjectPos",
-				"call": "no docu"
+				"functionName": "naviSetQObject",
+				"call": " naviMatrix matrix, GGLQObject obj"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "GGLList[row,"
 	},
 	{
 		"name": "naviSetExceededCallback",
@@ -5440,20 +5370,24 @@
 	},
 	{
 		"name": "naviSetRowChangedCallback",
-		"description": "naviSetRowChangedCallback",
+		"description": "Setzt die RowChanged-Callback-Funktion.",
 		"usages": [
 			{
-				"functionName": "naviSetRowChangedCallback",
-				"call": "no docu"
+				"functionName": "naviSetItemChangedCallback",
+				"call": " naviMatrix matrix, GGLFunction callback"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "naviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "naviMatrix",
+				"description": "matrix"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "GGLObject::None"
 	},
 	{
 		"name": "naviSetCallbackArgs",
@@ -5584,20 +5518,24 @@
 	},
 	{
 		"name": "naviSetWrapAround",
-		"description": "naviSetWrapAround",
+		"description": "Aktiviert oder Deaktiviert den WrapAournd Modus der NavigationsMatrix",
 		"usages": [
 			{
-				"functionName": "naviSetWrapAround",
-				"call": "no docu"
+				"functionName": "naviSetRowSelectionMode",
+				"call": " NaviMatrix matrix, bool enabled = true"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "NaviMatrix",
+				"description": "matrix"
+			},
+			{
+				"name": "NaviMatrix",
+				"description": "matrix"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "naviIsWrapAround",
@@ -5886,7 +5824,7 @@
 	},
 	{
 		"name": "shapeAddRect",
-		"description": "Fügt das Rechteck <em>rect</em> zu dem Shape <em>s</em> hinzu.\\n",
+		"description": "Fügt das Rechteck rect zu dem Shape s hinzu.\\n",
 		"usages": [
 			{
 				"functionName": "shapeAddRect",
@@ -5903,7 +5841,7 @@
 	},
 	{
 		"name": "shapeAddEllipse",
-		"description": "Fügt eine Ellipse zu dem Shape <em>s</em> hinzu.\\n",
+		"description": "Fügt eine Ellipse zu dem Shape s hinzu.\\n",
 		"usages": [
 			{
 				"functionName": "shapeAddEllipse",
@@ -5920,7 +5858,7 @@
 	},
 	{
 		"name": "shapeAddPolygon",
-		"description": "Fügt das Polygon aus der Liste <em>l</em> zu dem Shape <em>s</em> hinzu.\\n",
+		"description": "Fügt das Polygon aus der Liste l zu dem Shape s hinzu.\\n",
 		"usages": [
 			{
 				"functionName": "shapeAddPolygon",
@@ -5937,7 +5875,7 @@
 	},
 	{
 		"name": "shapeAddShape",
-		"description": "Fügt das Shape <em>s1</em> zu dem Shape <em>s2</em> hinzu.\\n",
+		"description": "Fügt das Shape s1 zu dem Shape s2 hinzu.\\n",
 		"usages": [
 			{
 				"functionName": "shapeAddShape",
@@ -5975,7 +5913,7 @@
 	},
 	{
 		"name": "shapeAddRoundedRect",
-		"description": "Fügt das an den Ecken abgerundete Rechteck <em>r</em> zu dem Shape <em>s</em> hinzu.",
+		"description": "Fügt das an den Ecken abgerundete Rechteck r zu dem Shape s hinzu.",
 		"usages": [
 			{
 				"functionName": "shapeAddRoundedRect",
@@ -5996,7 +5934,7 @@
 	},
 	{
 		"name": "shapeGetAngleAtPercent",
-		"description": "liefert den Winkel an der Prozentzahl <em>t</em> im Shape <em>s</em>.",
+		"description": "liefert den Winkel an der Prozentzahl t im Shape s.",
 		"usages": [
 			{
 				"functionName": "shapeGetAngleAtPercent",
@@ -6013,24 +5951,24 @@
 	},
 	{
 		"name": "shapeGetSlopeAtPercent",
-		"description": "shapeGetSlopeAtPercent",
+		"description": "liefert den Winkel an der Prozentzahl t im Shape s.",
 		"usages": [
 			{
 				"functionName": "shapeGetSlopeAtPercent",
-				"call": "no docu"
+				"call": "   Shape s ,  double t   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "t",
+				"description": "legt die Prozentzahl zwischen 0 und 1 fest, zu der der entsprechende Winkel zu finden ist "
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	},
 	{
 		"name": "shapeGetPointAtPercent",
-		"description": "liefert den Punkt, der an der Prozentzahl <em>t</em> im Shape <em>s</em> liegt.",
+		"description": "liefert den Punkt, der an der Prozentzahl t im Shape s liegt.",
 		"usages": [
 			{
 				"functionName": "shapeGetPointAtPercent",
@@ -6046,7 +5984,7 @@
 	},
 	{
 		"name": "shapeArcMoveTo",
-		"description": "legt im Shape <em>s</em> innerhalb des Rechtecks <em>r</em> den Startwinkel <em>startAngle</em> für das Zeichnen eines Bogens fest.",
+		"description": "legt im Shape s innerhalb des Rechtecks r den Startwinkel startAngle für das Zeichnen eines Bogens fest.",
 		"usages": [
 			{
 				"functionName": "shapeArcMoveTo",
@@ -6067,7 +6005,7 @@
 	},
 	{
 		"name": "shapeArcTo",
-		"description": "Fügt einen Bogen im Shape <em>s</em> ein, der am Startwinkel <em>startAngle</em> und sich über <em>sweepLength</em> Grad",
+		"description": "Fügt einen Bogen im Shape s ein, der am Startwinkel startAngle und sich über sweepLength Grad",
 		"usages": [
 			{
 				"functionName": "shapeArcTo",
@@ -6092,7 +6030,7 @@
 	},
 	{
 		"name": "shapeGetBoundingRect",
-		"description": "Liefert das Rechteck, das den Shape <em>s</em> umfasst",
+		"description": "Liefert das Rechteck, das den Shape s umfasst",
 		"usages": [
 			{
 				"functionName": "shapeGetBoundingRect",
@@ -6108,24 +6046,23 @@
 	},
 	{
 		"name": "shapeCloseSubpath",
-		"description": "shapeCloseSubpath",
+		"description": "Liefert das Rechteck, das den Shape s umfasst",
 		"usages": [
 			{
 				"functionName": "shapeCloseSubpath",
-				"call": "no docu"
+				"call": "   Shape s  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "Shape",
+				"description": "s"
 			}
-		],
-		"returnValue": "no docu"
+		]
 	},
 	{
 		"name": "shapeCubicTo",
-		"description": "Fügt im Shape <em>s</em> eine kubische Bezier-Kurve zwischen der aktuellen Position und der Position <em>endPoint</em>",
+		"description": "Fügt im Shape s eine kubische Bezier-Kurve zwischen der aktuellen Position und der Position endPoint",
 		"usages": [
 			{
 				"functionName": "shapeCubicTo",
@@ -6150,7 +6087,7 @@
 	},
 	{
 		"name": "shapeQuadTo",
-		"description": "Fügt im Shape <em>s</em> eine quadratische Bezier-Kurve zwischen der aktuellen Position und der Position <em>endPoint</em>",
+		"description": "Fügt im Shape s eine quadratische Bezier-Kurve zwischen der aktuellen Position und der Position endPoint",
 		"usages": [
 			{
 				"functionName": "shapeQuadTo",
@@ -6175,7 +6112,7 @@
 	},
 	{
 		"name": "shapeGetCurrentPosition",
-		"description": "liefert die aktuelle Position für das Zeichnen im Shape <em>s</em> (z.B. nach shapeArcTo(), shapeCubicTo(), shapeQuadTo() und shapeLineTo())",
+		"description": "liefert die aktuelle Position für das Zeichnen im Shape s (z.B. nach shapeArcTo(), shapeCubicTo(), shapeQuadTo() und shapeLineTo())",
 		"usages": [
 			{
 				"functionName": "shapeGetCurrentPosition",
@@ -6195,7 +6132,7 @@
 	},
 	{
 		"name": "shapeGetLength",
-		"description": "liefert die die Länge des Pfads vom Shape <em>s</em>",
+		"description": "liefert die die Länge des Pfads vom Shape s",
 		"usages": [
 			{
 				"functionName": "shapeGetLength",
@@ -6212,7 +6149,7 @@
 	},
 	{
 		"name": "shapeLineTo",
-		"description": "Zeichnet von der aktuellen Position (zu Beginn (0,0)) Linie zu dem Punkt <em>p</em> im Shape <em>s</em>.\\n",
+		"description": "Zeichnet von der aktuellen Position (zu Beginn (0,0)) Linie zu dem Punkt p im Shape s.\\n",
 		"usages": [
 			{
 				"functionName": "shapeLineTo",
@@ -6229,7 +6166,7 @@
 	},
 	{
 		"name": "shapeMoveTo",
-		"description": "verschiebt im Shape <em>s</em> den Startpunkt für das Zeichnen von shapeArcTo(), shapeCubicTo(), shapeQuadTo() und shapeLineTo() ",
+		"description": "verschiebt im Shape s den Startpunkt für das Zeichnen von shapeArcTo(), shapeCubicTo(), shapeQuadTo() und shapeLineTo() ",
 		"usages": [
 			{
 				"functionName": "shapeMoveTo",
@@ -6246,7 +6183,7 @@
 	},
 	{
 		"name": "shapeIntersects",
-		"description": "Liefert true, wenn Shape <em>s1</em> eine Schnittmenge mit Shape <em>s2</em besitzt, andernfalls false.\\n",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeIntersects",
@@ -6263,88 +6200,88 @@
 	},
 	{
 		"name": "shapeToReversed",
-		"description": "shapeToReversed",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeToReversed",
-				"call": "no docu"
+				"call": "   Shape s1 ,  Shape s2   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "s2",
+				"description": "Shape, das auf eine Schnittmenge mit Shape s2 zu prüfen ist"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "shapeClone",
-		"description": "shapeClone",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeClone",
-				"call": "no docu"
+				"call": "   Shape s1 ,  Shape s2   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "s2",
+				"description": "Shape, das auf eine Schnittmenge mit Shape s2 zu prüfen ist"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "shapeSetFillRule",
-		"description": "shapeSetFillRule",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeSetFillRule",
-				"call": "no docu"
+				"call": "   Shape s1 ,  Shape s2   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "s2",
+				"description": "Shape, das auf eine Schnittmenge mit Shape s2 zu prüfen ist"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "shapeSimplify",
-		"description": "shapeSimplify",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeSimplify",
-				"call": "no docu"
+				"call": "   Shape s1 ,  Shape s2   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "s2",
+				"description": "Shape, das auf eine Schnittmenge mit Shape s2 zu prüfen ist"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "shapeUnited",
-		"description": "shapeUnited",
+		"description": "Liefert true, wenn Shape s1 eine Schnittmenge mit Shape s2</em besitzt, andernfalls false.\\n",
 		"usages": [
 			{
 				"functionName": "shapeUnited",
-				"call": "no docu"
+				"call": "   Shape s1 ,  Shape s2   "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "s2",
+				"description": "Shape, das auf eine Schnittmenge mit Shape s2 zu prüfen ist"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "simExit",
@@ -6566,37 +6503,53 @@
 	},
 	{
 		"name": "makeBufferedSound",
-		"description": "makeBufferedSound",
+		"description": "legt ein gepuffertes Sound-Object an",
 		"usages": [
 			{
 				"functionName": "makeBufferedSound",
-				"call": "no docu"
+				"call": "   string file ,  string channel  [,  looped  = false]  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "file",
+				"description": "genesis-Url zur Sound Datei"
+			},
+			{
+				"name": "channel",
+				"description": "Kanal zu welchem Sound zugeordnet wird (\"sfx\", \"music\" oder \"voice\")"
+			},
+			{
+				"name": "loop",
+				"description": "Gibt an ob Sound gelooped abgespielt werden soll"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "Sound-Objekt"
 	},
 	{
 		"name": "makeStreamedSound",
-		"description": "makeStreamedSound",
+		"description": "legt ein gestreamtes Sound-Object an",
 		"usages": [
 			{
 				"functionName": "makeStreamedSound",
-				"call": "no docu"
+				"call": "   string file  ,  string channel  [,  looped  = false]  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "file",
+				"description": "genesis-Url zur Sound Datei"
+			},
+			{
+				"name": "channel",
+				"description": "Kanal zu welchem Sound zugeordnet wird (\"sfx\", \"music\" oder \"voice\")"
+			},
+			{
+				"name": "loop",
+				"description": "Gibt an ob Sound gelooped abgespielt werden soll"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "Sound-Objekt"
 	},
 	{
 		"name": "soundPlay",
@@ -6668,7 +6621,7 @@
 	},
 	{
 		"name": "soundIsPlaying",
-		"description": "liefert <em> true </em> zurück wenn der Sound gerade abgespielt wird sonst <em> false </em>.",
+		"description": "liefert  true  zurück wenn der Sound gerade abgespielt wird sonst  false .",
 		"usages": [
 			{
 				"functionName": "soundIsPlaying",
@@ -6685,7 +6638,7 @@
 	},
 	{
 		"name": "soundIsPaused",
-		"description": "liefert <em> true </em> zurück wenn der Sound gerade pausiert ist sonst <em> false </em>.",
+		"description": "liefert  true  zurück wenn der Sound gerade pausiert ist sonst  false .",
 		"usages": [
 			{
 				"functionName": "soundIsPaused",
@@ -6702,7 +6655,7 @@
 	},
 	{
 		"name": "soundIsStopped",
-		"description": "liefert <em> true </em> zurück wenn der Sound gerade gestoppt ist sonst <em> false </em>.",
+		"description": "liefert  true  zurück wenn der Sound gerade gestoppt ist sonst  false .",
 		"usages": [
 			{
 				"functionName": "soundIsStopped",
@@ -6808,37 +6761,37 @@
 	},
 	{
 		"name": "soundGetVolume",
-		"description": "soundGetVolume",
+		"description": "gibt die aktuelle Abspielzeit eines Sounds zurück.",
 		"usages": [
 			{
 				"functionName": "soundGetVolume",
-				"call": "no docu"
+				"call": "   Sound obj  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	},
 	{
 		"name": "soundSetVolume",
-		"description": "soundSetVolume",
+		"description": "gibt die aktuelle Abspielzeit eines Sounds zurück.",
 		"usages": [
 			{
 				"functionName": "soundSetVolume",
-				"call": "no docu"
+				"call": "   Sound obj  "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "obj",
+				"description": "- StreamedSound oder BufferedSound"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	},
 	{
 		"name": "makeTimer",
@@ -6960,20 +6913,20 @@
 	},
 	{
 		"name": "timerIsPaused",
-		"description": "timerIsPaused",
+		"description": "prüft ob ein Timer gerade Pausiert ist.",
 		"usages": [
 			{
 				"functionName": "timerIsPaused",
-				"call": "no docu"
+				"call": "  GGLObject<Timer> timer "
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "GGLObject",
+				"description": ""
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "timerIsActive",
@@ -7381,20 +7334,24 @@
 	},
 	{
 		"name": "userHasTouchscreen",
-		"description": "userHasTouchscreen",
+		"description": "prüft, ob ein User die Touchscreen Optimization eingeschaltet hat",
 		"usages": [
 			{
-				"functionName": "userHasTouchscreen",
-				"call": "no docu"
+				"functionName": "userHasMouse",
+				"call": " int index | qobject<user>"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "userHasGamePad",
@@ -7587,20 +7544,24 @@
 	},
 	{
 		"name": "userHasHighscoreOption",
-		"description": "userHasHighscoreOption",
+		"description": "prüft, ob ein User das Highscore Flag besitzt",
 		"usages": [
 			{
-				"functionName": "userHasHighscoreOption",
-				"call": "no docu"
+				"functionName": "userHasGroupOptimizationOption",
+				"call": " int index | qobject<user>"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "bool"
 	},
 	{
 		"name": "userHasAlwaysGameSettingsOption",
@@ -7751,20 +7712,24 @@
 	},
 	{
 		"name": "userGetGlobalSwitchKeys",
-		"description": "userGetGlobalSwitchKeys",
+		"description": "Gibt eine Liste der globalen Tasten zurück, mit denen man während eines Spiels auf eine andere Bedienart umschalten kann",
 		"usages": [
 			{
-				"functionName": "userGetGlobalSwitchKeys",
-				"call": "no docu"
+				"functionName": "userGetGlobalStopKeys",
+				"call": " int index | qobject<user>"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "GGLList"
 	},
 	{
 		"name": "userCreateGuest",
@@ -7821,20 +7786,28 @@
 	},
 	{
 		"name": "userCreateGUrl",
-		"description": "userCreateGUrl",
+		"description": "erzeugt einen GUrl um auf User spezifische Daten zuzugreifen.",
 		"usages": [
 			{
-				"functionName": "userCreateGUrl",
-				"call": "no docu"
+				"functionName": "userCreateArchivGUrl",
+				"call": " string filename, int index | qobject<user> , string archiveId"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "filename",
+				"description": "der Name des Files"
+			},
+			{
+				"name": "index",
+				"description": "bezieht sich auf die Usernummer in einem Spiel"
+			},
+			{
+				"name": "user",
+				"description": "ein qobject<user>, das z.B. mit userGet() geholt wurde"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "string"
 	},
 	{
 		"name": "userAllCreateArchivGUrl",
@@ -7888,53 +7861,29 @@
 	},
 	{
 		"name": "makeWebView",
-		"description": "makeWebView",
-		"usages": [
-			{
-				"functionName": "makeWebView",
-				"call": "no docu"
-			}
-		],
+		"description": "\\addtogroup builtins",
+		"usages": [],
 		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
+			{}
 		],
-		"returnValue": "no docu"
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "webSetUrl",
-		"description": "webSetUrl",
-		"usages": [
-			{
-				"functionName": "webSetUrl",
-				"call": "no docu"
-			}
-		],
+		"description": "\\addtogroup builtins",
+		"usages": [],
 		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
+			{}
 		],
-		"returnValue": "no docu"
+		"returnValue": "returnValue"
 	},
 	{
 		"name": "simStartConfigurator",
-		"description": "simStartConfigurator",
-		"usages": [
-			{
-				"functionName": "simStartConfigurator",
-				"call": "no docu"
-			}
-		],
+		"description": "\\addtogroup builtins",
+		"usages": [],
 		"params": [
-			{
-				"name": "no docu",
-				"description": "no docu"
-			}
+			{}
 		],
-		"returnValue": "no docu"
+		"returnValue": "returnValue"
 	}
 ]

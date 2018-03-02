@@ -2,7 +2,7 @@
   "name": "genesisvscode",
   "displayName": "genesisVSCode",
   "description": "language services for the genesis ggl",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "publisher": "JankMi",
   "engines": {
     "vscode": "^1.20.0"

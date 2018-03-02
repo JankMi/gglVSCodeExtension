@@ -93,10 +93,19 @@ gulp.task('createMinDoc', function () {
 
                             // var firstOcc = content.indexOf(element)
                             // var posDoc = content.indexOf(element, firstOcc + 10);
-                            var posDoc = content.search(`(usage|builtin).*${element}`)
 
-                            var beginPos = content.lastIndexOf("!", posDoc) - 2;
-                            var endPos = content.indexOf("*/", posDoc) + 2;
+                            //Alte Methode nach begin- und endPos zu suchen
+                            // var posDoc = content.search(`(usage|builtin).*${element}`)
+                            // var beginPos = content.lastIndexOf("!", endPos) - 2;
+                            // var endPos = content.indexOf("*/", posDoc) + 2;
+
+                            /*Da alle funktionen dokumentiert sind und als Rückgabewert einen ObjectPointer enthalten,
+                              kann als Endposition nach dem ObjectPointer + Funktionsnamen gesucht werden.
+                              Lastindexof sucht rückwärts wesshalb als Startsuchposition die gerade ermittelte Endposition angegeben ist und nach
+                              dem Doxygenbeginn "/*!" gesucht wird
+                            */
+                           var endPos = content.search(`ObjectPointer.*${element}`) - 1;
+                           var beginPos = content.lastIndexOf("/*!", endPos);
 
                             if (beginPos < 0 || endPos < 0) {
                                 docEntry.description = element;
@@ -109,7 +118,10 @@ gulp.task('createMinDoc', function () {
                                 console.debug(`Builtin: ${element} not found, of file ${name}`);
                             } else {
                                 var doc = content.substring(beginPos, endPos)
-                                docEntry.description = regexDescription.exec(doc)[1];
+                                /*auch die beschreibung enthält häufig <em></em> 
+                                  <b></b> ist mir zwar nicht aufgefallen aber sicher ist sicher :D
+                                */
+                                docEntry.description = regexDescription.exec(doc)[1].split(/<\/?b>|<\/?em>/).join("");
                                 var docLines = doc.split("\n")
 
                                 docEntry.name = element;
@@ -123,7 +135,13 @@ gulp.task('createMinDoc', function () {
                                             nextIsUsage = false;
                                             return;
                                         }
-                                        docEntry.usages.push({ functionName: entry[1], call: entry[2] })
+                                        /*der Funktionsname ist häufig falsch eingetragen,
+                                          wesshalb es überhaupt erst nicht gefundene Dokus gab,
+                                          Bsp.: makeBufferedSound ist als makeSound dokumentiert.
+                                          Desshalb wird der Funktionsname aus der Header genommen.
+                                          Dort muss er richtig geschrieben sein...
+                                        */
+                                        docEntry.usages.push({ functionName: element, call: entry[2] })
                                         if (entry[3] == undefined) {
                                             nextIsUsage = false;
                                             return;
@@ -156,7 +174,8 @@ gulp.task('createMinDoc', function () {
                                                     if (entry[3] == undefined || entry[4] == undefined) {
                                                         console.debug("usage, undefined")
                                                     }
-                                                    docEntry.usages.push({ functionName: entry[3], call: entry[4] });
+                                                    //siehe vorrige Änderung
+                                                    docEntry.usages.push({ functionName: element, call: entry[4] });
                                                 } catch (error) {
                                                     console.debug("error on creating Object");
                                                 }

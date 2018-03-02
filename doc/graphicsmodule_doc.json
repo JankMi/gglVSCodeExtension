@@ -390,20 +390,20 @@
 	},
 	{
 		"name": "gfxGetScale",
-		"description": "gfxGetScale",
+		"description": "Gibt den Skalierungsfaktor eines Grafikelement zurück",
 		"usages": [
 			{
 				"functionName": "gfxGetScale",
-				"call": "no docu"
+				"call": "Graphicsobject objekt"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "Graphicsobject",
+				"description": "objekt"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "double"
 	},
 	{
 		"name": "gfxSetRotation",
@@ -790,20 +790,20 @@
 	},
 	{
 		"name": "gfxGetGeometry",
-		"description": "gfxGetGeometry",
+		"description": "Gibt die wahre Geometrie eines Grafikelements zurück",
 		"usages": [
 			{
 				"functionName": "gfxGetGeometry",
-				"call": "no docu"
+				"call": "Graphicsobject objekt"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "Graphicsobject",
+				"description": "objekt"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "rect"
 	},
 	{
 		"name": "gfxCenterOn",
@@ -970,20 +970,20 @@
 	},
 	{
 		"name": "gfxGetAlignment",
-		"description": "gfxGetAlignment",
+		"description": "Gibt das ein Alignment für ein Textobjekt zurück.",
 		"usages": [
 			{
 				"functionName": "gfxGetAlignment",
-				"call": "no docu"
+				"call": "Text objekt"
 			}
 		],
 		"params": [
 			{
-				"name": "no docu",
-				"description": "no docu"
+				"name": "Text",
+				"description": "objekt"
 			}
 		],
-		"returnValue": "no docu"
+		"returnValue": "string"
 	},
 	{
 		"name": "gfxSetElideMode",
@@ -1172,7 +1172,7 @@
 	},
 	{
 		"name": "gfxGetTextMargin",
-		"description": "Gibt den Abstand zwischen dem Text und dem Rahmen des Textfeldes als <em>dict</em> zurück.",
+		"description": "Gibt den Abstand zwischen dem Text und dem Rahmen des Textfeldes als dict zurück.",
 		"usages": [
 			{
 				"functionName": "gfxGetTextMargin",
@@ -1613,11 +1613,11 @@
 	},
 	{
 		"name": "gfxSetAngle",
-		"description": "Setzt den \"Angle Origin Point\" des Grafikelements auf den angegeben Punkt.",
+		"description": "Dreht das Grafikelement um einen angegebenen Winkel im Rahmen der",
 		"usages": [
 			{
-				"functionName": "gfxSetAngleOriginPoint",
-				"call": "Graphicsobject object, point origin"
+				"functionName": "gfxSetAngle",
+				"call": "Graphicsobject object, double winkel"
 			}
 		],
 		"params": [
