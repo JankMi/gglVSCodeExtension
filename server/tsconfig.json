@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "lib": [
+      "esnext"
+    ],
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "strictNullChecks": false,
+    "alwaysStrict": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "inlineSourceMap": true,
+    "declaration": true
+  },
+  "include": [
+    "src",
+    "tests"
+  ]
+}

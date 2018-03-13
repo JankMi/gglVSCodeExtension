@@ -1,0 +1,9 @@
+{
+  "@tsukiy0/generator-typescript": {
+    "license": "MIT",
+    "name": "server",
+    "description": "server for ggl language support",
+    "authorName": "Michael Jank",
+    "authorEmail": "michael.jank.90@googlemail.com"
+  }
+}

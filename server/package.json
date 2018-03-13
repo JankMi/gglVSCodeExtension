@@ -1,0 +1,49 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "name": "server",
+  "description": "server for ggl language support",
+  "license": "MIT",
+  "author": {
+    "name": "Michael Jank",
+    "email": "michael.jank.90@googlemail.com"
+  },
+  "engines": {
+    "node": "8.10.0"
+  },
+  "main": "dist\\index.js",
+  "typings": "dist\\index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "start": "node .",
+    "format": "prettier --write \"{src,tests}/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "tslint --format verbose --type-check --fix --project tsconfig.json",
+    "postlint": "npm run format",
+    "test": "mocha --opts mocha.opts tests\\**\\*.test.ts",
+    "coverage": "nyc npm test",
+    "installServer": "installServerIntoExtension ../client ./package.json ./tsconfig.json",
+    "compile": "installServerIntoExtension ../client ./package.json ./tsconfig.json && tsc -p .",
+    "watch": "installServerIntoExtension ../client ./package.json ./tsconfig.json && tsc -w -p ."
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/mocha": "^2.2.48",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4",
+    "nyc": "^11.6.0",
+    "prettier": "^1.11.1",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.10.0",
+    "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "file-system": "^2.2.2",
+    "fs": "0.0.1-security",
+    "vscode-languageserver": "^4.0.0",
+    "vscode-textmate": "^3.2.0"
+  }
+}

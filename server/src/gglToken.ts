@@ -1,3 +1,5 @@
+import { logDebug } from "./functions"
+
 export class GGLVariableToken {
     private content: string;
     private type: TokenTypes = TokenTypes.NotDeclared;
@@ -12,17 +14,18 @@ export class GGLVariableToken {
     constructor(content: string, scopes: string[], lineNo: number, startPos: number, endPos: number, nestedGroups: number[], file: string, type: TokenTypes) {
         const helper = /([\w]+|~)/.exec(content);
         if (helper === null) {
-            console.debug(file + lineNo);
+            logDebug(file + lineNo);
+        } else {
+            //        this.content = /(\w+)/.exec(content)[1];
+            this.content = helper[1];
+            this.scopes = scopes;
+            this.file = file;
+            this.lineNo = lineNo;
+            this.nestedGroups = nestedGroups;
+            this.startPos = startPos;
+            this.endPos = endPos;
+            this.type = type;
         }
-//        this.content = /(\w+)/.exec(content)[1];
-        this.content = helper [1];
-        this.scopes = scopes;
-        this.file = file;
-        this.lineNo = lineNo;
-        this.nestedGroups = nestedGroups;
-        this.startPos = startPos;
-        this.endPos = endPos;
-        this.type = type;
     }
 
     public get Content(): string { return this.content; }
@@ -33,10 +36,11 @@ export class GGLVariableToken {
     public get LineNumber(): number { return this.lineNo; }
     public get StartPos(): number { return this.startPos; }
     public get EndPos(): number { return this.endPos; }
-    public get DefaultValue(): string {return this.defaultValue; }
+    public get DefaultValue(): string { return this.defaultValue; }
     public set DefaultValue(toSet: string) { this.defaultValue = toSet; }
 }
 
+// tslint:disable-next-line:max-classes-per-file
 export class GGLFunctionToken extends GGLVariableToken {
     private parameters: GGLVariableToken[] = [];
 
