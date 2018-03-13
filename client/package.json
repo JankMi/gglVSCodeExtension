@@ -1,5 +1,5 @@
 {
-  "name": "ggl-client",
+  "name": "genesisvscode",
   "displayName": "ggl language support client",
   "description": "ggl language support ggl e.g. game generation language",
   "version": "0.0.1",
@@ -16,7 +16,7 @@
         "id": "ggl",
         "aliases": [
           "ggl",
-          "ggl"
+          "GameGenerationLanguge"
         ],
         "extensions": [
           ".ggl"
@@ -24,10 +24,20 @@
         "configuration": "./language-configuration.json"
       }
     ],
+    "snippets": [
+      {
+        "language": "ggl",
+        "path": "./snippets/ggl.json"
+      },
+      {
+        "language": "json",
+        "path": "./snippets/json.json"
+      }
+    ],
     "grammars": [
       {
         "language": "ggl",
-        "scopeName": "",
+        "scopeName": "source.genesisGGL",
         "path": "./syntaxes/ggl.tmLanguage.json"
       }
     ]
@@ -49,13 +59,17 @@
     "type": "git",
     "url": "git+https://github.com/JankMi/gglVSCodeExtension.git"
   },
+  "main": "out/extension.js",
   "bugs": {
     "url": "https://github.com/JankMi/gglVSCodeExtension/issues"
   },
   "homepage": "https://github.com/JankMi/gglVSCodeExtension#readme",
-  "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "update-vscode": "node ./node_modules/vscode/bin/install",
+    "postinstall": "node ./node_modules/vscode/bin/install"
   }
 }

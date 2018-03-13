@@ -2,9 +2,9 @@
   "compilerOptions": {
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "es5",
+    "target": "es6",
     "lib": [
-      "esnext"
+      "es2016"
     ],
     "noImplicitAny": false,
     "noUnusedLocals": true,
@@ -13,10 +13,10 @@
     "preserveConstEnums": true,
     "removeComments": true,
     "inlineSourceMap": true,
-    "declaration": true
+    "declaration": true,
+		"outDir": "../client/server"
   },
-  "include": [
-    "src",
-    "tests"
+  "exclue": [
+    "node_modules"
   ]
 }

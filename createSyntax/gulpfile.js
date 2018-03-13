@@ -245,21 +245,3 @@ function createBuiltin(line, docEntry) {
     }
     docEntry.usages.push({ functionName: usage[1], call: usage[2] });
 }
-
-gulp.task("fixRequire", function (){
-    console.debug("fixRequire");
-    
-    fileSystem.recurseSync("../", ['out/*.js'], function (filepath, relative, filename) {
-        var content = fs.readFileSync(filepath, "utf-8");
-        var pos = content.indexOf("\"vscode-textmate\"");
-        if (pos < 0){
-            console.debug(`${filename}: no occurence`);
-            return;
-        }
-        var newContent = content.substring(0,pos);
-        newContent = newContent.concat("path.join(require.main.filename, '../../node_modules/vscode-textmate/release/main.js')");
-        newContent = newContent.concat(content.substring(pos+"\"vscode-textmate\"".length,content.length));
-        fs.writeFileSync(filepath,newContent,'utf-8');
-        console.debug(`${filename}: changed`)
-    })
-})
